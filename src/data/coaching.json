@@ -1,0 +1,82 @@
+[
+  {
+    "key": "chain_rule:product_rule",
+    "trigger_count": 3,
+    "escalation_count": 6,
+    "initial_message": "When you see a composite function like f(g(x)), that's the chain rule — not the product rule. The product rule applies when two separate functions are multiplied, like f(x) * g(x).",
+    "escalated_message": "You're still mixing these up. Key test: Is the expression f(x) * g(x) or f(g(x))? If one function is INSIDE another, use the chain rule. If they sit side by side multiplied, use the product rule.",
+    "discriminator_tip": "Inside vs. beside: chain rule = function inside another function. Product rule = two functions multiplied together."
+  },
+  {
+    "key": "product_rule:chain_rule",
+    "trigger_count": 3,
+    "escalation_count": 6,
+    "initial_message": "When two functions are multiplied together like f(x) * g(x), you need the product rule. The chain rule is for composite functions where one function is plugged into another.",
+    "escalated_message": "Still catching you here. Look for the multiplication: if you see u(x) * v(x), that's product rule territory. Chain rule kicks in when you have an outer function wrapping an inner one, like sin(x^2).",
+    "discriminator_tip": "Multiplication = product rule. Composition (nested) = chain rule. Look at the structure, not the complexity."
+  },
+  {
+    "key": "ftc_part1:ftc_part2",
+    "trigger_count": 3,
+    "escalation_count": 6,
+    "initial_message": "FTC Part 1 is about differentiating an integral with a variable upper bound: d/dx of an integral from a to x. FTC Part 2 is about evaluating a definite integral using an antiderivative: F(b) - F(a).",
+    "escalated_message": "Key distinction you keep missing: FTC 1 goes integration → differentiation (taking the derivative of an accumulation function). FTC 2 goes antiderivative → evaluation (plug in the bounds). Which direction is this problem going?",
+    "discriminator_tip": "FTC 1: derivative of an integral (d/dx ∫). FTC 2: evaluate integral using antiderivative (F(b) - F(a))."
+  },
+  {
+    "key": "ftc_part2:ftc_part1",
+    "trigger_count": 3,
+    "escalation_count": 6,
+    "initial_message": "FTC Part 2 evaluates a definite integral by finding an antiderivative and subtracting: F(b) - F(a). FTC Part 1 deals with a function defined as an integral with a variable bound.",
+    "escalated_message": "You keep reaching for Part 1 when it should be Part 2. Ask: Am I evaluating a definite integral (Part 2)? Or am I differentiating a function defined as an integral (Part 1)?",
+    "discriminator_tip": "Evaluating ∫ from a to b = FTC Part 2. Differentiating ∫ from a to x = FTC Part 1."
+  },
+  {
+    "key": "related_rates:optimization",
+    "trigger_count": 3,
+    "escalation_count": 6,
+    "initial_message": "Related rates problems involve quantities changing over time (look for 'per second', 'per minute', rates of change with respect to time). Optimization finds the max or min of a quantity — no time variable needed.",
+    "escalated_message": "Time is the key signal. Related rates: everything changes with time (d/dt). Optimization: find the best (max/min) value of something. Does this problem mention time or rates?",
+    "discriminator_tip": "Time derivatives (d/dt, 'per second') = related rates. 'Find the maximum/minimum' with no time = optimization."
+  },
+  {
+    "key": "optimization:related_rates",
+    "trigger_count": 3,
+    "escalation_count": 6,
+    "initial_message": "Optimization asks you to find the maximum or minimum value of some quantity, usually with a constraint. Related rates involve quantities changing with respect to time.",
+    "escalated_message": "Look for the word 'maximize', 'minimize', or 'largest/smallest'. Those scream optimization. If instead you see rates of change happening simultaneously over time, that's related rates.",
+    "discriminator_tip": "Optimize = find best value (set f'=0). Related rates = link multiple rates of change over time."
+  },
+  {
+    "key": "mean_value_theorem:intermediate_value_theorem",
+    "trigger_count": 3,
+    "escalation_count": 6,
+    "initial_message": "MVT guarantees a point where the instantaneous rate equals the average rate over an interval. IVT guarantees that a continuous function hits every value between f(a) and f(b).",
+    "escalated_message": "MVT is about SLOPES (derivatives): there exists c where f'(c) = average rate. IVT is about VALUES (outputs): if f is continuous and k is between f(a) and f(b), then f(c) = k for some c.",
+    "discriminator_tip": "MVT = slope/rate guarantee (f'(c) matches average). IVT = value guarantee (function hits intermediate values)."
+  },
+  {
+    "key": "intermediate_value_theorem:mean_value_theorem",
+    "trigger_count": 3,
+    "escalation_count": 6,
+    "initial_message": "IVT says a continuous function on [a,b] takes every value between f(a) and f(b). MVT says there's a point where the derivative equals the average rate of change.",
+    "escalated_message": "Is the problem asking about a VALUE the function must reach, or about a RATE (derivative) that must occur? Value → IVT. Rate → MVT.",
+    "discriminator_tip": "Function value guarantee = IVT. Derivative/rate guarantee = MVT."
+  },
+  {
+    "key": "lhopitals_rule:limit_evaluation",
+    "trigger_count": 3,
+    "escalation_count": 6,
+    "initial_message": "L'Hôpital's rule only applies when direct substitution gives an indeterminate form (0/0 or ∞/∞). Regular limit evaluation works when you can simplify, factor, or directly substitute.",
+    "escalated_message": "Always try direct substitution FIRST. If you get 0/0 or ∞/∞, THEN use L'Hôpital's. If you get a real number, you're done — no L'Hôpital's needed.",
+    "discriminator_tip": "Step 1: Plug in. Get 0/0 or ∞/∞? → L'Hôpital's. Get a number? → Done (regular limit)."
+  },
+  {
+    "key": "implicit_differentiation:related_rates",
+    "trigger_count": 3,
+    "escalation_count": 6,
+    "initial_message": "Implicit differentiation applies when x and y are mixed in an equation and you differentiate both sides with respect to x. Related rates always involve a time variable — everything changes with respect to t.",
+    "escalated_message": "The differentiating variable is the clue. Implicit diff: d/dx (variables are x and y). Related rates: d/dt (everything changes with time). Is there a time component in this problem?",
+    "discriminator_tip": "Differentiate with respect to x (equation with x,y) = implicit diff. Differentiate with respect to time = related rates."
+  }
+]

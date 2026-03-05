@@ -1,0 +1,487 @@
+[
+  {
+    "id": "le_001",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "limit_evaluation",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Evaluate $$\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3}.$$",
+    "cue_tokens": ["lim", "\\to", "evaluate"],
+    "cue_aliases": ["tends to", "approaches", "as x goes to"],
+    "technique_options": ["limit_evaluation", "continuity_types", "lhopitals_rule", "quotient_rule"],
+    "correct_technique": "limit_evaluation",
+    "common_misidentification": "continuity_types",
+    "distractors": [
+      {
+        "concept": "continuity_types",
+        "why_tempting": "The $\\frac{0}{0}$ form at $x=3$ might make a student think the question is about whether the function is continuous there.",
+        "why_wrong": "The question asks to evaluate the limit, not to classify the type of discontinuity. Finding the limit value is the goal."
+      },
+      {
+        "concept": "lhopitals_rule",
+        "why_tempting": "The indeterminate $\\frac{0}{0}$ form is a classic trigger for L'Hopital's Rule.",
+        "why_wrong": "The expression factors as $\\frac{(x-3)(x+3)}{x-3}$, so algebraic simplification (direct factoring) is the appropriate technique for AP Calculus AB."
+      }
+    ],
+    "recognition_cue": "The problem directly says 'evaluate the limit' and gives a rational expression that factors. This is a straightforward limit evaluation by factoring and canceling.",
+    "solution_steps": [
+      "Factor the numerator: $x^2 - 9 = (x-3)(x+3)$.",
+      "Cancel the common factor: $\\frac{(x-3)(x+3)}{x-3} = x+3$ for $x \\neq 3$.",
+      "Substitute $x = 3$: $3 + 3 = 6$."
+    ],
+    "answer": "$6$"
+  },
+  {
+    "id": "le_002",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "limit_evaluation",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "What value does $f(x) = \\frac{\\sqrt{x+1} - 2}{x - 3}$ approach as $x$ gets arbitrarily close to $3$?",
+    "cue_tokens": ["approaches", "gets arbitrarily close to", "value"],
+    "cue_aliases": ["tends to", "limit", "as x nears"],
+    "technique_options": ["limit_evaluation", "continuity_types", "linear_approximation", "lhopitals_rule"],
+    "correct_technique": "limit_evaluation",
+    "common_misidentification": "continuity_types",
+    "distractors": [
+      {
+        "concept": "continuity_types",
+        "why_tempting": "The phrase 'as $x$ gets arbitrarily close to $3$' might suggest checking whether $f$ is continuous at $x=3$.",
+        "why_wrong": "The question asks for the value the function approaches, not whether the function is continuous. The task is limit evaluation."
+      },
+      {
+        "concept": "linear_approximation",
+        "why_tempting": "The square root and the phrase 'close to' can evoke linearization or tangent-line approximation.",
+        "why_wrong": "Linear approximation estimates $f(x)$ near a point where $f$ is defined and differentiable. Here we need the exact limit at a point where $f$ is undefined."
+      }
+    ],
+    "recognition_cue": "The phrase 'value the function approaches as $x$ gets close to' is paraphrased limit language. The $\\frac{0}{0}$ form requires algebraic manipulation (rationalizing the numerator).",
+    "solution_steps": [
+      "Recognize the $\\frac{0}{0}$ indeterminate form at $x = 3$.",
+      "Multiply numerator and denominator by the conjugate: $\\frac{\\sqrt{x+1}-2}{x-3} \\cdot \\frac{\\sqrt{x+1}+2}{\\sqrt{x+1}+2} = \\frac{(x+1)-4}{(x-3)(\\sqrt{x+1}+2)} = \\frac{x-3}{(x-3)(\\sqrt{x+1}+2)}$.",
+      "Cancel $(x-3)$: $\\frac{1}{\\sqrt{x+1}+2}$.",
+      "Substitute $x=3$: $\\frac{1}{\\sqrt{4}+2} = \\frac{1}{4}$."
+    ],
+    "answer": "$\\frac{1}{4}$"
+  },
+  {
+    "id": "le_003",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "limit_evaluation",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": false,
+    "stem": "The table below shows values of $g(x)$ near $x = 2$.\n\n| $x$ | $1.9$ | $1.99$ | $1.999$ | $2.001$ | $2.01$ | $2.1$ |\n|---|---|---|---|---|---|---|\n| $g(x)$ | $4.61$ | $4.9601$ | $4.996$ | $5.004$ | $5.0401$ | $5.41$ |\n\nBased on the data, what is a reasonable estimate for $\\lim_{x \\to 2} g(x)$?",
+    "cue_tokens": ["lim", "\\to", "estimate", "near"],
+    "cue_aliases": ["approaches", "table of values", "tends toward"],
+    "technique_options": ["limit_evaluation", "riemann_sums", "continuity_types", "derivative_as_rate"],
+    "correct_technique": "limit_evaluation",
+    "common_misidentification": "riemann_sums",
+    "distractors": [
+      {
+        "concept": "riemann_sums",
+        "why_tempting": "A table of function values at specific $x$-values can look like data for computing a Riemann sum.",
+        "why_wrong": "There is no integral or accumulation being asked for. The values are clustered around a single point to reveal the limiting behavior, not spread across an interval for area estimation."
+      },
+      {
+        "concept": "continuity_types",
+        "why_tempting": "Seeing that $g(2)$ is not given in the table may suggest the question is about whether $g$ is continuous at $x=2$.",
+        "why_wrong": "The question asks for the limit value. Whether $g(2)$ is defined or equals the limit is a continuity question, but that is not what is being asked."
+      }
+    ],
+    "recognition_cue": "The table gives $g(x)$ values for $x$-values approaching $2$ from both sides. This is a tabular representation of limit evaluation: observe that the outputs converge to a single value.",
+    "solution_steps": [
+      "Examine $g(x)$ as $x \\to 2^-$: $4.61 \\to 4.9601 \\to 4.996$, approaching $5$.",
+      "Examine $g(x)$ as $x \\to 2^+$: $5.41 \\to 5.0401 \\to 5.004$, approaching $5$.",
+      "Since both one-sided limits approach the same value, $\\lim_{x \\to 2} g(x) = 5$."
+    ],
+    "answer": "$5$"
+  },
+  {
+    "id": "le_004",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "limit_evaluation",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $h(x) = \\frac{\\sin(x - \\pi)}{x - \\pi}$. A student claims that because $h(\\pi)$ is undefined, the function has no meaningful output at $x = \\pi$. Is the student correct? Justify by computing the appropriate value.",
+    "cue_tokens": ["undefined", "meaningful output", "compute"],
+    "cue_aliases": ["does not exist", "indeterminate", "value at"],
+    "technique_options": ["limit_evaluation", "continuity_types", "lhopitals_rule", "squeeze_theorem"],
+    "correct_technique": "limit_evaluation",
+    "common_misidentification": "continuity_types",
+    "distractors": [
+      {
+        "concept": "continuity_types",
+        "why_tempting": "The problem discusses $h(\\pi)$ being undefined and asks about output at $x = \\pi$, which sounds like a continuity analysis.",
+        "why_wrong": "The question asks the student to 'compute the appropriate value,' which means finding $\\lim_{x \\to \\pi} h(x)$. The task is limit evaluation, not continuity classification."
+      },
+      {
+        "concept": "lhopitals_rule",
+        "why_tempting": "The $\\frac{0}{0}$ form of $\\frac{\\sin(x-\\pi)}{x-\\pi}$ at $x=\\pi$ is a textbook L'Hopital's candidate.",
+        "why_wrong": "This limit matches the fundamental limit $\\lim_{u \\to 0} \\frac{\\sin u}{u} = 1$ with the substitution $u = x - \\pi$. No differentiation is needed."
+      }
+    ],
+    "recognition_cue": "Despite the adversarial framing about being 'undefined,' the core task is computing $\\lim_{x \\to \\pi} \\frac{\\sin(x-\\pi)}{x-\\pi}$, a direct limit evaluation using the known sine limit.",
+    "solution_steps": [
+      "Let $u = x - \\pi$. As $x \\to \\pi$, $u \\to 0$.",
+      "Rewrite: $\\lim_{u \\to 0} \\frac{\\sin u}{u}$.",
+      "Apply the fundamental trigonometric limit: $\\lim_{u \\to 0} \\frac{\\sin u}{u} = 1$.",
+      "The student is incorrect. Although $h(\\pi)$ is undefined, the limit equals $1$, so $h(x) \\to 1$ as $x \\to \\pi$."
+    ],
+    "answer": "$1$; the student is incorrect because $\\lim_{x \\to \\pi} h(x) = 1$."
+  },
+  {
+    "id": "le_005",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "limit_evaluation",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Determine the value that $\\frac{2x^2 + 3x - 5}{x^2 - 1}$ tends toward as $x$ approaches $1$.",
+    "cue_tokens": ["tends toward", "approaches", "value"],
+    "cue_aliases": ["limit", "gets close to", "converges to"],
+    "technique_options": ["limit_evaluation", "quotient_rule", "continuity_types", "lhopitals_rule"],
+    "correct_technique": "limit_evaluation",
+    "common_misidentification": "quotient_rule",
+    "distractors": [
+      {
+        "concept": "quotient_rule",
+        "why_tempting": "The expression is a ratio of two polynomials, and the quotient rule is used to differentiate such expressions.",
+        "why_wrong": "No derivative is being requested. The question asks for the limit of the expression as $x \\to 1$, which requires factoring and simplifying."
+      },
+      {
+        "concept": "continuity_types",
+        "why_tempting": "The expression is undefined at $x=1$ ($\\frac{0}{0}$), which could prompt a discussion of removable discontinuity.",
+        "why_wrong": "The question asks for the value the expression tends toward, which is a limit computation. Continuity classification would be a follow-up question, not the task at hand."
+      }
+    ],
+    "recognition_cue": "The phrase 'value that ... tends toward as $x$ approaches' is paraphrased limit language. The $\\frac{0}{0}$ form at $x=1$ requires factoring both numerator and denominator.",
+    "solution_steps": [
+      "Factor the numerator: $2x^2 + 3x - 5 = (2x+5)(x-1)$.",
+      "Factor the denominator: $x^2 - 1 = (x+1)(x-1)$.",
+      "Cancel $(x-1)$: $\\frac{(2x+5)}{(x+1)}$.",
+      "Substitute $x = 1$: $\\frac{2(1)+5}{1+1} = \\frac{7}{2}$."
+    ],
+    "answer": "$\\frac{7}{2}$"
+  },
+  {
+    "id": "ct_001",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "continuity_types",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $$f(x) = \\begin{cases} x^2 + 1 & \\text{if } x < 2 \\\\ 3x - 1 & \\text{if } x \\geq 2 \\end{cases}.$$ Determine whether $f$ is continuous at $x = 2$. If not, classify the type of discontinuity.",
+    "cue_tokens": ["continuous", "discontinuity", "piecewise"],
+    "cue_aliases": ["removable", "jump", "defined at"],
+    "technique_options": ["continuity_types", "limit_evaluation", "mvt", "derivative_as_rate"],
+    "correct_technique": "continuity_types",
+    "common_misidentification": "limit_evaluation",
+    "distractors": [
+      {
+        "concept": "limit_evaluation",
+        "why_tempting": "You must compute left-hand and right-hand limits, which feels like a limit evaluation problem.",
+        "why_wrong": "Computing the limits is a step within the continuity check. The question specifically asks whether the function is continuous and to classify any discontinuity, which is a continuity analysis."
+      },
+      {
+        "concept": "mvt",
+        "why_tempting": "The MVT requires continuity on a closed interval, so seeing continuity language might trigger MVT thinking.",
+        "why_wrong": "No interval or mean value conclusion is being discussed. The question is purely about pointwise continuity at $x = 2$."
+      }
+    ],
+    "recognition_cue": "The problem directly asks 'is $f$ continuous' and 'classify the type of discontinuity.' A piecewise function with a boundary point is a classic continuity-type problem.",
+    "solution_steps": [
+      "Compute $f(2) = 3(2) - 1 = 5$.",
+      "Compute $\\lim_{x \\to 2^-} f(x) = 2^2 + 1 = 5$.",
+      "Compute $\\lim_{x \\to 2^+} f(x) = 3(2) - 1 = 5$.",
+      "Since $\\lim_{x \\to 2} f(x) = 5 = f(2)$, the function is continuous at $x = 2$."
+    ],
+    "answer": "$f$ is continuous at $x = 2$."
+  },
+  {
+    "id": "ct_002",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "continuity_types",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The function $g(x) = \\frac{x^2 - 4}{x - 2}$ is defined for all $x \\neq 2$. Can $g$ be redefined at $x = 2$ so that it becomes continuous there? If so, what value should $g(2)$ be assigned?",
+    "cue_tokens": ["redefined", "continuous", "assigned"],
+    "cue_aliases": ["removable discontinuity", "extend continuously", "fill in the hole"],
+    "technique_options": ["continuity_types", "limit_evaluation", "lhopitals_rule", "linear_approximation"],
+    "correct_technique": "continuity_types",
+    "common_misidentification": "limit_evaluation",
+    "distractors": [
+      {
+        "concept": "limit_evaluation",
+        "why_tempting": "You need to evaluate $\\lim_{x \\to 2} g(x)$ as part of answering the question, so it feels like a limit problem.",
+        "why_wrong": "The limit computation is a means to the end. The actual question is about removing a discontinuity by redefining the function, which is a continuity classification task."
+      },
+      {
+        "concept": "lhopitals_rule",
+        "why_tempting": "The $\\frac{0}{0}$ form at $x=2$ invites differentiation via L'Hopital's Rule.",
+        "why_wrong": "The question is about whether the discontinuity is removable. Computing the limit via factoring is sufficient, and the main task is continuity analysis, not limit technique selection."
+      }
+    ],
+    "recognition_cue": "The phrases 'redefined to become continuous' and 'what value should be assigned' signal a removable-discontinuity (continuity-type) problem, not merely a limit computation.",
+    "solution_steps": [
+      "Factor: $g(x) = \\frac{(x-2)(x+2)}{x-2} = x+2$ for $x \\neq 2$.",
+      "Compute $\\lim_{x \\to 2} g(x) = 2 + 2 = 4$.",
+      "Since the limit exists and is finite, the discontinuity at $x = 2$ is removable.",
+      "Assign $g(2) = 4$ to make $g$ continuous at $x = 2$."
+    ],
+    "answer": "Yes; set $g(2) = 4$ to remove the discontinuity."
+  },
+  {
+    "id": "ct_003",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "continuity_types",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "A function $p(x)$ has the following behavior near $x = 1$: from the left, $p(x)$ approaches $3$; from the right, $p(x)$ approaches $5$; and $p(1) = 3$. Sketch or describe the graph near $x = 1$, and identify the type of discontinuity at $x = 1$.",
+    "cue_tokens": ["discontinuity", "from the left", "from the right"],
+    "cue_aliases": ["jump", "one-sided limits", "graph behavior"],
+    "technique_options": ["continuity_types", "limit_evaluation", "increasing_decreasing", "evt"],
+    "correct_technique": "continuity_types",
+    "common_misidentification": "limit_evaluation",
+    "distractors": [
+      {
+        "concept": "limit_evaluation",
+        "why_tempting": "Left-hand and right-hand limit values are given, which looks like a one-sided limit evaluation problem.",
+        "why_wrong": "The limits are already provided. The task is to use them to identify the type of discontinuity, which is a continuity classification problem."
+      },
+      {
+        "concept": "increasing_decreasing",
+        "why_tempting": "The different values from left and right could suggest analyzing whether the function is increasing or decreasing around $x = 1$.",
+        "why_wrong": "The question is not about the sign of $p'(x)$. It asks for the type of discontinuity, which depends on the relationship between one-sided limits and $p(1)$."
+      }
+    ],
+    "recognition_cue": "The problem provides one-sided limit values and $p(1)$, then asks to 'identify the type of discontinuity.' This is a verbal/graphical representation of continuity classification.",
+    "solution_steps": [
+      "Identify: $\\lim_{x \\to 1^-} p(x) = 3$ and $\\lim_{x \\to 1^+} p(x) = 5$.",
+      "Since $\\lim_{x \\to 1^-} p(x) \\neq \\lim_{x \\to 1^+} p(x)$, the two-sided limit does not exist.",
+      "When left-hand and right-hand limits are both finite but unequal, the discontinuity is a jump discontinuity.",
+      "The graph has a solid dot at $(1,3)$ and an open circle at $(1,5)$, with the curve jumping from $y=3$ to $y=5$."
+    ],
+    "answer": "Jump discontinuity at $x = 1$."
+  },
+  {
+    "id": "ct_004",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "continuity_types",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A particle's position is modeled by $$s(t) = \\begin{cases} t^2 + 1 & \\text{if } 0 \\leq t < 3 \\\\ 2t + k & \\text{if } t \\geq 3 \\end{cases}.$$ For the velocity to exist at $t = 3$, the position function must first be continuous there. Find the value of $k$ that makes $s$ continuous at $t = 3$.",
+    "cue_tokens": ["continuous", "piecewise", "find the value of $k$"],
+    "cue_aliases": ["no break", "connected", "smooth transition"],
+    "technique_options": ["continuity_types", "particle_motion", "derivative_as_rate", "limit_evaluation"],
+    "correct_technique": "continuity_types",
+    "common_misidentification": "particle_motion",
+    "distractors": [
+      {
+        "concept": "particle_motion",
+        "why_tempting": "The problem mentions a particle's position and velocity, which are the hallmarks of particle motion problems.",
+        "why_wrong": "The question does not ask for velocity, displacement, or acceleration. It asks for the value of $k$ that makes the position function continuous. This is a continuity problem wrapped in a particle-motion context."
+      },
+      {
+        "concept": "derivative_as_rate",
+        "why_tempting": "The mention of velocity (a derivative) suggests a rate-of-change problem.",
+        "why_wrong": "Velocity is mentioned only as motivation. The actual computation required is ensuring continuity of $s(t)$ at $t = 3$ by finding $k$."
+      }
+    ],
+    "recognition_cue": "Despite the particle-motion context, the question reduces to: find $k$ so that a piecewise function is continuous at the boundary. This is a continuity-type problem requiring left-limit = right-limit = function value.",
+    "solution_steps": [
+      "Compute the left-hand value: $\\lim_{t \\to 3^-} s(t) = 3^2 + 1 = 10$.",
+      "Compute the right-hand value: $s(3) = 2(3) + k = 6 + k$.",
+      "Set them equal for continuity: $6 + k = 10$.",
+      "Solve: $k = 4$."
+    ],
+    "answer": "$k = 4$"
+  },
+  {
+    "id": "ct_005",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "continuity_types",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The function $f$ is continuous on the closed interval $[-1, 4]$ with $f(-1) = -3$ and $f(4) = 7$. Does the Intermediate Value Theorem guarantee a value $c$ in $(-1, 4)$ such that $f(c) = 2$? Explain.",
+    "cue_tokens": ["continuous", "Intermediate Value Theorem", "closed interval"],
+    "cue_aliases": ["IVT", "between", "must pass through"],
+    "technique_options": ["continuity_types", "mvt", "evt", "limit_evaluation"],
+    "correct_technique": "continuity_types",
+    "common_misidentification": "mvt",
+    "distractors": [
+      {
+        "concept": "mvt",
+        "why_tempting": "Both MVT and IVT require continuity on a closed interval, and students often confuse the two theorems.",
+        "why_wrong": "The MVT guarantees a point where $f'(c)$ equals the average rate of change. The IVT guarantees that $f$ takes on every intermediate output value. This problem asks about an intermediate output value, so it is IVT."
+      },
+      {
+        "concept": "evt",
+        "why_tempting": "EVT also requires continuity on a closed interval, so the hypotheses look similar.",
+        "why_wrong": "EVT guarantees the existence of absolute maximum and minimum values. This problem asks whether a specific intermediate value is achieved, which is the IVT."
+      }
+    ],
+    "recognition_cue": "The problem states continuity on a closed interval, gives endpoint values, and asks whether $f$ achieves a value between them. This is a textbook IVT application, which falls under continuity types.",
+    "solution_steps": [
+      "Verify IVT hypotheses: $f$ is continuous on $[-1, 4]$ (given).",
+      "Check that $2$ lies between $f(-1) = -3$ and $f(4) = 7$: indeed $-3 < 2 < 7$.",
+      "By the Intermediate Value Theorem, there exists at least one $c \\in (-1, 4)$ such that $f(c) = 2$."
+    ],
+    "answer": "Yes. Since $f$ is continuous on $[-1,4]$ and $2$ is between $f(-1)=-3$ and $f(4)=7$, the IVT guarantees some $c \\in (-1,4)$ with $f(c) = 2$."
+  },
+  {
+    "id": "sq_001",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "squeeze_theorem",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Given that $-1 \\leq \\sin\\!\\left(\\frac{1}{x}\\right) \\leq 1$ for all $x \\neq 0$, use the Squeeze Theorem to evaluate $$\\lim_{x \\to 0}\\, x^2 \\sin\\!\\left(\\frac{1}{x}\\right).$$",
+    "cue_tokens": ["Squeeze Theorem", "bounded", "inequality"],
+    "cue_aliases": ["Sandwich Theorem", "Pinching Theorem", "trapped between"],
+    "technique_options": ["squeeze_theorem", "limit_evaluation", "lhopitals_rule", "chain_rule"],
+    "correct_technique": "squeeze_theorem",
+    "common_misidentification": "limit_evaluation",
+    "distractors": [
+      {
+        "concept": "limit_evaluation",
+        "why_tempting": "Students might try direct substitution or algebraic manipulation to evaluate the limit.",
+        "why_wrong": "Direct substitution yields $0 \\cdot \\sin(\\text{undefined})$, which is not a standard form. The oscillation of $\\sin(1/x)$ prevents standard limit techniques from working."
+      },
+      {
+        "concept": "lhopitals_rule",
+        "why_tempting": "The expression involves $\\sin$ and a limit approaching $0$, reminiscent of $\\frac{\\sin x}{x}$-type problems.",
+        "why_wrong": "The expression is not in $\\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$ form. L'Hopital's Rule does not apply. The bounded oscillation requires the Squeeze Theorem."
+      }
+    ],
+    "recognition_cue": "The problem explicitly names the Squeeze Theorem and provides the bounding inequality $-1 \\leq \\sin(1/x) \\leq 1$. The oscillating factor bounded by known limits is the hallmark of a Squeeze Theorem application.",
+    "solution_steps": [
+      "Multiply the inequality $-1 \\leq \\sin(1/x) \\leq 1$ by $x^2$ (positive for $x \\neq 0$): $-x^2 \\leq x^2 \\sin(1/x) \\leq x^2$.",
+      "Compute the bounding limits: $\\lim_{x \\to 0} (-x^2) = 0$ and $\\lim_{x \\to 0} x^2 = 0$.",
+      "By the Squeeze Theorem, $\\lim_{x \\to 0} x^2 \\sin(1/x) = 0$."
+    ],
+    "answer": "$0$"
+  },
+  {
+    "id": "sq_002",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "squeeze_theorem",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Suppose $h(x)$ is a function that always stays between $3 - x^2$ and $3 + x^4$ for all $x$ near $0$. What can you conclude about $\\lim_{x \\to 0} h(x)$?",
+    "cue_tokens": ["stays between", "for all $x$ near", "conclude"],
+    "cue_aliases": ["bounded by", "sandwiched", "trapped"],
+    "technique_options": ["squeeze_theorem", "limit_evaluation", "evt", "continuity_types"],
+    "correct_technique": "squeeze_theorem",
+    "common_misidentification": "limit_evaluation",
+    "distractors": [
+      {
+        "concept": "limit_evaluation",
+        "why_tempting": "The problem asks for a limit, which might lead a student to try direct evaluation or algebraic techniques on $h(x)$.",
+        "why_wrong": "We do not have a formula for $h(x)$. The only information is the bounding inequality, so the Squeeze Theorem is the appropriate tool."
+      },
+      {
+        "concept": "evt",
+        "why_tempting": "The bounding functions might suggest finding extrema of $h(x)$ in a neighborhood of $0$.",
+        "why_wrong": "EVT requires a continuous function on a closed interval and finds absolute extrema. This problem is about deducing a limit from known bounds, which is the Squeeze Theorem."
+      }
+    ],
+    "recognition_cue": "The phrase 'stays between [lower bound] and [upper bound] for all $x$ near $0$' is paraphrased Squeeze Theorem language. Both bounds approach the same value at $x=0$.",
+    "solution_steps": [
+      "Identify the bounds: $3 - x^2 \\leq h(x) \\leq 3 + x^4$ near $x = 0$.",
+      "Evaluate the bounding limits: $\\lim_{x \\to 0}(3 - x^2) = 3$ and $\\lim_{x \\to 0}(3 + x^4) = 3$.",
+      "Since both bounding limits equal $3$, the Squeeze Theorem gives $\\lim_{x \\to 0} h(x) = 3$."
+    ],
+    "answer": "$\\lim_{x \\to 0} h(x) = 3$"
+  },
+  {
+    "id": "sq_003",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "squeeze_theorem",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "Three functions are graphed near $x = 0$: $y = -|x|$, $y = f(x)$, and $y = |x|$. The graph of $f(x)$ oscillates rapidly but always lies between the graphs of $-|x|$ and $|x|$. All three graphs pass through the origin. What is $\\lim_{x \\to 0} f(x)$, and which theorem justifies your answer?",
+    "cue_tokens": ["lies between", "oscillates", "graphs"],
+    "cue_aliases": ["bounded", "squeezed", "sandwiched between curves"],
+    "technique_options": ["squeeze_theorem", "limit_evaluation", "lhopitals_rule", "f_fprime_fdoubleprime"],
+    "correct_technique": "squeeze_theorem",
+    "common_misidentification": "lhopitals_rule",
+    "distractors": [
+      {
+        "concept": "lhopitals_rule",
+        "why_tempting": "The oscillating function approaching $0$ might remind students of indeterminate forms that L'Hopital can resolve.",
+        "why_wrong": "There is no ratio producing an indeterminate form. L'Hopital's Rule cannot be applied. The visual bounding by $-|x|$ and $|x|$ is a graphical representation of the Squeeze Theorem."
+      },
+      {
+        "concept": "f_fprime_fdoubleprime",
+        "why_tempting": "Multiple curves on the same axes and oscillating behavior might suggest analyzing $f$, $f'$, and $f''$ relationships.",
+        "why_wrong": "The other two curves ($-|x|$ and $|x|$) are not derivatives of $f$. They are bounding functions for the Squeeze Theorem."
+      }
+    ],
+    "recognition_cue": "An oscillating function trapped between two functions that converge to the same value at a point is the graphical signature of the Squeeze Theorem.",
+    "solution_steps": [
+      "From the graph: $-|x| \\leq f(x) \\leq |x|$ for all $x$ near $0$.",
+      "Compute the bounding limits: $\\lim_{x \\to 0} (-|x|) = 0$ and $\\lim_{x \\to 0} |x| = 0$.",
+      "By the Squeeze Theorem, $\\lim_{x \\to 0} f(x) = 0$."
+    ],
+    "answer": "$0$, justified by the Squeeze Theorem."
+  },
+  {
+    "id": "sq_004",
+    "cluster": 6,
+    "cb_unit": 1,
+    "concept": "squeeze_theorem",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $f(x) = (x - 1)^2 \\cos\\!\\left(\\frac{5}{x-1}\\right)$. A student says: 'Since $\\cos\\!\\left(\\frac{5}{x-1}\\right)$ oscillates without bound near $x = 1$, the limit $\\lim_{x \\to 1} f(x)$ does not exist.' Find the limit and explain why the student's reasoning is flawed.",
+    "cue_tokens": ["oscillates", "does not exist", "bounded"],
+    "cue_aliases": ["between $-1$ and $1$", "cosine is bounded", "pinched"],
+    "technique_options": ["squeeze_theorem", "limit_evaluation", "lhopitals_rule", "continuity_types"],
+    "correct_technique": "squeeze_theorem",
+    "common_misidentification": "limit_evaluation",
+    "distractors": [
+      {
+        "concept": "limit_evaluation",
+        "why_tempting": "The problem asks to 'find the limit,' which sounds like a standard limit evaluation. Students might try direct substitution or algebraic manipulation.",
+        "why_wrong": "Direct substitution gives $0 \\cdot \\cos(\\text{undefined})$. The oscillation of cosine prevents standard algebraic simplification. The $(x-1)^2$ factor drives the product to $0$ while cosine stays bounded, making this a Squeeze Theorem problem."
+      },
+      {
+        "concept": "lhopitals_rule",
+        "why_tempting": "The presence of a trigonometric function and a limit with an indeterminate-looking form might suggest differentiation.",
+        "why_wrong": "The expression is not in $\\frac{0}{0}$ or $\\frac{\\infty}{\\infty}$ form. It is a product of a function tending to $0$ and a bounded oscillating function, which is handled by the Squeeze Theorem."
+      }
+    ],
+    "recognition_cue": "The adversarial framing claims the limit does not exist because of oscillation. However, $\\cos(5/(x-1))$ is bounded between $-1$ and $1$, and $(x-1)^2 \\to 0$. Recognizing 'bounded times something going to zero' is the key signal for the Squeeze Theorem.",
+    "solution_steps": [
+      "Note that $-1 \\leq \\cos\\!\\left(\\frac{5}{x-1}\\right) \\leq 1$ for all $x \\neq 1$.",
+      "Multiply by $(x-1)^2 \\geq 0$: $-(x-1)^2 \\leq (x-1)^2 \\cos\\!\\left(\\frac{5}{x-1}\\right) \\leq (x-1)^2$.",
+      "Both bounding limits approach $0$: $\\lim_{x \\to 1} -(x-1)^2 = 0$ and $\\lim_{x \\to 1} (x-1)^2 = 0$.",
+      "By the Squeeze Theorem, $\\lim_{x \\to 1} f(x) = 0$.",
+      "The student's error: $\\cos$ does oscillate, but it remains bounded between $-1$ and $1$, and $(x-1)^2 \\to 0$ squeezes the entire product to $0$."
+    ],
+    "answer": "$0$. The student is wrong because cosine is bounded between $-1$ and $1$, and the $(x-1)^2$ factor forces the product to $0$ by the Squeeze Theorem."
+  }
+]

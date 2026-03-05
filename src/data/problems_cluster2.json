@@ -1,0 +1,941 @@
+[
+  {
+    "id": "fff_001",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "f_fprime_fdoubleprime",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The graph of $f'(x)$ is shown as a parabola opening upward with roots at $x = 1$ and $x = 5$. At which $x$-value does $f$ have a local minimum?",
+    "cue_tokens": ["graph of f'", "local minimum of f"],
+    "cue_aliases": ["f prime graph", "relationship between f and f'", "first derivative graph"],
+    "technique_options": ["f_fprime_fdoubleprime", "relative_extrema", "increasing_decreasing", "concavity"],
+    "correct_technique": "f_fprime_fdoubleprime",
+    "common_misidentification": "relative_extrema",
+    "distractors": [
+      { "concept": "relative_extrema", "why_tempting": "Asks about a local minimum", "why_wrong": "The key task is reading the f' graph to determine f's behavior — not applying first/second derivative tests to a formula" },
+      { "concept": "increasing_decreasing", "why_tempting": "Need to know where f increases/decreases", "why_wrong": "While related, the core skill is interpreting the f' graph to find where f' changes sign from negative to positive" }
+    ],
+    "recognition_cue": "Given a graph of f' and asked about behavior of f = f/f'/f'' relationship interpretation.",
+    "solution_steps": [
+      "f has a local min where f' changes from negative to positive",
+      "The parabola $f'(x)$ opens up with roots at 1 and 5, so $f' < 0$ between 1 and 5",
+      "Wait — parabola opening up is negative between roots. So f' goes: positive → negative at $x=1$, negative → positive at $x=5$",
+      "f has a local min at $x = 5$ (where f' changes from negative to positive)"
+    ],
+    "answer": "$x = 5$"
+  },
+  {
+    "id": "fff_002",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "f_fprime_fdoubleprime",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "If $f''(x) > 0$ for all $x$ in $(a, b)$ and $f'(c) = 0$ for some $c$ in $(a, b)$, what can you conclude about $f(c)$?",
+    "cue_tokens": ["f''(x) > 0", "f'(c) = 0", "conclude"],
+    "cue_aliases": ["second derivative positive", "critical point with concavity info"],
+    "technique_options": ["f_fprime_fdoubleprime", "concavity", "relative_extrema", "inflection_points"],
+    "correct_technique": "f_fprime_fdoubleprime",
+    "common_misidentification": "concavity",
+    "distractors": [
+      { "concept": "concavity", "why_tempting": "$f'' > 0$ directly tells about concavity", "why_wrong": "The question combines concavity info with a critical point to draw a conclusion about f — it's about the f/f'/f'' relationship" },
+      { "concept": "relative_extrema", "why_tempting": "You're identifying a local extremum", "why_wrong": "The core skill is connecting the sign of f'' with f'=0 to determine the type of extremum — that's the f/f'/f'' relationship" }
+    ],
+    "recognition_cue": "Given info about f' and f'' simultaneously, asked about f = connecting f/f'/f'' relationships.",
+    "solution_steps": [
+      "$f''(x) > 0$ means f is concave up on $(a,b)$",
+      "$f'(c) = 0$ means c is a critical point",
+      "Second Derivative Test: concave up + critical point → local minimum",
+      "$f(c)$ is a local minimum of $f$"
+    ],
+    "answer": "$f(c)$ is a local minimum"
+  },
+  {
+    "id": "fff_003",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "f_fprime_fdoubleprime",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "The graph of $f''(x)$ crosses the $x$-axis at $x = 2$ (from positive to negative) and at $x = 6$ (from negative to positive). The graph of $f'(x)$ has a root at $x = 4$. Describe the behavior of $f$ at $x = 2$, $x = 4$, and $x = 6$.",
+    "cue_tokens": ["f'' crosses x-axis", "f' has root", "behavior of f"],
+    "cue_aliases": ["second derivative graph", "connect f f' f''"],
+    "technique_options": ["f_fprime_fdoubleprime", "inflection_points", "relative_extrema", "concavity"],
+    "correct_technique": "f_fprime_fdoubleprime",
+    "common_misidentification": "inflection_points",
+    "distractors": [
+      { "concept": "inflection_points", "why_tempting": "f'' changing sign means inflection points", "why_wrong": "The question asks about f's full behavior at three points — connecting f, f', and f'' info — not just finding inflection points" },
+      { "concept": "relative_extrema", "why_tempting": "f' = 0 means a possible extremum", "why_wrong": "This requires combining information from both f' and f'' to describe f — it's a full f/f'/f'' analysis" }
+    ],
+    "recognition_cue": "Given info about f' AND f'' at multiple points, asked about f = multi-level f/f'/f'' interpretation.",
+    "solution_steps": [
+      "At $x=2$: $f''$ changes from + to − → inflection point of f (concavity changes from up to down)",
+      "At $x=4$: $f'(4)=0$; need $f''(4)$: since $f''$ went from + to − at $x=2$ and is still negative at $x=4$, $f''(4) < 0$ → local maximum of f",
+      "At $x=6$: $f''$ changes from − to + → inflection point of f (concavity changes from down to up)"
+    ],
+    "answer": "$x=2$: inflection point; $x=4$: local max; $x=6$: inflection point"
+  },
+  {
+    "id": "fff_004",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "f_fprime_fdoubleprime",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A company's profit function $P(t)$ has the property that $P'(t) > 0$ and $P''(t) < 0$ for all $t > 5$. What does this tell you about the company's profit growth for $t > 5$?",
+    "cue_tokens": ["P'(t) > 0", "P''(t) < 0", "profit growth"],
+    "cue_aliases": ["first derivative positive second negative", "increasing but decelerating"],
+    "technique_options": ["f_fprime_fdoubleprime", "optimization", "increasing_decreasing", "derivative_as_rate"],
+    "correct_technique": "f_fprime_fdoubleprime",
+    "common_misidentification": "optimization",
+    "distractors": [
+      { "concept": "optimization", "why_tempting": "Business problem about profit — sounds like optimization", "why_wrong": "No maximum/minimum is being sought — the question is about interpreting the signs of P' and P'' together" },
+      { "concept": "increasing_decreasing", "why_tempting": "P' > 0 means profit is increasing", "why_wrong": "That's only half the answer — the question requires combining P' > 0 (increasing) with P'' < 0 (concave down) for full interpretation" }
+    ],
+    "recognition_cue": "Signs of both f' and f'' given + asked for interpretation = f/f'/f'' relationship analysis.",
+    "solution_steps": [
+      "$P'(t) > 0$: profit is increasing for $t > 5$",
+      "$P''(t) < 0$: the rate of increase is slowing (concave down)",
+      "Profit is growing, but at a decreasing rate — growth is decelerating"
+    ],
+    "answer": "Profit is increasing but at a decreasing rate (growth is slowing)"
+  },
+  {
+    "id": "id_001",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "increasing_decreasing",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the intervals where $f(x) = x^3 - 3x^2 + 4$ is increasing.",
+    "cue_tokens": ["intervals", "increasing"],
+    "cue_aliases": ["where is f going up", "f is getting larger", "positive derivative intervals"],
+    "technique_options": ["increasing_decreasing", "relative_extrema", "concavity", "optimization"],
+    "correct_technique": "increasing_decreasing",
+    "common_misidentification": "relative_extrema",
+    "distractors": [
+      { "concept": "relative_extrema", "why_tempting": "You find critical points in both problems", "why_wrong": "The question asks for intervals where f is increasing, not the locations of local max/min" },
+      { "concept": "concavity", "why_tempting": "Both use derivative analysis", "why_wrong": "Concavity uses f'', but increasing/decreasing uses f'" }
+    ],
+    "recognition_cue": "'Intervals where f is increasing' = find where f'(x) > 0.",
+    "solution_steps": [
+      "$f'(x) = 3x^2 - 6x = 3x(x - 2)$",
+      "Critical points: $x = 0$ and $x = 2$",
+      "Sign chart: $f' > 0$ on $(-\\infty, 0)$ and $(2, \\infty)$, $f' < 0$ on $(0, 2)$"
+    ],
+    "answer": "$f$ is increasing on $(-\\infty, 0) \\cup (2, \\infty)$"
+  },
+  {
+    "id": "id_002",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "increasing_decreasing",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "For what values of $x$ is the function $g(x) = xe^{-x}$ getting smaller?",
+    "cue_tokens": ["getting smaller", "values of x"],
+    "cue_aliases": ["decreasing", "where function falls"],
+    "technique_options": ["increasing_decreasing", "relative_extrema", "derivative_as_rate", "product_rule"],
+    "correct_technique": "increasing_decreasing",
+    "common_misidentification": "relative_extrema",
+    "distractors": [
+      { "concept": "relative_extrema", "why_tempting": "Need to find critical points first", "why_wrong": "The question is about the intervals where g decreases, not the extrema locations" },
+      { "concept": "product_rule", "why_tempting": "$xe^{-x}$ requires product rule to differentiate", "why_wrong": "Product rule is a computation tool — the concept being tested is interpreting where f' < 0" }
+    ],
+    "recognition_cue": "'Getting smaller' = decreasing = find where g'(x) < 0.",
+    "solution_steps": [
+      "$g'(x) = e^{-x} - xe^{-x} = e^{-x}(1 - x)$",
+      "Since $e^{-x} > 0$ always, sign of $g'$ depends on $(1-x)$",
+      "$g'(x) < 0$ when $1 - x < 0$, i.e., $x > 1$"
+    ],
+    "answer": "$g$ is decreasing on $(1, \\infty)$"
+  },
+  {
+    "id": "id_003",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "increasing_decreasing",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "The graph of $f'(x)$ is a horizontal line at $y = -2$ for $x < 1$, jumps to $y = 3$ for $1 < x < 4$, and drops to $y = -1$ for $x > 4$. On which intervals is $f$ increasing?",
+    "cue_tokens": ["graph of f'", "increasing"],
+    "cue_aliases": ["where f' is positive", "read derivative graph"],
+    "technique_options": ["increasing_decreasing", "f_fprime_fdoubleprime", "continuity_types", "relative_extrema"],
+    "correct_technique": "increasing_decreasing",
+    "common_misidentification": "f_fprime_fdoubleprime",
+    "distractors": [
+      { "concept": "f_fprime_fdoubleprime", "why_tempting": "Reading the graph of f' to understand f is an f/f'/f'' skill", "why_wrong": "The question specifically asks only about increasing intervals — a focused increasing/decreasing question" },
+      { "concept": "relative_extrema", "why_tempting": "f' changes sign at x=1 and x=4", "why_wrong": "The question asks for the increasing intervals, not where the extrema occur" }
+    ],
+    "recognition_cue": "Graph of f' given + 'where is f increasing' = where f' is positive (above x-axis).",
+    "solution_steps": [
+      "$f'(x) = 3 > 0$ on $(1, 4)$",
+      "$f'(x) < 0$ on $(-\\infty, 1)$ and $(4, \\infty)$",
+      "$f$ is increasing on $(1, 4)$"
+    ],
+    "answer": "$f$ is increasing on $(1, 4)$"
+  },
+  {
+    "id": "id_004",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "increasing_decreasing",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A company's revenue is $R(x) = 200x - x^2$ where $x$ is units sold. For what production levels is revenue improving?",
+    "cue_tokens": ["improving", "production levels"],
+    "cue_aliases": ["increasing revenue", "where R goes up"],
+    "technique_options": ["increasing_decreasing", "optimization", "derivative_as_rate", "relative_extrema"],
+    "correct_technique": "increasing_decreasing",
+    "common_misidentification": "optimization",
+    "distractors": [
+      { "concept": "optimization", "why_tempting": "Business revenue problem — sounds like you'd maximize revenue", "why_wrong": "The question asks where revenue is 'improving' (increasing), not for the maximum revenue value" },
+      { "concept": "derivative_as_rate", "why_tempting": "Need the derivative to find the rate", "why_wrong": "The question isn't asking for the rate at a point — it's asking for the interval where R' > 0" }
+    ],
+    "recognition_cue": "Business disguise: 'improving' = increasing. Find where R'(x) > 0.",
+    "solution_steps": [
+      "$R'(x) = 200 - 2x$",
+      "$R'(x) > 0$ when $200 - 2x > 0$, i.e., $x < 100$"
+    ],
+    "answer": "Revenue is increasing for $0 < x < 100$ units"
+  },
+  {
+    "id": "con_001",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "concavity",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Determine the intervals where $f(x) = x^4 - 6x^2$ is concave up.",
+    "cue_tokens": ["concave up", "intervals"],
+    "cue_aliases": ["concavity", "f'' positive", "curves upward"],
+    "technique_options": ["concavity", "inflection_points", "increasing_decreasing", "f_fprime_fdoubleprime"],
+    "correct_technique": "concavity",
+    "common_misidentification": "inflection_points",
+    "distractors": [
+      { "concept": "inflection_points", "why_tempting": "Both use f'' and share critical analysis", "why_wrong": "Inflection points are where concavity changes — this asks for the intervals of concavity themselves" },
+      { "concept": "increasing_decreasing", "why_tempting": "Both ask about intervals", "why_wrong": "Increasing/decreasing uses f'; concavity uses f''" }
+    ],
+    "recognition_cue": "'Concave up intervals' = find where f''(x) > 0.",
+    "solution_steps": [
+      "$f'(x) = 4x^3 - 12x$, $f''(x) = 12x^2 - 12 = 12(x^2 - 1)$",
+      "$f''(x) = 0$ at $x = \\pm 1$",
+      "$f'' > 0$ on $(-\\infty, -1) \\cup (1, \\infty)$"
+    ],
+    "answer": "Concave up on $(-\\infty, -1) \\cup (1, \\infty)$"
+  },
+  {
+    "id": "con_002",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "concavity",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "For $h(x) = \\ln(x^2 + 1)$, on what intervals does the graph bend downward?",
+    "cue_tokens": ["bend downward"],
+    "cue_aliases": ["concave down", "curves downward", "f'' negative"],
+    "technique_options": ["concavity", "increasing_decreasing", "inflection_points", "chain_rule"],
+    "correct_technique": "concavity",
+    "common_misidentification": "increasing_decreasing",
+    "distractors": [
+      { "concept": "increasing_decreasing", "why_tempting": "'Bending downward' might sound like decreasing", "why_wrong": "Bending downward = concave down (f'' < 0), not decreasing (f' < 0). A function can increase while bending down." },
+      { "concept": "chain_rule", "why_tempting": "Need chain rule to differentiate $\\ln(x^2+1)$", "why_wrong": "Chain rule is a tool for computation — the concept being identified is concavity" }
+    ],
+    "recognition_cue": "'Bends downward' = concave down = f''(x) < 0.",
+    "solution_steps": [
+      "$h'(x) = \\frac{2x}{x^2 + 1}$",
+      "$h''(x) = \\frac{2(x^2+1) - 2x(2x)}{(x^2+1)^2} = \\frac{2 - 2x^2}{(x^2+1)^2}$",
+      "$h'' < 0$ when $2 - 2x^2 < 0$, i.e., $|x| > 1$: on $(-\\infty, -1) \\cup (1, \\infty)$"
+    ],
+    "answer": "Concave down on $(-\\infty, -1) \\cup (1, \\infty)$"
+  },
+  {
+    "id": "con_003",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "concavity",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "The graph of $f'(x)$ is a decreasing line. What can you conclude about the concavity of $f$?",
+    "cue_tokens": ["graph of f'", "concavity of f"],
+    "cue_aliases": ["f' decreasing means", "second derivative from f' graph"],
+    "technique_options": ["concavity", "f_fprime_fdoubleprime", "increasing_decreasing", "inflection_points"],
+    "correct_technique": "concavity",
+    "common_misidentification": "f_fprime_fdoubleprime",
+    "distractors": [
+      { "concept": "f_fprime_fdoubleprime", "why_tempting": "Uses the f'/f'' relationship", "why_wrong": "The specific question is about concavity — the f/f'/f'' concept involves connecting all three levels" },
+      { "concept": "increasing_decreasing", "why_tempting": "f' is described as decreasing", "why_wrong": "f' decreasing tells about f's concavity (f'' < 0 → concave down), not about f being decreasing" }
+    ],
+    "recognition_cue": "f' graph is decreasing → f'' < 0 everywhere → f is concave down.",
+    "solution_steps": [
+      "If $f'$ is decreasing, then $f'' < 0$ (the derivative of f' is negative)",
+      "$f'' < 0$ means $f$ is concave down everywhere"
+    ],
+    "answer": "$f$ is concave down everywhere"
+  },
+  {
+    "id": "con_004",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "concavity",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "An economist models GDP growth as $G(t) = 100t^{0.5}$. She says growth is 'decelerating.' Verify her claim for $t > 0$.",
+    "cue_tokens": ["decelerating", "verify"],
+    "cue_aliases": ["slowing down", "rate of growth decreasing", "concave down check"],
+    "technique_options": ["concavity", "derivative_as_rate", "optimization", "increasing_decreasing"],
+    "correct_technique": "concavity",
+    "common_misidentification": "derivative_as_rate",
+    "distractors": [
+      { "concept": "derivative_as_rate", "why_tempting": "Need to find the growth rate", "why_wrong": "'Decelerating' means the rate of change is decreasing — that's about f'', not just f'" },
+      { "concept": "optimization", "why_tempting": "Economic problem with growth analysis", "why_wrong": "Not looking for a maximum — verifying that f'' < 0 (concave down)" }
+    ],
+    "recognition_cue": "'Decelerating' = rate of change is decreasing = f'' < 0 = concave down.",
+    "solution_steps": [
+      "$G'(t) = 50t^{-0.5}$",
+      "$G''(t) = -25t^{-1.5} = -\\frac{25}{t^{1.5}}$",
+      "For $t > 0$: $G''(t) < 0$, confirming the growth is decelerating (concave down)"
+    ],
+    "answer": "Confirmed: $G''(t) < 0$ for $t > 0$, so growth is decelerating"
+  },
+  {
+    "id": "re_001",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "relative_extrema",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the local maximum and minimum values of $f(x) = 2x^3 - 9x^2 + 12x$.",
+    "cue_tokens": ["local maximum", "local minimum"],
+    "cue_aliases": ["relative extrema", "relative max and min", "turning points"],
+    "technique_options": ["relative_extrema", "absolute_extrema", "optimization", "increasing_decreasing"],
+    "correct_technique": "relative_extrema",
+    "common_misidentification": "absolute_extrema",
+    "distractors": [
+      { "concept": "absolute_extrema", "why_tempting": "Both find extreme values", "why_wrong": "No closed interval given — this asks for local (relative) extrema, not absolute" },
+      { "concept": "optimization", "why_tempting": "Finding max/min values", "why_wrong": "Optimization involves a constraint or applied context — this is pure curve analysis for local extrema" }
+    ],
+    "recognition_cue": "'Local max/min values' on an open domain = relative extrema via first or second derivative test.",
+    "solution_steps": [
+      "$f'(x) = 6x^2 - 18x + 12 = 6(x-1)(x-2)$. Critical points: $x=1, x=2$",
+      "First derivative test: $f'$ changes from + to − at $x=1$ (local max), − to + at $x=2$ (local min)",
+      "$f(1) = 2-9+12 = 5$, $f(2) = 16-36+24 = 4$"
+    ],
+    "answer": "Local max of $5$ at $x=1$; local min of $4$ at $x=2$"
+  },
+  {
+    "id": "re_002",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "relative_extrema",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Use the second derivative test to classify the critical points of $g(x) = x^4 - 8x^2 + 3$.",
+    "cue_tokens": ["second derivative test", "classify", "critical points"],
+    "cue_aliases": ["relative extrema", "local max or min", "nature of critical points"],
+    "technique_options": ["relative_extrema", "concavity", "inflection_points", "increasing_decreasing"],
+    "correct_technique": "relative_extrema",
+    "common_misidentification": "concavity",
+    "distractors": [
+      { "concept": "concavity", "why_tempting": "Second derivative test involves f''", "why_wrong": "f'' is used as a tool to classify critical points — the concept is finding relative extrema, not concavity intervals" },
+      { "concept": "inflection_points", "why_tempting": "Also uses f''", "why_wrong": "Inflection points are where f'' changes sign — this uses f'' evaluated at critical points to classify max vs. min" }
+    ],
+    "recognition_cue": "'Second derivative test' + 'classify critical points' = relative extrema classification.",
+    "solution_steps": [
+      "$g'(x) = 4x^3 - 16x = 4x(x^2-4) = 4x(x-2)(x+2)$. Critical: $x = -2, 0, 2$",
+      "$g''(x) = 12x^2 - 16$",
+      "$g''(-2) = 48-16=32>0$ → local min; $g''(0) = -16<0$ → local max; $g''(2) = 32>0$ → local min"
+    ],
+    "answer": "Local min at $x=-2$ and $x=2$; local max at $x=0$"
+  },
+  {
+    "id": "re_003",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "relative_extrema",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "The graph of $f'(x)$ crosses the $x$-axis at $x = -1$ (from above to below) and at $x = 3$ (from below to above). Identify all relative extrema of $f$.",
+    "cue_tokens": ["f' crosses x-axis", "relative extrema of f"],
+    "cue_aliases": ["derivative sign change", "local max and min from f' graph"],
+    "technique_options": ["relative_extrema", "f_fprime_fdoubleprime", "inflection_points", "increasing_decreasing"],
+    "correct_technique": "relative_extrema",
+    "common_misidentification": "f_fprime_fdoubleprime",
+    "distractors": [
+      { "concept": "f_fprime_fdoubleprime", "why_tempting": "Reading f' graph to understand f", "why_wrong": "The specific task is identifying relative extrema from sign changes of f' — not a full f/f'/f'' analysis" },
+      { "concept": "inflection_points", "why_tempting": "Also involves f' crossing the axis", "why_wrong": "f' crossing the axis = critical points of f (extrema), not inflection points (which involve f'' crossing)" }
+    ],
+    "recognition_cue": "f' changes sign at a point → relative extremum of f. Direction of change determines max vs. min.",
+    "solution_steps": [
+      "At $x=-1$: $f'$ goes from positive to negative → $f$ has a relative maximum at $x=-1$",
+      "At $x=3$: $f'$ goes from negative to positive → $f$ has a relative minimum at $x=3$"
+    ],
+    "answer": "Relative max at $x=-1$; relative min at $x=3$"
+  },
+  {
+    "id": "re_004",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "relative_extrema",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A ball is thrown upward with height $h(t) = -16t^2 + 64t + 5$. At what time does the ball reach its highest point?",
+    "cue_tokens": ["highest point", "at what time"],
+    "cue_aliases": ["maximum height", "peak", "vertex"],
+    "technique_options": ["relative_extrema", "optimization", "particle_motion", "derivative_as_rate"],
+    "correct_technique": "relative_extrema",
+    "common_misidentification": "optimization",
+    "distractors": [
+      { "concept": "optimization", "why_tempting": "Finding a maximum value", "why_wrong": "Optimization problems involve setting up a function from constraints — here the function is given, just find the critical point" },
+      { "concept": "particle_motion", "why_tempting": "Ball moving with position function", "why_wrong": "Particle motion analysis is broader — this specifically asks for the time of maximum height (relative extremum)" }
+    ],
+    "recognition_cue": "Given explicit function + 'highest/lowest point' = find critical point and verify it's a relative extremum.",
+    "solution_steps": [
+      "$h'(t) = -32t + 64 = 0 \\Rightarrow t = 2$",
+      "$h''(t) = -32 < 0$, confirming local maximum at $t = 2$"
+    ],
+    "answer": "$t = 2$ seconds"
+  },
+  {
+    "id": "ae_001",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "absolute_extrema",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the absolute maximum and minimum of $f(x) = x^3 - 3x + 1$ on $[-2, 2]$.",
+    "cue_tokens": ["absolute maximum", "absolute minimum", "on [-2, 2]"],
+    "cue_aliases": ["global max", "global min", "closed interval", "candidates test"],
+    "technique_options": ["absolute_extrema", "relative_extrema", "optimization", "evt"],
+    "correct_technique": "absolute_extrema",
+    "common_misidentification": "relative_extrema",
+    "distractors": [
+      { "concept": "relative_extrema", "why_tempting": "Both involve finding extrema", "why_wrong": "Relative extrema are local — absolute extrema require checking endpoints AND critical points (Candidates Test)" },
+      { "concept": "evt", "why_tempting": "EVT guarantees extrema exist on closed intervals", "why_wrong": "EVT is the theorem that justifies the search — the technique is the Candidates Test for absolute extrema" }
+    ],
+    "recognition_cue": "'Absolute max/min' + closed interval = Candidates Test (check critical points AND endpoints).",
+    "solution_steps": [
+      "$f'(x) = 3x^2 - 3 = 3(x-1)(x+1)$. Critical points in $[-2,2]$: $x=-1, x=1$",
+      "Evaluate: $f(-2)=-1$, $f(-1)=3$, $f(1)=-1$, $f(2)=3$",
+      "Absolute max = 3 (at $x=-1$ and $x=2$); absolute min = $-1$ (at $x=-2$ and $x=1$)"
+    ],
+    "answer": "Absolute max $= 3$; absolute min $= -1$"
+  },
+  {
+    "id": "ae_002",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "absolute_extrema",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "What are the global extreme values of $g(x) = \\sin(x) + \\cos(x)$ on $[0, 2\\pi]$?",
+    "cue_tokens": ["global extreme values", "on [0, 2pi]"],
+    "cue_aliases": ["absolute extrema", "closed interval extrema"],
+    "technique_options": ["absolute_extrema", "relative_extrema", "evt", "increasing_decreasing"],
+    "correct_technique": "absolute_extrema",
+    "common_misidentification": "relative_extrema",
+    "distractors": [
+      { "concept": "relative_extrema", "why_tempting": "Need to find critical points", "why_wrong": "Global extreme values on a closed interval = Candidates Test, not just local extrema" },
+      { "concept": "evt", "why_tempting": "EVT guarantees extrema exist", "why_wrong": "EVT is the justification — the actual technique is the Candidates Test" }
+    ],
+    "recognition_cue": "'Global extreme values' on closed interval = Candidates Test.",
+    "solution_steps": [
+      "$g'(x) = \\cos(x) - \\sin(x) = 0 \\Rightarrow \\tan(x) = 1 \\Rightarrow x = \\frac{\\pi}{4}, \\frac{5\\pi}{4}$",
+      "Evaluate: $g(0)=1$, $g(\\pi/4)=\\sqrt{2}$, $g(5\\pi/4)=-\\sqrt{2}$, $g(2\\pi)=1$",
+      "Absolute max $= \\sqrt{2}$ at $x = \\pi/4$; absolute min $= -\\sqrt{2}$ at $x = 5\\pi/4$"
+    ],
+    "answer": "Absolute max $= \\sqrt{2}$; absolute min $= -\\sqrt{2}$"
+  },
+  {
+    "id": "ae_003",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "absolute_extrema",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": true,
+    "stem": "A function $f$ is continuous on $[0, 8]$. The table shows values at critical points and endpoints:\n\n| $x$ | 0 | 2 | 5 | 8 |\n|---|---|---|---|---|\n| $f(x)$ | 3 | 7 | -1 | 4 |\n\n$x = 2$ and $x = 5$ are the only critical points. Find the absolute extrema.",
+    "cue_tokens": ["continuous", "closed interval", "critical points", "endpoints", "absolute extrema"],
+    "cue_aliases": ["candidates test from table", "global max min"],
+    "technique_options": ["absolute_extrema", "evt", "relative_extrema", "increasing_decreasing"],
+    "correct_technique": "absolute_extrema",
+    "common_misidentification": "evt",
+    "distractors": [
+      { "concept": "evt", "why_tempting": "Continuous on closed interval — EVT applies", "why_wrong": "EVT guarantees existence — the Candidates Test is the procedure for finding them" },
+      { "concept": "relative_extrema", "why_tempting": "Critical points are given", "why_wrong": "Must compare critical point values with endpoint values for absolute extrema" }
+    ],
+    "recognition_cue": "Continuous + closed interval + table with critical and endpoint values = Candidates Test comparison.",
+    "solution_steps": [
+      "Compare all candidates: $f(0)=3$, $f(2)=7$, $f(5)=-1$, $f(8)=4$",
+      "Absolute max $= 7$ at $x=2$; absolute min $= -1$ at $x=5$"
+    ],
+    "answer": "Absolute max $= 7$ at $x = 2$; absolute min $= -1$ at $x = 5$"
+  },
+  {
+    "id": "ae_004",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "absolute_extrema",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A farmer has 100 meters of fencing to enclose a rectangular pen against a barn wall (3 sides fenced). What is the maximum area of the pen? Hint: the function is defined on a closed interval $[0, 50]$.",
+    "cue_tokens": ["maximum area", "closed interval", "fencing"],
+    "cue_aliases": ["absolute max on closed interval", "candidates test"],
+    "technique_options": ["absolute_extrema", "optimization", "relative_extrema", "derivative_as_rate"],
+    "correct_technique": "absolute_extrema",
+    "common_misidentification": "optimization",
+    "distractors": [
+      { "concept": "optimization", "why_tempting": "Classic optimization word problem (max area with constraint)", "why_wrong": "The problem specifies the closed interval and asks for the absolute maximum — the technique is Candidates Test, not general optimization setup" },
+      { "concept": "relative_extrema", "why_tempting": "Need the critical point", "why_wrong": "Must check endpoints too since we're on a closed interval — absolute extrema, not just relative" }
+    ],
+    "recognition_cue": "Optimization-looking problem BUT explicitly states closed interval → Candidates Test for absolute max.",
+    "solution_steps": [
+      "Let width = $x$, length = $100 - 2x$. Area $A(x) = x(100 - 2x) = 100x - 2x^2$ on $[0, 50]$",
+      "$A'(x) = 100 - 4x = 0 \\Rightarrow x = 25$",
+      "$A(0) = 0$, $A(25) = 1250$, $A(50) = 0$. Absolute max $= 1250$ m²"
+    ],
+    "answer": "$1250$ m²"
+  },
+  {
+    "id": "ip_001",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "inflection_points",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the inflection points of $f(x) = x^3 - 6x^2 + 9x + 1$.",
+    "cue_tokens": ["inflection points"],
+    "cue_aliases": ["points of inflection", "where concavity changes"],
+    "technique_options": ["inflection_points", "concavity", "relative_extrema", "f_fprime_fdoubleprime"],
+    "correct_technique": "inflection_points",
+    "common_misidentification": "concavity",
+    "distractors": [
+      { "concept": "concavity", "why_tempting": "Both use f''", "why_wrong": "Concavity asks for intervals — inflection points asks for specific locations where concavity changes" },
+      { "concept": "relative_extrema", "why_tempting": "Both are 'special points' on a curve", "why_wrong": "Extrema use f'=0; inflection points use f''=0 with sign change" }
+    ],
+    "recognition_cue": "'Inflection points' = find where f'' = 0 AND f'' changes sign.",
+    "solution_steps": [
+      "$f''(x) = 6x - 12 = 0 \\Rightarrow x = 2$",
+      "$f''$ changes from negative (when $x<2$) to positive (when $x>2$) → inflection point at $x=2$",
+      "$f(2) = 8 - 24 + 18 + 1 = 3$"
+    ],
+    "answer": "Inflection point at $(2, 3)$"
+  },
+  {
+    "id": "ip_002",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "inflection_points",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "At which $x$-values does the graph of $g(x) = x^4 - 4x^3$ change its curvature direction?",
+    "cue_tokens": ["change", "curvature direction"],
+    "cue_aliases": ["concavity change", "inflection", "bending direction changes"],
+    "technique_options": ["inflection_points", "concavity", "relative_extrema", "increasing_decreasing"],
+    "correct_technique": "inflection_points",
+    "common_misidentification": "concavity",
+    "distractors": [
+      { "concept": "concavity", "why_tempting": "Curvature direction = concavity", "why_wrong": "The question asks where it CHANGES, not what it is — that's inflection points" },
+      { "concept": "relative_extrema", "why_tempting": "Looking for special x-values", "why_wrong": "Extrema are where f'=0; curvature change is where f'' changes sign" }
+    ],
+    "recognition_cue": "'Changes curvature direction' = inflection points = f'' changes sign.",
+    "solution_steps": [
+      "$g''(x) = 12x^2 - 24x = 12x(x - 2) = 0$ at $x = 0$ and $x = 2$",
+      "Sign chart: $g'' > 0$ on $(-\\infty, 0)$, $g'' < 0$ on $(0, 2)$, $g'' > 0$ on $(2, \\infty)$",
+      "Both are inflection points since $g''$ changes sign at each"
+    ],
+    "answer": "Inflection points at $x = 0$ and $x = 2$"
+  },
+  {
+    "id": "ip_003",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "inflection_points",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "The graph of $f'(x)$ has a local maximum at $x = 3$. What is true about $f$ at $x = 3$?",
+    "cue_tokens": ["f' has local maximum", "what is true about f"],
+    "cue_aliases": ["f' has extremum implies", "inflection of f from f' graph"],
+    "technique_options": ["inflection_points", "relative_extrema", "f_fprime_fdoubleprime", "concavity"],
+    "correct_technique": "inflection_points",
+    "common_misidentification": "relative_extrema",
+    "distractors": [
+      { "concept": "relative_extrema", "why_tempting": "Mentions 'local maximum' — but of f', not f", "why_wrong": "A local max of f' means f'' changes from + to − at that point — this is an inflection point of f" },
+      { "concept": "f_fprime_fdoubleprime", "why_tempting": "Connecting f' info to f", "why_wrong": "The specific conclusion is an inflection point — the f/f'/f'' concept is broader" }
+    ],
+    "recognition_cue": "f' has a local max/min → f'' changes sign → f has an inflection point.",
+    "solution_steps": [
+      "If $f'$ has a local max at $x=3$, then $f''$ changes from positive to negative at $x=3$",
+      "This means $f$ changes from concave up to concave down at $x=3$",
+      "$f$ has an inflection point at $x = 3$"
+    ],
+    "answer": "$f$ has an inflection point at $x = 3$"
+  },
+  {
+    "id": "ip_004",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "inflection_points",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A population model gives $P(t) = \\frac{1000}{1 + 9e^{-0.5t}}$. At what time is the population growing fastest? (This is the logistic inflection point.)",
+    "cue_tokens": ["growing fastest", "inflection point"],
+    "cue_aliases": ["maximum growth rate", "logistic inflection"],
+    "technique_options": ["inflection_points", "optimization", "relative_extrema", "derivative_as_rate"],
+    "correct_technique": "inflection_points",
+    "common_misidentification": "optimization",
+    "distractors": [
+      { "concept": "optimization", "why_tempting": "'Fastest' sounds like maximizing something", "why_wrong": "You're maximizing P'(t), which means finding where P''(t) = 0 — that's the inflection point of P" },
+      { "concept": "derivative_as_rate", "why_tempting": "Growth rate is a derivative", "why_wrong": "Finding where the rate is maximized requires the inflection point, not just computing the rate" }
+    ],
+    "recognition_cue": "'Growing fastest' = maximize the rate = inflection point of the original function.",
+    "solution_steps": [
+      "For logistic $P(t) = \\frac{L}{1+Ae^{-kt}}$, inflection occurs at $P = L/2$",
+      "$\\frac{1000}{2} = 500 = \\frac{1000}{1+9e^{-0.5t}}$",
+      "$1 + 9e^{-0.5t} = 2 \\Rightarrow e^{-0.5t} = \\frac{1}{9} \\Rightarrow t = \\frac{\\ln 9}{0.5} = 2\\ln 9 \\approx 4.39$"
+    ],
+    "answer": "$t = 2\\ln 9 \\approx 4.39$"
+  },
+  {
+    "id": "evt_001",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "evt",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $f(x) = x^2 - 4x + 7$ on $[0, 5]$. By the Extreme Value Theorem, $f$ must attain an absolute max and min. Find them.",
+    "cue_tokens": ["Extreme Value Theorem", "absolute max and min", "closed interval"],
+    "cue_aliases": ["EVT", "guaranteed extrema"],
+    "technique_options": ["evt", "absolute_extrema", "relative_extrema", "mvt"],
+    "correct_technique": "evt",
+    "common_misidentification": "absolute_extrema",
+    "distractors": [
+      { "concept": "absolute_extrema", "why_tempting": "Finding absolute extrema is the computation", "why_wrong": "The question explicitly asks about EVT — the theorem guaranteeing that continuous functions on closed intervals attain their bounds" },
+      { "concept": "mvt", "why_tempting": "Both are named theorems about functions on intervals", "why_wrong": "MVT is about derivative equaling average rate — EVT is about existence of extreme values" }
+    ],
+    "recognition_cue": "'Extreme Value Theorem' + continuous function on closed interval = EVT guarantees absolute extrema exist.",
+    "solution_steps": [
+      "EVT: $f$ continuous on $[0,5]$ → absolute max and min exist",
+      "$f'(x) = 2x - 4 = 0 \\Rightarrow x = 2$",
+      "$f(0) = 7$, $f(2) = 3$, $f(5) = 12$",
+      "Absolute min $= 3$ at $x=2$; absolute max $= 12$ at $x=5$"
+    ],
+    "answer": "Absolute min $= 3$ at $x = 2$; absolute max $= 12$ at $x = 5$"
+  },
+  {
+    "id": "evt_002",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "evt",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Can you guarantee that $f(x) = \\frac{1}{x}$ attains a maximum value on $(0, 2)$? Justify using theorems.",
+    "cue_tokens": ["guarantee", "maximum value", "justify"],
+    "cue_aliases": ["EVT conditions", "does EVT apply", "extreme value existence"],
+    "technique_options": ["evt", "absolute_extrema", "continuity_types", "relative_extrema"],
+    "correct_technique": "evt",
+    "common_misidentification": "absolute_extrema",
+    "distractors": [
+      { "concept": "absolute_extrema", "why_tempting": "Asks about maximum value existence", "why_wrong": "This is a theoretical question about whether EVT applies — not a computation of the extrema" },
+      { "concept": "continuity_types", "why_tempting": "Continuity is a condition of EVT", "why_wrong": "The core concept is EVT and its conditions, not continuity classification itself" }
+    ],
+    "recognition_cue": "'Can you guarantee extrema exist?' = check if EVT conditions (continuous + closed interval) are met.",
+    "solution_steps": [
+      "EVT requires: (1) continuous on $[a,b]$, (2) closed interval",
+      "$f(x) = 1/x$ is continuous on $(0,2)$, but the interval is OPEN",
+      "EVT does not apply — as $x \\to 0^+$, $f(x) \\to \\infty$, so no maximum is attained"
+    ],
+    "answer": "No — the interval is open, so EVT does not apply. $f$ has no maximum on $(0,2)$."
+  },
+  {
+    "id": "evt_003",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "evt",
+    "disguise_level": 3,
+    "representation": "verbal",
+    "calculator_allowed": false,
+    "stem": "A closed container holds a liquid whose temperature varies continuously. At noon the temperature is $70°F$ and at 6 PM it is $85°F$. The container is monitored continuously over $[12, 18]$ (hours). Must there be a moment when the temperature is at its highest?",
+    "cue_tokens": ["continuously", "closed", "must there be", "highest"],
+    "cue_aliases": ["EVT application", "guaranteed maximum"],
+    "technique_options": ["evt", "mvt", "continuity_types", "absolute_extrema"],
+    "correct_technique": "evt",
+    "common_misidentification": "mvt",
+    "distractors": [
+      { "concept": "mvt", "why_tempting": "Continuous function on a closed interval — MVT also uses this setup", "why_wrong": "MVT is about average rate equaling instantaneous rate — this asks about the existence of a maximum value (EVT)" },
+      { "concept": "continuity_types", "why_tempting": "Mentions continuous temperature", "why_wrong": "Continuity is a condition — the theorem being applied is EVT" }
+    ],
+    "recognition_cue": "Continuous function + closed time interval + 'must there be a max/min' = EVT.",
+    "solution_steps": [
+      "Temperature is continuous on the closed interval $[12, 18]$",
+      "By EVT, a continuous function on a closed interval attains its maximum and minimum",
+      "Yes, there must be a moment when temperature is at its absolute highest"
+    ],
+    "answer": "Yes — by EVT, the continuous temperature function must attain a maximum on $[12, 18]$"
+  },
+  {
+    "id": "evt_004",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "evt",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A student claims: 'Since $g(x) = \\tan(x)$ is continuous on $(-\\pi/2, \\pi/2)$, EVT guarantees it has an absolute max.' Is the student correct?",
+    "cue_tokens": ["EVT", "continuous", "absolute max", "correct?"],
+    "cue_aliases": ["EVT conditions check", "open interval EVT"],
+    "technique_options": ["evt", "continuity_types", "absolute_extrema", "relative_extrema"],
+    "correct_technique": "evt",
+    "common_misidentification": "continuity_types",
+    "distractors": [
+      { "concept": "continuity_types", "why_tempting": "The discussion involves continuity of tan(x)", "why_wrong": "The core issue is whether EVT conditions are met — open vs. closed interval" },
+      { "concept": "absolute_extrema", "why_tempting": "Discusses absolute max existence", "why_wrong": "This is about EVT's hypotheses, not computing extrema" }
+    ],
+    "recognition_cue": "Checking if EVT conditions are met = understanding EVT's requirements (continuous + CLOSED interval).",
+    "solution_steps": [
+      "EVT requires a CLOSED interval $[a,b]$",
+      "$(-\\pi/2, \\pi/2)$ is an OPEN interval",
+      "The student is incorrect — EVT does not apply to open intervals",
+      "$\\tan(x) \\to \\pm\\infty$ at the endpoints, so no absolute max exists"
+    ],
+    "answer": "No — EVT requires a closed interval, and $(-\\pi/2, \\pi/2)$ is open"
+  },
+  {
+    "id": "mvt_001",
+    "cluster": 2,
+    "cb_unit": 4,
+    "concept": "mvt",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Verify that the Mean Value Theorem applies to $f(x) = x^2 + 2x$ on $[1, 3]$, and find the value of $c$ guaranteed by MVT.",
+    "cue_tokens": ["Mean Value Theorem", "find c"],
+    "cue_aliases": ["MVT", "average rate equals instantaneous rate"],
+    "technique_options": ["mvt", "evt", "derivative_as_rate", "linear_approximation"],
+    "correct_technique": "mvt",
+    "common_misidentification": "derivative_as_rate",
+    "distractors": [
+      { "concept": "derivative_as_rate", "why_tempting": "Involves computing a derivative at a point", "why_wrong": "MVT equates the average rate over an interval with an instantaneous rate — it's a theorem, not just a derivative evaluation" },
+      { "concept": "evt", "why_tempting": "Both are named theorems on closed intervals", "why_wrong": "EVT is about extreme values — MVT is about rates of change" }
+    ],
+    "recognition_cue": "'Mean Value Theorem' + 'find c' on a closed interval = MVT application.",
+    "solution_steps": [
+      "$f$ is polynomial → continuous on $[1,3]$, differentiable on $(1,3)$. MVT applies.",
+      "Average rate: $\\frac{f(3)-f(1)}{3-1} = \\frac{15-3}{2} = 6$",
+      "$f'(x) = 2x + 2$. Set $f'(c) = 6$: $2c + 2 = 6 \\Rightarrow c = 2$"
+    ],
+    "answer": "$c = 2$"
+  },
+  {
+    "id": "mvt_002",
+    "cluster": 2,
+    "cb_unit": 4,
+    "concept": "mvt",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A car drives from city A to city B (120 miles apart) in exactly 2 hours. Must the car's speedometer have read exactly 60 mph at some point during the trip?",
+    "cue_tokens": ["must", "exactly 60 mph", "some point"],
+    "cue_aliases": ["guaranteed instantaneous rate", "MVT application"],
+    "technique_options": ["mvt", "derivative_as_rate", "evt", "integral_as_accumulation"],
+    "correct_technique": "mvt",
+    "common_misidentification": "derivative_as_rate",
+    "distractors": [
+      { "concept": "derivative_as_rate", "why_tempting": "Speed is a rate", "why_wrong": "The question asks if the instantaneous speed MUST equal the average speed — that's MVT, not a simple derivative evaluation" },
+      { "concept": "integral_as_accumulation", "why_tempting": "Distance = integral of speed", "why_wrong": "The question is about a guaranteed instantaneous rate, not accumulated distance" }
+    ],
+    "recognition_cue": "'Must the instantaneous rate equal the average rate at some point?' = MVT.",
+    "solution_steps": [
+      "Position is continuous and differentiable (car moves smoothly)",
+      "Average speed = 120/2 = 60 mph",
+      "By MVT, there exists some time $c$ where the instantaneous speed $= 60$ mph"
+    ],
+    "answer": "Yes — by MVT, the speedometer must read exactly 60 mph at some moment"
+  },
+  {
+    "id": "mvt_003",
+    "cluster": 2,
+    "cb_unit": 4,
+    "concept": "mvt",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": true,
+    "stem": "| $t$ (sec) | 0 | 3 |\n|---|---|---|\n| $s(t)$ (m) | 10 | 34 |\n\n$s(t)$ is differentiable on $(0,3)$. Must there exist a time $c \\in (0, 3)$ when the velocity is exactly $8$ m/s?",
+    "cue_tokens": ["must there exist", "velocity exactly", "differentiable"],
+    "cue_aliases": ["MVT guarantees", "instantaneous equals average"],
+    "technique_options": ["mvt", "derivative_as_rate", "riemann_sums", "particle_motion"],
+    "correct_technique": "mvt",
+    "common_misidentification": "derivative_as_rate",
+    "distractors": [
+      { "concept": "derivative_as_rate", "why_tempting": "Velocity is the derivative of position", "why_wrong": "The question is about whether MVT guarantees a specific instantaneous rate, not just computing it" },
+      { "concept": "particle_motion", "why_tempting": "Position and velocity of a moving object", "why_wrong": "This is an MVT existence question, not a particle motion analysis" }
+    ],
+    "recognition_cue": "Two endpoints + differentiable + 'must there be an instant where rate equals average' = MVT.",
+    "solution_steps": [
+      "Average velocity $= \\frac{34 - 10}{3 - 0} = 8$ m/s",
+      "$s(t)$ is differentiable on $(0,3)$ → MVT applies",
+      "MVT guarantees $\\exists\\, c \\in (0,3)$ with $s'(c) = 8$ m/s"
+    ],
+    "answer": "Yes — MVT guarantees velocity equals 8 m/s at some $c \\in (0, 3)$"
+  },
+  {
+    "id": "mvt_004",
+    "cluster": 2,
+    "cb_unit": 4,
+    "concept": "mvt",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $f(x) = |x|$ on $[-1, 1]$. Does MVT guarantee a value $c$ where $f'(c) = \\frac{f(1)-f(-1)}{1-(-1)}$?",
+    "cue_tokens": ["MVT", "guarantee", "|x|"],
+    "cue_aliases": ["MVT conditions check", "differentiability requirement"],
+    "technique_options": ["mvt", "continuity_types", "derivative_as_rate", "evt"],
+    "correct_technique": "mvt",
+    "common_misidentification": "continuity_types",
+    "distractors": [
+      { "concept": "continuity_types", "why_tempting": "$|x|$ has a continuity/differentiability issue at 0", "why_wrong": "$|x|$ is continuous everywhere — the issue is differentiability, which is an MVT condition" },
+      { "concept": "evt", "why_tempting": "Another theorem on closed intervals", "why_wrong": "EVT involves extreme values — MVT involves average rate. Different theorems." }
+    ],
+    "recognition_cue": "Checking MVT conditions = verify both continuity on [a,b] AND differentiability on (a,b).",
+    "solution_steps": [
+      "MVT requires: continuous on $[-1,1]$ ✓ and differentiable on $(-1,1)$",
+      "$|x|$ is NOT differentiable at $x = 0$ (corner) → MVT does NOT apply",
+      "Average rate $= \\frac{1-1}{2} = 0$, but $f'(x) = \\pm 1$ where it exists — never equals 0"
+    ],
+    "answer": "No — $|x|$ is not differentiable at $x=0$, so MVT does not apply"
+  },
+  {
+    "id": "opt_001",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "optimization",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A farmer wants to enclose the maximum area with 200 feet of fencing in a rectangular pen. Find the dimensions that maximize the area.",
+    "cue_tokens": ["maximum area", "enclose", "dimensions that maximize"],
+    "cue_aliases": ["optimize", "largest possible", "maximize quantity"],
+    "technique_options": ["optimization", "absolute_extrema", "related_rates", "derivative_as_rate"],
+    "correct_technique": "optimization",
+    "common_misidentification": "absolute_extrema",
+    "distractors": [
+      { "concept": "absolute_extrema", "why_tempting": "Finding a maximum value", "why_wrong": "Optimization involves setting up the function from a constraint — not given a function on a closed interval" },
+      { "concept": "related_rates", "why_tempting": "Involves relationships between dimensions", "why_wrong": "No time variable or rate of change — this is a static optimization problem" }
+    ],
+    "recognition_cue": "'Maximize/minimize a quantity' with a constraint = optimization (set up function, differentiate, find critical point).",
+    "solution_steps": [
+      "Perimeter: $2l + 2w = 200 \\Rightarrow l = 100 - w$",
+      "Area: $A = lw = w(100 - w) = 100w - w^2$",
+      "$A'(w) = 100 - 2w = 0 \\Rightarrow w = 50$, $l = 50$",
+      "$A = 50 \\times 50 = 2500$ sq ft"
+    ],
+    "answer": "$50 \\times 50$ ft, area $= 2500$ sq ft"
+  },
+  {
+    "id": "opt_002",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "optimization",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find two positive numbers whose sum is 40 and whose product is as large as possible.",
+    "cue_tokens": ["as large as possible", "sum is 40", "product"],
+    "cue_aliases": ["maximize product", "constrained optimization"],
+    "technique_options": ["optimization", "relative_extrema", "absolute_extrema", "increasing_decreasing"],
+    "correct_technique": "optimization",
+    "common_misidentification": "relative_extrema",
+    "distractors": [
+      { "concept": "relative_extrema", "why_tempting": "Need to find a maximum using derivatives", "why_wrong": "The key task is setting up the objective function from the constraint — not just finding critical points of a given function" },
+      { "concept": "absolute_extrema", "why_tempting": "Finding the largest product", "why_wrong": "No closed interval explicitly given — you must set up the optimization from the constraint" }
+    ],
+    "recognition_cue": "'As large/small as possible' + a constraint = optimization problem.",
+    "solution_steps": [
+      "Let $x + y = 40$, maximize $P = xy = x(40-x) = 40x - x^2$",
+      "$P'(x) = 40 - 2x = 0 \\Rightarrow x = 20$, $y = 20$",
+      "$P = 400$"
+    ],
+    "answer": "Both numbers are $20$; maximum product $= 400$"
+  },
+  {
+    "id": "opt_003",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "optimization",
+    "disguise_level": 3,
+    "representation": "text",
+    "calculator_allowed": true,
+    "stem": "An open-top box is made from a $12 \\times 12$ inch sheet by cutting squares of side $x$ from each corner and folding up. What cut size maximizes the volume?",
+    "cue_tokens": ["maximizes the volume", "cut size"],
+    "cue_aliases": ["optimize", "largest volume", "best dimensions"],
+    "technique_options": ["optimization", "absolute_extrema", "volume_cross_sections", "related_rates"],
+    "correct_technique": "optimization",
+    "common_misidentification": "volume_cross_sections",
+    "distractors": [
+      { "concept": "volume_cross_sections", "why_tempting": "Involves volume of a 3D shape", "why_wrong": "Volume by cross-sections is an integration technique — this is an algebraic optimization of a volume formula" },
+      { "concept": "related_rates", "why_tempting": "Changing dimensions affect the box", "why_wrong": "No time variable — x is a design choice, not a rate" }
+    ],
+    "recognition_cue": "'Maximize volume' + constraint from geometry = optimization.",
+    "solution_steps": [
+      "Dimensions: $(12-2x) \\times (12-2x) \\times x$. Volume: $V = x(12-2x)^2$",
+      "$V' = (12-2x)^2 + x \\cdot 2(12-2x)(-2) = (12-2x)(12-2x - 4x) = (12-2x)(12-6x)$",
+      "$V' = 0$ when $x = 6$ (invalid) or $x = 2$",
+      "$V(2) = 2(8)^2 = 128$ cubic inches"
+    ],
+    "answer": "$x = 2$ inches; max volume $= 128$ in³"
+  },
+  {
+    "id": "opt_004",
+    "cluster": 2,
+    "cb_unit": 5,
+    "concept": "optimization",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A wire of length 20 cm is cut into two pieces. One piece is bent into a circle and the other into a square. How should the wire be cut to minimize the total enclosed area?",
+    "cue_tokens": ["minimize", "total enclosed area", "cut"],
+    "cue_aliases": ["optimize allocation", "minimize combined area"],
+    "technique_options": ["optimization", "area_between_curves", "absolute_extrema", "related_rates"],
+    "correct_technique": "optimization",
+    "common_misidentification": "area_between_curves",
+    "distractors": [
+      { "concept": "area_between_curves", "why_tempting": "Problem involves area", "why_wrong": "Area between curves is an integration concept — this is an algebraic optimization with a constraint" },
+      { "concept": "related_rates", "why_tempting": "Multiple changing quantities", "why_wrong": "No time dependence — this is a static allocation optimization" }
+    ],
+    "recognition_cue": "'Minimize total area' + constraint on total wire = optimization with objective function setup.",
+    "solution_steps": [
+      "Let $x$ = circumference of circle, $20-x$ = perimeter of square",
+      "Circle radius: $r = x/(2\\pi)$, area $= \\pi r^2 = x^2/(4\\pi)$",
+      "Square side: $s = (20-x)/4$, area $= (20-x)^2/16$",
+      "Total area $A = \\frac{x^2}{4\\pi} + \\frac{(20-x)^2}{16}$",
+      "$A' = \\frac{x}{2\\pi} - \\frac{20-x}{8} = 0 \\Rightarrow x = \\frac{20\\pi}{4+\\pi}$"
+    ],
+    "answer": "Circle circumference $= \\frac{20\\pi}{4 + \\pi} \\approx 8.80$ cm"
+  }
+]

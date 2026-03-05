@@ -1,0 +1,505 @@
+[
+  {
+    "id": "dar_001",
+    "cluster": 1,
+    "cb_unit": 2,
+    "concept": "derivative_as_rate",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the rate of change of $f(x) = 3x^2 - 5x + 1$ at $x = 2$.",
+    "cue_tokens": ["rate of change", "at x ="],
+    "cue_aliases": ["instantaneous rate", "derivative at a point", "slope at"],
+    "technique_options": ["derivative_as_rate", "integral_as_accumulation", "linear_approximation", "mvt"],
+    "correct_technique": "derivative_as_rate",
+    "common_misidentification": "mvt",
+    "distractors": [
+      { "concept": "mvt", "why_tempting": "Both involve rates of change on intervals", "why_wrong": "MVT connects average rate to instantaneous rate — this just asks for the instantaneous rate directly" },
+      { "concept": "linear_approximation", "why_tempting": "Both use the derivative at a point", "why_wrong": "Linear approximation uses the derivative to estimate nearby function values — this just asks for the rate itself" }
+    ],
+    "recognition_cue": "'Rate of change at a point' = evaluate the derivative at that point.",
+    "solution_steps": [
+      "Find $f'(x) = 6x - 5$",
+      "Evaluate at $x = 2$: $f'(2) = 6(2) - 5 = 7$"
+    ],
+    "answer": "$7$"
+  },
+  {
+    "id": "dar_002",
+    "cluster": 1,
+    "cb_unit": 2,
+    "concept": "derivative_as_rate",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A balloon's volume is given by $V(t) = \\frac{4}{3}\\pi t^3$ cubic cm, where $t$ is in seconds. How quickly is the volume growing when $t = 3$?",
+    "cue_tokens": ["how quickly", "growing", "when t ="],
+    "cue_aliases": ["how fast", "rate of growth", "speed of change"],
+    "technique_options": ["derivative_as_rate", "related_rates", "integral_as_accumulation", "chain_rule"],
+    "correct_technique": "derivative_as_rate",
+    "common_misidentification": "related_rates",
+    "distractors": [
+      { "concept": "related_rates", "why_tempting": "Involves a changing volume and time", "why_wrong": "Volume is given directly as a function of t — no implicit relationship between multiple changing quantities" },
+      { "concept": "integral_as_accumulation", "why_tempting": "Volume is accumulating over time", "why_wrong": "The question asks for the instantaneous growth rate (derivative), not a total accumulated amount" }
+    ],
+    "recognition_cue": "Single explicit function of t + 'how quickly' = evaluate the derivative.",
+    "solution_steps": [
+      "Find $V'(t) = 4\\pi t^2$",
+      "Evaluate at $t = 3$: $V'(3) = 4\\pi(9) = 36\\pi$"
+    ],
+    "answer": "$36\\pi$ cubic cm per second"
+  },
+  {
+    "id": "dar_003",
+    "cluster": 1,
+    "cb_unit": 2,
+    "concept": "derivative_as_rate",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": true,
+    "stem": "The table shows the population $P(t)$ of a town (in thousands) at various years.\n\n| $t$ (years since 2000) | 0 | 2 | 4 | 6 | 8 |\n|---|---|---|---|---|---|\n| $P(t)$ | 12.0 | 13.1 | 14.8 | 17.2 | 20.5 |\n\nEstimate the rate at which the population is changing at $t = 4$.",
+    "cue_tokens": ["rate", "changing at", "estimate"],
+    "cue_aliases": ["approximate derivative", "rate of change from table"],
+    "technique_options": ["derivative_as_rate", "riemann_sums", "average_value", "linear_approximation"],
+    "correct_technique": "derivative_as_rate",
+    "common_misidentification": "riemann_sums",
+    "distractors": [
+      { "concept": "riemann_sums", "why_tempting": "Table data with discrete intervals looks like a Riemann sum setup", "why_wrong": "The question asks for a rate at a specific time, not a total accumulated change over an interval" },
+      { "concept": "average_value", "why_tempting": "You might average table values", "why_wrong": "Average value of a function requires integration — this asks for the instantaneous rate (derivative approximation)" }
+    ],
+    "recognition_cue": "Table data + 'rate at a specific time' = approximate the derivative using neighboring points.",
+    "solution_steps": [
+      "Use the symmetric difference quotient: $P'(4) \\approx \\frac{P(6) - P(2)}{6 - 2}$",
+      "$P'(4) \\approx \\frac{17.2 - 13.1}{4} = \\frac{4.1}{4} = 1.025$"
+    ],
+    "answer": "Approximately $1.025$ thousand people per year"
+  },
+  {
+    "id": "dar_004",
+    "cluster": 1,
+    "cb_unit": 2,
+    "concept": "derivative_as_rate",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A particle moves along the $x$-axis. Its position at time $t$ is $x(t) = t^3 - 6t^2 + 9t + 2$. What is the particle's velocity at $t = 1$?",
+    "cue_tokens": ["velocity", "at t ="],
+    "cue_aliases": ["speed", "how fast moving", "rate of position change"],
+    "technique_options": ["derivative_as_rate", "particle_motion", "optimization", "ftc_part1"],
+    "correct_technique": "derivative_as_rate",
+    "common_misidentification": "particle_motion",
+    "distractors": [
+      { "concept": "particle_motion", "why_tempting": "It literally says 'particle moves' — feels like a particle motion analysis problem", "why_wrong": "Particle motion analysis involves interpreting sign changes of v(t) and a(t) — this just asks for velocity at one instant, which is f'(t) evaluated" },
+      { "concept": "optimization", "why_tempting": "Position function is a cubic — might be looking for max/min", "why_wrong": "The question asks for velocity at a specific time, not an extreme value" }
+    ],
+    "recognition_cue": "Velocity = derivative of position. Asking for velocity at a specific time = evaluate x'(t).",
+    "solution_steps": [
+      "Velocity is $v(t) = x'(t) = 3t^2 - 12t + 9$",
+      "Evaluate at $t = 1$: $v(1) = 3 - 12 + 9 = 0$"
+    ],
+    "answer": "$0$ (the particle is momentarily at rest)"
+  },
+  {
+    "id": "iac_001",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "integral_as_accumulation",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Water flows into a tank at a rate of $r(t) = 3t + 2$ gallons per minute. Find the total amount of water that flows in during the first 5 minutes.",
+    "cue_tokens": ["total amount", "flows in during", "rate"],
+    "cue_aliases": ["accumulated", "total change", "how much over interval"],
+    "technique_options": ["integral_as_accumulation", "derivative_as_rate", "average_value", "riemann_sums"],
+    "correct_technique": "integral_as_accumulation",
+    "common_misidentification": "derivative_as_rate",
+    "distractors": [
+      { "concept": "derivative_as_rate", "why_tempting": "The problem mentions a rate function", "why_wrong": "The question asks for total accumulation, not an instantaneous rate — you integrate the rate to get total" },
+      { "concept": "average_value", "why_tempting": "You might think to find the average rate over the interval", "why_wrong": "Average value gives the mean rate, not the total amount accumulated" }
+    ],
+    "recognition_cue": "Given a rate + asking for total over an interval = integrate the rate function.",
+    "solution_steps": [
+      "Total water $= \\int_0^5 (3t + 2)\\,dt$",
+      "$= \\left[\\frac{3t^2}{2} + 2t\\right]_0^5 = \\frac{75}{2} + 10 = \\frac{95}{2}$"
+    ],
+    "answer": "$\\frac{95}{2} = 47.5$ gallons"
+  },
+  {
+    "id": "iac_002",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "integral_as_accumulation",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A factory produces widgets at a speed of $p(t) = 50 - 2t$ widgets per hour. How many widgets are produced between hour 3 and hour 10?",
+    "cue_tokens": ["how many", "produced between", "per hour"],
+    "cue_aliases": ["total production", "accumulated output", "net amount"],
+    "technique_options": ["integral_as_accumulation", "derivative_as_rate", "u_substitution", "riemann_sums"],
+    "correct_technique": "integral_as_accumulation",
+    "common_misidentification": "derivative_as_rate",
+    "distractors": [
+      { "concept": "derivative_as_rate", "why_tempting": "A production rate is given", "why_wrong": "You need the total, not the rate at a single moment — integrate" },
+      { "concept": "riemann_sums", "why_tempting": "Accumulating discrete amounts over time intervals", "why_wrong": "Riemann sums approximate an integral — here you can evaluate the integral exactly" }
+    ],
+    "recognition_cue": "Rate function + 'how many over an interval' = definite integral.",
+    "solution_steps": [
+      "Total $= \\int_3^{10} (50 - 2t)\\,dt$",
+      "$= \\left[50t - t^2\\right]_3^{10} = (500 - 100) - (150 - 9) = 400 - 141 = 259$"
+    ],
+    "answer": "$259$ widgets"
+  },
+  {
+    "id": "iac_003",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "integral_as_accumulation",
+    "disguise_level": 3,
+    "representation": "verbal",
+    "calculator_allowed": true,
+    "stem": "The graph of a velocity function $v(t)$ is shown as a straight line from $(0, 4)$ to $(6, 10)$. What is the total distance the object travels from $t = 0$ to $t = 6$? (Assume velocity is always positive.)",
+    "cue_tokens": ["total distance", "velocity", "from t = 0 to t = 6"],
+    "cue_aliases": ["net displacement", "accumulated distance", "area under velocity"],
+    "technique_options": ["integral_as_accumulation", "derivative_as_rate", "area_between_curves", "particle_motion"],
+    "correct_technique": "integral_as_accumulation",
+    "common_misidentification": "particle_motion",
+    "distractors": [
+      { "concept": "particle_motion", "why_tempting": "Involves velocity and displacement of a moving object", "why_wrong": "Particle motion analysis involves sign changes and direction — this simply asks for total distance via integration of a positive velocity" },
+      { "concept": "area_between_curves", "why_tempting": "The integral is geometrically an area", "why_wrong": "Area between curves involves two functions — here it's area under one function (velocity)" }
+    ],
+    "recognition_cue": "Velocity graph + 'total distance' = area under the curve = definite integral of v(t).",
+    "solution_steps": [
+      "The velocity is linear: $v(t) = 4 + t$ (from $(0,4)$ to $(6,10)$)",
+      "Total distance $= \\int_0^6 (4 + t)\\,dt = \\left[4t + \\frac{t^2}{2}\\right]_0^6 = 24 + 18 = 42$",
+      "Or use the trapezoid area: $\\frac{1}{2}(4 + 10)(6) = 42$"
+    ],
+    "answer": "$42$ units"
+  },
+  {
+    "id": "iac_004",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "integral_as_accumulation",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The temperature of a chemical reaction changes at a rate of $T'(t) = 8 - 2t$ degrees per minute. If the initial temperature is $20°$, what is the temperature at $t = 5$ minutes?",
+    "cue_tokens": ["changes at a rate", "initial", "what is the temperature at"],
+    "cue_aliases": ["net change", "accumulate from initial", "integrate the rate"],
+    "technique_options": ["integral_as_accumulation", "derivative_as_rate", "separation_of_variables", "linear_approximation"],
+    "correct_technique": "integral_as_accumulation",
+    "common_misidentification": "separation_of_variables",
+    "distractors": [
+      { "concept": "separation_of_variables", "why_tempting": "Given a rate of change and initial condition — looks like a differential equation", "why_wrong": "T'(t) is already explicitly given as a function of t — just integrate directly, no need to separate variables" },
+      { "concept": "derivative_as_rate", "why_tempting": "A rate of change is given", "why_wrong": "The question asks for the value at a future time, not the rate — integrate and add to initial value" }
+    ],
+    "recognition_cue": "Given rate + initial value + asking for future value = integrate rate and add to initial.",
+    "solution_steps": [
+      "$T(5) = T(0) + \\int_0^5 T'(t)\\,dt = 20 + \\int_0^5 (8 - 2t)\\,dt$",
+      "$= 20 + \\left[8t - t^2\\right]_0^5 = 20 + (40 - 25) = 20 + 15 = 35$"
+    ],
+    "answer": "$35$ degrees"
+  },
+  {
+    "id": "ft1_001",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "ftc_part1",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $g(x) = \\int_2^x \\sqrt{t^3 + 1}\\,dt$. Find $g'(x)$.",
+    "cue_tokens": ["integral with variable upper bound", "find g'(x)"],
+    "cue_aliases": ["derivative of integral", "FTC", "antiderivative function"],
+    "technique_options": ["ftc_part1", "u_substitution", "chain_rule", "ftc_part2"],
+    "correct_technique": "ftc_part1",
+    "common_misidentification": "u_substitution",
+    "distractors": [
+      { "concept": "u_substitution", "why_tempting": "There's a complicated integrand that might need substitution", "why_wrong": "FTC Part 1 says the derivative of the integral is just the integrand evaluated at x — no need to find the antiderivative" },
+      { "concept": "chain_rule", "why_tempting": "Taking a derivative of a composed expression", "why_wrong": "The upper bound is simply x (not a function of x), so no chain rule is needed — direct FTC Part 1" }
+    ],
+    "recognition_cue": "Function defined as an integral with variable upper bound + asking for its derivative = FTC Part 1.",
+    "solution_steps": [
+      "By FTC Part 1: if $g(x) = \\int_a^x f(t)\\,dt$, then $g'(x) = f(x)$",
+      "$g'(x) = \\sqrt{x^3 + 1}$"
+    ],
+    "answer": "$g'(x) = \\sqrt{x^3 + 1}$"
+  },
+  {
+    "id": "ft1_002",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "ftc_part1",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Define $h(x) = \\int_0^x \\cos(t^2)\\,dt$. What is the slope of $h$ at $x = \\sqrt{\\pi}$?",
+    "cue_tokens": ["slope", "integral from 0 to x"],
+    "cue_aliases": ["derivative", "rate of change of integral function"],
+    "technique_options": ["ftc_part1", "derivative_as_rate", "chain_rule", "u_substitution"],
+    "correct_technique": "ftc_part1",
+    "common_misidentification": "derivative_as_rate",
+    "distractors": [
+      { "concept": "derivative_as_rate", "why_tempting": "'Slope' means derivative, which is a rate", "why_wrong": "The function is defined as an integral — you need FTC Part 1 to find its derivative, not basic differentiation rules" },
+      { "concept": "u_substitution", "why_tempting": "The integrand has a composite function $\\cos(t^2)$", "why_wrong": "You don't need to evaluate the integral — FTC Part 1 gives the derivative directly" }
+    ],
+    "recognition_cue": "'Slope of' an integral-defined function = its derivative = FTC Part 1 applied, then evaluate.",
+    "solution_steps": [
+      "By FTC Part 1: $h'(x) = \\cos(x^2)$",
+      "$h'(\\sqrt{\\pi}) = \\cos((\\sqrt{\\pi})^2) = \\cos(\\pi) = -1$"
+    ],
+    "answer": "$-1$"
+  },
+  {
+    "id": "ft1_003",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "ftc_part1",
+    "disguise_level": 3,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $F(x) = \\int_1^{x^2} \\sin(t)\\,dt$. Find $F'(x)$.",
+    "cue_tokens": ["integral", "variable bound", "find F'(x)"],
+    "cue_aliases": ["derivative of accumulation function", "FTC with chain rule"],
+    "technique_options": ["ftc_part1", "chain_rule", "u_substitution", "product_rule"],
+    "correct_technique": "ftc_part1",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      { "concept": "chain_rule", "why_tempting": "The upper bound is $x^2$, a composite function", "why_wrong": "The chain rule alone doesn't address the integral — you need FTC Part 1 combined with chain rule" },
+      { "concept": "u_substitution", "why_tempting": "Might try substitution to evaluate the integral first", "why_wrong": "FTC Part 1 + chain rule gives the derivative without evaluating the integral" }
+    ],
+    "recognition_cue": "Integral with a function (not just $x$) as the upper bound → FTC Part 1 + chain rule.",
+    "solution_steps": [
+      "By FTC Part 1 with chain rule: $F'(x) = \\sin(x^2) \\cdot \\frac{d}{dx}(x^2)$",
+      "$F'(x) = 2x\\sin(x^2)$"
+    ],
+    "answer": "$F'(x) = 2x\\sin(x^2)$"
+  },
+  {
+    "id": "ft1_004",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "ftc_part1",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The number of bacteria in a culture at time $x$ hours is modeled by $B(x) = 200 + \\int_0^x (50 - 3t^2)\\,dt$. Is the bacteria count increasing or decreasing at $x = 4$?",
+    "cue_tokens": ["increasing or decreasing", "integral from 0 to x"],
+    "cue_aliases": ["sign of derivative", "FTC applied to growth model"],
+    "technique_options": ["ftc_part1", "increasing_decreasing", "derivative_as_rate", "separation_of_variables"],
+    "correct_technique": "ftc_part1",
+    "common_misidentification": "increasing_decreasing",
+    "distractors": [
+      { "concept": "increasing_decreasing", "why_tempting": "Asks 'increasing or decreasing' — sounds like first derivative test", "why_wrong": "The function is defined via an integral — first find B'(x) using FTC Part 1, then check its sign" },
+      { "concept": "derivative_as_rate", "why_tempting": "Need to find the rate of change", "why_wrong": "The rate comes from FTC Part 1 applied to the integral, not from standard differentiation" }
+    ],
+    "recognition_cue": "Function defined with an integral + 'increasing/decreasing' = FTC Part 1 to get derivative, then check sign.",
+    "solution_steps": [
+      "By FTC Part 1: $B'(x) = 50 - 3x^2$",
+      "$B'(4) = 50 - 3(16) = 50 - 48 = 2 > 0$",
+      "Since $B'(4) > 0$, the count is increasing at $x = 4$"
+    ],
+    "answer": "Increasing (since $B'(4) = 2 > 0$)"
+  },
+  {
+    "id": "ft2_001",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "ftc_part2",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Evaluate $\\int_1^4 (2x + 3)\\,dx$ using the Fundamental Theorem of Calculus.",
+    "cue_tokens": ["evaluate", "definite integral", "FTC"],
+    "cue_aliases": ["compute the integral", "antiderivative evaluated at bounds"],
+    "technique_options": ["ftc_part2", "riemann_sums", "u_substitution", "ftc_part1"],
+    "correct_technique": "ftc_part2",
+    "common_misidentification": "riemann_sums",
+    "distractors": [
+      { "concept": "riemann_sums", "why_tempting": "It's a definite integral which Riemann sums can approximate", "why_wrong": "You can find the exact answer using an antiderivative — Riemann sums are for approximation or when no closed form exists" },
+      { "concept": "ftc_part1", "why_tempting": "Both are 'FTC'", "why_wrong": "FTC Part 1 is about differentiating an integral function — Part 2 is about evaluating a definite integral using antiderivatives" }
+    ],
+    "recognition_cue": "Definite integral of a function you can antidifferentiate = FTC Part 2.",
+    "solution_steps": [
+      "Antiderivative: $F(x) = x^2 + 3x$",
+      "$\\int_1^4 (2x+3)\\,dx = F(4) - F(1) = (16 + 12) - (1 + 3) = 28 - 4 = 24$"
+    ],
+    "answer": "$24$"
+  },
+  {
+    "id": "ft2_002",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "ftc_part2",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Given that $F(x) = x^3 - 2x$ is an antiderivative of $f(x) = 3x^2 - 2$, compute $\\int_0^3 f(x)\\,dx$.",
+    "cue_tokens": ["antiderivative", "compute", "definite integral"],
+    "cue_aliases": ["evaluate using antiderivative", "FTC Part 2"],
+    "technique_options": ["ftc_part2", "ftc_part1", "u_substitution", "riemann_sums"],
+    "correct_technique": "ftc_part2",
+    "common_misidentification": "ftc_part1",
+    "distractors": [
+      { "concept": "ftc_part1", "why_tempting": "Both parts of FTC are referenced", "why_wrong": "Part 1 involves differentiating an integral — this is evaluating a definite integral using a known antiderivative (Part 2)" },
+      { "concept": "u_substitution", "why_tempting": "Might think you need a technique to integrate", "why_wrong": "The antiderivative is already given — just evaluate at the bounds" }
+    ],
+    "recognition_cue": "Given antiderivative + definite integral = plug bounds into antiderivative (FTC Part 2).",
+    "solution_steps": [
+      "$\\int_0^3 f(x)\\,dx = F(3) - F(0)$",
+      "$= (27 - 6) - (0 - 0) = 21$"
+    ],
+    "answer": "$21$"
+  },
+  {
+    "id": "ft2_003",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "ftc_part2",
+    "disguise_level": 3,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A car's acceleration is $a(t) = 6t$ m/s². If its velocity at $t = 0$ is $5$ m/s, find the velocity at $t = 3$ seconds.",
+    "cue_tokens": ["acceleration", "velocity at", "find"],
+    "cue_aliases": ["integrate acceleration", "net change in velocity"],
+    "technique_options": ["ftc_part2", "derivative_as_rate", "particle_motion", "integral_as_accumulation"],
+    "correct_technique": "ftc_part2",
+    "common_misidentification": "particle_motion",
+    "distractors": [
+      { "concept": "particle_motion", "why_tempting": "Involves position/velocity/acceleration of a moving object", "why_wrong": "This is a direct computation: integrate acceleration to get velocity change, then add initial velocity — FTC Part 2" },
+      { "concept": "integral_as_accumulation", "why_tempting": "You are accumulating velocity change", "why_wrong": "While conceptually accumulation, the mechanics are FTC Part 2: evaluate the antiderivative at bounds" }
+    ],
+    "recognition_cue": "Acceleration + initial velocity + find velocity at a time = FTC Part 2 (integrate a(t), evaluate at bounds, add initial).",
+    "solution_steps": [
+      "$v(3) = v(0) + \\int_0^3 a(t)\\,dt = 5 + \\int_0^3 6t\\,dt$",
+      "$= 5 + \\left[3t^2\\right]_0^3 = 5 + 27 = 32$"
+    ],
+    "answer": "$32$ m/s"
+  },
+  {
+    "id": "ft2_004",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "ftc_part2",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "If $f$ is continuous and $\\int_2^5 f(x)\\,dx = 12$ and $\\int_2^8 f(x)\\,dx = 20$, find $\\int_5^8 f(x)\\,dx$.",
+    "cue_tokens": ["integral", "find", "continuous"],
+    "cue_aliases": ["split integral", "additive property", "FTC property"],
+    "technique_options": ["ftc_part2", "ftc_part1", "average_value", "u_substitution"],
+    "correct_technique": "ftc_part2",
+    "common_misidentification": "ftc_part1",
+    "distractors": [
+      { "concept": "ftc_part1", "why_tempting": "Involves properties of integrals and continuity", "why_wrong": "No variable-bound integral function here — this uses the additive property of definite integrals (a consequence of FTC Part 2)" },
+      { "concept": "average_value", "why_tempting": "Given integral values over intervals", "why_wrong": "Average value divides by interval length — this asks for the integral itself over a sub-interval" }
+    ],
+    "recognition_cue": "Known definite integrals over overlapping intervals + find integral over remaining piece = additive property of FTC Part 2.",
+    "solution_steps": [
+      "By the additive property: $\\int_2^8 f(x)\\,dx = \\int_2^5 f(x)\\,dx + \\int_5^8 f(x)\\,dx$",
+      "$20 = 12 + \\int_5^8 f(x)\\,dx$",
+      "$\\int_5^8 f(x)\\,dx = 8$"
+    ],
+    "answer": "$8$"
+  },
+  {
+    "id": "rs_001",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "riemann_sums",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": true,
+    "stem": "Approximate $\\int_0^4 x^2\\,dx$ using a right Riemann sum with $n = 4$ subintervals.",
+    "cue_tokens": ["approximate", "Riemann sum", "subintervals"],
+    "cue_aliases": ["rectangular approximation", "right sum", "partition"],
+    "technique_options": ["riemann_sums", "ftc_part2", "u_substitution", "average_value"],
+    "correct_technique": "riemann_sums",
+    "common_misidentification": "ftc_part2",
+    "distractors": [
+      { "concept": "ftc_part2", "why_tempting": "You could evaluate this integral exactly", "why_wrong": "The problem specifically asks for a Riemann sum approximation, not the exact value" },
+      { "concept": "average_value", "why_tempting": "Both involve integrals over intervals", "why_wrong": "Average value computes $\\frac{1}{b-a}\\int_a^b f(x)\\,dx$ — this asks for the sum of rectangle areas" }
+    ],
+    "recognition_cue": "'Approximate integral' + 'Riemann sum' + 'n subintervals' = Riemann sum computation.",
+    "solution_steps": [
+      "$\\Delta x = \\frac{4-0}{4} = 1$. Right endpoints: $x = 1, 2, 3, 4$",
+      "Sum $= \\Delta x[f(1) + f(2) + f(3) + f(4)] = 1[1 + 4 + 9 + 16] = 30$"
+    ],
+    "answer": "$30$"
+  },
+  {
+    "id": "rs_002",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "riemann_sums",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": true,
+    "stem": "Using 3 equal-width rectangles and left endpoints, estimate the area under $f(x) = \\sqrt{x}$ from $x = 1$ to $x = 4$.",
+    "cue_tokens": ["rectangles", "left endpoints", "estimate", "area under"],
+    "cue_aliases": ["left Riemann sum", "rectangular estimate"],
+    "technique_options": ["riemann_sums", "ftc_part2", "area_between_curves", "integral_as_accumulation"],
+    "correct_technique": "riemann_sums",
+    "common_misidentification": "ftc_part2",
+    "distractors": [
+      { "concept": "ftc_part2", "why_tempting": "You could find the exact area by integrating", "why_wrong": "The problem asks for an estimate using rectangles, not the exact integral" },
+      { "concept": "area_between_curves", "why_tempting": "Mentions 'area under' a curve", "why_wrong": "Area between curves involves two functions — this is area under one curve approximated by rectangles" }
+    ],
+    "recognition_cue": "'Rectangles' + 'endpoints' + 'estimate area' = Riemann sum.",
+    "solution_steps": [
+      "$\\Delta x = \\frac{4-1}{3} = 1$. Left endpoints: $x = 1, 2, 3$",
+      "Sum $= 1[\\sqrt{1} + \\sqrt{2} + \\sqrt{3}] = 1 + 1.414 + 1.732 \\approx 4.146$"
+    ],
+    "answer": "$\\approx 4.146$"
+  },
+  {
+    "id": "rs_003",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "riemann_sums",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": true,
+    "stem": "The rate of oil leaking from a pipe (in liters per hour) is measured at 2-hour intervals:\n\n| $t$ (hours) | 0 | 2 | 4 | 6 | 8 |\n|---|---|---|---|---|---|\n| $r(t)$ (L/hr) | 10 | 8 | 6 | 3 | 1 |\n\nUsing a trapezoidal sum, estimate the total oil leaked in 8 hours.",
+    "cue_tokens": ["trapezoidal sum", "estimate", "total", "table"],
+    "cue_aliases": ["trapezoidal approximation", "trap rule", "sum from table"],
+    "technique_options": ["riemann_sums", "integral_as_accumulation", "ftc_part2", "average_value"],
+    "correct_technique": "riemann_sums",
+    "common_misidentification": "integral_as_accumulation",
+    "distractors": [
+      { "concept": "integral_as_accumulation", "why_tempting": "You're finding a total accumulated amount", "why_wrong": "You have discrete data, not a formula — must use a numerical approximation (trapezoidal sum)" },
+      { "concept": "average_value", "why_tempting": "Might average the rates", "why_wrong": "Average value of a function is $\\frac{1}{b-a}\\int$ — this asks for the total, estimated by trapezoids" }
+    ],
+    "recognition_cue": "Table data + 'trapezoidal sum' + 'estimate total' = Riemann/trapezoidal approximation.",
+    "solution_steps": [
+      "$\\Delta t = 2$. Trapezoidal sum $= \\frac{\\Delta t}{2}[r(0) + 2r(2) + 2r(4) + 2r(6) + r(8)]$",
+      "$= \\frac{2}{2}[10 + 16 + 12 + 6 + 1] = 1 \\cdot 45 = 45$"
+    ],
+    "answer": "$45$ liters"
+  },
+  {
+    "id": "rs_004",
+    "cluster": 1,
+    "cb_unit": 6,
+    "concept": "riemann_sums",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": true,
+    "stem": "A runner's speed (mph) is recorded every 15 minutes: 6.0, 6.5, 7.0, 6.8, 6.2. Using a left Riemann sum, how far did the runner travel in one hour?",
+    "cue_tokens": ["recorded every 15 minutes", "left Riemann sum", "how far"],
+    "cue_aliases": ["distance from speed data", "left sum approximation"],
+    "technique_options": ["riemann_sums", "integral_as_accumulation", "derivative_as_rate", "particle_motion"],
+    "correct_technique": "riemann_sums",
+    "common_misidentification": "integral_as_accumulation",
+    "distractors": [
+      { "concept": "integral_as_accumulation", "why_tempting": "Distance = integral of speed", "why_wrong": "No formula for speed is given — only discrete data points, so you must approximate with Riemann sum" },
+      { "concept": "particle_motion", "why_tempting": "A runner moving with varying speed", "why_wrong": "Particle motion analysis involves derivatives and sign changes — this is numerical approximation from data" }
+    ],
+    "recognition_cue": "Discrete speed data at regular intervals + 'how far' = Riemann sum to approximate distance.",
+    "solution_steps": [
+      "$\\Delta t = 15$ min $= 0.25$ hr. Left endpoints use first 4 values: 6.0, 6.5, 7.0, 6.8",
+      "Distance $\\approx 0.25(6.0 + 6.5 + 7.0 + 6.8) = 0.25(26.3) = 6.575$"
+    ],
+    "answer": "$\\approx 6.575$ miles"
+  }
+]

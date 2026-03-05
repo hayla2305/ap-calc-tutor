@@ -1,0 +1,1276 @@
+[
+  {
+    "id": "us_001",
+    "cluster": 4,
+    "cb_unit": 6,
+    "concept": "u_substitution",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Evaluate the integral $$\\int 2x \\cos(x^2)\\, dx.$$",
+    "cue_tokens": ["integrate", "antiderivative"],
+    "cue_aliases": ["find the integral", "evaluate"],
+    "technique_options": ["u_substitution", "chain_rule", "product_rule", "ftc_part2"],
+    "correct_technique": "u_substitution",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "The integrand contains a composite function $\\cos(x^2)$ which triggers chain rule thinking",
+        "why_wrong": "The chain rule is a differentiation technique; here we need to undo the chain rule by substituting $u = x^2$"
+      },
+      {
+        "concept": "product_rule",
+        "why_tempting": "The integrand is a product of $2x$ and $\\cos(x^2)$, suggesting integration by parts (product rule in reverse)",
+        "why_wrong": "The factor $2x$ is exactly $du$ when $u = x^2$, so no integration by parts is needed"
+      }
+    ],
+    "recognition_cue": "The integrand contains a composite function and its inner derivative appears as a factor, signaling u-substitution.",
+    "solution_steps": [
+      "Let $u = x^2$, so $du = 2x\\, dx$.",
+      "Rewrite the integral as $\\int \\cos(u)\\, du$.",
+      "Integrate to get $\\sin(u) + C$.",
+      "Back-substitute: $\\sin(x^2) + C$."
+    ],
+    "answer": "$\\sin(x^2) + C$"
+  },
+  {
+    "id": "us_002",
+    "cluster": 4,
+    "cb_unit": 6,
+    "concept": "u_substitution",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find an antiderivative of $$\\frac{e^{\\sqrt{x}}}{2\\sqrt{x}}.$$",
+    "cue_tokens": ["antiderivative"],
+    "cue_aliases": ["find a function whose derivative is", "evaluate the integral of"],
+    "technique_options": ["u_substitution", "chain_rule", "quotient_rule", "ftc_part1"],
+    "correct_technique": "u_substitution",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "The expression involves $e^{\\sqrt{x}}$, a composition that the chain rule would differentiate",
+        "why_wrong": "We are asked for the antiderivative, not the derivative; we reverse the chain rule via u-substitution"
+      },
+      {
+        "concept": "quotient_rule",
+        "why_tempting": "The expression is a fraction with $2\\sqrt{x}$ in the denominator, suggesting a quotient",
+        "why_wrong": "The quotient rule applies to differentiating a ratio; here $\\frac{1}{2\\sqrt{x}}$ is the derivative of $\\sqrt{x}$, serving as the $du$ factor"
+      }
+    ],
+    "recognition_cue": "A composition $e^{\\sqrt{x}}$ appears alongside $\\frac{1}{2\\sqrt{x}}$, which is the derivative of $\\sqrt{x}$. This inner-derivative-times-outer-function pattern signals u-substitution.",
+    "solution_steps": [
+      "Let $u = \\sqrt{x}$, so $du = \\frac{1}{2\\sqrt{x}}\\, dx$.",
+      "The integral becomes $\\int e^u\\, du$.",
+      "Integrate: $e^u + C$.",
+      "Back-substitute: $e^{\\sqrt{x}} + C$."
+    ],
+    "answer": "$e^{\\sqrt{x}} + C$"
+  },
+  {
+    "id": "us_003",
+    "cluster": 4,
+    "cb_unit": 6,
+    "concept": "u_substitution",
+    "disguise_level": 3,
+    "representation": "text",
+    "calculator_allowed": true,
+    "stem": "A particle's velocity is $v(t) = t^2 e^{t^3}$ meters per second. Using technology, determine how far the particle travels from $t = 0$ to $t = 1$. Which technique sets up the antiderivative before evaluating?",
+    "cue_tokens": ["velocity", "distance", "integral"],
+    "cue_aliases": ["how far", "displacement", "total distance"],
+    "technique_options": ["u_substitution", "particle_motion", "riemann_sums", "chain_rule"],
+    "correct_technique": "u_substitution",
+    "common_misidentification": "particle_motion",
+    "distractors": [
+      {
+        "concept": "particle_motion",
+        "why_tempting": "The problem explicitly involves a particle's velocity and asks about distance traveled",
+        "why_wrong": "Particle motion describes the physical setup, but the mathematical technique needed to evaluate $\\int_0^1 t^2 e^{t^3}\\, dt$ is u-substitution with $u = t^3$"
+      },
+      {
+        "concept": "riemann_sums",
+        "why_tempting": "The problem mentions 'using technology' which could suggest numerical approximation",
+        "why_wrong": "The integrand has a clean antiderivative via u-substitution; Riemann sums are for approximation when no closed form exists"
+      }
+    ],
+    "recognition_cue": "Despite the applied context, the integrand $t^2 e^{t^3}$ contains $e^{(\\text{inner})}$ multiplied by the derivative of the inner function ($t^2 = \\frac{1}{3} \\cdot 3t^2 = \\frac{1}{3} du$). The core technique is u-substitution.",
+    "solution_steps": [
+      "Set up the integral $\\int_0^1 t^2 e^{t^3}\\, dt$.",
+      "Let $u = t^3$, so $du = 3t^2\\, dt$, i.e., $t^2\\, dt = \\frac{1}{3} du$.",
+      "Change bounds: when $t=0$, $u=0$; when $t=1$, $u=1$.",
+      "Evaluate $\\frac{1}{3}\\int_0^1 e^u\\, du = \\frac{1}{3}(e - 1) \\approx 0.573$."
+    ],
+    "answer": "$\\frac{1}{3}(e - 1) \\approx 0.573$ meters"
+  },
+  {
+    "id": "us_004",
+    "cluster": 4,
+    "cb_unit": 6,
+    "concept": "u_substitution",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Evaluate $$\\int \\frac{\\ln(x)}{x}\\, dx.$$ At first glance, the fraction may suggest one technique, but look carefully at the structure.",
+    "cue_tokens": ["integrate", "evaluate"],
+    "cue_aliases": ["find the integral"],
+    "technique_options": ["u_substitution", "quotient_rule", "lhopitals_rule", "implicit_differentiation"],
+    "correct_technique": "u_substitution",
+    "common_misidentification": "quotient_rule",
+    "distractors": [
+      {
+        "concept": "quotient_rule",
+        "why_tempting": "The integrand is $\\frac{\\ln(x)}{x}$, a quotient of two functions, which visually resembles a quotient rule scenario",
+        "why_wrong": "The quotient rule is for differentiation; moreover $\\frac{1}{x}$ is the derivative of $\\ln(x)$, making this a classic u-substitution"
+      },
+      {
+        "concept": "lhopitals_rule",
+        "why_tempting": "Students associate $\\frac{\\ln(x)}{x}$ with L'Hopital's rule from limit problems involving this same expression",
+        "why_wrong": "L'Hopital's rule applies to indeterminate limits, not to evaluating indefinite integrals"
+      }
+    ],
+    "recognition_cue": "The expression $\\frac{\\ln(x)}{x}$ is really $\\ln(x) \\cdot \\frac{1}{x}$, and $\\frac{1}{x}$ is the derivative of $\\ln(x)$. This function-times-its-own-derivative pattern is the hallmark of u-substitution.",
+    "solution_steps": [
+      "Let $u = \\ln(x)$, so $du = \\frac{1}{x}\\, dx$.",
+      "Rewrite as $\\int u\\, du$.",
+      "Integrate: $\\frac{u^2}{2} + C$.",
+      "Back-substitute: $\\frac{(\\ln x)^2}{2} + C$."
+    ],
+    "answer": "$\\frac{(\\ln x)^2}{2} + C$"
+  },
+
+  {
+    "id": "abc_001",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "area_between_curves",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the area of the region enclosed by $y = x^2$ and $y = x + 2$.",
+    "cue_tokens": ["area", "enclosed", "between"],
+    "cue_aliases": ["area of the region", "area bounded by"],
+    "technique_options": ["area_between_curves", "riemann_sums", "u_substitution", "volume_disk_washer"],
+    "correct_technique": "area_between_curves",
+    "common_misidentification": "riemann_sums",
+    "distractors": [
+      {
+        "concept": "riemann_sums",
+        "why_tempting": "Finding area under/between curves can be associated with Riemann sum approximations",
+        "why_wrong": "Riemann sums approximate integrals numerically; here we compute the exact area using the closed-form integral of $\\text{top} - \\text{bottom}$"
+      },
+      {
+        "concept": "volume_disk_washer",
+        "why_tempting": "Both techniques involve integrating between two curves and share similar setup language",
+        "why_wrong": "Volume requires revolving a region around an axis; this problem asks only for the planar area"
+      }
+    ],
+    "recognition_cue": "Two explicit curves are given and the problem asks for the area of the enclosed region. This directly calls for integrating (top $-$ bottom) between intersection points.",
+    "solution_steps": [
+      "Find intersections: $x^2 = x + 2 \\Rightarrow x^2 - x - 2 = 0 \\Rightarrow (x-2)(x+1) = 0$, so $x = -1, 2$.",
+      "On $[-1, 2]$, $y = x+2$ is above $y = x^2$.",
+      "Compute $\\int_{-1}^{2} [(x+2) - x^2]\\, dx = \\int_{-1}^{2} (x + 2 - x^2)\\, dx$.",
+      "Evaluate: $\\left[\\frac{x^2}{2} + 2x - \\frac{x^3}{3}\\right]_{-1}^{2} = \\left(2 + 4 - \\frac{8}{3}\\right) - \\left(\\frac{1}{2} - 2 + \\frac{1}{3}\\right) = \\frac{9}{2}$."
+    ],
+    "answer": "$\\frac{9}{2}$"
+  },
+  {
+    "id": "abc_002",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "area_between_curves",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Compute the total region bounded above by $y = 6 - x^2$ and below by $y = 2x$ for all $x$-values where $6 - x^2 \\geq 2x$.",
+    "cue_tokens": ["region", "bounded above", "bounded below"],
+    "cue_aliases": ["total region", "area where"],
+    "technique_options": ["area_between_curves", "optimization", "riemann_sums", "average_value"],
+    "correct_technique": "area_between_curves",
+    "common_misidentification": "optimization",
+    "distractors": [
+      {
+        "concept": "optimization",
+        "why_tempting": "The phrase 'bounded above/below' and the inequality constraint resemble optimization feasibility conditions",
+        "why_wrong": "Optimization finds max/min values of a function; here we are computing an area between two curves"
+      },
+      {
+        "concept": "average_value",
+        "why_tempting": "Both average value and area between curves involve definite integrals over an interval",
+        "why_wrong": "Average value divides the integral by the interval length; this problem asks for the total enclosed area without any averaging"
+      }
+    ],
+    "recognition_cue": "Two functions define upper and lower boundaries, and the problem asks for the size of the enclosed region. Despite paraphrased language, the structure is top-minus-bottom integration.",
+    "solution_steps": [
+      "Solve $6 - x^2 = 2x$: $x^2 + 2x - 6 = 0$ gives $x = \\frac{-2 \\pm \\sqrt{28}}{2} = -1 \\pm \\sqrt{7}$.",
+      "On $[-1-\\sqrt{7},\\, -1+\\sqrt{7}]$, the parabola is above the line.",
+      "Area $= \\int_{-1-\\sqrt{7}}^{-1+\\sqrt{7}} [(6-x^2) - 2x]\\, dx = \\int_{-1-\\sqrt{7}}^{-1+\\sqrt{7}} (6 - 2x - x^2)\\, dx$.",
+      "Use symmetry about $x = -1$: the integrand becomes $7 - (x+1)^2$. With half-width $\\sqrt{7}$, area $= \\frac{4}{3}(\\sqrt{7})^3 = \\frac{28\\sqrt{7}}{3}$."
+    ],
+    "answer": "$\\frac{28\\sqrt{7}}{3}$"
+  },
+  {
+    "id": "abc_003",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "area_between_curves",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": true,
+    "stem": "The graph shows two functions $f$ and $g$ on $[0, 4]$. From the graph, $f(x) \\geq g(x)$ on the entire interval, $f$ appears to be a downward-opening parabola passing through $(0,4)$ and $(4,4)$ with vertex $(2,6)$, and $g$ is the constant function $g(x) = 2$. Set up and evaluate the integral that gives the area of the shaded region between $f$ and $g$.",
+    "cue_tokens": ["shaded region", "area", "between"],
+    "cue_aliases": ["shaded area", "region between the graphs"],
+    "technique_options": ["area_between_curves", "riemann_sums", "volume_cross_sections", "ftc_part2"],
+    "correct_technique": "area_between_curves",
+    "common_misidentification": "riemann_sums",
+    "distractors": [
+      {
+        "concept": "riemann_sums",
+        "why_tempting": "A graph-based problem may lead students to estimate the area using rectangles rather than an exact integral",
+        "why_wrong": "The functions can be identified from the graph, so we compute the exact integral rather than a numerical approximation"
+      },
+      {
+        "concept": "volume_cross_sections",
+        "why_tempting": "The shaded region between two curves could be mistaken as the base for a cross-sectional volume problem",
+        "why_wrong": "The problem only asks for the planar area; no cross-sectional shape or third dimension is mentioned"
+      }
+    ],
+    "recognition_cue": "A shaded region between two identifiable curves on a graph, with the problem asking for area. Read the curves from the graph and set up top-minus-bottom.",
+    "solution_steps": [
+      "From the graph, $f(x) = -\\frac{1}{2}(x-2)^2 + 6 = -\\frac{1}{2}x^2 + 2x + 4$ and $g(x) = 2$.",
+      "Area $= \\int_0^4 [f(x) - g(x)]\\, dx = \\int_0^4 \\left(-\\frac{1}{2}x^2 + 2x + 2\\right) dx$.",
+      "Evaluate: $\\left[-\\frac{x^3}{6} + x^2 + 2x\\right]_0^4 = -\\frac{64}{6} + 16 + 8 = -\\frac{32}{3} + 24 = \\frac{40}{3}$."
+    ],
+    "answer": "$\\frac{40}{3}$"
+  },
+  {
+    "id": "abc_004",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "area_between_curves",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $R$ be the region bounded by $x = y^2$ and $x = 4$. Find the area of $R$. (Hint: consider integrating with respect to $y$.)",
+    "cue_tokens": ["area", "region bounded"],
+    "cue_aliases": ["area of region R"],
+    "technique_options": ["area_between_curves", "volume_disk_washer", "u_substitution", "implicit_differentiation"],
+    "correct_technique": "area_between_curves",
+    "common_misidentification": "volume_disk_washer",
+    "distractors": [
+      {
+        "concept": "volume_disk_washer",
+        "why_tempting": "The region $R$ defined by $x = y^2$ and $x = 4$ is the classic setup for a disk/washer volume problem when revolved; students may jump ahead to volume",
+        "why_wrong": "The problem only asks for the area of $R$, not the volume of a solid of revolution"
+      },
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "The curve $x = y^2$ is given implicitly as a function of $y$, which might suggest implicit differentiation",
+        "why_wrong": "No derivative is needed; we integrate $(\\text{right} - \\text{left})$ with respect to $y$ to find the area"
+      }
+    ],
+    "recognition_cue": "The curves are given as $x = f(y)$ and $x = c$, suggesting integration with respect to $y$. Despite the unusual orientation, this is still area between curves: integrate (right $-$ left) $dy$.",
+    "solution_steps": [
+      "Find $y$-bounds: $y^2 = 4 \\Rightarrow y = -2, 2$.",
+      "Right curve: $x = 4$; Left curve: $x = y^2$.",
+      "Area $= \\int_{-2}^{2} (4 - y^2)\\, dy$.",
+      "By symmetry: $2\\int_0^2 (4 - y^2)\\, dy = 2\\left[4y - \\frac{y^3}{3}\\right]_0^2 = 2\\left(8 - \\frac{8}{3}\\right) = \\frac{32}{3}$."
+    ],
+    "answer": "$\\frac{32}{3}$"
+  },
+
+  {
+    "id": "vcs_001",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "volume_cross_sections",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The base of a solid is the region bounded by $y = \\sqrt{x}$, $y = 0$, and $x = 4$. Cross-sections perpendicular to the $x$-axis are squares. Find the volume of the solid.",
+    "cue_tokens": ["cross-sections", "perpendicular", "volume", "squares"],
+    "cue_aliases": ["volume of the solid", "solid with known cross-sections"],
+    "technique_options": ["volume_cross_sections", "volume_disk_washer", "area_between_curves", "riemann_sums"],
+    "correct_technique": "volume_cross_sections",
+    "common_misidentification": "volume_disk_washer",
+    "distractors": [
+      {
+        "concept": "volume_disk_washer",
+        "why_tempting": "Both compute volumes using integration and involve the same base region setup",
+        "why_wrong": "Disk/washer requires revolution around an axis; here the cross-sections are explicitly given as squares, not circles"
+      },
+      {
+        "concept": "area_between_curves",
+        "why_tempting": "The base region is defined by curves, similar to an area-between-curves problem",
+        "why_wrong": "This problem asks for the volume of a 3D solid, not the area of the base region"
+      }
+    ],
+    "recognition_cue": "The problem states a base region and specifies the shape of cross-sections perpendicular to an axis. This is the defining setup for the cross-section volume method: $V = \\int A(x)\\, dx$.",
+    "solution_steps": [
+      "At position $x$, the side length of each square cross-section is $s(x) = \\sqrt{x} - 0 = \\sqrt{x}$.",
+      "Area of cross-section: $A(x) = (\\sqrt{x})^2 = x$.",
+      "Volume $= \\int_0^4 x\\, dx = \\left[\\frac{x^2}{2}\\right]_0^4 = 8$."
+    ],
+    "answer": "$8$"
+  },
+  {
+    "id": "vcs_002",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "volume_cross_sections",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A solid has a base bounded by $y = 1 - x^2$ and the $x$-axis. Each slice taken perpendicular to the $x$-axis has a cross-section that is a semicircle with diameter along the base. What is the volume?",
+    "cue_tokens": ["solid", "slice", "semicircle", "diameter", "volume"],
+    "cue_aliases": ["volume of the solid", "solid whose cross-sections are"],
+    "technique_options": ["volume_cross_sections", "volume_disk_washer", "area_between_curves", "u_substitution"],
+    "correct_technique": "volume_cross_sections",
+    "common_misidentification": "volume_disk_washer",
+    "distractors": [
+      {
+        "concept": "volume_disk_washer",
+        "why_tempting": "Semicircular cross-sections involve circular geometry, which students conflate with disk/washer circular cross-sections from revolution",
+        "why_wrong": "Disk/washer cross-sections arise from revolving a region; here the semicircles are prescribed directly as the cross-sectional shape"
+      },
+      {
+        "concept": "u_substitution",
+        "why_tempting": "The resulting integral may require a substitution or power-reducing technique to evaluate",
+        "why_wrong": "u-substitution is an integration technique, not the conceptual method; the volume setup is cross-sections"
+      }
+    ],
+    "recognition_cue": "A specific cross-sectional shape (semicircle) is described with its dimension determined by the base region. This is cross-section volume, not revolution.",
+    "solution_steps": [
+      "The base spans $x \\in [-1, 1]$ where $1 - x^2 \\geq 0$.",
+      "Diameter of each semicircle: $d = 1 - x^2$, so radius $r = \\frac{1-x^2}{2}$.",
+      "Area $A(x) = \\frac{1}{2}\\pi r^2 = \\frac{\\pi}{8}(1-x^2)^2$.",
+      "Volume $= \\frac{\\pi}{8}\\int_{-1}^{1}(1-x^2)^2\\, dx = \\frac{\\pi}{8} \\cdot \\frac{16}{15} = \\frac{2\\pi}{15}$."
+    ],
+    "answer": "$\\frac{2\\pi}{15}$"
+  },
+  {
+    "id": "vcs_003",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "volume_cross_sections",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": true,
+    "stem": "A surveyor measures the width $w(x)$ of a lake at 100-meter intervals along a straight road:\n\n| $x$ (meters) | 0 | 100 | 200 | 300 | 400 |\n|---|---|---|---|---|---|\n| $w(x)$ (meters) | 0 | 120 | 150 | 110 | 0 |\n\nThe lake bed at each cross-section is approximately an equilateral triangle with base $w(x)$. Use a trapezoidal approximation to estimate the volume of water in the lake.",
+    "cue_tokens": ["cross-section", "equilateral triangle", "volume"],
+    "cue_aliases": ["estimate the volume", "volume of water"],
+    "technique_options": ["volume_cross_sections", "riemann_sums", "area_between_curves", "average_value"],
+    "correct_technique": "volume_cross_sections",
+    "common_misidentification": "riemann_sums",
+    "distractors": [
+      {
+        "concept": "riemann_sums",
+        "why_tempting": "The table of values and trapezoidal approximation seem like a Riemann sum / numerical integration problem",
+        "why_wrong": "While the numerical method is trapezoidal, the underlying concept being applied is volume by cross-sections where $A(x) = \\frac{\\sqrt{3}}{4}[w(x)]^2$"
+      },
+      {
+        "concept": "average_value",
+        "why_tempting": "One might think to average the cross-sectional areas over the interval",
+        "why_wrong": "Average value divides the total integral by the interval length; volume requires the total integral without division"
+      }
+    ],
+    "recognition_cue": "A cross-sectional shape (equilateral triangle) is specified, and its dimension varies along one axis. Even with tabular data, the concept is volume by known cross-sections.",
+    "solution_steps": [
+      "Cross-sectional area of an equilateral triangle: $A(x) = \\frac{\\sqrt{3}}{4}[w(x)]^2$.",
+      "Compute areas: $A(0) = 0$, $A(100) = \\frac{\\sqrt{3}}{4}(14400) = 3600\\sqrt{3}$, $A(200) = \\frac{\\sqrt{3}}{4}(22500) = 5625\\sqrt{3}$, $A(300) = \\frac{\\sqrt{3}}{4}(12100) = 3025\\sqrt{3}$, $A(400) = 0$.",
+      "Trapezoidal rule with $\\Delta x = 100$: $V \\approx \\frac{100}{2}[A(0) + 2A(100) + 2A(200) + 2A(300) + A(400)]$.",
+      "Evaluate: $V \\approx 50[0 + 7200\\sqrt{3} + 11250\\sqrt{3} + 6050\\sqrt{3} + 0] = 50 \\cdot 24500\\sqrt{3} = 1{,}225{,}000\\sqrt{3} \\approx 2{,}121{,}762$ cubic meters."
+    ],
+    "answer": "$1{,}225{,}000\\sqrt{3} \\approx 2{,}121{,}762$ cubic meters"
+  },
+  {
+    "id": "vcs_004",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "volume_cross_sections",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The region $R$ is bounded by $y = \\sin(x)$ and $y = 0$ for $0 \\leq x \\leq \\pi$. A solid is built so that cross-sections perpendicular to the $x$-axis are squares. A student claims this requires revolving $R$ around the $x$-axis. Is the student correct? Find the volume.",
+    "cue_tokens": ["cross-sections", "squares", "volume"],
+    "cue_aliases": ["volume of the solid"],
+    "technique_options": ["volume_cross_sections", "volume_disk_washer", "area_between_curves", "ftc_part2"],
+    "correct_technique": "volume_cross_sections",
+    "common_misidentification": "volume_disk_washer",
+    "distractors": [
+      {
+        "concept": "volume_disk_washer",
+        "why_tempting": "The problem deliberately introduces the idea of revolving around the $x$-axis, and the base region is a classic revolution setup",
+        "why_wrong": "The cross-sections are squares, not circles; the student's claim is incorrect. No axis of revolution is used."
+      },
+      {
+        "concept": "ftc_part2",
+        "why_tempting": "The final evaluation uses the Fundamental Theorem, and $\\sin(x)$ integration is a standard FTC exercise",
+        "why_wrong": "FTC Part 2 is a tool for evaluating the integral; the conceptual setup is volume by cross-sections"
+      }
+    ],
+    "recognition_cue": "Despite the adversarial mention of revolution, the key phrase is 'cross-sections perpendicular to the $x$-axis are squares.' Prescribed cross-section shapes mean cross-section volume, not disk/washer.",
+    "solution_steps": [
+      "The student is incorrect: square cross-sections are not produced by revolution.",
+      "Side length at position $x$: $s = \\sin(x)$.",
+      "Area $A(x) = \\sin^2(x) = \\frac{1 - \\cos(2x)}{2}$.",
+      "Volume $= \\int_0^{\\pi} \\frac{1-\\cos(2x)}{2}\\, dx = \\frac{1}{2}\\left[x - \\frac{\\sin(2x)}{2}\\right]_0^{\\pi} = \\frac{\\pi}{2}$."
+    ],
+    "answer": "$\\frac{\\pi}{2}$"
+  },
+
+  {
+    "id": "vdw_001",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "volume_disk_washer",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the volume of the solid generated by revolving the region bounded by $y = \\sqrt{x}$, $y = 0$, and $x = 4$ about the $x$-axis.",
+    "cue_tokens": ["revolving", "volume", "about the x-axis"],
+    "cue_aliases": ["solid of revolution", "volume generated by rotating"],
+    "technique_options": ["volume_disk_washer", "volume_cross_sections", "area_between_curves", "u_substitution"],
+    "correct_technique": "volume_disk_washer",
+    "common_misidentification": "volume_cross_sections",
+    "distractors": [
+      {
+        "concept": "volume_cross_sections",
+        "why_tempting": "Both methods find volumes by integrating cross-sectional areas, and students may confuse which applies",
+        "why_wrong": "Cross-section problems specify a shape (square, triangle, etc.); here the shape is a disk created by revolution"
+      },
+      {
+        "concept": "area_between_curves",
+        "why_tempting": "The bounded region is the same setup as an area-between-curves problem",
+        "why_wrong": "We are computing a 3D volume by revolving the region, not the 2D area"
+      }
+    ],
+    "recognition_cue": "The problem says 'revolving about the $x$-axis.' Revolving a region around an axis produces circular cross-sections, calling for the disk (or washer) method.",
+    "solution_steps": [
+      "Each cross-section is a disk with radius $r = \\sqrt{x}$.",
+      "Volume $= \\pi \\int_0^4 (\\sqrt{x})^2\\, dx = \\pi \\int_0^4 x\\, dx$.",
+      "Evaluate: $\\pi \\left[\\frac{x^2}{2}\\right]_0^4 = \\pi \\cdot 8 = 8\\pi$."
+    ],
+    "answer": "$8\\pi$"
+  },
+  {
+    "id": "vdw_002",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "volume_disk_washer",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The region enclosed by $y = x^2$ and $y = 4$ is rotated about the line $y = 4$. Determine the volume of the resulting solid.",
+    "cue_tokens": ["rotated", "volume", "about the line"],
+    "cue_aliases": ["solid of revolution", "rotating about"],
+    "technique_options": ["volume_disk_washer", "volume_cross_sections", "optimization", "area_between_curves"],
+    "correct_technique": "volume_disk_washer",
+    "common_misidentification": "volume_cross_sections",
+    "distractors": [
+      {
+        "concept": "volume_cross_sections",
+        "why_tempting": "The rotation produces a solid with circular slices, and students may confuse this with prescribed cross-sections",
+        "why_wrong": "The circular cross-sections come from revolution, not from a stated cross-section shape; this is disk/washer"
+      },
+      {
+        "concept": "optimization",
+        "why_tempting": "Finding the correct radius involves measuring distance from $y = x^2$ to $y = 4$, which feels like an optimization step",
+        "why_wrong": "Optimization finds extreme values; here the radius expression $R = 4 - x^2$ follows directly from the geometry of revolution"
+      }
+    ],
+    "recognition_cue": "Rotation about a horizontal line (not the $x$-axis itself) produces disks. The radius is the distance from the curve to the axis of rotation.",
+    "solution_steps": [
+      "Intersection: $x^2 = 4 \\Rightarrow x = \\pm 2$.",
+      "Axis of rotation is $y = 4$. Radius: $R(x) = 4 - x^2$ (distance from curve to axis).",
+      "Volume $= \\pi \\int_{-2}^{2} (4-x^2)^2\\, dx$.",
+      "Expand and integrate: $\\pi \\int_{-2}^{2}(16 - 8x^2 + x^4)\\, dx = \\pi\\left[16x - \\frac{8x^3}{3} + \\frac{x^5}{5}\\right]_{-2}^{2}$.",
+      "Evaluate: $\\pi \\cdot 2\\left(32 - \\frac{64}{3} + \\frac{32}{5}\\right) = \\frac{512\\pi}{15}$."
+    ],
+    "answer": "$\\frac{512\\pi}{15}$"
+  },
+  {
+    "id": "vdw_003",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "volume_disk_washer",
+    "disguise_level": 3,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A potter shapes a bowl by spinning clay. The interior profile is $y = x^2$ and the exterior edge is $y = 2x$, for $y$-values between 0 and 4. The bowl is symmetric about the $y$-axis of the potter's wheel. What is the volume of clay in the bowl wall?",
+    "cue_tokens": ["spinning", "symmetric", "volume"],
+    "cue_aliases": ["volume of the solid", "volume of clay"],
+    "technique_options": ["volume_disk_washer", "volume_cross_sections", "related_rates", "area_between_curves"],
+    "correct_technique": "volume_disk_washer",
+    "common_misidentification": "area_between_curves",
+    "distractors": [
+      {
+        "concept": "area_between_curves",
+        "why_tempting": "The region between the two profile curves looks like an area-between-curves setup",
+        "why_wrong": "The bowl is three-dimensional due to spinning (revolution); we need washers, not planar area"
+      },
+      {
+        "concept": "related_rates",
+        "why_tempting": "A potter 'spinning clay' may trigger related rates thinking about rotational motion",
+        "why_wrong": "Related rates involve rates of change over time; spinning here describes a solid of revolution"
+      }
+    ],
+    "recognition_cue": "Spinning clay around an axis creates a solid of revolution. Two profile curves create a hollow region, requiring the washer method: $\\pi \\int (R^2 - r^2)\\, dy$.",
+    "solution_steps": [
+      "Integrate with respect to $y$. Outer radius: from $y = 2x$, $x = \\frac{y}{2}$, so $R = \\frac{y}{2}$. Inner radius: from $y = x^2$, $x = \\sqrt{y}$, so $r = \\sqrt{y}$.",
+      "Wait -- the interior (closer to axis) has $x = \\sqrt{y}$ and exterior has $x = \\frac{y}{2}$. Check at $y=1$: $\\sqrt{1}=1 > \\frac{1}{2}$. So $R = \\sqrt{y}$ and $r = \\frac{y}{2}$.",
+      "Volume $= \\pi \\int_0^4 \\left[(\\sqrt{y})^2 - \\left(\\frac{y}{2}\\right)^2\\right] dy = \\pi \\int_0^4 \\left(y - \\frac{y^2}{4}\\right) dy$.",
+      "Evaluate: $\\pi\\left[\\frac{y^2}{2} - \\frac{y^3}{12}\\right]_0^4 = \\pi\\left(8 - \\frac{16}{3}\\right) = \\frac{8\\pi}{3}$."
+    ],
+    "answer": "$\\frac{8\\pi}{3}$"
+  },
+  {
+    "id": "vdw_004",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "volume_disk_washer",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The region bounded by $y = e^x$, $y = 1$, and $x = 1$ is revolved about the line $y = 1$. A student sets up $$\\pi \\int_0^1 (e^x)^2\\, dx.$$ Identify the correct technique and explain whether the student's setup is correct.",
+    "cue_tokens": ["revolved", "volume", "about the line"],
+    "cue_aliases": ["solid of revolution", "rotating about $y = 1$"],
+    "technique_options": ["volume_disk_washer", "volume_cross_sections", "ftc_part2", "u_substitution"],
+    "correct_technique": "volume_disk_washer",
+    "common_misidentification": "volume_cross_sections",
+    "distractors": [
+      {
+        "concept": "volume_cross_sections",
+        "why_tempting": "The student's incorrect setup doesn't clearly distinguish between disk and cross-section methods",
+        "why_wrong": "Revolution about an axis creates circular disks; no specific non-circular cross-section shape is prescribed"
+      },
+      {
+        "concept": "ftc_part2",
+        "why_tempting": "The final integral evaluation uses FTC Part 2, and the exponential integral is a standard exercise",
+        "why_wrong": "FTC Part 2 is the evaluation tool; the conceptual technique is disk/washer volume"
+      }
+    ],
+    "recognition_cue": "Revolution about $y = 1$ creates disks. The radius must be measured from the curve to the axis of rotation: $R = e^x - 1$, not $e^x$.",
+    "solution_steps": [
+      "The correct technique is disk method about $y = 1$.",
+      "The student's setup is incorrect. The radius should be $R(x) = e^x - 1$ (distance from curve to axis $y=1$), not $e^x$.",
+      "Correct setup: $V = \\pi \\int_0^1 (e^x - 1)^2\\, dx = \\pi \\int_0^1 (e^{2x} - 2e^x + 1)\\, dx$.",
+      "Evaluate: $\\pi\\left[\\frac{e^{2x}}{2} - 2e^x + x\\right]_0^1 = \\pi\\left[\\left(\\frac{e^2}{2} - 2e + 1\\right) - \\left(\\frac{1}{2} - 2\\right)\\right] = \\pi\\left(\\frac{e^2}{2} - 2e + \\frac{5}{2}\\right)$."
+    ],
+    "answer": "$\\pi\\left(\\frac{e^2}{2} - 2e + \\frac{5}{2}\\right)$"
+  },
+
+  {
+    "id": "av_001",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "average_value",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the average value of $f(x) = x^2$ on the interval $[0, 3]$.",
+    "cue_tokens": ["average value"],
+    "cue_aliases": ["mean value of the function", "average of $f$"],
+    "technique_options": ["average_value", "mvt", "riemann_sums", "ftc_part2"],
+    "correct_technique": "average_value",
+    "common_misidentification": "mvt",
+    "distractors": [
+      {
+        "concept": "mvt",
+        "why_tempting": "The Mean Value Theorem and the average value formula both involve dividing by the interval length, and MVT guarantees a point where $f(c)$ equals the average value",
+        "why_wrong": "MVT relates a derivative to a difference quotient; the average value formula computes $\\frac{1}{b-a}\\int_a^b f(x)\\, dx$"
+      },
+      {
+        "concept": "riemann_sums",
+        "why_tempting": "Averaging sample values resembles a Riemann sum approach to computing the mean",
+        "why_wrong": "Riemann sums approximate the integral; the average value formula uses the exact integral divided by interval length"
+      }
+    ],
+    "recognition_cue": "The phrase 'average value' on an interval directly invokes the formula $f_{\\text{avg}} = \\frac{1}{b-a}\\int_a^b f(x)\\, dx$.",
+    "solution_steps": [
+      "Apply the average value formula: $f_{\\text{avg}} = \\frac{1}{3-0}\\int_0^3 x^2\\, dx$.",
+      "Evaluate: $\\frac{1}{3}\\left[\\frac{x^3}{3}\\right]_0^3 = \\frac{1}{3} \\cdot 9 = 3$."
+    ],
+    "answer": "$3$"
+  },
+  {
+    "id": "av_002",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "average_value",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A temperature function $T(t) = 70 + 10\\sin\\left(\\frac{\\pi t}{12}\\right)$ models degrees Fahrenheit over a 24-hour day ($0 \\leq t \\leq 24$). What is the mean temperature over the full day?",
+    "cue_tokens": ["mean temperature", "over the full day"],
+    "cue_aliases": ["average temperature", "mean value"],
+    "technique_options": ["average_value", "mvt", "optimization", "u_substitution"],
+    "correct_technique": "average_value",
+    "common_misidentification": "optimization",
+    "distractors": [
+      {
+        "concept": "optimization",
+        "why_tempting": "Temperature problems frequently ask for maximum or minimum temperature, priming students toward optimization",
+        "why_wrong": "The problem asks for the mean (average) over the interval, not the extreme values"
+      },
+      {
+        "concept": "mvt",
+        "why_tempting": "The Mean Value Theorem guarantees a time when instantaneous rate equals the average rate, which sounds related to 'mean temperature'",
+        "why_wrong": "MVT concerns the derivative (rate of change), not the average value of the function itself"
+      }
+    ],
+    "recognition_cue": "'Mean temperature over the full day' is the average value of $T(t)$ on $[0, 24]$. The applied context paraphrases 'average value' as 'mean temperature.'",
+    "solution_steps": [
+      "Average value $= \\frac{1}{24}\\int_0^{24}\\left[70 + 10\\sin\\left(\\frac{\\pi t}{12}\\right)\\right] dt$.",
+      "Evaluate: $\\frac{1}{24}\\left[70t - 10 \\cdot \\frac{12}{\\pi}\\cos\\left(\\frac{\\pi t}{12}\\right)\\right]_0^{24}$.",
+      "$= \\frac{1}{24}\\left[(1680 - \\frac{120}{\\pi}\\cos(2\\pi)) - (0 - \\frac{120}{\\pi}\\cos(0))\\right]$.",
+      "$= \\frac{1}{24}\\left[1680 - \\frac{120}{\\pi} + \\frac{120}{\\pi}\\right] = \\frac{1680}{24} = 70$."
+    ],
+    "answer": "$70$ degrees Fahrenheit"
+  },
+  {
+    "id": "av_003",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "average_value",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": true,
+    "stem": "A runner's speed $v(t)$ (in mph) is recorded at various times:\n\n| $t$ (hours) | 0 | 0.5 | 1.0 | 1.5 | 2.0 |\n|---|---|---|---|---|---|\n| $v(t)$ (mph) | 6.0 | 7.2 | 7.8 | 7.0 | 5.5 |\n\nUsing a trapezoidal approximation for $\\int_0^2 v(t)\\, dt$, estimate the runner's average speed over the 2-hour run.",
+    "cue_tokens": ["average speed"],
+    "cue_aliases": ["mean speed", "average rate"],
+    "technique_options": ["average_value", "riemann_sums", "particle_motion", "ftc_part1"],
+    "correct_technique": "average_value",
+    "common_misidentification": "riemann_sums",
+    "distractors": [
+      {
+        "concept": "riemann_sums",
+        "why_tempting": "The trapezoidal approximation is a Riemann-sum-type technique used in the computation",
+        "why_wrong": "The trapezoidal rule is the computational tool, but the concept being applied is average value: dividing the total integral by the interval length"
+      },
+      {
+        "concept": "particle_motion",
+        "why_tempting": "Speed and time data describe a moving object, which is a particle motion context",
+        "why_wrong": "Particle motion typically asks for position, velocity, or acceleration relationships; this asks specifically for the average speed, which is the average value formula"
+      }
+    ],
+    "recognition_cue": "The question asks for 'average speed over the 2-hour run,' which means $\\frac{1}{2-0}\\int_0^2 v(t)\\, dt$. The table and trapezoid rule are just the tools to approximate the integral.",
+    "solution_steps": [
+      "Approximate $\\int_0^2 v(t)\\, dt$ using trapezoids with $\\Delta t = 0.5$.",
+      "$\\int_0^2 v\\, dt \\approx \\frac{0.5}{2}[v(0) + 2v(0.5) + 2v(1.0) + 2v(1.5) + v(2.0)]$.",
+      "$= 0.25[6.0 + 14.4 + 15.6 + 14.0 + 5.5] = 0.25(55.5) = 13.875$.",
+      "Average speed $= \\frac{1}{2}(13.875) = 6.9375$ mph."
+    ],
+    "answer": "$6.9375$ mph"
+  },
+  {
+    "id": "av_004",
+    "cluster": 4,
+    "cb_unit": 8,
+    "concept": "average_value",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $g$ be continuous on $[1, 5]$ with $\\int_1^5 g(x)\\, dx = 12$. A student claims that by the Mean Value Theorem, there exists $c$ in $(1, 5)$ such that $g(c) = 3$. Is the student using the correct theorem? What is the correct justification?",
+    "cue_tokens": ["Mean Value Theorem", "continuous", "there exists $c$"],
+    "cue_aliases": ["MVT", "guaranteed value"],
+    "technique_options": ["average_value", "mvt", "evt", "ftc_part1"],
+    "correct_technique": "average_value",
+    "common_misidentification": "mvt",
+    "distractors": [
+      {
+        "concept": "mvt",
+        "why_tempting": "The student explicitly invokes MVT, and the conclusion involves a specific value at some point $c$",
+        "why_wrong": "The standard MVT relates $f'(c)$ to a difference quotient. The correct result here is the Mean Value Theorem for Integrals (a corollary of the average value theorem), which guarantees $g(c) = \\frac{1}{b-a}\\int_a^b g(x)\\, dx$"
+      },
+      {
+        "concept": "evt",
+        "why_tempting": "EVT also guarantees the existence of specific function values (max and min) on a closed interval",
+        "why_wrong": "EVT guarantees extreme values exist but does not guarantee the function achieves its average value"
+      }
+    ],
+    "recognition_cue": "The value $g(c) = 3 = \\frac{12}{4} = \\frac{1}{5-1}\\int_1^5 g(x)\\, dx$ is the average value. The correct theorem is the Mean Value Theorem for Integrals, which is the existence guarantee for average value.",
+    "solution_steps": [
+      "Compute the average value: $\\frac{1}{5-1}\\int_1^5 g(x)\\, dx = \\frac{12}{4} = 3$.",
+      "The student's conclusion ($g(c) = 3$ for some $c$) is correct, but the justification is wrong.",
+      "The correct theorem is the Mean Value Theorem for Integrals (Average Value Theorem): if $g$ is continuous on $[a,b]$, there exists $c \\in (a,b)$ with $g(c) = \\frac{1}{b-a}\\int_a^b g(x)\\, dx$.",
+      "The standard MVT (for derivatives) would say $g'(c) = \\frac{g(5)-g(1)}{4}$, which is a different statement."
+    ],
+    "answer": "The student's conclusion is correct but the justification should cite the Mean Value Theorem for Integrals (Average Value Theorem), not the standard MVT for derivatives. The average value is $3$."
+  },
+
+  {
+    "id": "sv_001",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "separation_of_variables",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Solve the differential equation $$\\frac{dy}{dx} = 3x^2 y$$ given that $y(0) = 5$.",
+    "cue_tokens": ["solve", "differential equation", "$\\frac{dy}{dx}$"],
+    "cue_aliases": ["find $y$", "solve the DE"],
+    "technique_options": ["separation_of_variables", "slope_fields", "implicit_differentiation", "u_substitution"],
+    "correct_technique": "separation_of_variables",
+    "common_misidentification": "implicit_differentiation",
+    "distractors": [
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "The equation involves $\\frac{dy}{dx}$ and both $x$ and $y$, similar to implicit differentiation setups",
+        "why_wrong": "Implicit differentiation finds $\\frac{dy}{dx}$ from an equation; here $\\frac{dy}{dx}$ is already given and we need to solve for $y$"
+      },
+      {
+        "concept": "slope_fields",
+        "why_tempting": "Both slope fields and separation of variables deal with first-order DEs",
+        "why_wrong": "Slope fields visualize the DE; separation of variables produces the exact analytic solution"
+      }
+    ],
+    "recognition_cue": "The DE has the form $\\frac{dy}{dx} = f(x) \\cdot g(y)$, where $x$ and $y$ factors are multiplicatively separable. This is the textbook signal for separation of variables.",
+    "solution_steps": [
+      "Separate: $\\frac{dy}{y} = 3x^2\\, dx$.",
+      "Integrate both sides: $\\ln|y| = x^3 + C$.",
+      "Solve for $y$: $y = Ae^{x^3}$ where $A = e^C$.",
+      "Apply initial condition $y(0) = 5$: $5 = Ae^0 \\Rightarrow A = 5$.",
+      "Solution: $y = 5e^{x^3}$."
+    ],
+    "answer": "$y = 5e^{x^3}$"
+  },
+  {
+    "id": "sv_002",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "separation_of_variables",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A population $P$ grows at a rate proportional to its current size, with proportionality constant $k = 0.02$. If the initial population is 1000, find $P(t)$.",
+    "cue_tokens": ["rate proportional to", "grows", "find $P(t)$"],
+    "cue_aliases": ["exponential growth model", "find the population function"],
+    "technique_options": ["separation_of_variables", "related_rates", "linear_approximation", "slope_fields"],
+    "correct_technique": "separation_of_variables",
+    "common_misidentification": "related_rates",
+    "distractors": [
+      {
+        "concept": "related_rates",
+        "why_tempting": "The problem describes a rate of change (growth rate) involving a changing quantity, resembling related rates",
+        "why_wrong": "Related rates involve multiple quantities changing with respect to time; here there is one DE $\\frac{dP}{dt} = kP$ to solve analytically"
+      },
+      {
+        "concept": "linear_approximation",
+        "why_tempting": "One might approximate the population growth linearly for small time intervals",
+        "why_wrong": "Linear approximation gives a local estimate; separation of variables yields the exact exponential solution"
+      }
+    ],
+    "recognition_cue": "'Rate proportional to current size' translates to $\\frac{dP}{dt} = kP$, a separable DE. The word 'proportional' plus a single dependent variable signals separation of variables.",
+    "solution_steps": [
+      "Write the DE: $\\frac{dP}{dt} = 0.02P$.",
+      "Separate: $\\frac{dP}{P} = 0.02\\, dt$.",
+      "Integrate: $\\ln|P| = 0.02t + C$.",
+      "Solve: $P = Ae^{0.02t}$. With $P(0) = 1000$: $A = 1000$.",
+      "Solution: $P(t) = 1000e^{0.02t}$."
+    ],
+    "answer": "$P(t) = 1000e^{0.02t}$"
+  },
+  {
+    "id": "sv_003",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "separation_of_variables",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "A slope field is shown for a differential equation. From the slope field, the slopes appear to depend on both $x$ and $y$: at every point, the slope equals $\\frac{x}{y}$. The solution curve passes through $(0, 2)$. Use the appropriate analytic technique to find the equation of this solution curve.",
+    "cue_tokens": ["slope field", "analytic", "find the equation"],
+    "cue_aliases": ["solve the DE", "find the solution curve"],
+    "technique_options": ["separation_of_variables", "slope_fields", "implicit_differentiation", "eulers_method"],
+    "correct_technique": "separation_of_variables",
+    "common_misidentification": "slope_fields",
+    "distractors": [
+      {
+        "concept": "slope_fields",
+        "why_tempting": "The problem begins by describing a slope field, making it seem like a slope field identification problem",
+        "why_wrong": "The slope field provides the DE; the problem then asks for the analytic solution, which requires separation of variables"
+      },
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "The final answer may be in implicit form $y^2 - x^2 = C$, suggesting implicit differentiation",
+        "why_wrong": "Implicit differentiation would verify the answer by differentiating, but the solving technique is separation of variables"
+      }
+    ],
+    "recognition_cue": "Despite the graphical start, the task is to solve $\\frac{dy}{dx} = \\frac{x}{y}$ analytically. Since $x$ and $y$ separate multiplicatively (rewrite as $y\\, dy = x\\, dx$), use separation of variables.",
+    "solution_steps": [
+      "From the slope field, the DE is $\\frac{dy}{dx} = \\frac{x}{y}$.",
+      "Separate: $y\\, dy = x\\, dx$.",
+      "Integrate: $\\frac{y^2}{2} = \\frac{x^2}{2} + C$.",
+      "Apply $(0, 2)$: $\\frac{4}{2} = 0 + C \\Rightarrow C = 2$.",
+      "Solution: $y^2 = x^2 + 4$, or $y = \\sqrt{x^2 + 4}$ (taking the positive root since $y(0) = 2 > 0$)."
+    ],
+    "answer": "$y = \\sqrt{x^2 + 4}$"
+  },
+  {
+    "id": "sv_004",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "separation_of_variables",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Given that $\\frac{dy}{dx} = \\frac{y + xy}{1 + x^2}$ and $y(0) = 3$, find $y(x)$. The right side may look like it requires the quotient rule, but examine its structure more carefully.",
+    "cue_tokens": ["$\\frac{dy}{dx}$", "find $y(x)$"],
+    "cue_aliases": ["solve", "differential equation"],
+    "technique_options": ["separation_of_variables", "quotient_rule", "implicit_differentiation", "chain_rule"],
+    "correct_technique": "separation_of_variables",
+    "common_misidentification": "quotient_rule",
+    "distractors": [
+      {
+        "concept": "quotient_rule",
+        "why_tempting": "The right side is a fraction $\\frac{y + xy}{1+x^2}$, which visually resembles a quotient rule expression",
+        "why_wrong": "The quotient rule differentiates ratios; here we factor the numerator as $y(1+x)$ to reveal the separable structure"
+      },
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "The equation mixes $x$ and $y$ terms in a complicated way, suggesting implicit methods",
+        "why_wrong": "After factoring, the DE is separable: $\\frac{dy}{y} = \\frac{1+x}{1+x^2}\\, dx$; no implicit differentiation is needed"
+      }
+    ],
+    "recognition_cue": "Factor the numerator: $y + xy = y(1+x)$. The DE becomes $\\frac{dy}{dx} = y \\cdot \\frac{1+x}{1+x^2}$, which is separable. The adversarial presentation disguises a clean factorization.",
+    "solution_steps": [
+      "Factor: $\\frac{dy}{dx} = y \\cdot \\frac{1+x}{1+x^2}$.",
+      "Separate: $\\frac{dy}{y} = \\frac{1+x}{1+x^2}\\, dx$.",
+      "Split the right side: $\\frac{1}{1+x^2}\\, dx + \\frac{x}{1+x^2}\\, dx$.",
+      "Integrate: $\\ln|y| = \\arctan(x) + \\frac{1}{2}\\ln(1+x^2) + C$.",
+      "Apply $y(0) = 3$: $\\ln 3 = 0 + 0 + C$, so $C = \\ln 3$.",
+      "Solution: $y = 3\\sqrt{1+x^2}\\, e^{\\arctan(x)}$."
+    ],
+    "answer": "$y = 3\\sqrt{1+x^2}\\, e^{\\arctan(x)}$"
+  },
+
+  {
+    "id": "sf_001",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "slope_fields",
+    "disguise_level": 1,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "A slope field is drawn for a differential equation. At every point, the line segments have slope equal to $\\frac{dy}{dx} = x - y$. Sketch the solution curve through $(0, 1)$ and describe its long-term behavior.",
+    "cue_tokens": ["slope field", "sketch", "solution curve"],
+    "cue_aliases": ["direction field", "draw the solution"],
+    "technique_options": ["slope_fields", "separation_of_variables", "linear_approximation", "eulers_method"],
+    "correct_technique": "slope_fields",
+    "common_misidentification": "separation_of_variables",
+    "distractors": [
+      {
+        "concept": "separation_of_variables",
+        "why_tempting": "Students may try to solve $\\frac{dy}{dx} = x - y$ analytically rather than using the slope field",
+        "why_wrong": "The problem asks to sketch using the slope field and describe behavior qualitatively, not to find a closed-form solution"
+      },
+      {
+        "concept": "eulers_method",
+        "why_tempting": "Both Euler's method and slope fields use the DE to trace solution curves step by step",
+        "why_wrong": "Euler's method computes numerical approximations; slope field analysis is qualitative and visual"
+      }
+    ],
+    "recognition_cue": "The problem explicitly mentions a slope field and asks to sketch a solution curve. This is a slope field analysis problem: follow the tangent segments from the initial point.",
+    "solution_steps": [
+      "At $(0,1)$: slope $= 0 - 1 = -1$. The curve starts heading downward.",
+      "Follow the field: as $y$ decreases toward the line $y = x - 1$, slopes approach 1.",
+      "The equilibrium occurs along $y = x - 1$ where $x - y = 1$ (constant positive slope).",
+      "Long-term behavior: the solution curve approaches $y = x - 1$ as $x \\to \\infty$."
+    ],
+    "answer": "The solution curve through $(0,1)$ initially decreases, then curves upward and asymptotically approaches $y = x - 1$."
+  },
+  {
+    "id": "sf_002",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "slope_fields",
+    "disguise_level": 2,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "Below are four direction fields (I, II, III, IV). Match the differential equation $\\frac{dy}{dx} = y(1 - y)$ to the correct direction field. In field I, slopes are zero along $y = 0$ and $y = 1$. In field II, slopes are zero only along $y = 0$. In field III, slopes depend only on $x$. In field IV, slopes are zero along $x = 0$ and $x = 1$.",
+    "cue_tokens": ["direction fields", "match"],
+    "cue_aliases": ["which slope field", "identify the field"],
+    "technique_options": ["slope_fields", "separation_of_variables", "f_fprime_fdoubleprime", "increasing_decreasing"],
+    "correct_technique": "slope_fields",
+    "common_misidentification": "increasing_decreasing",
+    "distractors": [
+      {
+        "concept": "increasing_decreasing",
+        "why_tempting": "Analyzing where $y(1-y) > 0$ or $< 0$ involves increasing/decreasing analysis of $y$",
+        "why_wrong": "Increasing/decreasing analysis applies to a given function's derivative; here we are matching a DE to its slope field representation"
+      },
+      {
+        "concept": "f_fprime_fdoubleprime",
+        "why_tempting": "Determining concavity of solution curves involves $f''$, connecting to $f/f'/f''$ analysis",
+        "why_wrong": "The task is matching the DE to a visual field, not analyzing higher-order derivative relationships"
+      }
+    ],
+    "recognition_cue": "Matching DEs to slope fields requires analyzing where slopes are zero, positive, or negative. For $\\frac{dy}{dx} = y(1-y)$, slopes are zero when $y = 0$ or $y = 1$, matching Field I.",
+    "solution_steps": [
+      "Find where $\\frac{dy}{dx} = 0$: $y(1-y) = 0 \\Rightarrow y = 0$ or $y = 1$.",
+      "The slope depends only on $y$, not on $x$: segments at the same height have the same slope.",
+      "Between $y = 0$ and $y = 1$: $y(1-y) > 0$ (positive slopes).",
+      "This matches Field I (zero slopes along $y = 0$ and $y = 1$)."
+    ],
+    "answer": "Field I"
+  },
+  {
+    "id": "sf_003",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "slope_fields",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A differential equation has the property that its slope field has horizontal segments ($\\frac{dy}{dx} = 0$) along the curve $y = x^2$. Which of the following DEs has this property?\n\n(A) $\\frac{dy}{dx} = y - x^2$ \n(B) $\\frac{dy}{dx} = x^2 - y$ \n(C) $\\frac{dy}{dx} = 2x$ \n(D) $\\frac{dy}{dx} = x^2 y$",
+    "cue_tokens": ["slope field", "horizontal segments", "$\\frac{dy}{dx} = 0$"],
+    "cue_aliases": ["direction field", "zero slopes"],
+    "technique_options": ["slope_fields", "relative_extrema", "increasing_decreasing", "implicit_differentiation"],
+    "correct_technique": "slope_fields",
+    "common_misidentification": "relative_extrema",
+    "distractors": [
+      {
+        "concept": "relative_extrema",
+        "why_tempting": "Horizontal tangent lines ($f'(c) = 0$) are associated with finding relative extrema",
+        "why_wrong": "Relative extrema analysis applies to a single function; here we analyze where a slope field has zero slopes to identify the correct DE"
+      },
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "The curve $y = x^2$ along which slopes are zero might suggest an implicit relationship to differentiate",
+        "why_wrong": "We are matching a slope field property to a DE, not differentiating an implicit equation"
+      }
+    ],
+    "recognition_cue": "The problem describes a slope field property (zero slopes along a specific curve) and asks which DE produces that field. Set $\\frac{dy}{dx} = 0$ and check which DE yields $y = x^2$.",
+    "solution_steps": [
+      "We need $\\frac{dy}{dx} = 0$ when $y = x^2$.",
+      "(A): $y - x^2 = 0$ when $y = x^2$. Check: $\\frac{dy}{dx} = 0$ along $y = x^2$. Yes!",
+      "(B): $x^2 - y = 0$ when $y = x^2$. Also gives zero. Both (A) and (B) have zero slopes along $y = x^2$.",
+      "Distinguish: both (A) and (B) satisfy the zero-slope condition. But note (A) and (B) are negatives of each other, so both have the same nullcline $y = x^2$. The answer is both (A) and (B). If only one is expected, either works; typically (A) is listed."
+    ],
+    "answer": "(A) $\\frac{dy}{dx} = y - x^2$ and (B) $\\frac{dy}{dx} = x^2 - y$ both have horizontal segments along $y = x^2$."
+  },
+  {
+    "id": "sf_004",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "slope_fields",
+    "disguise_level": 3,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The table gives the slope $\\frac{dy}{dx}$ at selected $(x, y)$ points for a differential equation:\n\n| | $y = -1$ | $y = 0$ | $y = 1$ | $y = 2$ |\n|---|---|---|---|---|\n| $x = 0$ | $-2$ | $0$ | $2$ | $4$ |\n| $x = 1$ | $-2$ | $0$ | $2$ | $4$ |\n| $x = 2$ | $-2$ | $0$ | $2$ | $4$ |\n\nFrom this data, determine the form of the differential equation and describe what the slope field looks like.",
+    "cue_tokens": ["slope", "slope field", "differential equation"],
+    "cue_aliases": ["direction field", "describe the field"],
+    "technique_options": ["slope_fields", "separation_of_variables", "f_fprime_fdoubleprime", "linear_approximation"],
+    "correct_technique": "slope_fields",
+    "common_misidentification": "separation_of_variables",
+    "distractors": [
+      {
+        "concept": "separation_of_variables",
+        "why_tempting": "Once the DE is identified, one might solve it using separation of variables",
+        "why_wrong": "The problem asks to identify the DE and describe the slope field, not to solve the DE"
+      },
+      {
+        "concept": "f_fprime_fdoubleprime",
+        "why_tempting": "The table of slope values at different points resembles a derivative table used in $f/f'/f''$ analysis",
+        "why_wrong": "This is a slope field in tabular form, not derivatives of a known function"
+      }
+    ],
+    "recognition_cue": "A table of slopes at grid points is a numerical representation of a slope field. The pattern (slopes depend only on $y$, not $x$) reveals the structure of the DE.",
+    "solution_steps": [
+      "Observe: slopes are the same across each row (independent of $x$). The DE depends only on $y$.",
+      "Read the pattern: slope $= 2y$ at each point (e.g., $y=-1 \\to -2$, $y=0 \\to 0$, $y=1 \\to 2$, $y=2 \\to 4$).",
+      "The DE is $\\frac{dy}{dx} = 2y$.",
+      "The slope field has horizontal segments along $y = 0$, upward-tilting segments for $y > 0$ (steeper as $y$ increases), and downward-tilting segments for $y < 0$. All segments at a given height are parallel (autonomous DE)."
+    ],
+    "answer": "The DE is $\\frac{dy}{dx} = 2y$. The slope field has horizontal nullcline at $y = 0$, with parallel segments at each height since slopes depend only on $y$."
+  },
+
+  {
+    "id": "em_001",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "eulers_method",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": true,
+    "scored": false,
+    "stem": "Use Euler's method with step size $\\Delta x = 0.5$ to approximate $y(2)$ if $\\frac{dy}{dx} = x + y$ and $y(0) = 1$.",
+    "cue_tokens": ["Euler's method", "step size", "approximate"],
+    "cue_aliases": ["Euler approximation", "numerical method"],
+    "technique_options": ["eulers_method", "slope_fields", "separation_of_variables", "linear_approximation"],
+    "correct_technique": "eulers_method",
+    "common_misidentification": "linear_approximation",
+    "distractors": [
+      {
+        "concept": "linear_approximation",
+        "why_tempting": "Each Euler step is essentially a linear approximation, and both use tangent line ideas",
+        "why_wrong": "Linear approximation gives a single tangent-line estimate; Euler's method iterates multiple linear steps to approximate a solution over an interval"
+      },
+      {
+        "concept": "separation_of_variables",
+        "why_tempting": "One might try to solve the DE exactly instead of approximating",
+        "why_wrong": "The problem explicitly asks for Euler's method, a numerical approximation technique"
+      }
+    ],
+    "recognition_cue": "The problem names Euler's method directly and provides a step size. The task is to iteratively compute $y_{n+1} = y_n + f(x_n, y_n) \\cdot \\Delta x$.",
+    "solution_steps": [
+      "Start: $(x_0, y_0) = (0, 1)$. $\\frac{dy}{dx} = 0 + 1 = 1$.",
+      "Step 1: $y_1 = 1 + 1(0.5) = 1.5$ at $x = 0.5$.",
+      "Step 2: slope $= 0.5 + 1.5 = 2$. $y_2 = 1.5 + 2(0.5) = 2.5$ at $x = 1.0$.",
+      "Step 3: slope $= 1.0 + 2.5 = 3.5$. $y_3 = 2.5 + 3.5(0.5) = 4.25$ at $x = 1.5$.",
+      "Step 4: slope $= 1.5 + 4.25 = 5.75$. $y_4 = 4.25 + 5.75(0.5) = 7.125$ at $x = 2.0$."
+    ],
+    "answer": "$y(2) \\approx 7.125$"
+  },
+  {
+    "id": "em_002",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "eulers_method",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": true,
+    "scored": false,
+    "stem": "Given the initial value problem $\\frac{dy}{dx} = \\sin(y)$ with $y(0) = \\frac{\\pi}{2}$, perform three iterations with $h = 0.25$ to estimate $y(0.75)$.",
+    "cue_tokens": ["iterations", "estimate", "$h = 0.25$"],
+    "cue_aliases": ["step through", "perform iterations"],
+    "technique_options": ["eulers_method", "separation_of_variables", "slope_fields", "riemann_sums"],
+    "correct_technique": "eulers_method",
+    "common_misidentification": "separation_of_variables",
+    "distractors": [
+      {
+        "concept": "separation_of_variables",
+        "why_tempting": "$\\frac{dy}{dx} = \\sin(y)$ is technically separable, and students may try to solve it exactly",
+        "why_wrong": "The problem asks for a numerical iteration with specified step size, not an exact solution"
+      },
+      {
+        "concept": "riemann_sums",
+        "why_tempting": "Performing iterations with a fixed step size to approximate an integral resembles Riemann sums",
+        "why_wrong": "Riemann sums approximate definite integrals; Euler's method approximates solutions to initial value problems"
+      }
+    ],
+    "recognition_cue": "'Perform iterations with $h = 0.25$' and 'estimate' signal a step-by-step numerical method. With an IVP given, this is Euler's method.",
+    "solution_steps": [
+      "Start: $(x_0, y_0) = (0, \\frac{\\pi}{2})$. Slope $= \\sin(\\frac{\\pi}{2}) = 1$.",
+      "Step 1: $y_1 = \\frac{\\pi}{2} + 1(0.25) = \\frac{\\pi}{2} + 0.25 \\approx 1.8208$ at $x = 0.25$.",
+      "Step 2: slope $= \\sin(1.8208) \\approx 0.9686$. $y_2 \\approx 1.8208 + 0.9686(0.25) \\approx 2.0629$ at $x = 0.50$.",
+      "Step 3: slope $= \\sin(2.0629) \\approx 0.8797$. $y_3 \\approx 2.0629 + 0.8797(0.25) \\approx 2.2828$ at $x = 0.75$."
+    ],
+    "answer": "$y(0.75) \\approx 2.283$"
+  },
+  {
+    "id": "em_003",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "eulers_method",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": true,
+    "scored": false,
+    "stem": "A student uses Euler's method on $\\frac{dy}{dx} = 2x - y$ with $y(1) = 0$ and $\\Delta x = 0.5$. They fill in the table below but left one entry blank:\n\n| $n$ | $x_n$ | $y_n$ | $\\frac{dy}{dx}$ at $(x_n, y_n)$ |\n|---|---|---|---|\n| 0 | 1.0 | 0 | 2 |\n| 1 | 1.5 | 1.0 | ? |\n| 2 | 2.0 | ? | |\n\nFill in the missing entries.",
+    "cue_tokens": ["Euler's method", "table", "fill in"],
+    "cue_aliases": ["complete the table", "missing values"],
+    "technique_options": ["eulers_method", "linear_approximation", "riemann_sums", "slope_fields"],
+    "correct_technique": "eulers_method",
+    "common_misidentification": "linear_approximation",
+    "distractors": [
+      {
+        "concept": "linear_approximation",
+        "why_tempting": "Filling in a table of approximate values resembles linear approximation at each step",
+        "why_wrong": "Linear approximation is a one-step tangent line idea; the table represents multiple Euler iterations"
+      },
+      {
+        "concept": "riemann_sums",
+        "why_tempting": "A table with step sizes and function values resembles a Riemann sum computation",
+        "why_wrong": "Riemann sums approximate integrals; this table tracks an Euler's method approximation of a DE solution"
+      }
+    ],
+    "recognition_cue": "A partially completed Euler's method table with $x_n$, $y_n$, and slope columns. The task is to continue the iteration: slope at $(x_n, y_n)$, then $y_{n+1} = y_n + \\text{slope} \\cdot \\Delta x$.",
+    "solution_steps": [
+      "At $(1.5, 1.0)$: slope $= 2(1.5) - 1.0 = 2.0$.",
+      "$y_2 = 1.0 + 2.0(0.5) = 2.0$ at $x = 2.0$."
+    ],
+    "answer": "Slope at $n=1$: $2.0$; $y_2 = 2.0$ at $x = 2.0$."
+  },
+  {
+    "id": "em_004",
+    "cluster": 5,
+    "cb_unit": 7,
+    "concept": "eulers_method",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": true,
+    "scored": false,
+    "stem": "Consider $\\frac{dy}{dx} = -2y$ with $y(0) = 10$. The exact solution is $y = 10e^{-2x}$. A student uses the tangent line at $(0, 10)$ to estimate $y(1) \\approx -10$. Explain why this estimate is so poor and describe a method that gives a better approximation by using smaller steps.",
+    "cue_tokens": ["tangent line", "smaller steps", "better approximation"],
+    "cue_aliases": ["improve the estimate", "iterative approximation"],
+    "technique_options": ["eulers_method", "linear_approximation", "slope_fields", "separation_of_variables"],
+    "correct_technique": "eulers_method",
+    "common_misidentification": "linear_approximation",
+    "distractors": [
+      {
+        "concept": "linear_approximation",
+        "why_tempting": "The student's approach is exactly linear approximation with one large step, and the problem criticizes it",
+        "why_wrong": "The improvement described (using smaller steps iteratively) is Euler's method, which refines linear approximation through multiple iterations"
+      },
+      {
+        "concept": "separation_of_variables",
+        "why_tempting": "The exact solution is given and was presumably found by separation of variables",
+        "why_wrong": "The question asks about a numerical improvement strategy, not the analytic solution method"
+      }
+    ],
+    "recognition_cue": "The problem contrasts a single tangent-line step (linear approximation) with the idea of 'smaller steps' for better accuracy. Breaking one large step into many small ones is the core idea of Euler's method.",
+    "solution_steps": [
+      "The student used one giant step of $\\Delta x = 1$: $y(1) \\approx 10 + (-20)(1) = -10$. The exact value is $10e^{-2} \\approx 1.353$.",
+      "The error occurs because the tangent line dramatically overshoots for large step sizes on a rapidly decaying exponential.",
+      "Euler's method with $\\Delta x = 0.25$ (4 steps): $y_1 = 10 + (-20)(0.25) = 5$; $y_2 = 5 + (-10)(0.25) = 2.5$; $y_3 = 2.5 + (-5)(0.25) = 1.25$; $y_4 = 1.25 + (-2.5)(0.25) = 0.625$.",
+      "The 4-step estimate $y(1) \\approx 0.625$ is much closer to $1.353$ than $-10$ was. Smaller $\\Delta x$ gives even better results."
+    ],
+    "answer": "The single-step estimate fails because the step size is too large for the rapidly changing function. Euler's method with $\\Delta x = 0.25$ gives $y(1) \\approx 0.625$, a much better approximation than $-10$."
+  },
+
+  {
+    "id": "pm_001",
+    "cluster": 5,
+    "cb_unit": 4,
+    "concept": "particle_motion",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A particle moves along the $x$-axis with velocity $v(t) = 3t^2 - 12t + 9$ for $t \\geq 0$. Find all times when the particle changes direction.",
+    "cue_tokens": ["particle", "velocity", "changes direction"],
+    "cue_aliases": ["when does the object reverse", "direction change"],
+    "technique_options": ["particle_motion", "relative_extrema", "increasing_decreasing", "ftc_part1"],
+    "correct_technique": "particle_motion",
+    "common_misidentification": "relative_extrema",
+    "distractors": [
+      {
+        "concept": "relative_extrema",
+        "why_tempting": "Finding where velocity equals zero and checking sign changes is procedurally identical to the first derivative test for extrema",
+        "why_wrong": "Relative extrema apply to optimizing a function; here $v(t) = 0$ with a sign change means the particle reverses direction, a motion concept"
+      },
+      {
+        "concept": "increasing_decreasing",
+        "why_tempting": "Analyzing sign changes of $v(t)$ resembles determining where a function increases or decreases",
+        "why_wrong": "The context is particle motion: $v(t)$ sign changes correspond to direction changes, not just monotonicity of position"
+      }
+    ],
+    "recognition_cue": "A particle's velocity is given and the question asks when it changes direction. Direction change occurs when $v(t) = 0$ and $v$ changes sign. This is the particle motion framework.",
+    "solution_steps": [
+      "Set $v(t) = 0$: $3t^2 - 12t + 9 = 0 \\Rightarrow 3(t-1)(t-3) = 0 \\Rightarrow t = 1, 3$.",
+      "Check sign changes: $v(0) = 9 > 0$; $v(2) = 12 - 24 + 9 = -3 < 0$; $v(4) = 48 - 48 + 9 = 9 > 0$.",
+      "Sign changes at both $t = 1$ (positive to negative) and $t = 3$ (negative to positive).",
+      "The particle changes direction at $t = 1$ and $t = 3$."
+    ],
+    "answer": "The particle changes direction at $t = 1$ and $t = 3$."
+  },
+  {
+    "id": "pm_002",
+    "cluster": 5,
+    "cb_unit": 4,
+    "concept": "particle_motion",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "An object moves along a line with acceleration $a(t) = 6t - 4$ and initial velocity $v(0) = 2$. Find the object's velocity function and determine when the object is speeding up.",
+    "cue_tokens": ["acceleration", "velocity", "speeding up"],
+    "cue_aliases": ["moving faster", "speed increasing"],
+    "technique_options": ["particle_motion", "increasing_decreasing", "ftc_part1", "related_rates"],
+    "correct_technique": "particle_motion",
+    "common_misidentification": "increasing_decreasing",
+    "distractors": [
+      {
+        "concept": "increasing_decreasing",
+        "why_tempting": "'Speeding up' sounds like increasing, which triggers first-derivative-test thinking",
+        "why_wrong": "Speeding up means speed (not velocity) is increasing, which occurs when velocity and acceleration have the same sign. This is a particle motion analysis, not a simple increasing/decreasing test."
+      },
+      {
+        "concept": "related_rates",
+        "why_tempting": "Velocity and acceleration are rates that depend on each other, resembling related rates",
+        "why_wrong": "Related rates involve multiple geometric or physical quantities changing simultaneously; here we analyze one particle's motion along a line"
+      }
+    ],
+    "recognition_cue": "Acceleration, velocity, and 'speeding up' are particle motion keywords. Speeding up means $v(t)$ and $a(t)$ share the same sign.",
+    "solution_steps": [
+      "Find $v(t) = \\int a(t)\\, dt = 3t^2 - 4t + C$. With $v(0) = 2$: $C = 2$, so $v(t) = 3t^2 - 4t + 2$.",
+      "Find when $v(t) = 0$: discriminant $= 16 - 24 = -8 < 0$. Since $v(0) = 2 > 0$, $v(t) > 0$ for all $t$.",
+      "Find when $a(t) > 0$: $6t - 4 > 0 \\Rightarrow t > \\frac{2}{3}$.",
+      "Speeding up when $v > 0$ and $a > 0$: for $t > \\frac{2}{3}$."
+    ],
+    "answer": "$v(t) = 3t^2 - 4t + 2$. The object is speeding up for $t > \\frac{2}{3}$."
+  },
+  {
+    "id": "pm_003",
+    "cluster": 5,
+    "cb_unit": 4,
+    "concept": "particle_motion",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": true,
+    "stem": "The graph of $v(t)$, the velocity of a particle moving along the $x$-axis, is shown for $0 \\leq t \\leq 6$. The graph is a piecewise linear function that goes from $v(0) = 4$ down to $v(2) = -2$, then up to $v(4) = 2$, then down to $v(6) = -1$. If $x(0) = 3$, find the position $x(6)$ and the total distance traveled.",
+    "cue_tokens": ["velocity", "position", "total distance"],
+    "cue_aliases": ["displacement", "how far did the particle travel"],
+    "technique_options": ["particle_motion", "area_between_curves", "riemann_sums", "ftc_part1"],
+    "correct_technique": "particle_motion",
+    "common_misidentification": "area_between_curves",
+    "distractors": [
+      {
+        "concept": "area_between_curves",
+        "why_tempting": "Computing the integral of $v(t)$ involves finding areas between the $v$-curve and the $t$-axis, which looks like area between curves",
+        "why_wrong": "The geometric area calculation serves the particle motion framework; the concept is displacement/distance from velocity, not area between arbitrary curves"
+      },
+      {
+        "concept": "riemann_sums",
+        "why_tempting": "Piecewise linear velocity could be approximated by rectangles",
+        "why_wrong": "The piecewise linear graph gives exact areas as triangles and trapezoids; no approximation is needed"
+      }
+    ],
+    "recognition_cue": "A velocity graph with a question about position and total distance is a particle motion problem. Displacement $= \\int v\\, dt$ (net signed area); total distance $= \\int |v|\\, dt$ (total unsigned area).",
+    "solution_steps": [
+      "Break into segments based on the piecewise linear graph. Find where $v = 0$: between $t=0$ and $t=2$, $v$ crosses zero. Linear from $(0,4)$ to $(2,-2)$: $v(t) = 4 - 3t$, so $v = 0$ at $t = \\frac{4}{3}$. Between $t=2$ and $t=4$, $v$ crosses zero: linear from $(2,-2)$ to $(4,2)$: $v(t) = -2 + 2(t-2) = 2t-6$, so $v=0$ at $t=3$. Between $t=4$ and $t=6$: linear from $(4,2)$ to $(6,-1)$: $v(t) = 2 - \\frac{3}{2}(t-4)$, so $v=0$ at $t = \\frac{16}{3}$.",
+      "Displacement $= \\int_0^6 v(t)\\, dt$. Use geometric areas of triangles/trapezoids: $[0, \\frac{4}{3}]$: triangle area $= \\frac{1}{2}(\\frac{4}{3})(4) = \\frac{8}{3}$ (positive). $[\\frac{4}{3}, 2]$: triangle area $= \\frac{1}{2}(\\frac{2}{3})(2) = \\frac{2}{3}$ (negative). $[2, 3]$: triangle area $= \\frac{1}{2}(1)(2) = 1$ (negative). $[3, 4]$: triangle area $= \\frac{1}{2}(1)(2) = 1$ (positive). $[4, \\frac{16}{3}]$: triangle area $= \\frac{1}{2}(\\frac{4}{3})(2) = \\frac{4}{3}$ (positive). $[\\frac{16}{3}, 6]$: triangle area $= \\frac{1}{2}(\\frac{2}{3})(1) = \\frac{1}{3}$ (negative).",
+      "Displacement $= \\frac{8}{3} - \\frac{2}{3} - 1 + 1 + \\frac{4}{3} - \\frac{1}{3} = \\frac{8 - 2 + 4 - 1}{3} + 0 = 3$.",
+      "Position: $x(6) = x(0) + 3 = 3 + 3 = 6$.",
+      "Total distance $= \\frac{8}{3} + \\frac{2}{3} + 1 + 1 + \\frac{4}{3} + \\frac{1}{3} = \\frac{15}{3} + 2 = 7$."
+    ],
+    "answer": "$x(6) = 6$; total distance traveled $= 7$."
+  },
+  {
+    "id": "pm_004",
+    "cluster": 5,
+    "cb_unit": 4,
+    "concept": "particle_motion",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The position of a particle is $x(t) = t^3 - 6t^2 + 9t + 1$. A student claims that since $x'(t) = 0$ at $t = 1$ and $t = 3$, these are inflection points of the motion. Identify the correct concept and what actually happens at these times.",
+    "cue_tokens": ["position", "$x'(t) = 0$", "inflection points"],
+    "cue_aliases": ["what happens when velocity is zero"],
+    "technique_options": ["particle_motion", "inflection_points", "relative_extrema", "concavity"],
+    "correct_technique": "particle_motion",
+    "common_misidentification": "inflection_points",
+    "distractors": [
+      {
+        "concept": "inflection_points",
+        "why_tempting": "The student explicitly claims these are inflection points, and the position function is a cubic which does have an inflection point",
+        "why_wrong": "Inflection points are where $x''(t) = 0$ with a concavity change (where $x''(t) = 6t - 12 = 0$, i.e., $t = 2$). The points $t = 1, 3$ where $x'(t) = 0$ are where the particle changes direction."
+      },
+      {
+        "concept": "relative_extrema",
+        "why_tempting": "Where $x'(t) = 0$ are indeed local extrema of the position function",
+        "why_wrong": "While $x(1)$ and $x(3)$ are local extrema of position, in the particle motion context these are direction-change points (the particle stops and reverses)"
+      }
+    ],
+    "recognition_cue": "Position function with velocity analysis: $x'(t) = v(t) = 0$ means the particle momentarily stops. In particle motion, these are direction-change points, not inflection points.",
+    "solution_steps": [
+      "$x'(t) = 3t^2 - 12t + 9 = 3(t-1)(t-3)$.",
+      "At $t = 1$: $v$ changes from positive to negative (particle reverses from moving right to moving left). Position: $x(1) = 1 - 6 + 9 + 1 = 5$ (local max of position).",
+      "At $t = 3$: $v$ changes from negative to positive (particle reverses from moving left to moving right). Position: $x(3) = 27 - 54 + 27 + 1 = 1$ (local min of position).",
+      "The actual inflection point of $x(t)$ is at $t = 2$ where $x''(t) = 6t - 12 = 0$ and concavity changes. In motion terms, this is where acceleration changes sign.",
+      "The student confused direction-change points (where velocity = 0) with inflection points (where acceleration = 0)."
+    ],
+    "answer": "The student is incorrect. At $t = 1$ and $t = 3$, the particle changes direction (velocity changes sign). The inflection point of $x(t)$ is at $t = 2$, where acceleration changes sign."
+  }
+]

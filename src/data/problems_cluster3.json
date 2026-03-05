@@ -1,0 +1,1110 @@
+[
+  {
+    "id": "pr_001",
+    "cluster": 3,
+    "cb_unit": 2,
+    "concept": "product_rule",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the derivative of $f(x) = x^2 \\sin(x)$.",
+    "cue_tokens": ["derivative", "product"],
+    "cue_aliases": ["differentiate", "find f'(x)"],
+    "technique_options": ["product_rule", "chain_rule", "quotient_rule", "implicit_differentiation"],
+    "correct_technique": "product_rule",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "The $\\sin(x)$ factor might suggest a composition of functions requiring the chain rule.",
+        "why_wrong": "There is no nested composition here; $x^2$ and $\\sin(x)$ are multiplied, not composed."
+      },
+      {
+        "concept": "quotient_rule",
+        "why_tempting": "Students sometimes rewrite products as fractions to use a familiar rule.",
+        "why_wrong": "The function is a product, not a quotient. Rewriting would add unnecessary complexity."
+      }
+    ],
+    "recognition_cue": "Two distinct functions are multiplied together: $x^2$ and $\\sin(x)$. Neither is the derivative of the other, so the product rule $(uv)' = u'v + uv'$ is required.",
+    "solution_steps": [
+      "Identify $u = x^2$ and $v = \\sin(x)$.",
+      "Compute $u' = 2x$ and $v' = \\cos(x)$.",
+      "Apply the product rule: $f'(x) = u'v + uv' = 2x\\sin(x) + x^2\\cos(x)$."
+    ],
+    "answer": "$f'(x) = 2x\\sin(x) + x^2\\cos(x)$"
+  },
+  {
+    "id": "pr_002",
+    "cluster": 3,
+    "cb_unit": 2,
+    "concept": "product_rule",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A particle's position is modeled by $s(t) = t^3 e^{-t}$. Determine an expression for the velocity of the particle at time $t$.",
+    "cue_tokens": ["velocity", "position"],
+    "cue_aliases": ["rate of change of position", "how fast"],
+    "technique_options": ["product_rule", "chain_rule", "related_rates", "derivative_as_rate"],
+    "correct_technique": "product_rule",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "The factor $e^{-t}$ involves a composition ($e^u$ where $u = -t$), suggesting the chain rule alone might suffice.",
+        "why_wrong": "While the chain rule is needed for $\\frac{d}{dt}e^{-t}$, the overall structure is a product of $t^3$ and $e^{-t}$, requiring the product rule as the primary technique."
+      },
+      {
+        "concept": "related_rates",
+        "why_tempting": "The word 'velocity' and the physical context might suggest a related-rates setup with multiple changing quantities.",
+        "why_wrong": "There is only one independent variable $t$. Related rates involve differentiating an equation that links two or more dependent quantities."
+      }
+    ],
+    "recognition_cue": "Velocity is the derivative of position, so $v(t) = s'(t)$. The expression $t^3 e^{-t}$ is a product of two functions of $t$, requiring the product rule.",
+    "solution_steps": [
+      "Recognize that velocity $= s'(t)$, and $s(t) = t^3 \\cdot e^{-t}$ is a product.",
+      "Let $u = t^3$, $v = e^{-t}$. Then $u' = 3t^2$, $v' = -e^{-t}$ (chain rule on the inner function $-t$).",
+      "Apply product rule: $s'(t) = 3t^2 e^{-t} + t^3(-e^{-t}) = 3t^2 e^{-t} - t^3 e^{-t}$.",
+      "Factor: $s'(t) = t^2 e^{-t}(3 - t)$."
+    ],
+    "answer": "$v(t) = t^2 e^{-t}(3 - t)$"
+  },
+  {
+    "id": "pr_003",
+    "cluster": 3,
+    "cb_unit": 2,
+    "concept": "product_rule",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": false,
+    "stem": "The table below gives selected values of differentiable functions $f$ and $g$ and their derivatives.\n\n| $x$ | $f(x)$ | $f'(x)$ | $g(x)$ | $g'(x)$ |\n|---|---|---|---|---|\n| 1 | 3 | $-2$ | 4 | 5 |\n| 2 | $-1$ | 0 | 2 | 3 |\n| 3 | 4 | 1 | $-1$ | $-2$ |\n\nLet $h(x) = f(x) \\cdot g(x)$. What is $h'(2)$?",
+    "cue_tokens": ["h'(2)", "product"],
+    "cue_aliases": ["derivative of the product at x = 2"],
+    "technique_options": ["product_rule", "chain_rule", "quotient_rule", "f_fprime_fdoubleprime"],
+    "correct_technique": "product_rule",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "Students may confuse the composition $f(g(x))$ with the product $f(x) \\cdot g(x)$ when reading the table.",
+        "why_wrong": "The definition $h(x) = f(x) \\cdot g(x)$ is explicitly a product, not a composition."
+      },
+      {
+        "concept": "f_fprime_fdoubleprime",
+        "why_tempting": "The table lists $f$, $f'$, $g$, and $g'$, which resembles the function-derivative relationship analysis tasks.",
+        "why_wrong": "The task is to compute a specific derivative using the product rule, not to analyze relationships between a function and its derivatives."
+      }
+    ],
+    "recognition_cue": "The function $h$ is defined as the product $f(x) \\cdot g(x)$. The table provides the exact numerical values needed to evaluate the product rule formula at $x = 2$.",
+    "solution_steps": [
+      "By the product rule, $h'(x) = f'(x)g(x) + f(x)g'(x)$.",
+      "Substitute values at $x = 2$: $f(2) = -1$, $f'(2) = 0$, $g(2) = 2$, $g'(2) = 3$.",
+      "$h'(2) = (0)(2) + (-1)(3) = 0 - 3 = -3$."
+    ],
+    "answer": "$h'(2) = -3$"
+  },
+  {
+    "id": "pr_004",
+    "cluster": 3,
+    "cb_unit": 2,
+    "concept": "product_rule",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $y = \\ln(x) \\cdot \\sqrt{x}$. Which differentiation technique is the primary method needed, and what is $\\frac{dy}{dx}$?",
+    "cue_tokens": ["differentiation technique", "dy/dx"],
+    "cue_aliases": ["derivative", "primary method"],
+    "technique_options": ["product_rule", "chain_rule", "quotient_rule", "implicit_differentiation"],
+    "correct_technique": "product_rule",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "$\\sqrt{x} = x^{1/2}$ is a power function and $\\ln(x)$ is a common inner function in chain-rule problems, which may lead students to see a composition.",
+        "why_wrong": "$\\ln(x)$ and $\\sqrt{x}$ are multiplied, not composed. A composition would look like $\\ln(\\sqrt{x})$ or $\\sqrt{\\ln x}$."
+      },
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "The notation $\\frac{dy}{dx}$ with a named variable $y$ might suggest an implicit relationship.",
+        "why_wrong": "$y$ is explicitly defined as a function of $x$. Implicit differentiation is used when $y$ cannot be isolated."
+      }
+    ],
+    "recognition_cue": "Despite the $\\frac{dy}{dx}$ notation suggesting implicit methods, $y$ is explicitly a product of $\\ln(x)$ and $\\sqrt{x}$. The product rule is the primary technique.",
+    "solution_steps": [
+      "Let $u = \\ln(x)$ and $v = x^{1/2}$.",
+      "Compute $u' = \\frac{1}{x}$ and $v' = \\frac{1}{2}x^{-1/2}$.",
+      "Product rule: $\\frac{dy}{dx} = \\frac{1}{x} \\cdot x^{1/2} + \\ln(x) \\cdot \\frac{1}{2}x^{-1/2}$.",
+      "Simplify: $\\frac{dy}{dx} = x^{-1/2} + \\frac{\\ln(x)}{2\\sqrt{x}} = \\frac{1}{\\sqrt{x}} + \\frac{\\ln(x)}{2\\sqrt{x}} = \\frac{2 + \\ln(x)}{2\\sqrt{x}}$."
+    ],
+    "answer": "$\\frac{dy}{dx} = \\frac{2 + \\ln(x)}{2\\sqrt{x}}$"
+  },
+
+  {
+    "id": "qr_001",
+    "cluster": 3,
+    "cb_unit": 2,
+    "concept": "quotient_rule",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the derivative of $f(x) = \\frac{x^2 + 1}{x - 3}$.",
+    "cue_tokens": ["derivative", "fraction", "quotient"],
+    "cue_aliases": ["differentiate", "find f'(x)"],
+    "technique_options": ["quotient_rule", "product_rule", "chain_rule", "implicit_differentiation"],
+    "correct_technique": "quotient_rule",
+    "common_misidentification": "product_rule",
+    "distractors": [
+      {
+        "concept": "product_rule",
+        "why_tempting": "Students may rewrite the fraction as $(x^2+1)(x-3)^{-1}$ and attempt the product rule instead.",
+        "why_wrong": "While mathematically valid, the quotient rule is the direct primary technique for a function written as a ratio. The product-rule approach also requires the chain rule on $(x-3)^{-1}$."
+      },
+      {
+        "concept": "chain_rule",
+        "why_tempting": "The denominator $(x-3)$ could be seen as an inner function in a composition.",
+        "why_wrong": "There is no overall composition; the function is a ratio. The chain rule alone does not handle quotients."
+      }
+    ],
+    "recognition_cue": "The function is explicitly written as a fraction $\\frac{\\text{top}}{\\text{bottom}}$ where both numerator and denominator depend on $x$. This is the textbook signal for the quotient rule.",
+    "solution_steps": [
+      "Identify $u = x^2 + 1$ and $v = x - 3$.",
+      "Compute $u' = 2x$ and $v' = 1$.",
+      "Apply quotient rule: $f'(x) = \\frac{u'v - uv'}{v^2} = \\frac{2x(x-3) - (x^2+1)(1)}{(x-3)^2}$.",
+      "Expand numerator: $2x^2 - 6x - x^2 - 1 = x^2 - 6x - 1$.",
+      "$f'(x) = \\frac{x^2 - 6x - 1}{(x-3)^2}$."
+    ],
+    "answer": "$f'(x) = \\frac{x^2 - 6x - 1}{(x-3)^2}$"
+  },
+  {
+    "id": "qr_002",
+    "cluster": 3,
+    "cb_unit": 2,
+    "concept": "quotient_rule",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The concentration of a drug in the bloodstream $t$ hours after injection is given by $C(t) = \\frac{5t}{t^2 + 4}$ mg/L. Determine the rate at which the concentration is changing at time $t$.",
+    "cue_tokens": ["rate", "changing", "concentration"],
+    "cue_aliases": ["how fast is the concentration changing", "C'(t)"],
+    "technique_options": ["quotient_rule", "product_rule", "related_rates", "chain_rule"],
+    "correct_technique": "quotient_rule",
+    "common_misidentification": "related_rates",
+    "distractors": [
+      {
+        "concept": "related_rates",
+        "why_tempting": "The phrase 'rate at which the concentration is changing' sounds like a related-rates problem involving multiple changing quantities.",
+        "why_wrong": "There is only one independent variable $t$. The task is simply to differentiate $C(t)$, which is a quotient."
+      },
+      {
+        "concept": "product_rule",
+        "why_tempting": "Rewriting as $5t \\cdot (t^2+4)^{-1}$ makes it look like a product.",
+        "why_wrong": "While possible, the natural form is a quotient, and the quotient rule applies directly without needing the chain rule as well."
+      }
+    ],
+    "recognition_cue": "The function $C(t)$ is given as a fraction where both the numerator $5t$ and the denominator $t^2 + 4$ depend on $t$. The quotient rule is the direct technique.",
+    "solution_steps": [
+      "Let $u = 5t$ and $v = t^2 + 4$. Then $u' = 5$ and $v' = 2t$.",
+      "Apply quotient rule: $C'(t) = \\frac{5(t^2+4) - 5t(2t)}{(t^2+4)^2}$.",
+      "Simplify numerator: $5t^2 + 20 - 10t^2 = -5t^2 + 20 = 5(4 - t^2)$.",
+      "$C'(t) = \\frac{5(4 - t^2)}{(t^2 + 4)^2}$."
+    ],
+    "answer": "$C'(t) = \\frac{5(4 - t^2)}{(t^2 + 4)^2}$"
+  },
+  {
+    "id": "qr_003",
+    "cluster": 3,
+    "cb_unit": 2,
+    "concept": "quotient_rule",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": false,
+    "stem": "The differentiable functions $p$ and $q$ have values given in the table below.\n\n| $x$ | $p(x)$ | $p'(x)$ | $q(x)$ | $q'(x)$ |\n|---|---|---|---|---|\n| 1 | 2 | 3 | 4 | $-1$ |\n| 2 | 5 | $-2$ | 1 | 6 |\n\nLet $r(x) = \\frac{p(x)}{q(x)}$. Find $r'(1)$.",
+    "cue_tokens": ["r'(1)", "quotient"],
+    "cue_aliases": ["derivative of the ratio at x = 1"],
+    "technique_options": ["quotient_rule", "product_rule", "chain_rule", "f_fprime_fdoubleprime"],
+    "correct_technique": "quotient_rule",
+    "common_misidentification": "product_rule",
+    "distractors": [
+      {
+        "concept": "product_rule",
+        "why_tempting": "Tables with $f$, $f'$, $g$, $g'$ values appear in both product-rule and quotient-rule problems, and students may default to the product rule.",
+        "why_wrong": "The function $r$ is defined as a ratio $\\frac{p}{q}$, not a product. The quotient-rule formula must be used."
+      },
+      {
+        "concept": "f_fprime_fdoubleprime",
+        "why_tempting": "The table provides function and derivative values, which resembles $f$/$f'$/$f''$ analysis problems.",
+        "why_wrong": "The goal is to compute a derivative using the quotient rule at a specific point, not to analyze function behavior from derivative relationships."
+      }
+    ],
+    "recognition_cue": "$r(x)$ is explicitly defined as $\\frac{p(x)}{q(x)}$, a quotient. The table gives numerical values so that the quotient rule formula can be evaluated at $x = 1$.",
+    "solution_steps": [
+      "By the quotient rule, $r'(x) = \\frac{p'(x)q(x) - p(x)q'(x)}{[q(x)]^2}$.",
+      "At $x = 1$: $p(1) = 2$, $p'(1) = 3$, $q(1) = 4$, $q'(1) = -1$.",
+      "$r'(1) = \\frac{(3)(4) - (2)(-1)}{4^2} = \\frac{12 + 2}{16} = \\frac{14}{16} = \\frac{7}{8}$."
+    ],
+    "answer": "$r'(1) = \\frac{7}{8}$"
+  },
+  {
+    "id": "qr_004",
+    "cluster": 3,
+    "cb_unit": 2,
+    "concept": "quotient_rule",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $g(x) = \\frac{e^x}{1 + e^x}$. A student claims the derivative can be found using only the chain rule because $g$ can be viewed as a composition. Identify the correct primary technique and find $g'(x)$.",
+    "cue_tokens": ["derivative", "correct technique"],
+    "cue_aliases": ["find g'(x)", "differentiate"],
+    "technique_options": ["quotient_rule", "chain_rule", "product_rule", "implicit_differentiation"],
+    "correct_technique": "quotient_rule",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "The function $\\frac{e^x}{1+e^x}$ resembles the logistic function $\\frac{1}{1+e^{-x}}$, which can be differentiated via the chain rule. The problem even primes you to consider this.",
+        "why_wrong": "As written, the function is a quotient where both top and bottom depend on $x$. The quotient rule is the most direct approach."
+      },
+      {
+        "concept": "product_rule",
+        "why_tempting": "Rewriting as $e^x(1+e^x)^{-1}$ is a product form.",
+        "why_wrong": "While valid, the natural presentation as a fraction makes the quotient rule the primary identification. The product-rule rewrite also requires the chain rule on the second factor."
+      }
+    ],
+    "recognition_cue": "The function is presented as a fraction where both numerator ($e^x$) and denominator ($1 + e^x$) depend on $x$. Despite the adversarial suggestion of the chain rule, the quotient rule is the direct primary technique.",
+    "solution_steps": [
+      "Let $u = e^x$ and $v = 1 + e^x$. Then $u' = e^x$ and $v' = e^x$.",
+      "Quotient rule: $g'(x) = \\frac{e^x(1+e^x) - e^x \\cdot e^x}{(1+e^x)^2}$.",
+      "Simplify numerator: $e^x + e^{2x} - e^{2x} = e^x$.",
+      "$g'(x) = \\frac{e^x}{(1+e^x)^2}$."
+    ],
+    "answer": "$g'(x) = \\frac{e^x}{(1+e^x)^2}$"
+  },
+
+  {
+    "id": "cr_001",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "chain_rule",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the derivative of $f(x) = \\sin(3x^2 + 1)$.",
+    "cue_tokens": ["derivative", "composite function"],
+    "cue_aliases": ["differentiate", "find f'(x)"],
+    "technique_options": ["chain_rule", "product_rule", "quotient_rule", "u_substitution"],
+    "correct_technique": "chain_rule",
+    "common_misidentification": "product_rule",
+    "distractors": [
+      {
+        "concept": "product_rule",
+        "why_tempting": "Students may incorrectly view $\\sin$ and $3x^2 + 1$ as two separate factors being multiplied.",
+        "why_wrong": "$\\sin(3x^2+1)$ is a composition: the sine function applied to the inner function $3x^2+1$. The argument is inside the function, not multiplied by it."
+      },
+      {
+        "concept": "u_substitution",
+        "why_tempting": "The inner function $3x^2 + 1$ looks like a $u$-substitution candidate.",
+        "why_wrong": "$u$-substitution is an integration technique. For differentiation of compositions, the chain rule is the correct tool."
+      }
+    ],
+    "recognition_cue": "A function is applied to another function: $\\sin(\\text{something})$ where the 'something' is itself a function of $x$. This nesting signals the chain rule.",
+    "solution_steps": [
+      "Identify outer function $\\sin(u)$ and inner function $u = 3x^2 + 1$.",
+      "Differentiate outer: $\\cos(u)$. Differentiate inner: $u' = 6x$.",
+      "Chain rule: $f'(x) = \\cos(3x^2 + 1) \\cdot 6x = 6x\\cos(3x^2 + 1)$."
+    ],
+    "answer": "$f'(x) = 6x\\cos(3x^2 + 1)$"
+  },
+  {
+    "id": "cr_002",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "chain_rule",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "The temperature in a room $t$ minutes after a heater is turned on is modeled by $T(t) = 68 + 12(1 - e^{-0.05t})$ degrees Fahrenheit. How fast is the temperature changing at time $t$?",
+    "cue_tokens": ["how fast", "changing", "rate"],
+    "cue_aliases": ["T'(t)", "rate of change of temperature"],
+    "technique_options": ["chain_rule", "product_rule", "related_rates", "derivative_as_rate"],
+    "correct_technique": "chain_rule",
+    "common_misidentification": "related_rates",
+    "distractors": [
+      {
+        "concept": "related_rates",
+        "why_tempting": "The phrasing 'how fast is the temperature changing' in a physical context sounds like a related-rates problem.",
+        "why_wrong": "There is only one independent variable $t$, and $T$ is explicitly given as a function of $t$. Related rates involve differentiating an equation linking multiple dependent variables."
+      },
+      {
+        "concept": "product_rule",
+        "why_tempting": "The expression $12(1 - e^{-0.05t})$ might look like a product of $12$ and the parenthetical expression.",
+        "why_wrong": "$12$ is a constant multiplier, not a function of $t$. The key operation is the chain rule on $e^{-0.05t}$."
+      }
+    ],
+    "recognition_cue": "The expression $e^{-0.05t}$ is a composition: the exponential function applied to the inner function $-0.05t$. The chain rule is needed to differentiate this term.",
+    "solution_steps": [
+      "Distribute: $T(t) = 68 + 12 - 12e^{-0.05t} = 80 - 12e^{-0.05t}$.",
+      "Differentiate using the chain rule on $e^{-0.05t}$: the derivative of $e^u$ is $e^u \\cdot u'$ where $u = -0.05t$, so $u' = -0.05$.",
+      "$T'(t) = 0 - 12 \\cdot e^{-0.05t} \\cdot (-0.05) = 0.6e^{-0.05t}$."
+    ],
+    "answer": "$T'(t) = 0.6e^{-0.05t}$"
+  },
+  {
+    "id": "cr_003",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "chain_rule",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": false,
+    "stem": "The differentiable functions $f$ and $g$ have values given below.\n\n| $x$ | $f(x)$ | $f'(x)$ | $g(x)$ | $g'(x)$ |\n|---|---|---|---|---|\n| 1 | 3 | 4 | 2 | $-1$ |\n| 2 | 1 | $-3$ | 1 | 5 |\n| 3 | 2 | 7 | 3 | 2 |\n\nLet $h(x) = f(g(x))$. Find $h'(1)$.",
+    "cue_tokens": ["h'(1)", "composition", "f(g(x))"],
+    "cue_aliases": ["derivative of the composite at x = 1"],
+    "technique_options": ["chain_rule", "product_rule", "quotient_rule", "f_fprime_fdoubleprime"],
+    "correct_technique": "chain_rule",
+    "common_misidentification": "product_rule",
+    "distractors": [
+      {
+        "concept": "product_rule",
+        "why_tempting": "The table format with $f$, $f'$, $g$, $g'$ is also used in product-rule table problems, and students may default to $f' \\cdot g + f \\cdot g'$.",
+        "why_wrong": "$h(x) = f(g(x))$ is a composition, not a product $f(x) \\cdot g(x)$. The chain rule formula $h'(x) = f'(g(x)) \\cdot g'(x)$ is required."
+      },
+      {
+        "concept": "f_fprime_fdoubleprime",
+        "why_tempting": "The table lists function and derivative values, which may appear to be a function/derivative relationship question.",
+        "why_wrong": "The task asks for a specific derivative computation using the chain rule, not for analysis of how $f$, $f'$, and $f''$ relate."
+      }
+    ],
+    "recognition_cue": "$h(x) = f(g(x))$ is a composition of $f$ and $g$. The chain rule gives $h'(x) = f'(g(x)) \\cdot g'(x)$. The table supplies the numerical values needed.",
+    "solution_steps": [
+      "By the chain rule, $h'(x) = f'(g(x)) \\cdot g'(x)$.",
+      "At $x = 1$: $g(1) = 2$ and $g'(1) = -1$.",
+      "So $h'(1) = f'(g(1)) \\cdot g'(1) = f'(2) \\cdot (-1) = (-3)(-1) = 3$."
+    ],
+    "answer": "$h'(1) = 3$"
+  },
+  {
+    "id": "cr_004",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "chain_rule",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Differentiate $y = \\left(\\frac{x+1}{x-1}\\right)^3$. A student begins by applying the quotient rule. Is the quotient rule the primary technique needed?",
+    "cue_tokens": ["differentiate", "primary technique"],
+    "cue_aliases": ["find dy/dx", "which rule first"],
+    "technique_options": ["chain_rule", "quotient_rule", "product_rule", "implicit_differentiation"],
+    "correct_technique": "chain_rule",
+    "common_misidentification": "quotient_rule",
+    "distractors": [
+      {
+        "concept": "quotient_rule",
+        "why_tempting": "The expression inside the parentheses is a fraction, and the problem even mentions a student starting with the quotient rule.",
+        "why_wrong": "The outermost operation is raising a quantity to the third power: $(\\text{something})^3$. The chain rule must be applied first; the quotient rule is used for the inner derivative."
+      },
+      {
+        "concept": "product_rule",
+        "why_tempting": "Expanding the cube might suggest working with multiple factors.",
+        "why_wrong": "Expanding $(\\frac{x+1}{x-1})^3$ would be algebraically messy and unnecessary. The chain rule with the power rule handles the outer function directly."
+      }
+    ],
+    "recognition_cue": "The outermost structure is a power: $(\\text{inside})^3$. The chain rule must be applied first as the primary technique (power rule on the outside, then derivative of the inside). The quotient rule is secondary, used only for the inner derivative.",
+    "solution_steps": [
+      "Let $u = \\frac{x+1}{x-1}$, so $y = u^3$.",
+      "Chain rule (outer): $\\frac{dy}{dx} = 3u^2 \\cdot \\frac{du}{dx}$.",
+      "Quotient rule (inner): $\\frac{du}{dx} = \\frac{(1)(x-1)-(x+1)(1)}{(x-1)^2} = \\frac{-2}{(x-1)^2}$.",
+      "Combine: $\\frac{dy}{dx} = 3\\left(\\frac{x+1}{x-1}\\right)^2 \\cdot \\frac{-2}{(x-1)^2} = \\frac{-6(x+1)^2}{(x-1)^4}$."
+    ],
+    "answer": "$\\frac{dy}{dx} = \\frac{-6(x+1)^2}{(x-1)^4}$"
+  },
+
+  {
+    "id": "imd_001",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "implicit_differentiation",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find $\\frac{dy}{dx}$ by implicit differentiation: $x^2 + y^2 = 25$.",
+    "cue_tokens": ["implicit differentiation", "dy/dx"],
+    "cue_aliases": ["differentiate implicitly", "find the derivative"],
+    "technique_options": ["implicit_differentiation", "chain_rule", "quotient_rule", "related_rates"],
+    "correct_technique": "implicit_differentiation",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "Differentiating $y^2$ with respect to $x$ does use the chain rule ($2y \\cdot \\frac{dy}{dx}$), which may lead students to label this a chain-rule problem.",
+        "why_wrong": "The chain rule is a component used within implicit differentiation, but the overarching technique is implicit differentiation because $y$ is not isolated as a function of $x$."
+      },
+      {
+        "concept": "related_rates",
+        "why_tempting": "The equation $x^2 + y^2 = 25$ links two variables, which is similar to related-rates setups.",
+        "why_wrong": "Related rates involve both $x$ and $y$ changing with respect to a third variable (usually time $t$). Here we differentiate with respect to $x$ directly."
+      }
+    ],
+    "recognition_cue": "The equation $x^2 + y^2 = 25$ defines $y$ implicitly. Since $y$ is not (or cannot easily be) solved for explicitly, both sides must be differentiated with respect to $x$, treating $y$ as a function of $x$.",
+    "solution_steps": [
+      "Differentiate both sides with respect to $x$: $2x + 2y\\frac{dy}{dx} = 0$.",
+      "Solve for $\\frac{dy}{dx}$: $2y\\frac{dy}{dx} = -2x$.",
+      "$\\frac{dy}{dx} = \\frac{-x}{y}$."
+    ],
+    "answer": "$\\frac{dy}{dx} = -\\frac{x}{y}$"
+  },
+  {
+    "id": "imd_002",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "implicit_differentiation",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A curve is defined by the equation $x^3 + y^3 = 6xy$. Determine the slope of the tangent line to this curve at any point $(x, y)$ on the curve.",
+    "cue_tokens": ["slope", "tangent line", "curve defined by"],
+    "cue_aliases": ["dy/dx", "derivative along the curve"],
+    "technique_options": ["implicit_differentiation", "chain_rule", "product_rule", "linear_approximation"],
+    "correct_technique": "implicit_differentiation",
+    "common_misidentification": "product_rule",
+    "distractors": [
+      {
+        "concept": "product_rule",
+        "why_tempting": "The right side $6xy$ is a product of $x$ and $y$, and differentiating it does require the product rule.",
+        "why_wrong": "The product rule is used as a sub-step when differentiating $6xy$. The primary technique is implicit differentiation because $y$ cannot be isolated from $x^3 + y^3 = 6xy$."
+      },
+      {
+        "concept": "linear_approximation",
+        "why_tempting": "The mention of 'tangent line' might suggest linear approximation.",
+        "why_wrong": "Linear approximation uses a known derivative to approximate function values. Here we must first find the derivative via implicit differentiation."
+      }
+    ],
+    "recognition_cue": "The equation $x^3 + y^3 = 6xy$ cannot be solved for $y$ in closed form. Finding the slope requires differentiating both sides with respect to $x$, treating $y$ as an implicit function of $x$.",
+    "solution_steps": [
+      "Differentiate both sides: $3x^2 + 3y^2\\frac{dy}{dx} = 6y + 6x\\frac{dy}{dx}$ (using product rule on $6xy$).",
+      "Collect $\\frac{dy}{dx}$ terms: $3y^2\\frac{dy}{dx} - 6x\\frac{dy}{dx} = 6y - 3x^2$.",
+      "Factor: $\\frac{dy}{dx}(3y^2 - 6x) = 6y - 3x^2$.",
+      "$\\frac{dy}{dx} = \\frac{6y - 3x^2}{3y^2 - 6x} = \\frac{2y - x^2}{y^2 - 2x}$."
+    ],
+    "answer": "$\\frac{dy}{dx} = \\frac{2y - x^2}{y^2 - 2x}$"
+  },
+  {
+    "id": "imd_003",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "implicit_differentiation",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Given that $\\sin(xy) = x$, find $\\frac{dy}{dx}$. Note that the equation involves a product $xy$ inside a trig function.",
+    "cue_tokens": ["dy/dx", "equation involving x and y"],
+    "cue_aliases": ["find the derivative", "differentiate the relation"],
+    "technique_options": ["implicit_differentiation", "chain_rule", "product_rule", "inverse_function_derivatives"],
+    "correct_technique": "implicit_differentiation",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "Differentiating $\\sin(xy)$ requires the chain rule on the outer $\\sin$ function, which is very prominent.",
+        "why_wrong": "The chain rule is needed as a sub-step, but the primary technique is implicit differentiation because $y$ is implicitly defined by the equation $\\sin(xy) = x$."
+      },
+      {
+        "concept": "inverse_function_derivatives",
+        "why_tempting": "One might try to write $y = \\frac{\\arcsin(x)}{x}$ and differentiate using inverse trig derivative formulas.",
+        "why_wrong": "While algebraically possible, the problem calls for implicit differentiation of the original equation. The inverse approach introduces additional complexity."
+      }
+    ],
+    "recognition_cue": "The equation $\\sin(xy) = x$ mixes $x$ and $y$ in a way that $y$ cannot be cleanly isolated. Implicit differentiation is needed, using the chain rule and product rule as sub-steps.",
+    "solution_steps": [
+      "Differentiate both sides with respect to $x$: $\\cos(xy) \\cdot \\frac{d}{dx}(xy) = 1$.",
+      "Apply the product rule to $xy$: $\\frac{d}{dx}(xy) = y + x\\frac{dy}{dx}$.",
+      "So $\\cos(xy)\\left(y + x\\frac{dy}{dx}\\right) = 1$.",
+      "Expand: $y\\cos(xy) + x\\cos(xy)\\frac{dy}{dx} = 1$.",
+      "Solve: $\\frac{dy}{dx} = \\frac{1 - y\\cos(xy)}{x\\cos(xy)}$."
+    ],
+    "answer": "$\\frac{dy}{dx} = \\frac{1 - y\\cos(xy)}{x\\cos(xy)}$"
+  },
+  {
+    "id": "imd_004",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "implicit_differentiation",
+    "disguise_level": 3,
+    "representation": "verbal",
+    "calculator_allowed": false,
+    "stem": "An ellipse has the equation $\\frac{x^2}{9} + \\frac{y^2}{4} = 1$. A point moves along the ellipse. What is the slope of the ellipse at the point $(x, y)$? Express your answer in terms of $x$ and $y$.",
+    "cue_tokens": ["slope", "ellipse", "equation"],
+    "cue_aliases": ["tangent slope", "dy/dx on the curve"],
+    "technique_options": ["implicit_differentiation", "quotient_rule", "chain_rule", "related_rates"],
+    "correct_technique": "implicit_differentiation",
+    "common_misidentification": "related_rates",
+    "distractors": [
+      {
+        "concept": "related_rates",
+        "why_tempting": "The phrase 'a point moves along the ellipse' suggests quantities changing over time, which is a classic related-rates cue.",
+        "why_wrong": "The question asks for the slope $\\frac{dy}{dx}$, not for how $x$ or $y$ change with time. The motion description is context, not a signal for related rates."
+      },
+      {
+        "concept": "quotient_rule",
+        "why_tempting": "The terms $\\frac{x^2}{9}$ and $\\frac{y^2}{4}$ are fractions, potentially suggesting the quotient rule.",
+        "why_wrong": "These are constants dividing variable terms ($\\frac{1}{9}x^2$ and $\\frac{1}{4}y^2$), not quotients of two functions. Simple power rule suffices for each term within implicit differentiation."
+      }
+    ],
+    "recognition_cue": "The equation $\\frac{x^2}{9} + \\frac{y^2}{4} = 1$ implicitly defines $y$ as a function of $x$. The slope of the curve is $\\frac{dy}{dx}$, found by implicit differentiation.",
+    "solution_steps": [
+      "Differentiate both sides with respect to $x$: $\\frac{2x}{9} + \\frac{2y}{4}\\frac{dy}{dx} = 0$.",
+      "Simplify: $\\frac{2x}{9} + \\frac{y}{2}\\frac{dy}{dx} = 0$.",
+      "Solve: $\\frac{dy}{dx} = -\\frac{2x/9}{y/2} = -\\frac{4x}{9y}$."
+    ],
+    "answer": "$\\frac{dy}{dx} = -\\frac{4x}{9y}$"
+  },
+
+  {
+    "id": "ifd_001",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "inverse_function_derivatives",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "If $f(x) = x^3 + x$ and $f$ is one-to-one, find $(f^{-1})'(2)$.",
+    "cue_tokens": ["inverse function", "derivative", "(f^{-1})'"],
+    "cue_aliases": ["derivative of the inverse", "inverse derivative"],
+    "technique_options": ["inverse_function_derivatives", "chain_rule", "implicit_differentiation", "quotient_rule"],
+    "correct_technique": "inverse_function_derivatives",
+    "common_misidentification": "implicit_differentiation",
+    "distractors": [
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "One way to find inverse derivatives is to write $y = f^{-1}(x)$, then $f(y) = x$, and differentiate implicitly. Students may label this as implicit differentiation.",
+        "why_wrong": "While implicit differentiation can be a sub-step, the key concept being tested is the inverse function derivative formula $(f^{-1})'(b) = \\frac{1}{f'(a)}$ where $f(a) = b$."
+      },
+      {
+        "concept": "chain_rule",
+        "why_tempting": "The inverse function derivative formula $\\frac{1}{f'(f^{-1}(x))}$ involves a composition, suggesting the chain rule.",
+        "why_wrong": "The chain rule is the theoretical basis for the formula, but the technique being applied is specifically the inverse function derivative theorem."
+      }
+    ],
+    "recognition_cue": "The problem asks for the derivative of $f^{-1}$ at a point. The formula $(f^{-1})'(b) = \\frac{1}{f'(a)}$ where $f(a) = b$ is the key technique.",
+    "solution_steps": [
+      "Find $a$ such that $f(a) = 2$: solve $a^3 + a = 2$. Testing $a = 1$: $1 + 1 = 2$. So $a = 1$.",
+      "Compute $f'(x) = 3x^2 + 1$, so $f'(1) = 3 + 1 = 4$.",
+      "Apply the inverse function derivative formula: $(f^{-1})'(2) = \\frac{1}{f'(1)} = \\frac{1}{4}$."
+    ],
+    "answer": "$(f^{-1})'(2) = \\frac{1}{4}$"
+  },
+  {
+    "id": "ifd_002",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "inverse_function_derivatives",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $g$ be a differentiable, one-to-one function with $g(3) = 7$ and $g'(3) = 5$. If $h = g^{-1}$, what is $h'(7)$?",
+    "cue_tokens": ["inverse", "h'(7)", "one-to-one"],
+    "cue_aliases": ["derivative of the inverse function at 7"],
+    "technique_options": ["inverse_function_derivatives", "chain_rule", "quotient_rule", "implicit_differentiation"],
+    "correct_technique": "inverse_function_derivatives",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "Since $g(g^{-1}(x)) = x$, differentiating this identity uses the chain rule, and students might think the chain rule is the primary technique.",
+        "why_wrong": "The chain rule derivation leads to the inverse function derivative formula. The problem is directly asking you to apply that formula, which is the specific technique."
+      },
+      {
+        "concept": "quotient_rule",
+        "why_tempting": "The answer $\\frac{1}{g'(3)}$ is a fraction, and students sometimes associate fractions with the quotient rule.",
+        "why_wrong": "The fraction $\\frac{1}{g'(3)}$ comes from the inverse function derivative formula, not from differentiating a ratio of two functions."
+      }
+    ],
+    "recognition_cue": "$h = g^{-1}$, and we want $h'(7)$. Since $g(3) = 7$, the inverse function derivative formula gives $h'(7) = (g^{-1})'(7) = \\frac{1}{g'(3)}$.",
+    "solution_steps": [
+      "Identify that $h = g^{-1}$, so $h'(7) = (g^{-1})'(7)$.",
+      "Since $g(3) = 7$, the point $a = 3$ maps to $b = 7$.",
+      "$(g^{-1})'(7) = \\frac{1}{g'(3)} = \\frac{1}{5}$."
+    ],
+    "answer": "$h'(7) = \\frac{1}{5}$"
+  },
+  {
+    "id": "ifd_003",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "inverse_function_derivatives",
+    "disguise_level": 3,
+    "representation": "table",
+    "calculator_allowed": false,
+    "stem": "The table below gives values of a differentiable, one-to-one function $f$ and its derivative.\n\n| $x$ | $f(x)$ | $f'(x)$ |\n|---|---|---|\n| 1 | 4 | 2 |\n| 2 | 7 | 3 |\n| 3 | 5 | $-1$ |\n| 4 | 1 | 6 |\n\nFind $(f^{-1})'(7)$.",
+    "cue_tokens": ["(f^{-1})'(7)", "inverse", "table"],
+    "cue_aliases": ["derivative of the inverse at 7"],
+    "technique_options": ["inverse_function_derivatives", "chain_rule", "product_rule", "f_fprime_fdoubleprime"],
+    "correct_technique": "inverse_function_derivatives",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "Students familiar with the chain rule derivation of the inverse formula may identify the chain rule as the technique.",
+        "why_wrong": "The problem is asking for direct application of the inverse function derivative formula using table values, not for a general chain rule computation."
+      },
+      {
+        "concept": "f_fprime_fdoubleprime",
+        "why_tempting": "The table with $f$, $f'$ values resembles problems where you analyze function-derivative relationships.",
+        "why_wrong": "The task is specifically about the inverse function derivative, not about connecting $f$ and $f'$ behavior."
+      }
+    ],
+    "recognition_cue": "The notation $(f^{-1})'(7)$ explicitly asks for the derivative of the inverse function at $7$. From the table, $f(2) = 7$, so the formula gives $(f^{-1})'(7) = \\frac{1}{f'(2)}$.",
+    "solution_steps": [
+      "Find $a$ such that $f(a) = 7$. From the table, $f(2) = 7$, so $a = 2$.",
+      "Apply the formula: $(f^{-1})'(7) = \\frac{1}{f'(2)}$.",
+      "From the table, $f'(2) = 3$, so $(f^{-1})'(7) = \\frac{1}{3}$."
+    ],
+    "answer": "$(f^{-1})'(7) = \\frac{1}{3}$"
+  },
+  {
+    "id": "ifd_004",
+    "cluster": 3,
+    "cb_unit": 3,
+    "concept": "inverse_function_derivatives",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $f(x) = e^x + x$. Without finding a formula for $f^{-1}$, determine the value of $\\frac{d}{dx}[f^{-1}(x)]$ at $x = 1$. (Hint: $f(0) = 1$.)",
+    "cue_tokens": ["f^{-1}", "d/dx", "without finding a formula"],
+    "cue_aliases": ["derivative of the inverse at 1"],
+    "technique_options": ["inverse_function_derivatives", "implicit_differentiation", "chain_rule", "lhopitals_rule"],
+    "correct_technique": "inverse_function_derivatives",
+    "common_misidentification": "implicit_differentiation",
+    "distractors": [
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "Since $f^{-1}$ has no closed form, one might try to define $y = f^{-1}(x)$ so $e^y + y = x$ and differentiate implicitly.",
+        "why_wrong": "While implicit differentiation would work, the phrase 'without finding a formula for $f^{-1}$' and the hint $f(0) = 1$ are directing you to apply the inverse function derivative formula directly."
+      },
+      {
+        "concept": "lhopitals_rule",
+        "why_tempting": "The inability to find $f^{-1}$ might suggest a limit-based approach.",
+        "why_wrong": "There is no indeterminate form here. The inverse function derivative formula gives the answer without limits."
+      }
+    ],
+    "recognition_cue": "The problem asks for $(f^{-1})'(1)$ and provides the hint $f(0) = 1$. This directly sets up the inverse function derivative formula: $(f^{-1})'(1) = \\frac{1}{f'(0)}$.",
+    "solution_steps": [
+      "From the hint, $f(0) = e^0 + 0 = 1$, confirming $f(0) = 1$.",
+      "Compute $f'(x) = e^x + 1$, so $f'(0) = e^0 + 1 = 2$.",
+      "$(f^{-1})'(1) = \\frac{1}{f'(0)} = \\frac{1}{2}$."
+    ],
+    "answer": "$(f^{-1})'(1) = \\frac{1}{2}$"
+  },
+
+  {
+    "id": "rr_001",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "related_rates",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": true,
+    "stem": "A spherical balloon is being inflated so that its volume increases at a rate of $3$ cubic feet per minute. How fast is the radius increasing when the radius is $2$ feet? (Volume of a sphere: $V = \\frac{4}{3}\\pi r^3$.)",
+    "cue_tokens": ["rate", "how fast", "increasing", "when"],
+    "cue_aliases": ["find dr/dt", "rate of change of the radius"],
+    "technique_options": ["related_rates", "implicit_differentiation", "chain_rule", "optimization"],
+    "correct_technique": "related_rates",
+    "common_misidentification": "implicit_differentiation",
+    "distractors": [
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "Both techniques involve differentiating an equation with multiple variables. The equation $V = \\frac{4}{3}\\pi r^3$ looks like it could be differentiated implicitly.",
+        "why_wrong": "Implicit differentiation finds $\\frac{dy}{dx}$. Related rates differentiate with respect to time $t$, linking $\\frac{dV}{dt}$ and $\\frac{dr}{dt}$."
+      },
+      {
+        "concept": "optimization",
+        "why_tempting": "Both optimization and related rates involve geometric formulas and constraints.",
+        "why_wrong": "Optimization finds maximum or minimum values. This problem asks how fast a quantity is changing at a specific instant, which is a related-rates problem."
+      }
+    ],
+    "recognition_cue": "Two quantities ($V$ and $r$) are both changing with respect to time. A rate is given ($\\frac{dV}{dt} = 3$), and a rate is asked for ($\\frac{dr}{dt}$) at a specific instant. This is a classic related-rates setup.",
+    "solution_steps": [
+      "Start with $V = \\frac{4}{3}\\pi r^3$.",
+      "Differentiate both sides with respect to $t$: $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}$.",
+      "Substitute $\\frac{dV}{dt} = 3$ and $r = 2$: $3 = 4\\pi (4) \\frac{dr}{dt} = 16\\pi \\frac{dr}{dt}$.",
+      "$\\frac{dr}{dt} = \\frac{3}{16\\pi}$ ft/min."
+    ],
+    "answer": "$\\frac{dr}{dt} = \\frac{3}{16\\pi}$ ft/min"
+  },
+  {
+    "id": "rr_002",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "related_rates",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": true,
+    "stem": "A 10-foot ladder leans against a vertical wall. The bottom of the ladder slides away from the wall at $1$ ft/s. At the moment when the bottom is $6$ feet from the wall, how quickly is the top of the ladder sliding down the wall?",
+    "cue_tokens": ["sliding", "how quickly", "at the moment when"],
+    "cue_aliases": ["rate of change of the height", "dy/dt"],
+    "technique_options": ["related_rates", "implicit_differentiation", "optimization", "derivative_as_rate"],
+    "correct_technique": "related_rates",
+    "common_misidentification": "implicit_differentiation",
+    "distractors": [
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "The Pythagorean relation $x^2 + y^2 = 100$ is differentiated implicitly, blurring the line between implicit differentiation and related rates.",
+        "why_wrong": "The differentiation is with respect to time $t$ (not $x$ or $y$), and the goal is to relate the time-rates $\\frac{dx}{dt}$ and $\\frac{dy}{dt}$. This makes it a related-rates problem."
+      },
+      {
+        "concept": "optimization",
+        "why_tempting": "The geometric constraint (ladder, wall) is similar to optimization setups.",
+        "why_wrong": "No quantity is being maximized or minimized. We are finding the rate of change of the height at a specific instant."
+      }
+    ],
+    "recognition_cue": "Multiple quantities ($x$ = distance from wall, $y$ = height on wall) change with respect to time. One rate is given ($\\frac{dx}{dt} = 1$), and the other is sought ($\\frac{dy}{dt}$). The constraint $x^2 + y^2 = 100$ links them.",
+    "solution_steps": [
+      "Let $x$ = horizontal distance, $y$ = vertical height. Constraint: $x^2 + y^2 = 100$.",
+      "Differentiate with respect to $t$: $2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} = 0$.",
+      "When $x = 6$: $y = \\sqrt{100 - 36} = 8$.",
+      "Substitute: $2(6)(1) + 2(8)\\frac{dy}{dt} = 0 \\Rightarrow 12 + 16\\frac{dy}{dt} = 0$.",
+      "$\\frac{dy}{dt} = -\\frac{12}{16} = -\\frac{3}{4}$ ft/s (negative means the top slides down)."
+    ],
+    "answer": "The top slides down at $\\frac{3}{4}$ ft/s, i.e., $\\frac{dy}{dt} = -\\frac{3}{4}$ ft/s."
+  },
+  {
+    "id": "rr_003",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "related_rates",
+    "disguise_level": 3,
+    "representation": "verbal",
+    "calculator_allowed": true,
+    "stem": "Oil spills on a calm sea and spreads in a circular pattern. A coast guard observer measures that the area of the oil slick is growing at $50$ square meters per minute. At the moment when the oil slick has an area of $200\\pi$ square meters, at what rate is the radius of the slick expanding?",
+    "cue_tokens": ["rate", "growing", "at the moment when", "expanding"],
+    "cue_aliases": ["how fast is the radius increasing", "dr/dt"],
+    "technique_options": ["related_rates", "chain_rule", "implicit_differentiation", "linear_approximation"],
+    "correct_technique": "related_rates",
+    "common_misidentification": "chain_rule",
+    "distractors": [
+      {
+        "concept": "chain_rule",
+        "why_tempting": "The relationship $A = \\pi r^2$ and $\\frac{dA}{dt} = \\frac{dA}{dr} \\cdot \\frac{dr}{dt}$ literally is the chain rule, so students may label this as a chain-rule problem.",
+        "why_wrong": "While the chain rule is the underlying mechanism, the problem structure (two quantities changing with time, one rate given, another sought) defines it as a related-rates problem."
+      },
+      {
+        "concept": "linear_approximation",
+        "why_tempting": "The problem involves small changes in area and radius, which might evoke linear approximation ideas.",
+        "why_wrong": "Linear approximation estimates function values. This problem asks for an exact instantaneous rate."
+      }
+    ],
+    "recognition_cue": "Both $A$ and $r$ change with time. We know $\\frac{dA}{dt} = 50$ and need $\\frac{dr}{dt}$ at a specific instant. This is a related-rates problem using the area formula $A = \\pi r^2$.",
+    "solution_steps": [
+      "Given $A = \\pi r^2$, differentiate with respect to $t$: $\\frac{dA}{dt} = 2\\pi r \\frac{dr}{dt}$.",
+      "When $A = 200\\pi$: $\\pi r^2 = 200\\pi \\Rightarrow r = \\sqrt{200} = 10\\sqrt{2}$.",
+      "Substitute: $50 = 2\\pi (10\\sqrt{2}) \\frac{dr}{dt}$.",
+      "$\\frac{dr}{dt} = \\frac{50}{20\\pi\\sqrt{2}} = \\frac{5}{2\\pi\\sqrt{2}} = \\frac{5\\sqrt{2}}{4\\pi}$ m/min."
+    ],
+    "answer": "$\\frac{dr}{dt} = \\frac{5\\sqrt{2}}{4\\pi}$ m/min"
+  },
+  {
+    "id": "rr_004",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "related_rates",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": true,
+    "stem": "The equation $x^2 + y^2 = 169$ describes a circle. If $x$ and $y$ are both functions of time $t$, and $\\frac{dx}{dt} = 3$ when $x = 5$ and $y = 12$, find $\\frac{dy}{dt}$. A student says this is implicit differentiation because we differentiate $x^2 + y^2 = 169$. Is the student correct about the technique?",
+    "cue_tokens": ["functions of time", "dx/dt", "dy/dt"],
+    "cue_aliases": ["rate of change of y with respect to time"],
+    "technique_options": ["related_rates", "implicit_differentiation", "chain_rule", "derivative_as_rate"],
+    "correct_technique": "related_rates",
+    "common_misidentification": "implicit_differentiation",
+    "distractors": [
+      {
+        "concept": "implicit_differentiation",
+        "why_tempting": "The equation $x^2 + y^2 = 169$ looks identical to a standard implicit differentiation problem, and the problem even primes the student to think so.",
+        "why_wrong": "The key difference: both $x$ and $y$ are functions of time $t$, and we differentiate with respect to $t$ (not $x$). We seek $\\frac{dy}{dt}$, not $\\frac{dy}{dx}$. This makes it a related-rates problem."
+      },
+      {
+        "concept": "chain_rule",
+        "why_tempting": "Differentiating $x^2$ with respect to $t$ uses the chain rule: $2x \\frac{dx}{dt}$.",
+        "why_wrong": "The chain rule is a sub-step. The overarching technique is related rates: linking time-derivatives of two related quantities."
+      }
+    ],
+    "recognition_cue": "Although the equation is the same as a typical implicit differentiation problem, the variables are functions of time $t$. We are given $\\frac{dx}{dt}$ and asked for $\\frac{dy}{dt}$, making this a related-rates problem.",
+    "solution_steps": [
+      "Differentiate $x^2 + y^2 = 169$ with respect to $t$: $2x\\frac{dx}{dt} + 2y\\frac{dy}{dt} = 0$.",
+      "Substitute $x = 5$, $y = 12$, $\\frac{dx}{dt} = 3$: $2(5)(3) + 2(12)\\frac{dy}{dt} = 0$.",
+      "$30 + 24\\frac{dy}{dt} = 0 \\Rightarrow \\frac{dy}{dt} = -\\frac{30}{24} = -\\frac{5}{4}$.",
+      "The student is incorrect; the primary technique is related rates, not implicit differentiation, because we differentiate with respect to time."
+    ],
+    "answer": "$\\frac{dy}{dt} = -\\frac{5}{4}$"
+  },
+
+  {
+    "id": "la_001",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "linear_approximation",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Use the tangent line to $f(x) = \\sqrt{x}$ at $x = 25$ to approximate $\\sqrt{26}$.",
+    "cue_tokens": ["tangent line", "approximate"],
+    "cue_aliases": ["linear approximation", "linearization", "local linearity"],
+    "technique_options": ["linear_approximation", "chain_rule", "lhopitals_rule", "mvt"],
+    "correct_technique": "linear_approximation",
+    "common_misidentification": "mvt",
+    "distractors": [
+      {
+        "concept": "mvt",
+        "why_tempting": "The MVT also connects tangent lines and secant lines, so 'tangent line' language might trigger a MVT association.",
+        "why_wrong": "The MVT guarantees the existence of a tangent with a certain slope. Linear approximation uses the tangent line to estimate nearby function values."
+      },
+      {
+        "concept": "chain_rule",
+        "why_tempting": "$\\sqrt{x} = x^{1/2}$ requires the power rule (or chain rule) to differentiate, which is a sub-step.",
+        "why_wrong": "The chain rule (or power rule) finds $f'(x)$, but the primary concept is using the tangent line for approximation."
+      }
+    ],
+    "recognition_cue": "The problem asks to 'approximate' a function value using a 'tangent line' at a nearby known point. This is the definition of linear approximation: $L(x) = f(a) + f'(a)(x - a)$.",
+    "solution_steps": [
+      "$f(x) = \\sqrt{x}$, so $f(25) = 5$ and $f'(x) = \\frac{1}{2\\sqrt{x}}$, giving $f'(25) = \\frac{1}{10}$.",
+      "Tangent-line approximation: $L(x) = 5 + \\frac{1}{10}(x - 25)$.",
+      "$L(26) = 5 + \\frac{1}{10}(1) = 5.1$."
+    ],
+    "answer": "$\\sqrt{26} \\approx 5.1$"
+  },
+  {
+    "id": "la_002",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "linear_approximation",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Let $f$ be a differentiable function with $f(3) = 7$ and $f'(3) = -2$. Estimate $f(3.1)$.",
+    "cue_tokens": ["estimate", "differentiable", "nearby value"],
+    "cue_aliases": ["approximate f(3.1)", "linear estimate"],
+    "technique_options": ["linear_approximation", "derivative_as_rate", "mvt", "eulers_method"],
+    "correct_technique": "linear_approximation",
+    "common_misidentification": "derivative_as_rate",
+    "distractors": [
+      {
+        "concept": "derivative_as_rate",
+        "why_tempting": "Using $f'(3)$ as a rate of change to estimate $f(3.1)$ is conceptually similar and might be confused with simple rate-of-change reasoning.",
+        "why_wrong": "While the derivative-as-rate intuition underlies linear approximation, the specific technique of using $L(x) = f(a) + f'(a)(x - a)$ to estimate function values is linear approximation."
+      },
+      {
+        "concept": "eulers_method",
+        "why_tempting": "Euler's method also uses derivative information to step forward and estimate function values.",
+        "why_wrong": "Euler's method is for numerically solving differential equations by iterating. Here, a single tangent-line step estimates $f(3.1)$, which is a direct linear approximation."
+      }
+    ],
+    "recognition_cue": "We have $f(a)$ and $f'(a)$ at $a = 3$ and want to estimate $f$ at a nearby point $3.1$. This is a textbook linear approximation scenario.",
+    "solution_steps": [
+      "Linear approximation formula: $f(3.1) \\approx f(3) + f'(3)(3.1 - 3)$.",
+      "$f(3.1) \\approx 7 + (-2)(0.1) = 7 - 0.2 = 6.8$."
+    ],
+    "answer": "$f(3.1) \\approx 6.8$"
+  },
+  {
+    "id": "la_003",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "linear_approximation",
+    "disguise_level": 3,
+    "representation": "graph",
+    "calculator_allowed": false,
+    "stem": "The graph of a differentiable function $f$ passes through the point $(2, 5)$, and the tangent line to $f$ at $x = 2$ has slope $-3$. Using the tangent line shown in the graph, estimate $f(2.04)$.",
+    "cue_tokens": ["tangent line", "estimate", "graph"],
+    "cue_aliases": ["approximate from the tangent", "local linear approximation"],
+    "technique_options": ["linear_approximation", "derivative_as_rate", "increasing_decreasing", "mvt"],
+    "correct_technique": "linear_approximation",
+    "common_misidentification": "derivative_as_rate",
+    "distractors": [
+      {
+        "concept": "derivative_as_rate",
+        "why_tempting": "The slope of $-3$ is the rate of change, and students might frame this as a 'derivative as rate' problem rather than a linear approximation.",
+        "why_wrong": "The question specifically asks to use the tangent line to estimate a function value, which is the linear approximation technique."
+      },
+      {
+        "concept": "increasing_decreasing",
+        "why_tempting": "The negative slope might lead students to think about whether $f$ is increasing or decreasing.",
+        "why_wrong": "Classifying increasing/decreasing behavior is a different analytical task. Here we are computing a numerical estimate."
+      }
+    ],
+    "recognition_cue": "A tangent line at a known point is used to estimate the function value at a nearby point. The graph representation shifts the framing but the technique remains linear approximation.",
+    "solution_steps": [
+      "From the graph: $f(2) = 5$ and slope at $x = 2$ is $-3$, so $f'(2) = -3$.",
+      "Linear approximation: $f(2.04) \\approx f(2) + f'(2)(2.04 - 2) = 5 + (-3)(0.04)$.",
+      "$f(2.04) \\approx 5 - 0.12 = 4.88$."
+    ],
+    "answer": "$f(2.04) \\approx 4.88$"
+  },
+  {
+    "id": "la_004",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "linear_approximation",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "A differentiable function satisfies $f(4) = 10$ and $f'(4) = -1.5$. A student uses $f(4) + f'(4) \\cdot \\Delta x$ with $\\Delta x = 0.2$ to get $f(4.2) \\approx 9.7$. The student claims this is 'just plugging into the derivative.' Which concept does this calculation actually represent?",
+    "cue_tokens": ["f(a) + f'(a) delta x", "approximate"],
+    "cue_aliases": ["tangent line estimate", "linearization"],
+    "technique_options": ["linear_approximation", "derivative_as_rate", "eulers_method", "mvt"],
+    "correct_technique": "linear_approximation",
+    "common_misidentification": "derivative_as_rate",
+    "distractors": [
+      {
+        "concept": "derivative_as_rate",
+        "why_tempting": "The student's description of 'plugging into the derivative' frames the computation as using the rate of change, not as a tangent-line approximation.",
+        "why_wrong": "The formula $f(a) + f'(a)\\Delta x$ is precisely the linear approximation $L(a + \\Delta x)$. The derivative-as-rate concept describes what $f'$ means, not how to use it for estimation."
+      },
+      {
+        "concept": "eulers_method",
+        "why_tempting": "Euler's method uses the same formula $y_{n+1} = y_n + f'(x_n)\\Delta x$ for one step.",
+        "why_wrong": "Euler's method applies this formula iteratively to approximate solutions of differential equations. A single step from a known function value is linear approximation."
+      }
+    ],
+    "recognition_cue": "The calculation $f(4) + f'(4)(0.2)$ is exactly the linear approximation formula. Despite the student's framing, this is a tangent-line (linear) approximation of $f(4.2)$.",
+    "solution_steps": [
+      "The formula used is $f(a + \\Delta x) \\approx f(a) + f'(a) \\cdot \\Delta x$ with $a = 4$ and $\\Delta x = 0.2$.",
+      "This is the definition of linear approximation (linearization).",
+      "$f(4.2) \\approx 10 + (-1.5)(0.2) = 10 - 0.3 = 9.7$."
+    ],
+    "answer": "The technique is linear approximation, and $f(4.2) \\approx 9.7$."
+  },
+
+  {
+    "id": "lhr_001",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "lhopitals_rule",
+    "disguise_level": 1,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Evaluate $\\displaystyle\\lim_{x \\to 0} \\frac{\\sin(x)}{x}$ using L'Hopital's Rule.",
+    "cue_tokens": ["limit", "0/0", "L'Hopital"],
+    "cue_aliases": ["indeterminate form", "apply L'Hopital's"],
+    "technique_options": ["lhopitals_rule", "limit_evaluation", "squeeze_theorem", "chain_rule"],
+    "correct_technique": "lhopitals_rule",
+    "common_misidentification": "limit_evaluation",
+    "distractors": [
+      {
+        "concept": "limit_evaluation",
+        "why_tempting": "This is a limit problem, and the standard approach for $\\frac{\\sin x}{x}$ uses the squeeze theorem or the definition of the derivative, not L'Hopital's Rule.",
+        "why_wrong": "While other limit techniques work, the problem explicitly directs the use of L'Hopital's Rule because direct substitution gives $\\frac{0}{0}$."
+      },
+      {
+        "concept": "squeeze_theorem",
+        "why_tempting": "The squeeze theorem is the classical proof for $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$.",
+        "why_wrong": "The problem specifically asks for L'Hopital's Rule. Both techniques yield the same answer, but the requested method is L'Hopital's."
+      }
+    ],
+    "recognition_cue": "Direct substitution gives $\\frac{\\sin(0)}{0} = \\frac{0}{0}$, an indeterminate form. L'Hopital's Rule applies: take the limit of $\\frac{\\text{numerator}'}{\\text{denominator}'}$.",
+    "solution_steps": [
+      "Check: $\\lim_{x \\to 0} \\sin(x) = 0$ and $\\lim_{x \\to 0} x = 0$, so the form is $\\frac{0}{0}$.",
+      "Apply L'Hopital's Rule: $\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = \\lim_{x \\to 0} \\frac{\\cos(x)}{1}$.",
+      "Evaluate: $\\frac{\\cos(0)}{1} = 1$."
+    ],
+    "answer": "$1$"
+  },
+  {
+    "id": "lhr_002",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "lhopitals_rule",
+    "disguise_level": 2,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Find the value of $\\displaystyle\\lim_{x \\to \\infty} \\frac{3x^2 + x}{e^x}$.",
+    "cue_tokens": ["limit", "infinity", "indeterminate"],
+    "cue_aliases": ["evaluate the limit", "as x approaches infinity"],
+    "technique_options": ["lhopitals_rule", "limit_evaluation", "chain_rule", "quotient_rule"],
+    "correct_technique": "lhopitals_rule",
+    "common_misidentification": "limit_evaluation",
+    "distractors": [
+      {
+        "concept": "limit_evaluation",
+        "why_tempting": "Students might try to evaluate this limit by comparing growth rates informally rather than applying L'Hopital's Rule systematically.",
+        "why_wrong": "While growth-rate reasoning gives the correct intuition ($e^x$ dominates), L'Hopital's Rule is the rigorous technique for resolving the $\\frac{\\infty}{\\infty}$ form."
+      },
+      {
+        "concept": "quotient_rule",
+        "why_tempting": "The expression is a quotient, which might suggest the quotient rule for derivatives.",
+        "why_wrong": "The quotient rule differentiates a function. Here we are evaluating a limit. L'Hopital's Rule differentiates numerator and denominator separately (not via the quotient rule formula)."
+      }
+    ],
+    "recognition_cue": "As $x \\to \\infty$, both numerator and denominator approach $\\infty$, giving the indeterminate form $\\frac{\\infty}{\\infty}$. L'Hopital's Rule applies and may need to be applied more than once.",
+    "solution_steps": [
+      "As $x \\to \\infty$: $3x^2 + x \\to \\infty$ and $e^x \\to \\infty$. Form: $\\frac{\\infty}{\\infty}$.",
+      "First application: $\\lim_{x \\to \\infty} \\frac{6x + 1}{e^x}$. Still $\\frac{\\infty}{\\infty}$.",
+      "Second application: $\\lim_{x \\to \\infty} \\frac{6}{e^x} = 0$."
+    ],
+    "answer": "$0$"
+  },
+  {
+    "id": "lhr_003",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "lhopitals_rule",
+    "disguise_level": 3,
+    "representation": "verbal",
+    "calculator_allowed": false,
+    "stem": "Two differentiable functions $f$ and $g$ both satisfy $f(2) = 0$ and $g(2) = 0$. You also know that $f'(2) = 5$ and $g'(2) = 3$. Evaluate $\\displaystyle\\lim_{x \\to 2} \\frac{f(x)}{g(x)}$.",
+    "cue_tokens": ["limit", "both equal zero", "f(2) = 0", "g(2) = 0"],
+    "cue_aliases": ["limit of the ratio", "0/0 form"],
+    "technique_options": ["lhopitals_rule", "limit_evaluation", "quotient_rule", "continuity_types"],
+    "correct_technique": "lhopitals_rule",
+    "common_misidentification": "quotient_rule",
+    "distractors": [
+      {
+        "concept": "quotient_rule",
+        "why_tempting": "The expression $\\frac{f(x)}{g(x)}$ is a quotient, and the derivative values $f'(2)$ and $g'(2)$ are given, suggesting the quotient rule.",
+        "why_wrong": "The quotient rule finds the derivative of a quotient. Here we need the limit of the quotient, which happens to be $\\frac{0}{0}$. L'Hopital's Rule resolves this by taking $\\frac{f'(2)}{g'(2)}$."
+      },
+      {
+        "concept": "continuity_types",
+        "why_tempting": "Both functions equal zero at $x = 2$, which might suggest analyzing continuity or removable discontinuities.",
+        "why_wrong": "While the limit may relate to a removable discontinuity of $\\frac{f}{g}$, the technique for evaluating it is L'Hopital's Rule."
+      }
+    ],
+    "recognition_cue": "Both $f(2) = 0$ and $g(2) = 0$, so $\\lim_{x \\to 2} \\frac{f(x)}{g(x)}$ is $\\frac{0}{0}$. The derivative values are provided precisely to apply L'Hopital's Rule.",
+    "solution_steps": [
+      "Direct substitution: $\\frac{f(2)}{g(2)} = \\frac{0}{0}$, an indeterminate form.",
+      "L'Hopital's Rule: $\\lim_{x \\to 2} \\frac{f(x)}{g(x)} = \\lim_{x \\to 2} \\frac{f'(x)}{g'(x)} = \\frac{f'(2)}{g'(2)} = \\frac{5}{3}$."
+    ],
+    "answer": "$\\frac{5}{3}$"
+  },
+  {
+    "id": "lhr_004",
+    "cluster": 3,
+    "cb_unit": 4,
+    "concept": "lhopitals_rule",
+    "disguise_level": 4,
+    "representation": "text",
+    "calculator_allowed": false,
+    "stem": "Evaluate $\\displaystyle\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2}$. A student attempts to factor the numerator and cancel with $x^2$. Is factoring the best approach?",
+    "cue_tokens": ["limit", "e^x - 1 - x", "x^2"],
+    "cue_aliases": ["evaluate", "indeterminate form"],
+    "technique_options": ["lhopitals_rule", "limit_evaluation", "quotient_rule", "linear_approximation"],
+    "correct_technique": "lhopitals_rule",
+    "common_misidentification": "limit_evaluation",
+    "distractors": [
+      {
+        "concept": "limit_evaluation",
+        "why_tempting": "The student's instinct to factor and cancel is a standard limit evaluation technique (algebraic manipulation).",
+        "why_wrong": "The numerator $e^x - 1 - x$ cannot be factored into polynomial factors that cancel with $x^2$. The indeterminate form $\\frac{0}{0}$ persists, requiring L'Hopital's Rule."
+      },
+      {
+        "concept": "linear_approximation",
+        "why_tempting": "The expression $e^x - 1 - x$ is the error in the linear approximation of $e^x$ near $x = 0$, which connects conceptually.",
+        "why_wrong": "While the connection is valid, the technique to evaluate this limit is L'Hopital's Rule (applied twice), not linear approximation."
+      }
+    ],
+    "recognition_cue": "Substituting $x = 0$ gives $\\frac{e^0 - 1 - 0}{0} = \\frac{0}{0}$. The numerator cannot be factored to cancel with $x^2$, so L'Hopital's Rule is the appropriate technique. It needs to be applied twice.",
+    "solution_steps": [
+      "Check: $\\frac{e^0 - 1 - 0}{0^2} = \\frac{0}{0}$. L'Hopital's Rule applies.",
+      "First application: $\\lim_{x \\to 0} \\frac{e^x - 1}{2x}$. Substituting gives $\\frac{0}{0}$ again.",
+      "Second application: $\\lim_{x \\to 0} \\frac{e^x}{2} = \\frac{1}{2}$."
+    ],
+    "answer": "$\\frac{1}{2}$"
+  }
+]
