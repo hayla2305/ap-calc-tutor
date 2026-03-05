@@ -34,8 +34,19 @@ export default function App() {
       const state = e.state;
       if (state && state.appMode) {
         isPopRef.current = true;
-        historyStackRef.current.pop();
-        setCanGoBack(historyStackRef.current.length > 0);
+        const popped = historyStackRef.current.pop();
+        // When closing an overlay (popped entry is overlay), keep the back
+        // button visible if there are any remaining entries in the stack.
+        // When navigating back between modes, update normally.
+        // Key rule: closing overlays must never hide the back button
+        // unless the stack is truly empty.
+        const hasModeEntries = historyStackRef.current.some((entry) => entry.overlay === null);
+        if (popped?.overlay === 'open') {
+          // Overlay closed — back button stays if any mode entries remain
+          setCanGoBack(hasModeEntries);
+        } else {
+          setCanGoBack(historyStackRef.current.length > 0);
+        }
         setMode(state.appMode);
         // Dispatch a custom event so Mode1 can close overlays
         if (state.overlay === null) {
