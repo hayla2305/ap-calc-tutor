@@ -2,8 +2,8 @@
  * Cue validation for Mode 1 "What's the Play?" flow.
  *
  * Rules:
- * - Student must submit exactly 2 recognition cues before options appear
- * - At least 1 of the 2 must match cue_tokens or cue_aliases
+ * - Student must submit at least 1 recognition cue before options appear
+ * - At least 1 submitted cue must match cue_tokens or cue_aliases
  * - Matching is normalized: case-insensitive, punctuation-stripped, stemmed
  * - If validation fails, options stay hidden + corrective feedback shown
  * - At least 1 matched cue must be non-generic (dynamically computed from problem DB)
@@ -225,39 +225,30 @@ function cueMatches(studentCue, validCues, genericWords) {
 }
 
 /**
- * Validate student's 2 cues against problem's cue_tokens + cue_aliases.
+ * Validate student's cues against problem's cue_tokens + cue_aliases.
  *
- * @param {string[]} studentCues - Exactly 2 cues submitted by student
+ * @param {string[]} studentCues - 1 or more cues submitted by student
  * @param {object} problem - The problem object with cue_tokens and cue_aliases
  * @param {object[]} allProblems - Full problems array for dynamic generic detection
  * @returns {{ valid: boolean, matchCount: number, feedback: string | null }}
  */
 export function validateCues(studentCues, problem, allProblems = []) {
-  if (!studentCues || studentCues.length !== 2) {
+  if (!studentCues || studentCues.length === 0) {
     return {
       valid: false,
       matchCount: 0,
-      feedback: 'You need to identify exactly 2 recognition cues.',
+      feedback: 'Select at least one recognition cue.',
     };
   }
 
   // Filter out empty cues
   const nonEmpty = studentCues.filter((c) => c.trim().length > 0);
-  if (nonEmpty.length < 2) {
+  if (nonEmpty.length === 0) {
     return {
       valid: false,
       matchCount: 0,
-      feedback: 'Both cues must be non-empty. What in this problem tells you which technique to use?',
+      feedback: 'Select at least one recognition cue. What in this problem tells you which technique to use?',
     };
-  }
-
-  // Enforce unique cues — use math-aware normalization so math cues
-  // like "P'(t) > 0" and "P''(t) < 0" aren't collapsed to the same string
-  const unique = new Set(nonEmpty.map(c =>
-    isMathNotation(c) ? normalizeMath(c) : normalize(c)
-  ));
-  if (unique.size !== 2) {
-    return { valid: false, matchCount: 0, feedback: 'Choose 2 different cues.' };
   }
 
   const genericWords = buildGenericCueWords(allProblems, 3);
