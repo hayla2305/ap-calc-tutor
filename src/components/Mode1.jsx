@@ -137,7 +137,6 @@ export default function Mode1({ concepts, scoredConcepts, onEndSession, pushOver
   const toggleCue = useCallback((cue) => {
     setSelectedCues((prev) => {
       if (prev.includes(cue)) return prev.filter((c) => c !== cue);
-      if (prev.length >= 2) return prev; // Max 2
       return [...prev, cue];
     });
     setCueError(null);
@@ -147,8 +146,8 @@ export default function Mode1({ concepts, scoredConcepts, onEndSession, pushOver
   // Submit cues for validation
   const submitCues = useCallback(() => {
     if (!currentProblem) return;
-    if (selectedCues.length !== 2) {
-      setCueError('Select exactly 2 recognition cues before continuing.');
+    if (selectedCues.length === 0) {
+      setCueError('Select at least one recognition cue before continuing.');
       return;
     }
 
@@ -453,7 +452,7 @@ function CueSelection({
           Step 1: Identify Recognition Cues
         </h3>
         <p className="text-sm text-[var(--color-text-dim)] mb-3">
-          What signals in this problem tell you which technique to use? Tap exactly 2 cues.
+          What signals in this problem tell you which technique to use? Tap the cues that apply to this problem.
         </p>
       </div>
 
@@ -463,12 +462,9 @@ function CueSelection({
           <button
             key={chip}
             onClick={() => toggleCue(chip)}
-            disabled={selectedCues.length >= 2 && !selectedCues.includes(chip)}
             className={`px-3 py-1.5 rounded-full text-sm transition-colors border ${
               selectedCues.includes(chip)
                 ? 'border-[var(--color-accent)] bg-[var(--color-accent)] text-white'
-                : selectedCues.length >= 2
-                ? 'border-[var(--color-border)] text-[var(--color-text-dim)] opacity-40 cursor-not-allowed'
                 : 'border-[var(--color-border)] text-[var(--color-text)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]'
             }`}
           >
@@ -487,10 +483,10 @@ function CueSelection({
       {/* Submit */}
       <button
         onClick={submitCues}
-        disabled={selectedCues.length !== 2}
+        disabled={selectedCues.length === 0}
         className="w-full min-h-11 py-3 rounded-lg text-sm font-semibold transition-colors bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)] disabled:opacity-40 disabled:cursor-not-allowed"
       >
-        Confirm Cues ({selectedCues.length}/2)
+        Confirm Cues ({selectedCues.length})
       </button>
     </div>
   );
