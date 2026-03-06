@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { setConceptIds, getSettings, setSettings, isStoragePersistent, recordActivity } from './hooks/useStorage';
+import { setConceptIds, setConceptUids, setIdToUidMap, runStorageMigrationV2, getSettings, setSettings, isStoragePersistent, recordActivity } from './hooks/useStorage';
 import useSession from './hooks/useSession';
 import conceptsData from './data/concepts.json';
 import Mode1 from './components/Mode1';
@@ -8,9 +8,17 @@ import Mode3 from './components/Mode3';
 
 const scoredConcepts = conceptsData.filter((c) => c.scored);
 const conceptIds = conceptsData.map((c) => c.id);
+const conceptUids = conceptsData.map((c) => c.uid);
 
-// Register concept IDs for confusion tracking
+// Initialize UID resolution map (must come before migration)
+setIdToUidMap(conceptsData);
+
+// Run storage migration v1→v2 (idempotent, non-blocking)
+runStorageMigrationV2(conceptsData);
+
+// Register concept IDs and UIDs for confusion tracking
 setConceptIds(conceptIds);
+setConceptUids(conceptUids);
 
 export default function App() {
   const [mode, setMode] = useState('recognition');

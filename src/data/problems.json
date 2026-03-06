@@ -42,7 +42,10 @@
       "Find $f'(x) = 6x - 5$",
       "Evaluate at $x = 2$: $f'(2) = 6(2) - 5 = 7$"
     ],
-    "answer": "$7$"
+    "answer": "$7$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "dar_002",
@@ -88,7 +91,10 @@
       "Find $V'(t) = 4\\pi t^2$",
       "Evaluate at $t = 3$: $V'(3) = 4\\pi(9) = 36\\pi$"
     ],
-    "answer": "$36\\pi$ cubic cm per second"
+    "answer": "$36\\pi$ cubic cm per second",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "dar_003",
@@ -133,7 +139,10 @@
       "Use the symmetric difference quotient: $P'(4) \\approx \\frac{P(6) - P(2)}{6 - 2}$",
       "$P'(4) \\approx \\frac{17.2 - 13.1}{4} = \\frac{4.1}{4} = 1.025$"
     ],
-    "answer": "Approximately $1.025$ thousand people per year"
+    "answer": "Approximately $1.025$ thousand people per year",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "dar_004",
@@ -178,7 +187,10 @@
       "Velocity is $v(t) = x'(t) = 3t^2 - 12t + 9$",
       "Evaluate at $t = 1$: $v(1) = 3 - 12 + 9 = 0$"
     ],
-    "answer": "$0$ (the particle is momentarily at rest)"
+    "answer": "$0$ (the particle is momentarily at rest)",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "iac_001",
@@ -224,7 +236,10 @@
       "Total water $= \\int_0^5 (3t + 2)\\,dt$",
       "$= \\left[\\frac{3t^2}{2} + 2t\\right]_0^5 = \\frac{75}{2} + 10 = \\frac{95}{2}$"
     ],
-    "answer": "$\\frac{95}{2} = 47.5$ gallons"
+    "answer": "$\\frac{95}{2} = 47.5$ gallons",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "iac_002",
@@ -270,7 +285,10 @@
       "Total $= \\int_3^{10} (50 - 2t)\\,dt$",
       "$= \\left[50t - t^2\\right]_3^{10} = (500 - 100) - (150 - 9) = 400 - 141 = 259$"
     ],
-    "answer": "$259$ widgets"
+    "answer": "$259$ widgets",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "iac_003",
@@ -317,7 +335,10 @@
       "Total distance $= \\int_0^6 (4 + t)\\,dt = \\left[4t + \\frac{t^2}{2}\\right]_0^6 = 24 + 18 = 42$",
       "Or use the trapezoid area: $\\frac{1}{2}(4 + 10)(6) = 42$"
     ],
-    "answer": "$42$ units"
+    "answer": "$42$ units",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "iac_004",
@@ -363,7 +384,10 @@
       "$T(5) = T(0) + \\int_0^5 T'(t)\\,dt = 20 + \\int_0^5 (8 - 2t)\\,dt$",
       "$= 20 + \\left[8t - t^2\\right]_0^5 = 20 + (40 - 25) = 20 + 15 = 35$"
     ],
-    "answer": "$35$ degrees"
+    "answer": "$35$ degrees",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft1_001",
@@ -408,7 +432,10 @@
       "By FTC Part 1: if $g(x) = \\int_a^x f(t)\\,dt$, then $g'(x) = f(x)$",
       "$g'(x) = \\sqrt{x^3 + 1}$"
     ],
-    "answer": "$g'(x) = \\sqrt{x^3 + 1}$"
+    "answer": "$g'(x) = \\sqrt{x^3 + 1}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft1_002",
@@ -452,7 +479,10 @@
       "By FTC Part 1: $h'(x) = \\cos(x^2)$",
       "$h'(\\sqrt{\\pi}) = \\cos((\\sqrt{\\pi})^2) = \\cos(\\pi) = -1$"
     ],
-    "answer": "$-1$"
+    "answer": "$-1$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft1_003",
@@ -497,7 +527,10 @@
       "By FTC Part 1 with chain rule: $F'(x) = \\sin(x^2) \\cdot \\frac{d}{dx}(x^2)$",
       "$F'(x) = 2x\\sin(x^2)$"
     ],
-    "answer": "$F'(x) = 2x\\sin(x^2)$"
+    "answer": "$F'(x) = 2x\\sin(x^2)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft1_004",
@@ -542,7 +575,10 @@
       "$B'(4) = 50 - 3(16) = 50 - 48 = 2 > 0$",
       "Since $B'(4) > 0$, the count is increasing at $x = 4$"
     ],
-    "answer": "Increasing (since $B'(4) = 2 > 0$)"
+    "answer": "Increasing (since $B'(4) = 2 > 0$)",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft2_001",
@@ -587,7 +623,10 @@
       "Antiderivative: $F(x) = x^2 + 3x$",
       "$\\int_1^4 (2x+3)\\,dx = F(4) - F(1) = (16 + 12) - (1 + 3) = 28 - 4 = 24$"
     ],
-    "answer": "$24$"
+    "answer": "$24$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft2_002",
@@ -632,7 +671,10 @@
       "$\\int_0^3 f(x)\\,dx = F(3) - F(0)$",
       "$= (27 - 6) - (0 - 0) = 21$"
     ],
-    "answer": "$21$"
+    "answer": "$21$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft2_003",
@@ -677,7 +719,10 @@
       "$v(3) = v(0) + \\int_0^3 a(t)\\,dt = 5 + \\int_0^3 6t\\,dt$",
       "$= 5 + \\left[3t^2\\right]_0^3 = 5 + 27 = 32$"
     ],
-    "answer": "$32$ m/s"
+    "answer": "$32$ m/s",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft2_004",
@@ -724,7 +769,10 @@
       "$20 = 12 + \\int_5^8 f(x)\\,dx$",
       "$\\int_5^8 f(x)\\,dx = 8$"
     ],
-    "answer": "$8$"
+    "answer": "$8$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "rs_001",
@@ -770,7 +818,10 @@
       "$\\Delta x = \\frac{4-0}{4} = 1$. Right endpoints: $x = 1, 2, 3, 4$",
       "Sum $= \\Delta x[f(1) + f(2) + f(3) + f(4)] = 1[1 + 4 + 9 + 16] = 30$"
     ],
-    "answer": "$30$"
+    "answer": "$30$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "rs_002",
@@ -816,7 +867,10 @@
       "$\\Delta x = \\frac{4-1}{3} = 1$. Left endpoints: $x = 1, 2, 3$",
       "Sum $= 1[\\sqrt{1} + \\sqrt{2} + \\sqrt{3}] = 1 + 1.414 + 1.732 \\approx 4.146$"
     ],
-    "answer": "$\\approx 4.146$"
+    "answer": "$\\approx 4.146$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "rs_003",
@@ -863,7 +917,10 @@
       "$\\Delta t = 2$. Trapezoidal sum $= \\frac{\\Delta t}{2}[r(0) + 2r(2) + 2r(4) + 2r(6) + r(8)]$",
       "$= \\frac{2}{2}[10 + 16 + 12 + 6 + 1] = 1 \\cdot 45 = 45$"
     ],
-    "answer": "$45$ liters"
+    "answer": "$45$ liters",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "rs_004",
@@ -908,7 +965,10 @@
       "$\\Delta t = 15$ min $= 0.25$ hr. Left endpoints use first 4 values: 6.0, 6.5, 7.0, 6.8",
       "Distance $\\approx 0.25(6.0 + 6.5 + 7.0 + 6.8) = 0.25(26.3) = 6.575$"
     ],
-    "answer": "$\\approx 6.575$ miles"
+    "answer": "$\\approx 6.575$ miles",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "fff_001",
@@ -955,7 +1015,10 @@
       "Wait — parabola opening up is negative between roots. So f' goes: positive → negative at $x=1$, negative → positive at $x=5$",
       "f has a local min at $x = 5$ (where f' changes from negative to positive)"
     ],
-    "answer": "$x = 5$"
+    "answer": "$x = 5$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "fff_002",
@@ -1002,7 +1065,10 @@
       "Second Derivative Test: concave up + critical point → local minimum",
       "$f(c)$ is a local minimum of $f$"
     ],
-    "answer": "$f(c)$ is a local minimum"
+    "answer": "$f(c)$ is a local minimum",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "fff_003",
@@ -1048,7 +1114,10 @@
       "At $x=4$: $f'(4)=0$; need $f''(4)$: since $f''$ went from + to − at $x=2$ and is still negative at $x=4$, $f''(4) < 0$ → local maximum of f",
       "At $x=6$: $f''$ changes from − to + → inflection point of f (concavity changes from down to up)"
     ],
-    "answer": "$x=2$: inflection point; $x=4$: local max; $x=6$: inflection point"
+    "answer": "$x=2$: inflection point; $x=4$: local max; $x=6$: inflection point",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "fff_004",
@@ -1094,7 +1163,10 @@
       "$P''(t) < 0$: the rate of increase is slowing (concave down)",
       "Profit is growing, but at a decreasing rate — growth is decelerating"
     ],
-    "answer": "Profit is increasing but at a decreasing rate (growth is slowing)"
+    "answer": "Profit is increasing but at a decreasing rate (growth is slowing)",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "id_001",
@@ -1140,7 +1212,10 @@
       "Critical points: $x = 0$ and $x = 2$",
       "Sign chart: $f' > 0$ on $(-\\infty, 0)$ and $(2, \\infty)$, $f' < 0$ on $(0, 2)$"
     ],
-    "answer": "$f$ is increasing on $(-\\infty, 0) \\cup (2, \\infty)$"
+    "answer": "$f$ is increasing on $(-\\infty, 0) \\cup (2, \\infty)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "id_002",
@@ -1185,7 +1260,10 @@
       "Since $e^{-x} > 0$ always, sign of $g'$ depends on $(1-x)$",
       "$g'(x) < 0$ when $1 - x < 0$, i.e., $x > 1$"
     ],
-    "answer": "$g$ is decreasing on $(1, \\infty)$"
+    "answer": "$g$ is decreasing on $(1, \\infty)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "id_003",
@@ -1230,7 +1308,10 @@
       "$f'(x) < 0$ on $(-\\infty, 1)$ and $(4, \\infty)$",
       "$f$ is increasing on $(1, 4)$"
     ],
-    "answer": "$f$ is increasing on $(1, 4)$"
+    "answer": "$f$ is increasing on $(1, 4)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "id_004",
@@ -1274,7 +1355,10 @@
       "$R'(x) = 200 - 2x$",
       "$R'(x) > 0$ when $200 - 2x > 0$, i.e., $x < 100$"
     ],
-    "answer": "Revenue is increasing for $0 < x < 100$ units"
+    "answer": "Revenue is increasing for $0 < x < 100$ units",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "con_001",
@@ -1320,7 +1404,10 @@
       "$f''(x) = 0$ at $x = \\pm 1$",
       "$f'' > 0$ on $(-\\infty, -1) \\cup (1, \\infty)$"
     ],
-    "answer": "Concave up on $(-\\infty, -1) \\cup (1, \\infty)$"
+    "answer": "Concave up on $(-\\infty, -1) \\cup (1, \\infty)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "con_002",
@@ -1366,7 +1453,10 @@
       "$h''(x) = \\frac{2(x^2+1) - 2x(2x)}{(x^2+1)^2} = \\frac{2 - 2x^2}{(x^2+1)^2}$",
       "$h'' < 0$ when $2 - 2x^2 < 0$, i.e., $|x| > 1$: on $(-\\infty, -1) \\cup (1, \\infty)$"
     ],
-    "answer": "Concave down on $(-\\infty, -1) \\cup (1, \\infty)$"
+    "answer": "Concave down on $(-\\infty, -1) \\cup (1, \\infty)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "con_003",
@@ -1410,7 +1500,10 @@
       "If $f'$ is decreasing, then $f'' < 0$ (the derivative of f' is negative)",
       "$f'' < 0$ means $f$ is concave down everywhere"
     ],
-    "answer": "$f$ is concave down everywhere"
+    "answer": "$f$ is concave down everywhere",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "con_004",
@@ -1456,7 +1549,10 @@
       "$G''(t) = -25t^{-1.5} = -\\frac{25}{t^{1.5}}$",
       "For $t > 0$: $G''(t) < 0$, confirming the growth is decelerating (concave down)"
     ],
-    "answer": "Confirmed: $G''(t) < 0$ for $t > 0$, so growth is decelerating"
+    "answer": "Confirmed: $G''(t) < 0$ for $t > 0$, so growth is decelerating",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "re_001",
@@ -1502,7 +1598,10 @@
       "First derivative test: $f'$ changes from + to − at $x=1$ (local max), − to + at $x=2$ (local min)",
       "$f(1) = 2-9+12 = 5$, $f(2) = 16-36+24 = 4$"
     ],
-    "answer": "Local max of $5$ at $x=1$; local min of $4$ at $x=2$"
+    "answer": "Local max of $5$ at $x=1$; local min of $4$ at $x=2$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "re_002",
@@ -1549,7 +1648,10 @@
       "$g''(x) = 12x^2 - 16$",
       "$g''(-2) = 48-16=32>0$ → local min; $g''(0) = -16<0$ → local max; $g''(2) = 32>0$ → local min"
     ],
-    "answer": "Local min at $x=-2$ and $x=2$; local max at $x=0$"
+    "answer": "Local min at $x=-2$ and $x=2$; local max at $x=0$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "re_003",
@@ -1593,7 +1695,10 @@
       "At $x=-1$: $f'$ goes from positive to negative → $f$ has a relative maximum at $x=-1$",
       "At $x=3$: $f'$ goes from negative to positive → $f$ has a relative minimum at $x=3$"
     ],
-    "answer": "Relative max at $x=-1$; relative min at $x=3$"
+    "answer": "Relative max at $x=-1$; relative min at $x=3$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "re_004",
@@ -1638,7 +1743,10 @@
       "$h'(t) = -32t + 64 = 0 \\Rightarrow t = 2$",
       "$h''(t) = -32 < 0$, confirming local maximum at $t = 2$"
     ],
-    "answer": "$t = 2$ seconds"
+    "answer": "$t = 2$ seconds",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ae_001",
@@ -1686,7 +1794,10 @@
       "Evaluate: $f(-2)=-1$, $f(-1)=3$, $f(1)=-1$, $f(2)=3$",
       "Absolute max = 3 (at $x=-1$ and $x=2$); absolute min = $-1$ (at $x=-2$ and $x=1$)"
     ],
-    "answer": "Absolute max $= 3$; absolute min $= -1$"
+    "answer": "Absolute max $= 3$; absolute min $= -1$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ae_002",
@@ -1731,7 +1842,10 @@
       "Evaluate: $g(0)=1$, $g(\\pi/4)=\\sqrt{2}$, $g(5\\pi/4)=-\\sqrt{2}$, $g(2\\pi)=1$",
       "Absolute max $= \\sqrt{2}$ at $x = \\pi/4$; absolute min $= -\\sqrt{2}$ at $x = 5\\pi/4$"
     ],
-    "answer": "Absolute max $= \\sqrt{2}$; absolute min $= -\\sqrt{2}$"
+    "answer": "Absolute max $= \\sqrt{2}$; absolute min $= -\\sqrt{2}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ae_003",
@@ -1778,7 +1892,10 @@
       "Compare all candidates: $f(0)=3$, $f(2)=7$, $f(5)=-1$, $f(8)=4$",
       "Absolute max $= 7$ at $x=2$; absolute min $= -1$ at $x=5$"
     ],
-    "answer": "Absolute max $= 7$ at $x = 2$; absolute min $= -1$ at $x = 5$"
+    "answer": "Absolute max $= 7$ at $x = 2$; absolute min $= -1$ at $x = 5$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ae_004",
@@ -1824,7 +1941,10 @@
       "$A'(x) = 100 - 4x = 0 \\Rightarrow x = 25$",
       "$A(0) = 0$, $A(25) = 1250$, $A(50) = 0$. Absolute max $= 1250$ m²"
     ],
-    "answer": "$1250$ m²"
+    "answer": "$1250$ m²",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ip_001",
@@ -1869,7 +1989,10 @@
       "$f''$ changes from negative (when $x<2$) to positive (when $x>2$) → inflection point at $x=2$",
       "$f(2) = 8 - 24 + 18 + 1 = 3$"
     ],
-    "answer": "Inflection point at $(2, 3)$"
+    "answer": "Inflection point at $(2, 3)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ip_002",
@@ -1915,7 +2038,10 @@
       "Sign chart: $g'' > 0$ on $(-\\infty, 0)$, $g'' < 0$ on $(0, 2)$, $g'' > 0$ on $(2, \\infty)$",
       "Both are inflection points since $g''$ changes sign at each"
     ],
-    "answer": "Inflection points at $x = 0$ and $x = 2$"
+    "answer": "Inflection points at $x = 0$ and $x = 2$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ip_003",
@@ -1960,7 +2086,10 @@
       "This means $f$ changes from concave up to concave down at $x=3$",
       "$f$ has an inflection point at $x = 3$"
     ],
-    "answer": "$f$ has an inflection point at $x = 3$"
+    "answer": "$f$ has an inflection point at $x = 3$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ip_004",
@@ -2005,7 +2134,10 @@
       "$\\frac{1000}{2} = 500 = \\frac{1000}{1+9e^{-0.5t}}$",
       "$1 + 9e^{-0.5t} = 2 \\Rightarrow e^{-0.5t} = \\frac{1}{9} \\Rightarrow t = \\frac{\\ln 9}{0.5} = 2\\ln 9 \\approx 4.39$"
     ],
-    "answer": "$t = 2\\ln 9 \\approx 4.39$"
+    "answer": "$t = 2\\ln 9 \\approx 4.39$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "evt_001",
@@ -2052,7 +2184,10 @@
       "$f(0) = 7$, $f(2) = 3$, $f(5) = 12$",
       "Absolute min $= 3$ at $x=2$; absolute max $= 12$ at $x=5$"
     ],
-    "answer": "Absolute min $= 3$ at $x = 2$; absolute max $= 12$ at $x = 5$"
+    "answer": "Absolute min $= 3$ at $x = 2$; absolute max $= 12$ at $x = 5$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "evt_002",
@@ -2099,7 +2234,10 @@
       "$f(x) = 1/x$ is continuous on $(0,2)$, but the interval is OPEN",
       "EVT does not apply — as $x \\to 0^+$, $f(x) \\to \\infty$, so no maximum is attained"
     ],
-    "answer": "No — the interval is open, so EVT does not apply. $f$ has no maximum on $(0,2)$."
+    "answer": "No — the interval is open, so EVT does not apply. $f$ has no maximum on $(0,2)$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "evt_003",
@@ -2146,7 +2284,10 @@
       "By EVT, a continuous function on a closed interval attains its maximum and minimum",
       "Yes, there must be a moment when temperature is at its absolute highest"
     ],
-    "answer": "Yes — by EVT, the continuous temperature function must attain a maximum on $[12, 18]$"
+    "answer": "Yes — by EVT, the continuous temperature function must attain a maximum on $[12, 18]$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "evt_004",
@@ -2194,7 +2335,10 @@
       "The student is incorrect — EVT does not apply to open intervals",
       "$\\tan(x) \\to \\pm\\infty$ at the endpoints, so no absolute max exists"
     ],
-    "answer": "No — EVT requires a closed interval, and $(-\\pi/2, \\pi/2)$ is open"
+    "answer": "No — EVT requires a closed interval, and $(-\\pi/2, \\pi/2)$ is open",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "mvt_001",
@@ -2239,7 +2383,10 @@
       "Average rate: $\\frac{f(3)-f(1)}{3-1} = \\frac{15-3}{2} = 6$",
       "$f'(x) = 2x + 2$. Set $f'(c) = 6$: $2c + 2 = 6 \\Rightarrow c = 2$"
     ],
-    "answer": "$c = 2$"
+    "answer": "$c = 2$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "mvt_002",
@@ -2285,7 +2432,10 @@
       "Average speed = 120/2 = 60 mph",
       "By MVT, there exists some time $c$ where the instantaneous speed $= 60$ mph"
     ],
-    "answer": "Yes — by MVT, the speedometer must read exactly 60 mph at some moment"
+    "answer": "Yes — by MVT, the speedometer must read exactly 60 mph at some moment",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "mvt_003",
@@ -2331,7 +2481,10 @@
       "$s(t)$ is differentiable on $(0,3)$ → MVT applies",
       "MVT guarantees $\\exists\\, c \\in (0,3)$ with $s'(c) = 8$ m/s"
     ],
-    "answer": "Yes — MVT guarantees velocity equals 8 m/s at some $c \\in (0, 3)$"
+    "answer": "Yes — MVT guarantees velocity equals 8 m/s at some $c \\in (0, 3)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "mvt_004",
@@ -2377,7 +2530,10 @@
       "$|x|$ is NOT differentiable at $x = 0$ (corner) → MVT does NOT apply",
       "Average rate $= \\frac{1-1}{2} = 0$, but $f'(x) = \\pm 1$ where it exists — never equals 0"
     ],
-    "answer": "No — $|x|$ is not differentiable at $x=0$, so MVT does not apply"
+    "answer": "No — $|x|$ is not differentiable at $x=0$, so MVT does not apply",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "opt_001",
@@ -2425,7 +2581,10 @@
       "$A'(w) = 100 - 2w = 0 \\Rightarrow w = 50$, $l = 50$",
       "$A = 50 \\times 50 = 2500$ sq ft"
     ],
-    "answer": "$50 \\times 50$ ft, area $= 2500$ sq ft"
+    "answer": "$50 \\times 50$ ft, area $= 2500$ sq ft",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "opt_002",
@@ -2471,7 +2630,10 @@
       "$P'(x) = 40 - 2x = 0 \\Rightarrow x = 20$, $y = 20$",
       "$P = 400$"
     ],
-    "answer": "Both numbers are $20$; maximum product $= 400$"
+    "answer": "Both numbers are $20$; maximum product $= 400$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "opt_003",
@@ -2518,7 +2680,10 @@
       "$V' = 0$ when $x = 6$ (invalid) or $x = 2$",
       "$V(2) = 2(8)^2 = 128$ cubic inches"
     ],
-    "answer": "$x = 2$ inches; max volume $= 128$ in³"
+    "answer": "$x = 2$ inches; max volume $= 128$ in³",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "opt_004",
@@ -2566,7 +2731,10 @@
       "Total area $A = \\frac{x^2}{4\\pi} + \\frac{(20-x)^2}{16}$",
       "$A' = \\frac{x}{2\\pi} - \\frac{20-x}{8} = 0 \\Rightarrow x = \\frac{20\\pi}{4+\\pi}$"
     ],
-    "answer": "Circle circumference $= \\frac{20\\pi}{4 + \\pi} \\approx 8.80$ cm"
+    "answer": "Circle circumference $= \\frac{20\\pi}{4 + \\pi} \\approx 8.80$ cm",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "pr_001",
@@ -2611,7 +2779,10 @@
       "Compute $u' = 2x$ and $v' = \\cos(x)$.",
       "Apply the product rule: $f'(x) = u'v + uv' = 2x\\sin(x) + x^2\\cos(x)$."
     ],
-    "answer": "$f'(x) = 2x\\sin(x) + x^2\\cos(x)$"
+    "answer": "$f'(x) = 2x\\sin(x) + x^2\\cos(x)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "pr_002",
@@ -2657,7 +2828,10 @@
       "Apply product rule: $s'(t) = 3t^2 e^{-t} + t^3(-e^{-t}) = 3t^2 e^{-t} - t^3 e^{-t}$.",
       "Factor: $s'(t) = t^2 e^{-t}(3 - t)$."
     ],
-    "answer": "$v(t) = t^2 e^{-t}(3 - t)$"
+    "answer": "$v(t) = t^2 e^{-t}(3 - t)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "pr_003",
@@ -2701,7 +2875,10 @@
       "Substitute values at $x = 2$: $f(2) = -1$, $f'(2) = 0$, $g(2) = 2$, $g'(2) = 3$.",
       "$h'(2) = (0)(2) + (-1)(3) = 0 - 3 = -3$."
     ],
-    "answer": "$h'(2) = -3$"
+    "answer": "$h'(2) = -3$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "pr_004",
@@ -2747,7 +2924,10 @@
       "Product rule: $\\frac{dy}{dx} = \\frac{1}{x} \\cdot x^{1/2} + \\ln(x) \\cdot \\frac{1}{2}x^{-1/2}$.",
       "Simplify: $\\frac{dy}{dx} = x^{-1/2} + \\frac{\\ln(x)}{2\\sqrt{x}} = \\frac{1}{\\sqrt{x}} + \\frac{\\ln(x)}{2\\sqrt{x}} = \\frac{2 + \\ln(x)}{2\\sqrt{x}}$."
     ],
-    "answer": "$\\frac{dy}{dx} = \\frac{2 + \\ln(x)}{2\\sqrt{x}}$"
+    "answer": "$\\frac{dy}{dx} = \\frac{2 + \\ln(x)}{2\\sqrt{x}}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "qr_001",
@@ -2795,7 +2975,10 @@
       "Expand numerator: $2x^2 - 6x - x^2 - 1 = x^2 - 6x - 1$.",
       "$f'(x) = \\frac{x^2 - 6x - 1}{(x-3)^2}$."
     ],
-    "answer": "$f'(x) = \\frac{x^2 - 6x - 1}{(x-3)^2}$"
+    "answer": "$f'(x) = \\frac{x^2 - 6x - 1}{(x-3)^2}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "qr_002",
@@ -2842,7 +3025,10 @@
       "Simplify numerator: $5t^2 + 20 - 10t^2 = -5t^2 + 20 = 5(4 - t^2)$.",
       "$C'(t) = \\frac{5(4 - t^2)}{(t^2 + 4)^2}$."
     ],
-    "answer": "$C'(t) = \\frac{5(4 - t^2)}{(t^2 + 4)^2}$"
+    "answer": "$C'(t) = \\frac{5(4 - t^2)}{(t^2 + 4)^2}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "qr_003",
@@ -2886,7 +3072,10 @@
       "At $x = 1$: $p(1) = 2$, $p'(1) = 3$, $q(1) = 4$, $q'(1) = -1$.",
       "$r'(1) = \\frac{(3)(4) - (2)(-1)}{4^2} = \\frac{12 + 2}{16} = \\frac{14}{16} = \\frac{7}{8}$."
     ],
-    "answer": "$r'(1) = \\frac{7}{8}$"
+    "answer": "$r'(1) = \\frac{7}{8}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "qr_004",
@@ -2932,7 +3121,10 @@
       "Simplify numerator: $e^x + e^{2x} - e^{2x} = e^x$.",
       "$g'(x) = \\frac{e^x}{(1+e^x)^2}$."
     ],
-    "answer": "$g'(x) = \\frac{e^x}{(1+e^x)^2}$"
+    "answer": "$g'(x) = \\frac{e^x}{(1+e^x)^2}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "cr_001",
@@ -2977,7 +3169,10 @@
       "Differentiate outer: $\\cos(u)$. Differentiate inner: $u' = 6x$.",
       "Chain rule: $f'(x) = \\cos(3x^2 + 1) \\cdot 6x = 6x\\cos(3x^2 + 1)$."
     ],
-    "answer": "$f'(x) = 6x\\cos(3x^2 + 1)$"
+    "answer": "$f'(x) = 6x\\cos(3x^2 + 1)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "cr_002",
@@ -3023,7 +3218,10 @@
       "Differentiate using the chain rule on $e^{-0.05t}$: the derivative of $e^u$ is $e^u \\cdot u'$ where $u = -0.05t$, so $u' = -0.05$.",
       "$T'(t) = 0 - 12 \\cdot e^{-0.05t} \\cdot (-0.05) = 0.6e^{-0.05t}$."
     ],
-    "answer": "$T'(t) = 0.6e^{-0.05t}$"
+    "answer": "$T'(t) = 0.6e^{-0.05t}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "cr_003",
@@ -3068,7 +3266,10 @@
       "At $x = 1$: $g(1) = 2$ and $g'(1) = -1$.",
       "So $h'(1) = f'(g(1)) \\cdot g'(1) = f'(2) \\cdot (-1) = (-3)(-1) = 3$."
     ],
-    "answer": "$h'(1) = 3$"
+    "answer": "$h'(1) = 3$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "cr_004",
@@ -3114,7 +3315,10 @@
       "Quotient rule (inner): $\\frac{du}{dx} = \\frac{(1)(x-1)-(x+1)(1)}{(x-1)^2} = \\frac{-2}{(x-1)^2}$.",
       "Combine: $\\frac{dy}{dx} = 3\\left(\\frac{x+1}{x-1}\\right)^2 \\cdot \\frac{-2}{(x-1)^2} = \\frac{-6(x+1)^2}{(x-1)^4}$."
     ],
-    "answer": "$\\frac{dy}{dx} = \\frac{-6(x+1)^2}{(x-1)^4}$"
+    "answer": "$\\frac{dy}{dx} = \\frac{-6(x+1)^2}{(x-1)^4}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "imd_001",
@@ -3159,7 +3363,10 @@
       "Solve for $\\frac{dy}{dx}$: $2y\\frac{dy}{dx} = -2x$.",
       "$\\frac{dy}{dx} = \\frac{-x}{y}$."
     ],
-    "answer": "$\\frac{dy}{dx} = -\\frac{x}{y}$"
+    "answer": "$\\frac{dy}{dx} = -\\frac{x}{y}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "imd_002",
@@ -3206,7 +3413,10 @@
       "Factor: $\\frac{dy}{dx}(3y^2 - 6x) = 6y - 3x^2$.",
       "$\\frac{dy}{dx} = \\frac{6y - 3x^2}{3y^2 - 6x} = \\frac{2y - x^2}{y^2 - 2x}$."
     ],
-    "answer": "$\\frac{dy}{dx} = \\frac{2y - x^2}{y^2 - 2x}$"
+    "answer": "$\\frac{dy}{dx} = \\frac{2y - x^2}{y^2 - 2x}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "imd_003",
@@ -3253,7 +3463,10 @@
       "Expand: $y\\cos(xy) + x\\cos(xy)\\frac{dy}{dx} = 1$.",
       "Solve: $\\frac{dy}{dx} = \\frac{1 - y\\cos(xy)}{x\\cos(xy)}$."
     ],
-    "answer": "$\\frac{dy}{dx} = \\frac{1 - y\\cos(xy)}{x\\cos(xy)}$"
+    "answer": "$\\frac{dy}{dx} = \\frac{1 - y\\cos(xy)}{x\\cos(xy)}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "imd_004",
@@ -3299,7 +3512,10 @@
       "Simplify: $\\frac{2x}{9} + \\frac{y}{2}\\frac{dy}{dx} = 0$.",
       "Solve: $\\frac{dy}{dx} = -\\frac{2x/9}{y/2} = -\\frac{4x}{9y}$."
     ],
-    "answer": "$\\frac{dy}{dx} = -\\frac{4x}{9y}$"
+    "answer": "$\\frac{dy}{dx} = -\\frac{4x}{9y}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ifd_001",
@@ -3345,7 +3561,10 @@
       "Compute $f'(x) = 3x^2 + 1$, so $f'(1) = 3 + 1 = 4$.",
       "Apply the inverse function derivative formula: $(f^{-1})'(2) = \\frac{1}{f'(1)} = \\frac{1}{4}$."
     ],
-    "answer": "$(f^{-1})'(2) = \\frac{1}{4}$"
+    "answer": "$(f^{-1})'(2) = \\frac{1}{4}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ifd_002",
@@ -3390,7 +3609,10 @@
       "Since $g(3) = 7$, the point $a = 3$ maps to $b = 7$.",
       "$(g^{-1})'(7) = \\frac{1}{g'(3)} = \\frac{1}{5}$."
     ],
-    "answer": "$h'(7) = \\frac{1}{5}$"
+    "answer": "$h'(7) = \\frac{1}{5}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ifd_003",
@@ -3435,7 +3657,10 @@
       "Apply the formula: $(f^{-1})'(7) = \\frac{1}{f'(2)}$.",
       "From the table, $f'(2) = 3$, so $(f^{-1})'(7) = \\frac{1}{3}$."
     ],
-    "answer": "$(f^{-1})'(7) = \\frac{1}{3}$"
+    "answer": "$(f^{-1})'(7) = \\frac{1}{3}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ifd_004",
@@ -3480,7 +3705,10 @@
       "Compute $f'(x) = e^x + 1$, so $f'(0) = e^0 + 1 = 2$.",
       "$(f^{-1})'(1) = \\frac{1}{f'(0)} = \\frac{1}{2}$."
     ],
-    "answer": "$(f^{-1})'(1) = \\frac{1}{2}$"
+    "answer": "$(f^{-1})'(1) = \\frac{1}{2}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "rr_001",
@@ -3528,7 +3756,10 @@
       "Substitute $\\frac{dV}{dt} = 3$ and $r = 2$: $3 = 4\\pi (4) \\frac{dr}{dt} = 16\\pi \\frac{dr}{dt}$.",
       "$\\frac{dr}{dt} = \\frac{3}{16\\pi}$ ft/min."
     ],
-    "answer": "$\\frac{dr}{dt} = \\frac{3}{16\\pi}$ ft/min"
+    "answer": "$\\frac{dr}{dt} = \\frac{3}{16\\pi}$ ft/min",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "rr_002",
@@ -3576,7 +3807,10 @@
       "Substitute: $2(6)(1) + 2(8)\\frac{dy}{dt} = 0 \\Rightarrow 12 + 16\\frac{dy}{dt} = 0$.",
       "$\\frac{dy}{dt} = -\\frac{12}{16} = -\\frac{3}{4}$ ft/s (negative means the top slides down)."
     ],
-    "answer": "The top slides down at $\\frac{3}{4}$ ft/s, i.e., $\\frac{dy}{dt} = -\\frac{3}{4}$ ft/s."
+    "answer": "The top slides down at $\\frac{3}{4}$ ft/s, i.e., $\\frac{dy}{dt} = -\\frac{3}{4}$ ft/s.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "rr_003",
@@ -3624,7 +3858,10 @@
       "Substitute: $50 = 2\\pi (10\\sqrt{2}) \\frac{dr}{dt}$.",
       "$\\frac{dr}{dt} = \\frac{50}{20\\pi\\sqrt{2}} = \\frac{5}{2\\pi\\sqrt{2}} = \\frac{5\\sqrt{2}}{4\\pi}$ m/min."
     ],
-    "answer": "$\\frac{dr}{dt} = \\frac{5\\sqrt{2}}{4\\pi}$ m/min"
+    "answer": "$\\frac{dr}{dt} = \\frac{5\\sqrt{2}}{4\\pi}$ m/min",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "rr_004",
@@ -3670,7 +3907,10 @@
       "$30 + 24\\frac{dy}{dt} = 0 \\Rightarrow \\frac{dy}{dt} = -\\frac{30}{24} = -\\frac{5}{4}$.",
       "The student is incorrect; the primary technique is related rates, not implicit differentiation, because we differentiate with respect to time."
     ],
-    "answer": "$\\frac{dy}{dt} = -\\frac{5}{4}$"
+    "answer": "$\\frac{dy}{dt} = -\\frac{5}{4}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "la_001",
@@ -3716,7 +3956,10 @@
       "Tangent-line approximation: $L(x) = 5 + \\frac{1}{10}(x - 25)$.",
       "$L(26) = 5 + \\frac{1}{10}(1) = 5.1$."
     ],
-    "answer": "$\\sqrt{26} \\approx 5.1$"
+    "answer": "$\\sqrt{26} \\approx 5.1$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "la_002",
@@ -3761,7 +4004,10 @@
       "Linear approximation formula: $f(3.1) \\approx f(3) + f'(3)(3.1 - 3)$.",
       "$f(3.1) \\approx 7 + (-2)(0.1) = 7 - 0.2 = 6.8$."
     ],
-    "answer": "$f(3.1) \\approx 6.8$"
+    "answer": "$f(3.1) \\approx 6.8$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "la_003",
@@ -3807,7 +4053,10 @@
       "Linear approximation: $f(2.04) \\approx f(2) + f'(2)(2.04 - 2) = 5 + (-3)(0.04)$.",
       "$f(2.04) \\approx 5 - 0.12 = 4.88$."
     ],
-    "answer": "$f(2.04) \\approx 4.88$"
+    "answer": "$f(2.04) \\approx 4.88$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "la_004",
@@ -3852,7 +4101,10 @@
       "This is the definition of linear approximation (linearization).",
       "$f(4.2) \\approx 10 + (-1.5)(0.2) = 10 - 0.3 = 9.7$."
     ],
-    "answer": "The technique is linear approximation, and $f(4.2) \\approx 9.7$."
+    "answer": "The technique is linear approximation, and $f(4.2) \\approx 9.7$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "lhr_001",
@@ -3898,7 +4150,10 @@
       "Apply L'Hopital's Rule: $\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = \\lim_{x \\to 0} \\frac{\\cos(x)}{1}$.",
       "Evaluate: $\\frac{\\cos(0)}{1} = 1$."
     ],
-    "answer": "$1$"
+    "answer": "$1$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "lhr_002",
@@ -3944,7 +4199,10 @@
       "First application: $\\lim_{x \\to \\infty} \\frac{6x + 1}{e^x}$. Still $\\frac{\\infty}{\\infty}$.",
       "Second application: $\\lim_{x \\to \\infty} \\frac{6}{e^x} = 0$."
     ],
-    "answer": "$0$"
+    "answer": "$0$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "lhr_003",
@@ -3990,7 +4248,10 @@
       "Direct substitution: $\\frac{f(2)}{g(2)} = \\frac{0}{0}$, an indeterminate form.",
       "L'Hopital's Rule: $\\lim_{x \\to 2} \\frac{f(x)}{g(x)} = \\lim_{x \\to 2} \\frac{f'(x)}{g'(x)} = \\frac{f'(2)}{g'(2)} = \\frac{5}{3}$."
     ],
-    "answer": "$\\frac{5}{3}$"
+    "answer": "$\\frac{5}{3}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "lhr_004",
@@ -4036,7 +4297,10 @@
       "First application: $\\lim_{x \\to 0} \\frac{e^x - 1}{2x}$. Substituting gives $\\frac{0}{0}$ again.",
       "Second application: $\\lim_{x \\to 0} \\frac{e^x}{2} = \\frac{1}{2}$."
     ],
-    "answer": "$\\frac{1}{2}$"
+    "answer": "$\\frac{1}{2}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "us_001",
@@ -4082,7 +4346,10 @@
       "Integrate to get $\\sin(u) + C$.",
       "Back-substitute: $\\sin(x^2) + C$."
     ],
-    "answer": "$\\sin(x^2) + C$"
+    "answer": "$\\sin(x^2) + C$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "us_002",
@@ -4128,7 +4395,10 @@
       "Integrate: $e^u + C$.",
       "Back-substitute: $e^{\\sqrt{x}} + C$."
     ],
-    "answer": "$e^{\\sqrt{x}} + C$"
+    "answer": "$e^{\\sqrt{x}} + C$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "us_003",
@@ -4176,7 +4446,10 @@
       "Change bounds: when $t=0$, $u=0$; when $t=1$, $u=1$.",
       "Evaluate $\\frac{1}{3}\\int_0^1 e^u\\, du = \\frac{1}{3}(e - 1) \\approx 0.573$."
     ],
-    "answer": "$\\frac{1}{3}(e - 1) \\approx 0.573$ meters"
+    "answer": "$\\frac{1}{3}(e - 1) \\approx 0.573$ meters",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "us_004",
@@ -4221,7 +4494,10 @@
       "Integrate: $\\frac{u^2}{2} + C$.",
       "Back-substitute: $\\frac{(\\ln x)^2}{2} + C$."
     ],
-    "answer": "$\\frac{(\\ln x)^2}{2} + C$"
+    "answer": "$\\frac{(\\ln x)^2}{2} + C$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "abc_001",
@@ -4268,7 +4544,10 @@
       "Compute $\\int_{-1}^{2} [(x+2) - x^2]\\, dx = \\int_{-1}^{2} (x + 2 - x^2)\\, dx$.",
       "Evaluate: $\\left[\\frac{x^2}{2} + 2x - \\frac{x^3}{3}\\right]_{-1}^{2} = \\left(2 + 4 - \\frac{8}{3}\\right) - \\left(\\frac{1}{2} - 2 + \\frac{1}{3}\\right) = \\frac{9}{2}$."
     ],
-    "answer": "$\\frac{9}{2}$"
+    "answer": "$\\frac{9}{2}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "abc_002",
@@ -4315,7 +4594,10 @@
       "Area $= \\int_{-1-\\sqrt{7}}^{-1+\\sqrt{7}} [(6-x^2) - 2x]\\, dx = \\int_{-1-\\sqrt{7}}^{-1+\\sqrt{7}} (6 - 2x - x^2)\\, dx$.",
       "Use symmetry about $x = -1$: the integrand becomes $7 - (x+1)^2$. With half-width $\\sqrt{7}$, area $= \\frac{4}{3}(\\sqrt{7})^3 = \\frac{28\\sqrt{7}}{3}$."
     ],
-    "answer": "$\\frac{28\\sqrt{7}}{3}$"
+    "answer": "$\\frac{28\\sqrt{7}}{3}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "abc_003",
@@ -4361,7 +4643,10 @@
       "Area $= \\int_0^4 [f(x) - g(x)]\\, dx = \\int_0^4 \\left(-\\frac{1}{2}x^2 + 2x + 2\\right) dx$.",
       "Evaluate: $\\left[-\\frac{x^3}{6} + x^2 + 2x\\right]_0^4 = -\\frac{64}{6} + 16 + 8 = -\\frac{32}{3} + 24 = \\frac{40}{3}$."
     ],
-    "answer": "$\\frac{40}{3}$"
+    "answer": "$\\frac{40}{3}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "abc_004",
@@ -4406,7 +4691,10 @@
       "Area $= \\int_{-2}^{2} (4 - y^2)\\, dy$.",
       "By symmetry: $2\\int_0^2 (4 - y^2)\\, dy = 2\\left[4y - \\frac{y^3}{3}\\right]_0^2 = 2\\left(8 - \\frac{8}{3}\\right) = \\frac{32}{3}$."
     ],
-    "answer": "$\\frac{32}{3}$"
+    "answer": "$\\frac{32}{3}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vcs_001",
@@ -4453,7 +4741,10 @@
       "Area of cross-section: $A(x) = (\\sqrt{x})^2 = x$.",
       "Volume $= \\int_0^4 x\\, dx = \\left[\\frac{x^2}{2}\\right]_0^4 = 8$."
     ],
-    "answer": "$8$"
+    "answer": "$8$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vcs_002",
@@ -4502,7 +4793,10 @@
       "Area $A(x) = \\frac{1}{2}\\pi r^2 = \\frac{\\pi}{8}(1-x^2)^2$.",
       "Volume $= \\frac{\\pi}{8}\\int_{-1}^{1}(1-x^2)^2\\, dx = \\frac{\\pi}{8} \\cdot \\frac{16}{15} = \\frac{2\\pi}{15}$."
     ],
-    "answer": "$\\frac{2\\pi}{15}$"
+    "answer": "$\\frac{2\\pi}{15}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vcs_003",
@@ -4549,7 +4843,10 @@
       "Trapezoidal rule with $\\Delta x = 100$: $V \\approx \\frac{100}{2}[A(0) + 2A(100) + 2A(200) + 2A(300) + A(400)]$.",
       "Evaluate: $V \\approx 50[0 + 7200\\sqrt{3} + 11250\\sqrt{3} + 6050\\sqrt{3} + 0] = 50 \\cdot 24500\\sqrt{3} = 1{,}225{,}000\\sqrt{3} \\approx 2{,}121{,}762$ cubic meters."
     ],
-    "answer": "$1{,}225{,}000\\sqrt{3} \\approx 2{,}121{,}762$ cubic meters"
+    "answer": "$1{,}225{,}000\\sqrt{3} \\approx 2{,}121{,}762$ cubic meters",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vcs_004",
@@ -4595,7 +4892,10 @@
       "Area $A(x) = \\sin^2(x) = \\frac{1 - \\cos(2x)}{2}$.",
       "Volume $= \\int_0^{\\pi} \\frac{1-\\cos(2x)}{2}\\, dx = \\frac{1}{2}\\left[x - \\frac{\\sin(2x)}{2}\\right]_0^{\\pi} = \\frac{\\pi}{2}$."
     ],
-    "answer": "$\\frac{\\pi}{2}$"
+    "answer": "$\\frac{\\pi}{2}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vdw_001",
@@ -4641,7 +4941,10 @@
       "Volume $= \\pi \\int_0^4 (\\sqrt{x})^2\\, dx = \\pi \\int_0^4 x\\, dx$.",
       "Evaluate: $\\pi \\left[\\frac{x^2}{2}\\right]_0^4 = \\pi \\cdot 8 = 8\\pi$."
     ],
-    "answer": "$8\\pi$"
+    "answer": "$8\\pi$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vdw_002",
@@ -4689,7 +4992,10 @@
       "Expand and integrate: $\\pi \\int_{-2}^{2}(16 - 8x^2 + x^4)\\, dx = \\pi\\left[16x - \\frac{8x^3}{3} + \\frac{x^5}{5}\\right]_{-2}^{2}$.",
       "Evaluate: $\\pi \\cdot 2\\left(32 - \\frac{64}{3} + \\frac{32}{5}\\right) = \\frac{512\\pi}{15}$."
     ],
-    "answer": "$\\frac{512\\pi}{15}$"
+    "answer": "$\\frac{512\\pi}{15}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vdw_003",
@@ -4736,7 +5042,10 @@
       "Volume $= \\pi \\int_0^4 \\left[(\\sqrt{y})^2 - \\left(\\frac{y}{2}\\right)^2\\right] dy = \\pi \\int_0^4 \\left(y - \\frac{y^2}{4}\\right) dy$.",
       "Evaluate: $\\pi\\left[\\frac{y^2}{2} - \\frac{y^3}{12}\\right]_0^4 = \\pi\\left(8 - \\frac{16}{3}\\right) = \\frac{8\\pi}{3}$."
     ],
-    "answer": "$\\frac{8\\pi}{3}$"
+    "answer": "$\\frac{8\\pi}{3}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vdw_004",
@@ -4783,7 +5092,10 @@
       "Correct setup: $V = \\pi \\int_0^1 (e^x - 1)^2\\, dx = \\pi \\int_0^1 (e^{2x} - 2e^x + 1)\\, dx$.",
       "Evaluate: $\\pi\\left[\\frac{e^{2x}}{2} - 2e^x + x\\right]_0^1 = \\pi\\left[\\left(\\frac{e^2}{2} - 2e + 1\\right) - \\left(\\frac{1}{2} - 2\\right)\\right] = \\pi\\left(\\frac{e^2}{2} - 2e + \\frac{5}{2}\\right)$."
     ],
-    "answer": "$\\pi\\left(\\frac{e^2}{2} - 2e + \\frac{5}{2}\\right)$"
+    "answer": "$\\pi\\left(\\frac{e^2}{2} - 2e + \\frac{5}{2}\\right)$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "av_001",
@@ -4827,7 +5139,10 @@
       "Apply the average value formula: $f_{\\text{avg}} = \\frac{1}{3-0}\\int_0^3 x^2\\, dx$.",
       "Evaluate: $\\frac{1}{3}\\left[\\frac{x^3}{3}\\right]_0^3 = \\frac{1}{3} \\cdot 9 = 3$."
     ],
-    "answer": "$3$"
+    "answer": "$3$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "av_002",
@@ -4873,7 +5188,10 @@
       "$= \\frac{1}{24}\\left[(1680 - \\frac{120}{\\pi}\\cos(2\\pi)) - (0 - \\frac{120}{\\pi}\\cos(0))\\right]$.",
       "$= \\frac{1}{24}\\left[1680 - \\frac{120}{\\pi} + \\frac{120}{\\pi}\\right] = \\frac{1680}{24} = 70$."
     ],
-    "answer": "$70$ degrees Fahrenheit"
+    "answer": "$70$ degrees Fahrenheit",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "av_003",
@@ -4919,7 +5237,10 @@
       "$= 0.25[6.0 + 14.4 + 15.6 + 14.0 + 5.5] = 0.25(55.5) = 13.875$.",
       "Average speed $= \\frac{1}{2}(13.875) = 6.9375$ mph."
     ],
-    "answer": "$6.9375$ mph"
+    "answer": "$6.9375$ mph",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "av_004",
@@ -4966,7 +5287,10 @@
       "The correct theorem is the Mean Value Theorem for Integrals (Average Value Theorem): if $g$ is continuous on $[a,b]$, there exists $c \\in (a,b)$ with $g(c) = \\frac{1}{b-a}\\int_a^b g(x)\\, dx$.",
       "The standard MVT (for derivatives) would say $g'(c) = \\frac{g(5)-g(1)}{4}$, which is a different statement."
     ],
-    "answer": "The student's conclusion is correct but the justification should cite the Mean Value Theorem for Integrals (Average Value Theorem), not the standard MVT for derivatives. The average value is $3$."
+    "answer": "The student's conclusion is correct but the justification should cite the Mean Value Theorem for Integrals (Average Value Theorem), not the standard MVT for derivatives. The average value is $3$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "sv_001",
@@ -5014,7 +5338,10 @@
       "Apply initial condition $y(0) = 5$: $5 = Ae^0 \\Rightarrow A = 5$.",
       "Solution: $y = 5e^{x^3}$."
     ],
-    "answer": "$y = 5e^{x^3}$"
+    "answer": "$y = 5e^{x^3}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sv_002",
@@ -5062,7 +5389,10 @@
       "Solve: $P = Ae^{0.02t}$. With $P(0) = 1000$: $A = 1000$.",
       "Solution: $P(t) = 1000e^{0.02t}$."
     ],
-    "answer": "$P(t) = 1000e^{0.02t}$"
+    "answer": "$P(t) = 1000e^{0.02t}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sv_003",
@@ -5110,7 +5440,10 @@
       "Apply $(0, 2)$: $\\frac{4}{2} = 0 + C \\Rightarrow C = 2$.",
       "Solution: $y^2 = x^2 + 4$, or $y = \\sqrt{x^2 + 4}$ (taking the positive root since $y(0) = 2 > 0$)."
     ],
-    "answer": "$y = \\sqrt{x^2 + 4}$"
+    "answer": "$y = \\sqrt{x^2 + 4}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sv_004",
@@ -5158,7 +5491,10 @@
       "Apply $y(0) = 3$: $\\ln 3 = 0 + 0 + C$, so $C = \\ln 3$.",
       "Solution: $y = 3\\sqrt{1+x^2}\\, e^{\\arctan(x)}$."
     ],
-    "answer": "$y = 3\\sqrt{1+x^2}\\, e^{\\arctan(x)}$"
+    "answer": "$y = 3\\sqrt{1+x^2}\\, e^{\\arctan(x)}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sf_001",
@@ -5205,7 +5541,10 @@
       "The equilibrium occurs along $y = x - 1$ where $x - y = 1$ (constant positive slope).",
       "Long-term behavior: the solution curve approaches $y = x - 1$ as $x \\to \\infty$."
     ],
-    "answer": "The solution curve through $(0,1)$ initially decreases, then curves upward and asymptotically approaches $y = x - 1$."
+    "answer": "The solution curve through $(0,1)$ initially decreases, then curves upward and asymptotically approaches $y = x - 1$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sf_002",
@@ -5251,7 +5590,10 @@
       "Between $y = 0$ and $y = 1$: $y(1-y) > 0$ (positive slopes).",
       "This matches Field I (zero slopes along $y = 0$ and $y = 1$)."
     ],
-    "answer": "Field I"
+    "answer": "Field I",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sf_003",
@@ -5298,7 +5640,10 @@
       "(B): $x^2 - y = 0$ when $y = x^2$. Also gives zero. Both (A) and (B) have zero slopes along $y = x^2$.",
       "Distinguish: both (A) and (B) satisfy the zero-slope condition. But note (A) and (B) are negatives of each other, so both have the same nullcline $y = x^2$. The answer is both (A) and (B). If only one is expected, either works; typically (A) is listed."
     ],
-    "answer": "(A) $\\frac{dy}{dx} = y - x^2$ and (B) $\\frac{dy}{dx} = x^2 - y$ both have horizontal segments along $y = x^2$."
+    "answer": "(A) $\\frac{dy}{dx} = y - x^2$ and (B) $\\frac{dy}{dx} = x^2 - y$ both have horizontal segments along $y = x^2$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sf_004",
@@ -5345,7 +5690,10 @@
       "The DE is $\\frac{dy}{dx} = 2y$.",
       "The slope field has horizontal segments along $y = 0$, upward-tilting segments for $y > 0$ (steeper as $y$ increases), and downward-tilting segments for $y < 0$. All segments at a given height are parallel (autonomous DE)."
     ],
-    "answer": "The DE is $\\frac{dy}{dx} = 2y$. The slope field has horizontal nullcline at $y = 0$, with parallel segments at each height since slopes depend only on $y$."
+    "answer": "The DE is $\\frac{dy}{dx} = 2y$. The slope field has horizontal nullcline at $y = 0$, with parallel segments at each height since slopes depend only on $y$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "em_001",
@@ -5394,7 +5742,10 @@
       "Step 3: slope $= 1.0 + 2.5 = 3.5$. $y_3 = 2.5 + 3.5(0.5) = 4.25$ at $x = 1.5$.",
       "Step 4: slope $= 1.5 + 4.25 = 5.75$. $y_4 = 4.25 + 5.75(0.5) = 7.125$ at $x = 2.0$."
     ],
-    "answer": "$y(2) \\approx 7.125$"
+    "answer": "$y(2) \\approx 7.125$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "em_002",
@@ -5442,7 +5793,10 @@
       "Step 2: slope $= \\sin(1.8208) \\approx 0.9686$. $y_2 \\approx 1.8208 + 0.9686(0.25) \\approx 2.0629$ at $x = 0.50$.",
       "Step 3: slope $= \\sin(2.0629) \\approx 0.8797$. $y_3 \\approx 2.0629 + 0.8797(0.25) \\approx 2.2828$ at $x = 0.75$."
     ],
-    "answer": "$y(0.75) \\approx 2.283$"
+    "answer": "$y(0.75) \\approx 2.283$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "em_003",
@@ -5488,7 +5842,10 @@
       "At $(1.5, 1.0)$: slope $= 2(1.5) - 1.0 = 2.0$.",
       "$y_2 = 1.0 + 2.0(0.5) = 2.0$ at $x = 2.0$."
     ],
-    "answer": "Slope at $n=1$: $2.0$; $y_2 = 2.0$ at $x = 2.0$."
+    "answer": "Slope at $n=1$: $2.0$; $y_2 = 2.0$ at $x = 2.0$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "em_004",
@@ -5536,7 +5893,10 @@
       "Euler's method with $\\Delta x = 0.25$ (4 steps): $y_1 = 10 + (-20)(0.25) = 5$; $y_2 = 5 + (-10)(0.25) = 2.5$; $y_3 = 2.5 + (-5)(0.25) = 1.25$; $y_4 = 1.25 + (-2.5)(0.25) = 0.625$.",
       "The 4-step estimate $y(1) \\approx 0.625$ is much closer to $1.353$ than $-10$ was. Smaller $\\Delta x$ gives even better results."
     ],
-    "answer": "The single-step estimate fails because the step size is too large for the rapidly changing function. Euler's method with $\\Delta x = 0.25$ gives $y(1) \\approx 0.625$, a much better approximation than $-10$."
+    "answer": "The single-step estimate fails because the step size is too large for the rapidly changing function. Euler's method with $\\Delta x = 0.25$ gives $y(1) \\approx 0.625$, a much better approximation than $-10$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "pm_001",
@@ -5583,7 +5943,10 @@
       "Sign changes at both $t = 1$ (positive to negative) and $t = 3$ (negative to positive).",
       "The particle changes direction at $t = 1$ and $t = 3$."
     ],
-    "answer": "The particle changes direction at $t = 1$ and $t = 3$."
+    "answer": "The particle changes direction at $t = 1$ and $t = 3$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "pm_002",
@@ -5630,7 +5993,10 @@
       "Find when $a(t) > 0$: $6t - 4 > 0 \\Rightarrow t > \\frac{2}{3}$.",
       "Speeding up when $v > 0$ and $a > 0$: for $t > \\frac{2}{3}$."
     ],
-    "answer": "$v(t) = 3t^2 - 4t + 2$. The object is speeding up for $t > \\frac{2}{3}$."
+    "answer": "$v(t) = 3t^2 - 4t + 2$. The object is speeding up for $t > \\frac{2}{3}$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "pm_003",
@@ -5678,7 +6044,10 @@
       "Position: $x(6) = x(0) + 3 = 3 + 3 = 6$.",
       "Total distance $= \\frac{8}{3} + \\frac{2}{3} + 1 + 1 + \\frac{4}{3} + \\frac{1}{3} = \\frac{15}{3} + 2 = 7$."
     ],
-    "answer": "$x(6) = 6$; total distance traveled $= 7$."
+    "answer": "$x(6) = 6$; total distance traveled $= 7$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "pm_004",
@@ -5725,7 +6094,10 @@
       "The actual inflection point of $x(t)$ is at $t = 2$ where $x''(t) = 6t - 12 = 0$ and concavity changes. In motion terms, this is where acceleration changes sign.",
       "The student confused direction-change points (where velocity = 0) with inflection points (where acceleration = 0)."
     ],
-    "answer": "The student is incorrect. At $t = 1$ and $t = 3$, the particle changes direction (velocity changes sign). The inflection point of $x(t)$ is at $t = 2$, where acceleration changes sign."
+    "answer": "The student is incorrect. At $t = 1$ and $t = 3$, the particle changes direction (velocity changes sign). The inflection point of $x(t)$ is at $t = 2$, where acceleration changes sign.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "le_001",
@@ -5772,7 +6144,10 @@
       "Cancel the common factor: $\\frac{(x-3)(x+3)}{x-3} = x+3$ for $x \\neq 3$.",
       "Substitute $x = 3$: $3 + 3 = 6$."
     ],
-    "answer": "$6$"
+    "answer": "$6$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "le_002",
@@ -5820,7 +6195,10 @@
       "Cancel $(x-3)$: $\\frac{1}{\\sqrt{x+1}+2}$.",
       "Substitute $x=3$: $\\frac{1}{\\sqrt{4}+2} = \\frac{1}{4}$."
     ],
-    "answer": "$\\frac{1}{4}$"
+    "answer": "$\\frac{1}{4}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "le_003",
@@ -5868,7 +6246,10 @@
       "Examine $g(x)$ as $x \\to 2^+$: $5.41 \\to 5.0401 \\to 5.004$, approaching $5$.",
       "Since both one-sided limits approach the same value, $\\lim_{x \\to 2} g(x) = 5$."
     ],
-    "answer": "$5$"
+    "answer": "$5$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "le_004",
@@ -5916,7 +6297,10 @@
       "Apply the fundamental trigonometric limit: $\\lim_{u \\to 0} \\frac{\\sin u}{u} = 1$.",
       "The student is incorrect. Although $h(\\pi)$ is undefined, the limit equals $1$, so $h(x) \\to 1$ as $x \\to \\pi$."
     ],
-    "answer": "$1$; the student is incorrect because $\\lim_{x \\to \\pi} h(x) = 1$."
+    "answer": "$1$; the student is incorrect because $\\lim_{x \\to \\pi} h(x) = 1$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "le_005",
@@ -5964,7 +6348,10 @@
       "Cancel $(x-1)$: $\\frac{(2x+5)}{(x+1)}$.",
       "Substitute $x = 1$: $\\frac{2(1)+5}{1+1} = \\frac{7}{2}$."
     ],
-    "answer": "$\\frac{7}{2}$"
+    "answer": "$\\frac{7}{2}$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "ct_001",
@@ -6012,7 +6399,10 @@
       "Compute $\\lim_{x \\to 2^+} f(x) = 3(2) - 1 = 5$.",
       "Since $\\lim_{x \\to 2} f(x) = 5 = f(2)$, the function is continuous at $x = 2$."
     ],
-    "answer": "$f$ is continuous at $x = 2$."
+    "answer": "$f$ is continuous at $x = 2$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "ct_002",
@@ -6060,7 +6450,10 @@
       "Since the limit exists and is finite, the discontinuity at $x = 2$ is removable.",
       "Assign $g(2) = 4$ to make $g$ continuous at $x = 2$."
     ],
-    "answer": "Yes; set $g(2) = 4$ to remove the discontinuity."
+    "answer": "Yes; set $g(2) = 4$ to remove the discontinuity.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "ct_003",
@@ -6108,7 +6501,10 @@
       "When left-hand and right-hand limits are both finite but unequal, the discontinuity is a jump discontinuity.",
       "The graph has a solid dot at $(1,3)$ and an open circle at $(1,5)$, with the curve jumping from $y=3$ to $y=5$."
     ],
-    "answer": "Jump discontinuity at $x = 1$."
+    "answer": "Jump discontinuity at $x = 1$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "ct_004",
@@ -6156,7 +6552,10 @@
       "Set them equal for continuity: $6 + k = 10$.",
       "Solve: $k = 4$."
     ],
-    "answer": "$k = 4$"
+    "answer": "$k = 4$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "ct_005",
@@ -6203,7 +6602,10 @@
       "Check that $2$ lies between $f(-1) = -3$ and $f(4) = 7$: indeed $-3 < 2 < 7$.",
       "By the Intermediate Value Theorem, there exists at least one $c \\in (-1, 4)$ such that $f(c) = 2$."
     ],
-    "answer": "Yes. Since $f$ is continuous on $[-1,4]$ and $2$ is between $f(-1)=-3$ and $f(4)=7$, the IVT guarantees some $c \\in (-1,4)$ with $f(c) = 2$."
+    "answer": "Yes. Since $f$ is continuous on $[-1,4]$ and $2$ is between $f(-1)=-3$ and $f(4)=7$, the IVT guarantees some $c \\in (-1,4)$ with $f(c) = 2$.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "sq_001",
@@ -6250,7 +6652,10 @@
       "Compute the bounding limits: $\\lim_{x \\to 0} (-x^2) = 0$ and $\\lim_{x \\to 0} x^2 = 0$.",
       "By the Squeeze Theorem, $\\lim_{x \\to 0} x^2 \\sin(1/x) = 0$."
     ],
-    "answer": "$0$"
+    "answer": "$0$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "sq_002",
@@ -6297,7 +6702,10 @@
       "Evaluate the bounding limits: $\\lim_{x \\to 0}(3 - x^2) = 3$ and $\\lim_{x \\to 0}(3 + x^4) = 3$.",
       "Since both bounding limits equal $3$, the Squeeze Theorem gives $\\lim_{x \\to 0} h(x) = 3$."
     ],
-    "answer": "$\\lim_{x \\to 0} h(x) = 3$"
+    "answer": "$\\lim_{x \\to 0} h(x) = 3$",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "sq_003",
@@ -6344,7 +6752,10 @@
       "Compute the bounding limits: $\\lim_{x \\to 0} (-|x|) = 0$ and $\\lim_{x \\to 0} |x| = 0$.",
       "By the Squeeze Theorem, $\\lim_{x \\to 0} f(x) = 0$."
     ],
-    "answer": "$0$, justified by the Squeeze Theorem."
+    "answer": "$0$, justified by the Squeeze Theorem.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "sq_004",
@@ -6393,7 +6804,10 @@
       "By the Squeeze Theorem, $\\lim_{x \\to 1} f(x) = 0$.",
       "The student's error: $\\cos$ does oscillate, but it remains bounded between $-1$ and $1$, and $(x-1)^2 \\to 0$ squeezes the entire product to $0$."
     ],
-    "answer": "$0$. The student is wrong because cosine is bounded between $-1$ and $1$, and the $(x-1)^2$ factor forces the product to $0$ by the Squeeze Theorem."
+    "answer": "$0$. The student is wrong because cosine is bounded between $-1$ and $1$, and the $(x-1)^2$ factor forces the product to $0$ by the Squeeze Theorem.",
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "dar_005",
@@ -6439,7 +6853,10 @@
       "Evaluate at $t = 3$: $g'(3) = 20(27) - 4(3) + 1 = 540 - 12 + 1 = 529$"
     ],
     "answer": "$529$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "dar_006",
@@ -6486,7 +6903,10 @@
       "Evaluate at $t = 2$: $h'(2) = -9.8(2) + 20 = -19.6 + 20 = 0.4$"
     ],
     "answer": "$0.4$ meters per second",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "dar_007",
@@ -6532,7 +6952,10 @@
       "Evaluate at $q = 100$: $R'(100) = 200 - 100 = 100$"
     ],
     "answer": "$100$ dollars per unit",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "dar_008",
@@ -6579,7 +7002,10 @@
       "Evaluate at $t = 2$: $C'(2) = 5e^{-0.8}(1 - 0.8) = 5(0.4493)(0.2) \\approx 0.449$"
     ],
     "answer": "$\\approx 0.449$ mg/L per hour (or exactly $e^{-0.8}$)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "dar_009",
@@ -6626,7 +7052,10 @@
       "$D'(6) \\approx \\frac{12.7 - 5.8}{4} = \\frac{6.9}{4} = 1.725$"
     ],
     "answer": "$\\approx 1.725$ cm per °C",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "dar_010",
@@ -6673,7 +7102,10 @@
       "$S'(6) \\approx \\frac{10 - 28}{6} = \\frac{-18}{6} = -3$"
     ],
     "answer": "$-3$ ppt per km (salinity decreases by 3 parts per thousand per kilometer)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "iac_005",
@@ -6720,7 +7152,10 @@
       "$= \\left[2t^2 - t\\right]_0^3 = (18 - 3) - 0 = 15$"
     ],
     "answer": "$15$ meters",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "iac_006",
@@ -6767,7 +7202,10 @@
       "$= \\left[10t + 0.25t^2\\right]_0^8 = 80 + 16 = 96$"
     ],
     "answer": "$96$ liters",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "iac_007",
@@ -6814,7 +7252,10 @@
       "$= \\left[1500t - 25t^2\\right]_0^{10} = 15000 - 2500 = 12500$"
     ],
     "answer": "$12{,}500$ watt-minutes",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "iac_008",
@@ -6861,7 +7302,10 @@
       "$= 45000 + \\left[800t + 30t^2\\right]_0^5 = 45000 + 4000 + 750 = 49{,}750$"
     ],
     "answer": "$49{,}750$ residents",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "iac_009",
@@ -6908,7 +7352,10 @@
       "$= -200e^{-3} + 200 = 200(1 - e^{-3}) \\approx 200(1 - 0.0498) \\approx 190.04$"
     ],
     "answer": "$200(1 - e^{-3}) \\approx 190$ kg",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "iac_010",
@@ -6957,7 +7404,10 @@
       "$= 800 + 533.\\overline{3} = \\frac{4000}{3} \\approx 1333.3$"
     ],
     "answer": "$\\frac{4000}{3} \\approx 1333.3$ CFU·hr/m³",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft1_005",
@@ -7003,7 +7453,10 @@
       "$F'(x) = x^2 + 4x$"
     ],
     "answer": "$F'(x) = x^2 + 4x$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft1_006",
@@ -7049,7 +7502,10 @@
       "$A'(2) = e^{4}$"
     ],
     "answer": "$e^4$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft1_007",
@@ -7095,7 +7551,10 @@
       "By FTC Part 1: $G'(x) = -\\ln(x+1)$"
     ],
     "answer": "$G'(x) = -\\ln(x+1)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft1_008",
@@ -7142,7 +7601,10 @@
       "$R'(1) = \\frac{3}{1+1} = \\frac{3}{2}$"
     ],
     "answer": "$\\frac{3}{2}$ inches per hour",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft1_009",
@@ -7188,7 +7650,10 @@
       "$P'(x) = \\frac{3x^2}{1+x^3}$"
     ],
     "answer": "$P'(x) = \\frac{3x^2}{1+x^3}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft1_010",
@@ -7232,7 +7697,10 @@
       "By FTC Part 1 with chain rule: $Q'(x) = \\sqrt{4 + \\sin^2(x)} \\cdot \\cos(x)$"
     ],
     "answer": "$Q'(x) = \\cos(x)\\sqrt{4 + \\sin^2(x)}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft2_005",
@@ -7278,7 +7746,10 @@
       "$F(3) - F(0) = (54 - 18 + 3) - 0 = 39$"
     ],
     "answer": "$39$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft2_006",
@@ -7324,7 +7795,10 @@
       "$F(2) - F(-1) = (8 + 8) - (-1 + 2) = 16 - 1 = 15$"
     ],
     "answer": "$15$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft2_007",
@@ -7370,7 +7844,10 @@
       "$= -\\cos(\\pi) + \\cos(0) = 1 + 1 = 2$"
     ],
     "answer": "$2$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft2_008",
@@ -7417,7 +7894,10 @@
       "$= \\left[500x - \\frac{20x^3}{3}\\right]_0^4 = 2000 - \\frac{1280}{3} = \\frac{6000 - 1280}{3} = \\frac{4720}{3}$"
     ],
     "answer": "$\\frac{4720}{3} \\approx 1573.3$ N",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft2_009",
@@ -7464,7 +7944,10 @@
       "$= \\frac{1440}{\\pi}\\left(\\sin\\frac{\\pi}{2} - \\sin 0\\right) = \\frac{1440}{\\pi}(1) = \\frac{1440}{\\pi}$"
     ],
     "answer": "$\\frac{1440}{\\pi} \\approx 458.4$ gallons",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "ft2_010",
@@ -7514,7 +7997,10 @@
       "Strain energy $= \\frac{9{,}760{,}000}{3 \\times 4 \\times 10^8} = \\frac{9760}{1{,}200{,}000} \\approx 0.00813$ J"
     ],
     "answer": "$\\frac{9760}{1{,}200{,}000} \\approx 0.00813$ joules",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "rs_005",
@@ -7561,7 +8047,10 @@
       "Sum $= 2[\\sqrt{1} + \\sqrt{3} + \\sqrt{5} + \\sqrt{7}] = 2[1 + 1.732 + 2.236 + 2.646] \\approx 2(7.614) \\approx 15.23$"
     ],
     "answer": "$\\approx 15.23$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "rs_006",
@@ -7608,7 +8097,10 @@
       "Sum $= 1\\left[\\frac{1}{2} + \\frac{1}{3} + \\frac{1}{4} + \\frac{1}{5}\\right] = 0.5 + 0.333 + 0.25 + 0.2 = 1.283$"
     ],
     "answer": "$\\frac{77}{60} \\approx 1.283$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "rs_007",
@@ -7655,7 +8147,10 @@
       "$= \\frac{3}{2}[65 + 144 + 160 + 152 + 68] = \\frac{3}{2}(589) = 883.5$"
     ],
     "answer": "$883.5$ °F·hr",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "rs_008",
@@ -7702,7 +8197,10 @@
       "Sum $= 14{,}400(15 + 18 + 24 + 30 + 27 + 20) = 14{,}400 \\times 134 = 1{,}929{,}600$"
     ],
     "answer": "$1{,}929{,}600$ m³",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "rs_009",
@@ -7754,7 +8252,10 @@
       "AUC $= 2.4 + 5.5 + 11.3 + 14.8 + 6.2 = 40.2$"
     ],
     "answer": "$40.2$ μg·hr/mL",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "rs_010",
@@ -7805,7 +8306,10 @@
       "Total $= 0.5 + 3.3 + 6.6 + 19.5 = 29.9$"
     ],
     "answer": "$\\approx 29.9$ tonnes CO₂ per hectare",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "fff_005",
@@ -7851,7 +8355,10 @@
       "$f$ is concave down on the entire interval $(0, 6)$"
     ],
     "answer": "$(0, 6)$ — the entire domain shown",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "fff_006",
@@ -7900,7 +8407,10 @@
       "Local min at $x = 2$ where $f'$ changes from negative to positive"
     ],
     "answer": "$f$ is increasing on $(-\\infty, -1) \\cup (2, \\infty)$; local minimum at $x = 2$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "fff_007",
@@ -7947,7 +8457,10 @@
       "Critical point where $f'(x) = 0$: $2x - 3 = 0 \\Rightarrow x = \\frac{3}{2}$"
     ],
     "answer": "$x = \\frac{3}{2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "fff_008",
@@ -7995,7 +8508,10 @@
       "By the second derivative test: $f$ has a local maximum at $x = 4$ with value $f(4) = 10$"
     ],
     "answer": "$f$ has a local maximum of $10$ at $x = 4$ (horizontal tangent, concave down)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "fff_009",
@@ -8043,7 +8559,10 @@
       "Summary: $P'(t) > 0$ and $P''(t) < 0$ — increasing and concave down"
     ],
     "answer": "$P'(t) > 0$ (increasing) and $P''(t) < 0$ (concave down)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "fff_010",
@@ -8091,7 +8610,10 @@
       "The runner is moving backward but slowing down"
     ],
     "answer": "The runner is moving backward but decelerating (slowing down)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "id_005",
@@ -8139,7 +8661,10 @@
       "$h$ is decreasing on $(-\\infty, -2) \\cup (0, 2)$"
     ],
     "answer": "$(-\\infty, -2) \\cup (0, 2)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "id_006",
@@ -8186,7 +8711,10 @@
       "$f$ is increasing on $(-1, 1)$"
     ],
     "answer": "$(-1, 1)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "id_007",
@@ -8233,7 +8761,10 @@
       "$N$ is increasing on $\\left(\\frac{1}{e}, \\infty\\right)$"
     ],
     "answer": "$\\left(\\frac{1}{e}, \\infty\\right)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "id_008",
@@ -8280,7 +8811,10 @@
       "$p$ is decreasing on $(-2, 2)$"
     ],
     "answer": "$(-2, 2)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "id_009",
@@ -8327,7 +8861,10 @@
       "The colony is shrinking for all $t > 0$"
     ],
     "answer": "$(0, \\infty)$ — the colony shrinks for all positive time",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "id_010",
@@ -8374,7 +8911,10 @@
       "Efficiency is improving on $\\left(0, \\frac{\\pi}{4}\\right)$"
     ],
     "answer": "$\\left(0, \\frac{\\pi}{4}\\right)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "con_005",
@@ -8422,7 +8962,10 @@
       "$g''(x) < 0$ for $x < 0$ (concave down), $g''(x) > 0$ for $x > 0$ (concave up)"
     ],
     "answer": "Concave down on $(-\\infty, 0)$; concave up on $(0, \\infty)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "con_006",
@@ -8470,7 +9013,10 @@
       "$f$ is concave up on $(-2, \\infty)$"
     ],
     "answer": "$(-2, \\infty)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "con_007",
@@ -8518,7 +9064,10 @@
       "For $x > 0$, $f(x) > 0$ and $f''(x) < 0$ — the graph curves toward the $x$-axis"
     ],
     "answer": "For $x > 0$ (concave down, bending toward the axis)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "con_008",
@@ -8565,7 +9114,10 @@
       "The graph is concave down (opening downward) on $(0, \\infty)$"
     ],
     "answer": "Opening downward (concave down for all $x > 0$)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "con_009",
@@ -8614,7 +9166,10 @@
       "The graph is concave down — the claim is verified"
     ],
     "answer": "Verified: $L''(t) = -9e^{-0.3t} < 0$ for all $t > 0$, so the learning rate is decelerating",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "con_010",
@@ -8663,7 +9218,10 @@
       "The outbreak is accelerating when cumulative cases are below 5000"
     ],
     "answer": "The outbreak is accelerating when $0 < C < 5000$ (below half the carrying capacity)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "re_005",
@@ -8710,7 +9268,10 @@
       "At $x = 2$: $f'$ changes from $-$ to $+$ → local min. $f(2) = 8 - 24 + 5 = -11$"
     ],
     "answer": "Local max of $21$ at $x = -2$; local min of $-11$ at $x = 2$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "re_006",
@@ -8758,7 +9319,10 @@
       "At $x = 2$: $h''(2) = e^{-2}(4-8+2) = -2e^{-2} < 0$ → local max. $h(2) = 4e^{-2}$"
     ],
     "answer": "Local min of $0$ at $x = 0$; local max of $4e^{-2}$ at $x = 2$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "re_007",
@@ -8806,7 +9370,10 @@
       "At $x = \\frac{5\\pi}{6}$: $f'' = \\frac{\\sqrt{3}}{2} > 0$ → local min"
     ],
     "answer": "Local maximum at $x = \\frac{\\pi}{6}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "re_008",
@@ -8854,7 +9421,10 @@
       "For $t < 3$: $E' > 0$; for $t > 3$: $E' < 0$ → local max at $t = 3$"
     ],
     "answer": "$t = 3$ (with $E(3) = 30e^{-1} \\approx 11.04$)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "re_009",
@@ -8902,7 +9472,10 @@
       "At $x = 1$: $M'$ changes from $-$ to $+$ → local min"
     ],
     "answer": "Local minimum at $x = 1$ (100 units)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "re_010",
@@ -8950,7 +9523,10 @@
       "For $c < 2$: $Y' > 0$; for $c > 2$: $Y' < 0$ → local max at $c = 2$"
     ],
     "answer": "$c = 2$ (with yield $Y(2) = \\frac{200}{8} = 25$)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ae_005",
@@ -8999,7 +9575,10 @@
       "Absolute min = $1$ at $x = \\pm\\sqrt{2}$; absolute max = $50$ at $x = 3$"
     ],
     "answer": "Absolute min: $1$ at $x = \\pm\\sqrt{2}$; absolute max: $50$ at $x = 3$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ae_006",
@@ -9047,7 +9626,10 @@
       "Absolute min: $\\frac{\\pi}{3} - \\sqrt{3}$ at $x = \\frac{\\pi}{3}$; absolute max: $\\pi$ at $x = \\pi$"
     ],
     "answer": "Absolute min: $\\frac{\\pi}{3} - \\sqrt{3}$ at $x = \\frac{\\pi}{3}$; absolute max: $\\pi$ at $x = \\pi$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ae_007",
@@ -9094,7 +9676,10 @@
       "Absolute min is $3 - 3\\ln 3$ at $x = \\ln 3$"
     ],
     "answer": "Absolute min: $3 - 3\\ln 3$ at $x = \\ln 3$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ae_008",
@@ -9142,7 +9727,10 @@
       "Highest: $75°$ at $t = 14$; lowest: $\\approx 56.3°$ at $t = 0$ and $t = 24$"
     ],
     "answer": "Highest: $75°$F at 2 PM; lowest: $\\approx 56.3°$F at midnight",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ae_009",
@@ -9189,7 +9777,10 @@
       "$v = 50$ gives a max (40 mpg). The minimum is $32$ at $v = 30$ and $v = 70$"
     ],
     "answer": "Worst efficiency: $32$ mpg at $v = 30$ or $v = 70$ mph",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ae_010",
@@ -9238,7 +9829,10 @@
       "Absolute max is at $d = 10$"
     ],
     "answer": "Harvest on day $10$ (balance index $\\approx 5.41$)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ip_005",
@@ -9286,7 +9880,10 @@
       "Inflection points at $(-1, g(-1)) = (-1, 1)$ and $(1, g(1)) = (1, 3)$"
     ],
     "answer": "Inflection points at $(-1, 1)$ and $(1, 3)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ip_006",
@@ -9334,7 +9931,10 @@
       "Inflection points at $x = -3, 0, 3$"
     ],
     "answer": "$x = -3, 0, 3$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ip_007",
@@ -9381,7 +9981,10 @@
       "There is no inflection point — the graph is always concave up for $x > 0$"
     ],
     "answer": "No inflection point — the graph is concave up for all $x > 0$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ip_008",
@@ -9429,7 +10032,10 @@
       "Both are sign changes (check: $y''(0) = -2 < 0$, $y''(1) = 2e^{-1} > 0$)"
     ],
     "answer": "$x = \\pm\\frac{1}{\\sqrt{2}} = \\pm\\frac{\\sqrt{2}}{2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ip_009",
@@ -9478,7 +10084,10 @@
       "Inflection point at $t = 4$ years"
     ],
     "answer": "$t = 4$ years after founding",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ip_010",
@@ -9526,7 +10135,10 @@
       "$C''(t) = 0$ at $t = 4$. For $t > 4$: $C'' > 0$ (concave up, decline is slowing)"
     ],
     "answer": "$t = 4$ hours",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "evt_005",
@@ -9575,7 +10187,10 @@
       "Absolute min: $0$ at $x = 0$; absolute max: $\\frac{9}{10}$ at $x = \\pm 3$"
     ],
     "answer": "Yes, EVT applies. Min: $0$ at $x = 0$; max: $\\frac{9}{10}$ at $x = \\pm 3$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "evt_006",
@@ -9623,7 +10238,10 @@
       "Yes, an absolute maximum is guaranteed (though it may equal the endpoint values or exceed them)"
     ],
     "answer": "Yes — by EVT, continuity on a closed interval guarantees an absolute maximum exists",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "evt_007",
@@ -9672,7 +10290,10 @@
       "Indeed, $f \\to -\\infty$ as $x \\to 3^-$ and $f \\to +\\infty$ as $x \\to 3^+$, so no absolute min or max exists"
     ],
     "answer": "$f$ is not continuous on $[1, 5]$ (discontinuity at $x = 3$), so EVT does not apply",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "evt_008",
@@ -9721,7 +10342,10 @@
       "The student is incorrect"
     ],
     "answer": "Incorrect — EVT guarantees a maximum exists, but it could be greater than $3$ at an interior point",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "evt_009",
@@ -9769,7 +10393,10 @@
       "Yes, there must be a moment of peak power usage during the shift"
     ],
     "answer": "Yes — by EVT, continuous power consumption on a closed 10-hour interval must attain a maximum",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "evt_010",
@@ -9817,7 +10444,10 @@
       "The coach is correct — a coldest moment is guaranteed to exist"
     ],
     "answer": "Yes — EVT guarantees a minimum temperature exists on the closed interval $[0, 2]$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "mvt_005",
@@ -9864,7 +10494,10 @@
       "$c = \\frac{2}{\\sqrt{3}} = \\frac{2\\sqrt{3}}{3} \\approx 1.155$ (taking positive value in $(0,2)$)"
     ],
     "answer": "$c = \\frac{2\\sqrt{3}}{3}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "mvt_006",
@@ -9912,7 +10545,10 @@
       "$g'(x) = \\frac{1}{2\\sqrt{x}}$. Set $\\frac{1}{2\\sqrt{c}} = \\frac{1}{4}$: $\\sqrt{c} = 2$, so $c = 4$"
     ],
     "answer": "$c = 4$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "mvt_007",
@@ -9961,7 +10597,10 @@
       "Yes, there must have been such a moment"
     ],
     "answer": "Yes — by MVT, there must be a moment with climbing rate exactly $500$ ft/hr",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "mvt_008",
@@ -10011,7 +10650,10 @@
       "MVT alone cannot confirm or refute the claim fully, but the average rate is consistent with it"
     ],
     "answer": "MVT guarantees $B'(c) = -5$ mmHg/hr for some $c$, consistent with the claim, but cannot rule out faster rates at other times",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "mvt_009",
@@ -10060,7 +10702,10 @@
       "Yes, the car must have exceeded the speed limit"
     ],
     "answer": "Yes — MVT guarantees a speed of $65$ mph at some point, which exceeds the $60$ mph limit",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "mvt_010",
@@ -10109,7 +10754,10 @@
       "The theorem is the Mean Value Theorem"
     ],
     "answer": "The Mean Value Theorem — it guarantees $T'(c) \\approx 41.7°$F/hr for some $c$, which exceeds $30°$F/hr",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "opt_005",
@@ -10158,7 +10806,10 @@
       "$A''(x) = -2 < 0$ confirms maximum"
     ],
     "answer": "$15$ cm $\\times$ $15$ cm (a square), with area $225$ cm²",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "opt_006",
@@ -10207,7 +10858,10 @@
       "$A = 2\\sqrt{3}(9 - 3) = 12\\sqrt{3}$"
     ],
     "answer": "$12\\sqrt{3} \\approx 20.78$ square units",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "opt_007",
@@ -10255,7 +10909,10 @@
       "$S' = 4\\pi r - \\frac{1000}{r^2} = 0$ gives $r^3 = \\frac{250}{\\pi}$, so $r = \\left(\\frac{250}{\\pi}\\right)^{1/3}$"
     ],
     "answer": "$r = \\left(\\frac{250}{\\pi}\\right)^{1/3} \\approx 4.30$ cm",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "opt_008",
@@ -10305,7 +10962,10 @@
       "$x = \\frac{2500}{\\sqrt{39}} \\approx 400.3$ m downstream"
     ],
     "answer": "The cable should cross $\\approx 400$ m downstream of the relay station",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "opt_009",
@@ -10354,7 +11014,10 @@
       "$x = \\frac{200 - 4\\sqrt{700}}{24} \\approx 3.92$ cm (taking the value in the valid domain)"
     ],
     "answer": "$x = \\frac{25 - 5\\sqrt{7}}{3} \\approx 3.92$ cm",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "opt_010",
@@ -10402,7 +11065,10 @@
       "$y = 120 - 2(30) = 60$. Max area = $30 \\times 60 = 1800$ m²"
     ],
     "answer": "$30$ m $\\times$ $60$ m (area $= 1800$ m²)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "pr_005",
@@ -10448,7 +11114,10 @@
       "$f'(x) = 3x^2\\cos(x) + x^3(-\\sin(x)) = 3x^2\\cos(x) - x^3\\sin(x)$"
     ],
     "answer": "$f'(x) = 3x^2\\cos(x) - x^3\\sin(x)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "pr_006",
@@ -10494,7 +11163,10 @@
       "$= e^x\\left(\\ln(x) + \\frac{1}{x}\\right)$"
     ],
     "answer": "$e^x\\left(\\ln(x) + \\frac{1}{x}\\right)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "pr_007",
@@ -10540,7 +11212,10 @@
       "$= (-2)(5) + (4)(1) = -10 + 4 = -6$"
     ],
     "answer": "$-6$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "pr_008",
@@ -10587,7 +11262,10 @@
       "$P'(5) = (100)(25) + (2000)(-1.50) = 2500 - 3000 = -500$"
     ],
     "answer": "$-\\$500$ per year (profit is declining)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "pr_009",
@@ -10634,7 +11312,10 @@
       "$F'(2) = (-2)(4) + (46)(0.5) = -8 + 23 = 15$"
     ],
     "answer": "$15$ N/s",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "pr_010",
@@ -10683,7 +11364,10 @@
       "Since $B'(10) > 0$, total biomass is increasing"
     ],
     "answer": "Increasing — biomass is growing at $4.8$ kg/m²/yr",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "qr_005",
@@ -10729,7 +11413,10 @@
       "$= \\frac{2x^2 - 6x - x^2 - 1}{(x-3)^2} = \\frac{x^2 - 6x - 1}{(x-3)^2}$"
     ],
     "answer": "$\\frac{x^2 - 6x - 1}{(x-3)^2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "qr_006",
@@ -10775,7 +11462,10 @@
       "$= \\frac{x\\cos(x) - 2\\sin(x)}{x^3}$"
     ],
     "answer": "$\\frac{x\\cos(x) - 2\\sin(x)}{x^3}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "qr_007",
@@ -10821,7 +11511,10 @@
       "$= \\frac{(2)(-1) - (3)(4)}{(-1)^2} = \\frac{-2 - 12}{1} = -14$"
     ],
     "answer": "$-14$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "qr_008",
@@ -10867,7 +11560,10 @@
       "$= \\frac{e^x}{(1+e^x)^2}$"
     ],
     "answer": "$\\frac{e^x}{(1+e^x)^2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "qr_009",
@@ -10915,7 +11611,10 @@
       "Concentration is decreasing for $t > 2$"
     ],
     "answer": "$C'(t) = \\frac{50(4-t^2)}{(t^2+4)^2}$; decreasing for $t > 2$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "qr_010",
@@ -10965,7 +11664,10 @@
       "$= \\frac{0.02q^3 - 0.6q^2 - 200}{q^2} = 0.02q - 0.6 - \\frac{200}{q^2}$"
     ],
     "answer": "$\\bar{C}'(q) = 0.02q - 0.6 - \\frac{200}{q^2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "cr_005",
@@ -11011,7 +11713,10 @@
       "$y' = 5(3x^2+1)^4 \\cdot 6x = 30x(3x^2+1)^4$"
     ],
     "answer": "$30x(3x^2+1)^4$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "cr_006",
@@ -11057,7 +11762,10 @@
       "$\\frac{dy}{dx} = \\cos(5x-1) \\cdot 5 = 5\\cos(5x-1)$"
     ],
     "answer": "$5\\cos(5x-1)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "cr_007",
@@ -11103,7 +11811,10 @@
       "$f'(x) = e^{\\sqrt{x}} \\cdot \\frac{1}{2\\sqrt{x}} = \\frac{e^{\\sqrt{x}}}{2\\sqrt{x}}$"
     ],
     "answer": "$\\frac{e^{\\sqrt{x}}}{2\\sqrt{x}}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "cr_008",
@@ -11148,7 +11859,10 @@
       "$y' = \\frac{1}{x^2+3x} \\cdot (2x+3) = \\frac{2x+3}{x^2+3x} = \\frac{2x+3}{x(x+3)}$"
     ],
     "answer": "$\\frac{2x+3}{x(x+3)}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "cr_009",
@@ -11195,7 +11909,10 @@
       "At $t = 10$: $\\frac{dP}{dt} = -0.05e^{-0.5} \\approx -0.05(0.6065) \\approx -0.0303$"
     ],
     "answer": "$-0.05e^{-0.5} \\approx -0.0303$ per year",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "cr_010",
@@ -11243,7 +11960,10 @@
       "$= \\frac{500 \\cdot 7.2 e^{-0.3t}}{(1 + 24e^{-0.3t})^2} = \\frac{3600e^{-0.3t}}{(1 + 24e^{-0.3t})^2}$"
     ],
     "answer": "$P'(t) = \\frac{3600e^{-0.3t}}{(1 + 24e^{-0.3t})^2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "imd_005",
@@ -11290,7 +12010,10 @@
       "$\\frac{dy}{dx} = -\\frac{x}{y}$"
     ],
     "answer": "$\\frac{dy}{dx} = -\\frac{x}{y}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "imd_006",
@@ -11337,7 +12060,10 @@
       "$\\frac{dy}{dx} = \\frac{-y}{x + 3y^2}$"
     ],
     "answer": "$\\frac{dy}{dx} = \\frac{-y}{x + 3y^2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "imd_007",
@@ -11386,7 +12112,10 @@
       "Wait: check. $e^0 = 1$ and $1 - 1 = 0$. The tangent is vertical at $(1,0)$"
     ],
     "answer": "The tangent line is vertical at $(1, 0)$ (slope is undefined)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "imd_008",
@@ -11434,7 +12163,10 @@
       "$\\frac{dy}{dx} = \\frac{1 - y\\cos(xy)}{x\\cos(xy)}$"
     ],
     "answer": "$\\frac{dy}{dx} = \\frac{1 - y\\cos(xy)}{x\\cos(xy)}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "imd_009",
@@ -11482,7 +12214,10 @@
       "At $(2\\sqrt{2}, \\frac{3\\sqrt{2}}{2})$: $\\frac{dy}{dx} = -\\frac{9 \\cdot 2\\sqrt{2}}{16 \\cdot \\frac{3\\sqrt{2}}{2}} = -\\frac{18\\sqrt{2}}{24\\sqrt{2}} = -\\frac{3}{4}$"
     ],
     "answer": "$-\\frac{3}{4}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "imd_010",
@@ -11531,7 +12266,10 @@
       "$\\frac{dP}{dV} = \\frac{2nR - P}{V} = \\frac{2nR - \\frac{300nR}{V} - 2nR}{V} = -\\frac{300nR}{V^2}$"
     ],
     "answer": "$\\frac{dP}{dV} = -\\frac{300nR}{V^2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ifd_005",
@@ -11578,7 +12316,10 @@
       "$(f^{-1})'(2) = \\frac{1}{4}$"
     ],
     "answer": "$\\frac{1}{4}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ifd_006",
@@ -11623,7 +12364,10 @@
       "$\\frac{d}{dx}[\\arctan(x)] = \\frac{1}{1+x^2}$"
     ],
     "answer": "$\\frac{1}{1+x^2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ifd_007",
@@ -11671,7 +12415,10 @@
       "$g'(0) = \\frac{1}{3}$"
     ],
     "answer": "$\\frac{1}{3}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ifd_008",
@@ -11717,7 +12464,10 @@
       "$y' = \\frac{1}{\\sqrt{1-(3x)^2}} \\cdot 3 = \\frac{3}{\\sqrt{1-9x^2}}$"
     ],
     "answer": "$\\frac{3}{\\sqrt{1-9x^2}}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ifd_009",
@@ -11764,7 +12514,10 @@
       "By inverse function derivative: $\\frac{dF}{dC} = \\frac{1}{dC/dF} = \\frac{9}{5}$"
     ],
     "answer": "$\\frac{9}{5}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "ifd_010",
@@ -11810,7 +12563,10 @@
       "$(f^{-1})'(80) = \\frac{1}{f'(f^{-1}(80))} = \\frac{1}{f'(2.5)} = \\frac{1}{40}$"
     ],
     "answer": "$\\frac{1}{40} = 0.025$ volts per °C",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "rr_005",
@@ -11857,7 +12613,10 @@
       "$\\frac{dA}{dt} = 2\\pi(5)(2) = 20\\pi$"
     ],
     "answer": "$20\\pi \\approx 62.8$ cm²/s",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "rr_006",
@@ -11905,7 +12664,10 @@
       "$2(6)(1) + 2(8)\\frac{dy}{dt} = 0$, so $\\frac{dy}{dt} = -\\frac{3}{4}$"
     ],
     "answer": "The top slides down at $\\frac{3}{4}$ ft/s",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "rr_007",
@@ -11953,7 +12715,10 @@
       "$\\frac{dr}{dt} = \\frac{100}{400\\pi} = \\frac{1}{4\\pi}$"
     ],
     "answer": "$\\frac{1}{4\\pi} \\approx 0.080$ cm/s",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "rr_008",
@@ -12002,7 +12767,10 @@
       "$-3 = \\frac{\\pi(16)}{4}\\frac{dh}{dt}$, so $\\frac{dh}{dt} = \\frac{-3}{4\\pi}$"
     ],
     "answer": "Dropping at $\\frac{3}{4\\pi} \\approx 0.239$ m/min",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "rr_009",
@@ -12051,7 +12819,10 @@
       "$\\frac{d\\theta}{dt} = \\frac{30}{100} = 0.3$ rad/s"
     ],
     "answer": "$0.3$ radians per second",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "rr_010",
@@ -12101,7 +12872,10 @@
       "$\\frac{dd}{dt} = 20$ km/hr"
     ],
     "answer": "$20$ km/hr",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "la_005",
@@ -12148,7 +12922,10 @@
       "$L(26) = 5 + \\frac{1}{10} = 5.1$"
     ],
     "answer": "$\\sqrt{26} \\approx 5.1$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "la_006",
@@ -12195,7 +12972,10 @@
       "$L(x) = \\frac{1}{2} - \\frac{\\sqrt{3}}{2}\\left(x - \\frac{\\pi}{3}\\right)$"
     ],
     "answer": "$L(x) = \\frac{1}{2} - \\frac{\\sqrt{3}}{2}\\left(x - \\frac{\\pi}{3}\\right)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "la_007",
@@ -12241,7 +13021,10 @@
       "$= 10 + (-3)(0.2) = 10 - 0.6 = 9.4$"
     ],
     "answer": "$\\approx 9.4$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "la_008",
@@ -12289,7 +13072,10 @@
       "$dV = 4\\pi(25)(0.02) = 2\\pi \\approx 6.28$ cm³"
     ],
     "answer": "$dV \\approx 2\\pi \\approx 6.28$ cm³",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "la_009",
@@ -12336,7 +13122,10 @@
       "$dA = \\frac{\\pi(3)}{2}(0.01) = 0.015\\pi \\approx 0.047$ cm²"
     ],
     "answer": "Maximum error $\\approx 0.047$ cm² (or $0.015\\pi$)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "la_010",
@@ -12384,7 +13173,10 @@
       "Uncertainty: $|d\\sigma| = 6250$ Pa"
     ],
     "answer": "$\\pm 6250$ Pa (or $\\pm 6.25$ kPa)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "lhr_005",
@@ -12431,7 +13223,10 @@
       "L'Hôpital's: $\\lim_{x \\to 0} \\frac{3\\cos(3x)}{1} = 3\\cos(0) = 3$"
     ],
     "answer": "$3$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "lhr_006",
@@ -12477,7 +13272,10 @@
       "Apply again: $\\lim \\frac{2}{e^x} = 0$"
     ],
     "answer": "$0$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "lhr_007",
@@ -12524,7 +13322,10 @@
       "Still $\\frac{0}{0}$. Apply again: $\\lim \\frac{e^x}{2} = \\frac{1}{2}$"
     ],
     "answer": "$\\frac{1}{2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "lhr_008",
@@ -12571,7 +13372,10 @@
       "L'Hôpital's: $\\lim \\frac{1/x}{-1/x^2} = \\lim \\frac{-x^2}{x} = \\lim (-x) = 0$"
     ],
     "answer": "$0$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "lhr_009",
@@ -12618,7 +13422,10 @@
       "L'Hôpital's (differentiating with respect to $k$): $\\lim_{k \\to 0} \\frac{te^{-kt}}{t} = \\lim_{k \\to 0} e^{-kt} = 1$"
     ],
     "answer": "$1$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "lhr_010",
@@ -12666,7 +13473,10 @@
       "This justifies the convention $0 \\ln(0) = 0$"
     ],
     "answer": "$0$ — justifying the convention $0\\ln(0) = 0$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "derivatives"
   },
   {
     "id": "us_005",
@@ -12712,7 +13522,10 @@
       "$\\int u^4\\,du = \\frac{u^5}{5}+C = \\frac{(x^2+1)^5}{5}+C$"
     ],
     "answer": "$\\frac{(x^2+1)^5}{5}+C$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "us_006",
@@ -12758,7 +13571,10 @@
       "$\\int \\cos(u)\\frac{du}{3} = \\frac{\\sin(u)}{3}+C = \\frac{\\sin(3x)}{3}+C$"
     ],
     "answer": "$\\frac{\\sin(3x)}{3}+C$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "us_007",
@@ -12806,7 +13622,10 @@
       "$\\frac{1}{2}\\int_0^1 e^u\\,du = \\frac{1}{2}(e-1)$"
     ],
     "answer": "$\\frac{e-1}{2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "us_008",
@@ -12854,7 +13673,10 @@
       "$= 3\\left(-\\frac{1}{25}+\\frac{1}{9}\\right) = 3 \\cdot \\frac{16}{225} = \\frac{16}{75}$"
     ],
     "answer": "$\\frac{16}{75} \\approx 0.213$ μg",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "us_009",
@@ -12901,7 +13723,10 @@
       "$\\frac{1}{2}\\int_1^2 \\frac{du}{u} = \\frac{1}{2}\\ln|u|\\Big|_1^2 = \\frac{\\ln 2}{2}$"
     ],
     "answer": "$\\frac{\\ln 2}{2} \\approx 0.347$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "us_010",
@@ -12949,7 +13774,10 @@
       "$= 80(1 - 0.1353) \\approx 69.2$"
     ],
     "answer": "$80(1-e^{-2}) \\approx 69.2$ units",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "integrals"
   },
   {
     "id": "abc_005",
@@ -12997,7 +13825,10 @@
       "$= (9+9-9)-(-1+(-3)+\\frac{1}{3}) = 9 - (-\\frac{8}{3}) - (-1-3+\\frac{1}{3}) = \\frac{32}{3}$"
     ],
     "answer": "$\\frac{32}{3}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "abc_006",
@@ -13044,7 +13875,10 @@
       "$\\int_0^1(\\sqrt{x}-x)\\,dx = \\left[\\frac{2x^{3/2}}{3}-\\frac{x^2}{2}\\right]_0^1 = \\frac{2}{3}-\\frac{1}{2} = \\frac{1}{6}$"
     ],
     "answer": "$\\frac{1}{6}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "abc_007",
@@ -13092,7 +13926,10 @@
       "$= \\left[\\frac{x^4}{4}-\\frac{x^2}{2}\\right]_{-1}^0 + \\left[\\frac{x^2}{2}-\\frac{x^4}{4}\\right]_0^1 = \\frac{1}{4} + \\frac{1}{4} = \\frac{1}{2}$"
     ],
     "answer": "$\\frac{1}{2}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "abc_008",
@@ -13140,7 +13977,10 @@
       "$= \\left[8x-\\frac{2x^3}{3}\\right]_{-2}^2 = (16-\\frac{16}{3})-(-16+\\frac{16}{3}) = \\frac{64}{3}$"
     ],
     "answer": "$\\frac{64}{3} \\approx 21.3$ square units",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "abc_009",
@@ -13189,7 +14029,10 @@
       "For the portion where $D_1 > D_2$: $\\int_0^{2.61}(6000-1000x-500x^2)\\,dx \\approx 10{,}170$"
     ],
     "answer": "Approximately $10{,}170$ person-km (for the portion where $D_1 > D_2$)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vcs_005",
@@ -13238,7 +14081,10 @@
       "$= 2 \\cdot \\frac{480-320+96}{15} = 2 \\cdot \\frac{256}{15} = \\frac{512}{15}$"
     ],
     "answer": "$\\frac{512}{15}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vcs_006",
@@ -13286,7 +14132,10 @@
       "$V = \\int_{-3}^3 \\sqrt{3}(9-x^2)\\,dx = 2\\sqrt{3}\\int_0^3(9-x^2)\\,dx = 2\\sqrt{3}\\left[9x-\\frac{x^3}{3}\\right]_0^3 = 2\\sqrt{3}(18) = 36\\sqrt{3}$"
     ],
     "answer": "$36\\sqrt{3}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vcs_007",
@@ -13334,7 +14183,10 @@
       "$V = \\int_0^4 4y\\,dy = \\left[2y^2\\right]_0^4 = 32$"
     ],
     "answer": "$32$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vcs_008",
@@ -13382,7 +14234,10 @@
       "$V = \\int_0^{\\pi}\\frac{\\pi}{8}\\sin^2(x)\\,dx = \\frac{\\pi}{8}\\cdot\\frac{\\pi}{2} = \\frac{\\pi^2}{16}$"
     ],
     "answer": "$\\frac{\\pi^2}{16}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vcs_009",
@@ -13430,7 +14285,10 @@
       "$V = \\int_{-1}^1 \\frac{(1-x^2)^2}{4}\\,dx = \\frac{1}{2}\\int_0^1(1-2x^2+x^4)\\,dx = \\frac{1}{2}\\left[1-\\frac{2}{3}+\\frac{1}{5}\\right] = \\frac{1}{2}\\cdot\\frac{8}{15} = \\frac{4}{15}$"
     ],
     "answer": "$\\frac{4}{15}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vdw_005",
@@ -13477,7 +14335,10 @@
       "$= \\pi\\left[\\frac{x^5}{5}\\right]_0^2 = \\frac{32\\pi}{5}$"
     ],
     "answer": "$\\frac{32\\pi}{5}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vdw_006",
@@ -13525,7 +14386,10 @@
       "$= \\pi\\left[\\frac{x^3}{3}-\\frac{x^5}{5}\\right]_0^1 = \\pi(\\frac{1}{3}-\\frac{1}{5}) = \\frac{2\\pi}{15}$"
     ],
     "answer": "$\\frac{2\\pi}{15}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vdw_007",
@@ -13573,7 +14437,10 @@
       "$V = \\pi\\int_0^2[16 - y^4]\\,dy = \\pi\\left[16y-\\frac{y^5}{5}\\right]_0^2 = \\pi(32-\\frac{32}{5}) = \\frac{128\\pi}{5}$"
     ],
     "answer": "$\\frac{128\\pi}{5}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vdw_008",
@@ -13622,7 +14489,10 @@
       "$= \\pi\\left[-y^{-1}\\right]_1^4 = \\pi(-\\frac{1}{4}+1) = \\frac{3\\pi}{4}$"
     ],
     "answer": "$\\frac{3\\pi}{4}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vdw_009",
@@ -13671,7 +14541,10 @@
       "$= \\pi[3.75(4)-\\frac{64}{6}+\\frac{1024}{320}] = \\pi[15-\\frac{32}{3}+3.2] = \\pi \\cdot \\frac{54.6-32}{3} \\approx 7.53\\pi$"
     ],
     "answer": "$\\pi\\left(\\frac{226}{30}\\right) \\approx 7.53\\pi \\approx 23.7$ cubic units",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vdw_010",
@@ -13722,7 +14595,10 @@
       "$= \\pi[1.44+7.253+6.72] = 15.41\\pi \\approx 48.4$"
     ],
     "answer": "$\\approx 15.4\\pi \\approx 48.4$ cubic units",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "av_005",
@@ -13767,7 +14643,10 @@
       "$f_{\\text{avg}} = \\frac{1}{3-0}\\int_0^3 x^2\\,dx = \\frac{1}{3}\\left[\\frac{x^3}{3}\\right]_0^3 = \\frac{1}{3}\\cdot 9 = 3$"
     ],
     "answer": "$3$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "av_006",
@@ -13812,7 +14691,10 @@
       "$g_{\\text{avg}} = \\frac{1}{\\pi}\\int_0^{\\pi}\\sin(x)\\,dx = \\frac{1}{\\pi}[-\\cos(x)]_0^{\\pi} = \\frac{1}{\\pi}(1+1) = \\frac{2}{\\pi}$"
     ],
     "answer": "$\\frac{2}{\\pi} \\approx 0.637$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "av_007",
@@ -13859,7 +14741,10 @@
       "$= \\frac{1}{12}[(840+\\frac{120}{\\pi})-(0-\\frac{120}{\\pi})] = \\frac{1}{12}(840+\\frac{240}{\\pi}) = 70+\\frac{20}{\\pi}$"
     ],
     "answer": "$70 + \\frac{20}{\\pi} \\approx 76.4$°F",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "av_008",
@@ -13904,7 +14789,10 @@
       "$v_{\\text{avg}} = \\frac{1}{10}\\int_0^{10}(60-2t)\\,dt = \\frac{1}{10}[60t-t^2]_0^{10} = \\frac{1}{10}(600-100) = 50$"
     ],
     "answer": "$50$ mph",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "av_009",
@@ -13952,7 +14840,10 @@
       "$= \\frac{1}{24}[(4800 - \\frac{1200}{\\pi}) - (0 - \\frac{1200}{\\pi})] = \\frac{4800}{24} = 200$"
     ],
     "answer": "$200$ MW",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "av_010",
@@ -13999,7 +14890,10 @@
       "$= \\frac{3}{2}(-4e^{-2}+4) = 6(1-e^{-2}) \\approx 6(0.865) \\approx 5.19$"
     ],
     "answer": "$6(1-e^{-2}) \\approx 5.19$ mg/L",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "abc_010",
@@ -14046,7 +14940,10 @@
       "Area $= \\int_0^1 (x - x^3)\\,dx = \\left[\\frac{x^2}{2} - \\frac{x^4}{4}\\right]_0^1 = \\frac{1}{2} - \\frac{1}{4} = \\frac{1}{4}$"
     ],
     "answer": "$\\frac{1}{4}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "vcs_010",
@@ -14097,7 +14994,10 @@
       "$= \\frac{\\sqrt{3}}{4}\\left[8 - \\frac{64}{5} + \\frac{16}{3}\\right] = \\frac{\\sqrt{3}}{4} \\cdot \\frac{120 - 192 + 80}{15} = \\frac{\\sqrt{3}}{4} \\cdot \\frac{8}{15} = \\frac{2\\sqrt{3}}{15}$"
     ],
     "answer": "$\\frac{2\\sqrt{3}}{15}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "sv_005",
@@ -14144,7 +15044,10 @@
       "Exponentiate: $y = Ae^{x^3}$ where $A = \\pm e^C$"
     ],
     "answer": "$y = Ae^{x^3}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sv_006",
@@ -14191,7 +15094,10 @@
       "Solve: $y^3 = \\frac{3x^2}{2} + C_1$ or $y = \\left(\\frac{3x^2}{2} + C_1\\right)^{1/3}$"
     ],
     "answer": "$y = \\left(\\frac{3x^2}{2} + C\\right)^{1/3}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sv_007",
@@ -14240,7 +15146,10 @@
       "Solution: $P(t) = 200e^{0.05t}$"
     ],
     "answer": "$P(t) = 200e^{0.05t}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sv_008",
@@ -14289,7 +15198,10 @@
       "Solution: $T(t) = 20 + 70e^{-0.1t}$"
     ],
     "answer": "$T(t) = 20 + 70e^{-0.1t}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sv_009",
@@ -14340,7 +15252,10 @@
       "Solution: $S(t) = 50(1 - e^{-t/50})$"
     ],
     "answer": "$S(t) = 50(1 - e^{-t/50})$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sv_010",
@@ -14389,7 +15304,10 @@
       "Solution: $M(t) = 80e^{-0.0993t}$"
     ],
     "answer": "$M(t) = 80e^{-0.099t}$ with $k \\approx 0.099$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sf_005",
@@ -14435,7 +15353,10 @@
       "Slope $= 2 - 1 = 1$"
     ],
     "answer": "$1$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sf_006",
@@ -14482,7 +15403,10 @@
       "These are the $y$-values where the slope field has horizontal segments (equilibrium solutions)"
     ],
     "answer": "$y = 0$ and $y = 2$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sf_007",
@@ -14533,7 +15457,10 @@
       "Answer: (A)"
     ],
     "answer": "(A) $\\frac{dy}{dx} = y - 3$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sf_008",
@@ -14581,7 +15508,10 @@
       "Solution curves in the first quadrant rise but flatten out (slopes decrease)"
     ],
     "answer": "Slopes decrease as $x$ increases: the line segments become less steep moving rightward.",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sf_009",
@@ -14629,7 +15559,10 @@
       "For $P$ slightly above $3$, $dP/dt < 0$ (returns toward 3) and for $P$ slightly below $3$, $dP/dt > 0$ (returns toward 3) → $P = 3$ is stable"
     ],
     "answer": "$P = 1$ (unstable) and $P = 3$ (stable)",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "sf_010",
@@ -14678,7 +15611,10 @@
       "$c = 0$ is the stable equilibrium; $c = 1$ is unstable from below"
     ],
     "answer": "$c(t) \\to 0$ as $t \\to \\infty$; the concentration of $A$ decays to zero.",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "differential_equations"
   },
   {
     "id": "pm_005",
@@ -14726,7 +15662,10 @@
       "Solutions: $t = 1$ and $t = 3$"
     ],
     "answer": "$t = 1$ and $t = 3$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "pm_006",
@@ -14773,7 +15712,10 @@
       "$a(2) = 6(2) - 12 = 0$"
     ],
     "answer": "$0$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "pm_007",
@@ -14823,7 +15765,10 @@
       "Car moves in negative direction on $(0, \\frac{\\pi}{6}) \\cup (\\frac{5\\pi}{6}, 2\\pi)$"
     ],
     "answer": "$\\left(0,\\, \\frac{\\pi}{6}\\right) \\cup \\left(\\frac{5\\pi}{6},\\, 2\\pi\\right)$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "pm_008",
@@ -14872,7 +15817,10 @@
       "Total distance $\\approx 11.49 + 10.59 = 22.08$ m"
     ],
     "answer": "$\\approx 22.08$ meters",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "pm_009",
@@ -14923,7 +15871,10 @@
       "Since $\\mathbf{v} \\cdot \\mathbf{a} < 0$, the drone is slowing down"
     ],
     "answer": "Speed $= \\frac{5\\sqrt{2}}{2} \\approx 3.54$ m/s; the drone is slowing down.",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "pm_010",
@@ -14974,7 +15925,10 @@
       "Total distance $\\approx 3.5 + 4 + 2 + 2.5 = 12$ m"
     ],
     "answer": "$\\approx 12$ meters",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "applications"
   },
   {
     "id": "le_006",
@@ -15021,7 +15975,10 @@
       "Evaluate: $\\lim_{x \\to 4}(x + 4) = 8$"
     ],
     "answer": "$8$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "le_007",
@@ -15068,7 +16025,10 @@
       "Limit $= 5 \\cdot 1 = 5$"
     ],
     "answer": "$5$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "le_008",
@@ -15115,7 +16075,10 @@
       "Limit $= \\frac{3}{5}$"
     ],
     "answer": "$\\frac{3}{5}$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "le_009",
@@ -15162,7 +16125,10 @@
       "The profit approaches $\\$500$ as production grows large"
     ],
     "answer": "$\\$500$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "le_010",
@@ -15211,7 +16177,10 @@
       "This is $f'(3)$ where $f(x) = x^2$, confirming $f'(x) = 2x$ and $f'(3) = 6$"
     ],
     "answer": "$6$; this represents $f'(3)$ where $f(x) = x^2$.",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "ct_006",
@@ -15259,7 +16228,10 @@
       "The limit exists but doesn't equal $f(1)$ → removable discontinuity"
     ],
     "answer": "Not continuous; removable discontinuity at $x = 1$.",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "ct_007",
@@ -15307,7 +16279,10 @@
       "$3k = 6$ → $k = 2$"
     ],
     "answer": "$k = 2$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "ct_008",
@@ -15355,7 +16330,10 @@
       "Left limit ($-4$) ≠ right limit ($4$) → jump discontinuity at $x = 2$"
     ],
     "answer": "Jump discontinuity at $x = 2$.",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "ct_009",
@@ -15403,7 +16381,10 @@
       "For continuity, set $T(5) = 10$ °C"
     ],
     "answer": "Not continuous (removable discontinuity). $T(5)$ should be $10$ °C.",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "ct_010",
@@ -15453,7 +16434,10 @@
       "Solving: $5 + 2(w - 1) = 10$ → $w = 3.5$"
     ],
     "answer": "Jump discontinuity at $w = 5$. IVT applies on $[1, 5]$ where $C$ is continuous: $C(3.5) = 10$.",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "sq_005",
@@ -15501,7 +16485,10 @@
       "By the Squeeze Theorem, $\\lim_{x \\to 0} x^2\\cos\\left(\\frac{1}{x}\\right) = 0$"
     ],
     "answer": "$0$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "sq_006",
@@ -15549,7 +16536,10 @@
       "By the Squeeze Theorem, $\\lim_{x \\to \\infty} \\frac{\\sin(x)}{x} = 0$"
     ],
     "answer": "$0$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "sq_007",
@@ -15597,7 +16587,10 @@
       "$\\lim_{x \\to 0} g(x) = 2$"
     ],
     "answer": "$2$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "sq_008",
@@ -15645,7 +16638,10 @@
       "By the Squeeze Theorem, the limit is $0$"
     ],
     "answer": "$0$",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "sq_009",
@@ -15693,7 +16689,10 @@
       "The beam's displacement approaches $0$ mm"
     ],
     "answer": "$0$ mm; the displacement approaches zero.",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   },
   {
     "id": "sq_010",
@@ -15741,6 +16740,9 @@
       "The stock price approaches the moving average $M$"
     ],
     "answer": "$M$; the price converges to the moving average.",
-    "scored": true
+    "scored": true,
+    "subject": "ap",
+    "exam": "calc_ab",
+    "domain": "limits"
   }
 ]

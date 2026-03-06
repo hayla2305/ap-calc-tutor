@@ -1,6 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 
 const STORAGE_WARNING_KEY = '__storage_mode__';
+const CURRENT_SCHEMA_VERSION = 2;
 
 function getStorageBackend() {
   // Try window.storage (Claude artifact environment)
@@ -30,6 +31,32 @@ function createMemoryStorage() {
 }
 
 const { type: storageType, backend: storage } = getStorageBackend();
+
+// ─── UID Resolution ───
+// Maps legacy concept id → uid (e.g. "mvt" → "ap.calc_ab.mvt")
+let _idToUid = null;
+let _uidSet = null;
+
+export function setIdToUidMap(concepts) {
+  _idToUid = {};
+  _uidSet = new Set();
+  for (const c of concepts) {
+    _idToUid[c.id] = c.uid;
+    _uidSet.add(c.uid);
+  }
+}
+
+// Resolve a concept identifier to its UID.
+// Accepts either legacy id or uid — always returns uid.
+function resolveUid(identifier) {
+  if (!identifier) return identifier;
+  // Already a uid
+  if (_uidSet && _uidSet.has(identifier)) return identifier;
+  // Legacy id → uid
+  if (_idToUid && _idToUid[identifier]) return _idToUid[identifier];
+  // Unknown — return as-is (defensive)
+  return identifier;
+}
 
 export function getStorageType() {
   return storageType;
@@ -79,14 +106,16 @@ const DEFAULT_SOLVE = {
 };
 
 export function getProgress(concept) {
-  return safeGet(`progress:${concept}`, {
+  const uid = resolveUid(concept);
+  return safeGet(`progress:${uid}`, {
     recognition: { ...DEFAULT_RECOGNITION },
     solve: { ...DEFAULT_SOLVE },
   });
 }
 
 export function setProgress(concept, data) {
-  return safeSet(`progress:${concept}`, data);
+  const uid = resolveUid(concept);
+  return safeSet(`progress:${uid}`, data);
 }
 
 export function updateRecognition(concept, updater) {
@@ -104,7 +133,9 @@ export function updateSolve(concept, updater) {
 // ─── Confusion Storage ───
 
 export function getConfusion(trueConcept, chosenConcept) {
-  return safeGet(`confusions:${trueConcept}:${chosenConcept}`, {
+  const trueUid = resolveUid(trueConcept);
+  const chosenUid = resolveUid(chosenConcept);
+  return safeGet(`confusions:${trueUid}:${chosenUid}`, {
     count: 0,
     lastSeen: null,
     coaching_baseline_count: null,
@@ -113,45 +144,58 @@ export function getConfusion(trueConcept, chosenConcept) {
 }
 
 export function markCoachingBaseline(trueConcept, chosenConcept) {
-  const data = getConfusion(trueConcept, chosenConcept);
+  const trueUid = resolveUid(trueConcept);
+  const chosenUid = resolveUid(chosenConcept);
+  const data = getConfusion(trueUid, chosenUid);
   if (data.coaching_baseline_count == null) {
     data.coaching_baseline_count = data.count;
   }
   data.coaching_shown_ts = Date.now();
-  return safeSet(`confusions:${trueConcept}:${chosenConcept}`, data);
+  return safeSet(`confusions:${trueUid}:${chosenUid}`, data);
 }
 
 export function incrementConfusion(trueConcept, chosenConcept) {
-  const data = getConfusion(trueConcept, chosenConcept);
+  const trueUid = resolveUid(trueConcept);
+  const chosenUid = resolveUid(chosenConcept);
+  const data = getConfusion(trueUid, chosenUid);
   data.count += 1;
   data.lastSeen = Date.now();
-  return safeSet(`confusions:${trueConcept}:${chosenConcept}`, data);
+  return safeSet(`confusions:${trueUid}:${chosenUid}`, data);
 }
 
 export function getTopConfusions(trueConcept, limit = 2) {
-  // Scan all confusion keys for this trueConcept
+  const trueUid = resolveUid(trueConcept);
   const confusions = [];
-  // We need to check known concepts — pass them in or scan storage
-  // For efficiency, we'll use a known-concepts approach
-  const concepts = getAllConceptIds();
-  for (const chosen of concepts) {
-    if (chosen === trueConcept) continue;
-    const data = getConfusion(trueConcept, chosen);
-    if (data.count > 0) {
-      confusions.push({ chosen, ...data });
+  // Iterate legacy IDs so callers get legacy IDs back in `chosen`
+  const ids = getAllConceptIds();
+  for (const chosenId of ids) {
+    const chosenUid = resolveUid(chosenId);
+    if (chosenUid === trueUid) continue;
+    const data = safeGet(`confusions:${trueUid}:${chosenUid}`, null);
+    if (data && data.count > 0) {
+      confusions.push({ chosen: chosenId, ...data });
     }
   }
   confusions.sort((a, b) => b.count - a.count);
   return confusions.slice(0, limit);
 }
 
-// Concept IDs cache — set once from concepts.json
+// Concept UIDs cache — set once from concepts.json
+let _conceptUids = null;
+// Legacy: concept IDs cache (kept for backward compat during transition)
 let _conceptIds = null;
+
 export function setConceptIds(ids) {
   _conceptIds = ids;
 }
 export function getAllConceptIds() {
   return _conceptIds || [];
+}
+export function setConceptUids(uids) {
+  _conceptUids = uids;
+}
+export function getAllConceptUids() {
+  return _conceptUids || _conceptIds || [];
 }
 
 // ─── Attempts Log ───
@@ -235,15 +279,151 @@ export function useStorage(key, initialValue) {
 // ─── Reset ───
 
 export function resetAllProgress() {
-  // Only clear app-specific keys, not all storage
-  const concepts = getAllConceptIds();
-  for (const c of concepts) {
+  // Clear uid-keyed progress and confusion entries
+  const uids = getAllConceptUids();
+  for (const c of uids) {
     storage.removeItem(`progress:${c}`);
-    for (const c2 of concepts) {
+    for (const c2 of uids) {
+      if (c !== c2) storage.removeItem(`confusions:${c}:${c2}`);
+    }
+  }
+  // Also clear any remaining legacy id-keyed entries
+  const ids = getAllConceptIds();
+  for (const c of ids) {
+    storage.removeItem(`progress:${c}`);
+    for (const c2 of ids) {
       if (c !== c2) storage.removeItem(`confusions:${c}:${c2}`);
     }
   }
   storage.removeItem('attempts');
   storage.removeItem('sessions');
   storage.removeItem('lastInteractionTs');
+  storage.removeItem('storageSchemaVersion');
+}
+
+// ─── Storage Schema Migration (v1 → v2: UID namespacing) ───
+
+function estimateStorageUsage() {
+  if (storageType === 'memory') return { used: 0, quota: Infinity };
+  try {
+    let used = 0;
+    for (let i = 0; i < storage.length; i++) {
+      const key = storage.key(i);
+      used += key.length + (storage.getItem(key) || '').length;
+    }
+    // localStorage quota is typically ~5MB (5,242,880 chars)
+    return { used: used * 2, quota: 5_242_880 };
+  } catch {
+    return { used: 0, quota: 5_242_880 };
+  }
+}
+
+export function runStorageMigrationV2(concepts) {
+  const currentVersion = safeGet('storageSchemaVersion', 1);
+  if (currentVersion >= CURRENT_SCHEMA_VERSION) return;
+
+  // Build id → uid map
+  const idToUid = {};
+  for (const c of concepts) {
+    if (c.id && c.uid) idToUid[c.id] = c.uid;
+  }
+  const legacyIds = Object.keys(idToUid);
+  if (legacyIds.length === 0) return;
+
+  // ── Best-effort backup ──
+  const { used, quota } = estimateStorageUsage();
+  const projectedAfterBackup = used * 2; // backup roughly doubles usage
+  if (projectedAfterBackup < quota * 0.8) {
+    // Full backup: store all v1 keys
+    const backup = {};
+    for (const id of legacyIds) {
+      const progressRaw = storage.getItem(`progress:${id}`);
+      if (progressRaw !== null) backup[`progress:${id}`] = progressRaw;
+      for (const id2 of legacyIds) {
+        if (id === id2) continue;
+        const confRaw = storage.getItem(`confusions:${id}:${id2}`);
+        if (confRaw !== null) backup[`confusions:${id}:${id2}`] = confRaw;
+      }
+    }
+    const attemptsRaw = storage.getItem('attempts');
+    if (attemptsRaw !== null) backup['attempts'] = attemptsRaw;
+    safeSet('__v1_backup__', backup);
+  } else {
+    // Manifest-only backup: store key map only
+    safeSet('__v1_backup_manifest__', {
+      idToUid,
+      migratedAt: Date.now(),
+      note: 'Full backup skipped — storage quota > 80%',
+    });
+  }
+
+  // ── Migrate progress keys ──
+  for (const id of legacyIds) {
+    const uid = idToUid[id];
+    const v1Raw = storage.getItem(`progress:${id}`);
+    if (v1Raw === null) continue;
+    // Only write v2 key if it doesn't already exist (idempotent)
+    const v2Raw = storage.getItem(`progress:${uid}`);
+    if (v2Raw === null) {
+      const ok = safeSet(`progress:${uid}`, JSON.parse(v1Raw));
+      // Only delete v1 after confirming v2 write
+      if (ok && storage.getItem(`progress:${uid}`) !== null) {
+        storage.removeItem(`progress:${id}`);
+      }
+    } else {
+      // v2 key already exists — just clean up v1
+      storage.removeItem(`progress:${id}`);
+    }
+  }
+
+  // ── Migrate confusion keys ──
+  for (const id1 of legacyIds) {
+    const uid1 = idToUid[id1];
+    for (const id2 of legacyIds) {
+      if (id1 === id2) continue;
+      const uid2 = idToUid[id2];
+      const v1Key = `confusions:${id1}:${id2}`;
+      const v2Key = `confusions:${uid1}:${uid2}`;
+      const v1Raw = storage.getItem(v1Key);
+      if (v1Raw === null) continue;
+      const v2Raw = storage.getItem(v2Key);
+      if (v2Raw === null) {
+        const ok = safeSet(v2Key, JSON.parse(v1Raw));
+        if (ok && storage.getItem(v2Key) !== null) {
+          storage.removeItem(v1Key);
+        }
+      } else {
+        storage.removeItem(v1Key);
+      }
+    }
+  }
+
+  // ── Migrate attempts log (trueConcept / chosenConcept fields) ──
+  const attempts = safeGet('attempts', []);
+  let attemptsChanged = false;
+  for (const a of attempts) {
+    if (a.trueConcept && idToUid[a.trueConcept]) {
+      a.trueConceptUid = idToUid[a.trueConcept];
+      attemptsChanged = true;
+    } else if (a.trueConceptUid) {
+      // Already migrated
+    } else if (a.trueConcept) {
+      // Unknown concept — keep as-is, add uid field matching
+      a.trueConceptUid = a.trueConcept;
+    }
+    if (a.chosenConcept && idToUid[a.chosenConcept]) {
+      a.chosenConceptUid = idToUid[a.chosenConcept];
+      attemptsChanged = true;
+    } else if (a.chosenConceptUid) {
+      // Already migrated
+    } else if (a.chosenConcept) {
+      a.chosenConceptUid = a.chosenConcept;
+    }
+  }
+  if (attemptsChanged) {
+    safeSet('attempts', attempts);
+  }
+
+  // ── Mark migration complete ──
+  safeSet('storageSchemaVersion', CURRENT_SCHEMA_VERSION);
 }

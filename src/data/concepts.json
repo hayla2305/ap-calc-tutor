@@ -1,41 +1,692 @@
 [
-  { "id": "derivative_as_rate", "cluster": 1, "cb_unit": 2, "label": "Derivatives as Rates of Change", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields"] },
-  { "id": "integral_as_accumulation", "cluster": 1, "cb_unit": 6, "label": "Integrals as Accumulated Change", "scored": true, "implausible_with": ["eulers_method", "product_rule", "quotient_rule", "chain_rule", "implicit_differentiation", "squeeze_theorem"] },
-  { "id": "ftc_part1", "cluster": 1, "cb_unit": 6, "label": "FTC Part 1", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "slope_fields", "squeeze_theorem"] },
-  { "id": "ftc_part2", "cluster": 1, "cb_unit": 6, "label": "FTC Part 2", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "slope_fields", "squeeze_theorem", "implicit_differentiation"] },
-  { "id": "riemann_sums", "cluster": 1, "cb_unit": 6, "label": "Riemann Sums", "scored": true, "implausible_with": ["eulers_method", "product_rule", "quotient_rule", "chain_rule", "implicit_differentiation", "squeeze_theorem", "slope_fields"] },
-
-  { "id": "f_fprime_fdoubleprime", "cluster": 2, "cb_unit": 5, "label": "f, f', f'' Relationships", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "u_substitution", "separation_of_variables", "slope_fields"] },
-  { "id": "increasing_decreasing", "cluster": 2, "cb_unit": 5, "label": "Increasing/Decreasing", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "u_substitution", "separation_of_variables", "slope_fields", "squeeze_theorem"] },
-  { "id": "concavity", "cluster": 2, "cb_unit": 5, "label": "Concavity", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "u_substitution", "separation_of_variables", "slope_fields", "squeeze_theorem"] },
-  { "id": "relative_extrema", "cluster": 2, "cb_unit": 5, "label": "Relative Extrema", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "u_substitution", "separation_of_variables", "slope_fields", "squeeze_theorem"] },
-  { "id": "absolute_extrema", "cluster": 2, "cb_unit": 5, "label": "Absolute Extrema (Candidates Test)", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "u_substitution", "separation_of_variables", "slope_fields", "squeeze_theorem"] },
-  { "id": "inflection_points", "cluster": 2, "cb_unit": 5, "label": "Inflection Points", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "u_substitution", "separation_of_variables", "slope_fields", "squeeze_theorem"] },
-  { "id": "evt", "cluster": 2, "cb_unit": 5, "label": "Extreme Value Theorem", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "u_substitution", "product_rule", "quotient_rule", "chain_rule", "slope_fields", "squeeze_theorem"] },
-  { "id": "mvt", "cluster": 2, "cb_unit": 4, "label": "Mean Value Theorem", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "u_substitution", "product_rule", "quotient_rule", "chain_rule", "slope_fields", "squeeze_theorem"] },
-  { "id": "optimization", "cluster": 2, "cb_unit": 5, "label": "Optimization", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "slope_fields", "squeeze_theorem", "separation_of_variables"] },
-
-  { "id": "product_rule", "cluster": 3, "cb_unit": 2, "label": "Product Rule", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "squeeze_theorem", "separation_of_variables", "riemann_sums"] },
-  { "id": "quotient_rule", "cluster": 3, "cb_unit": 2, "label": "Quotient Rule", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "squeeze_theorem", "separation_of_variables", "riemann_sums"] },
-  { "id": "chain_rule", "cluster": 3, "cb_unit": 3, "label": "Chain Rule", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "squeeze_theorem", "separation_of_variables", "riemann_sums"] },
-  { "id": "implicit_differentiation", "cluster": 3, "cb_unit": 3, "label": "Implicit Differentiation", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "squeeze_theorem", "riemann_sums"] },
-  { "id": "inverse_function_derivatives", "cluster": 3, "cb_unit": 3, "label": "Inverse Function Derivatives", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "squeeze_theorem", "riemann_sums", "separation_of_variables"] },
-  { "id": "related_rates", "cluster": 3, "cb_unit": 4, "label": "Related Rates", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "squeeze_theorem", "riemann_sums", "u_substitution"] },
-  { "id": "linear_approximation", "cluster": 3, "cb_unit": 4, "label": "Linear Approximation / Differentials", "scored": true, "implausible_with": ["volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "squeeze_theorem", "riemann_sums", "u_substitution", "separation_of_variables"] },
-  { "id": "lhopitals_rule", "cluster": 3, "cb_unit": 4, "label": "L'Hopital's Rule", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "separation_of_variables", "riemann_sums", "u_substitution", "product_rule", "quotient_rule"] },
-
-  { "id": "u_substitution", "cluster": 4, "cb_unit": 6, "label": "u-Substitution", "scored": true, "implausible_with": ["eulers_method", "slope_fields", "squeeze_theorem", "product_rule", "quotient_rule", "implicit_differentiation", "related_rates", "lhopitals_rule"] },
-  { "id": "area_between_curves", "cluster": 4, "cb_unit": 8, "label": "Area Between Curves", "scored": true, "implausible_with": ["eulers_method", "slope_fields", "squeeze_theorem", "product_rule", "quotient_rule", "chain_rule", "implicit_differentiation", "related_rates", "lhopitals_rule"] },
-  { "id": "volume_cross_sections", "cluster": 4, "cb_unit": 8, "label": "Volume by Cross-Sections", "scored": true, "implausible_with": ["eulers_method", "slope_fields", "squeeze_theorem", "product_rule", "quotient_rule", "chain_rule", "implicit_differentiation", "related_rates", "lhopitals_rule", "limit_evaluation", "continuity_types"] },
-  { "id": "volume_disk_washer", "cluster": 4, "cb_unit": 8, "label": "Volume by Disk/Washer", "scored": true, "implausible_with": ["eulers_method", "slope_fields", "squeeze_theorem", "product_rule", "quotient_rule", "chain_rule", "implicit_differentiation", "related_rates", "lhopitals_rule", "limit_evaluation", "continuity_types"] },
-  { "id": "average_value", "cluster": 4, "cb_unit": 8, "label": "Average Value of a Function", "scored": true, "implausible_with": ["eulers_method", "slope_fields", "squeeze_theorem", "product_rule", "quotient_rule", "chain_rule", "implicit_differentiation", "related_rates", "volume_cross_sections", "volume_disk_washer"] },
-
-  { "id": "separation_of_variables", "cluster": 5, "cb_unit": 7, "label": "Separation of Variables", "scored": true, "implausible_with": ["volume_cross_sections", "volume_disk_washer", "area_between_curves", "squeeze_theorem", "product_rule", "quotient_rule", "chain_rule", "riemann_sums", "lhopitals_rule"] },
-  { "id": "slope_fields", "cluster": 5, "cb_unit": 7, "label": "Slope Fields", "scored": true, "implausible_with": ["volume_cross_sections", "volume_disk_washer", "area_between_curves", "squeeze_theorem", "product_rule", "quotient_rule", "chain_rule", "riemann_sums", "lhopitals_rule", "u_substitution"] },
-  { "id": "eulers_method", "cluster": 5, "cb_unit": 7, "label": "Euler's Method (BC Enrichment)", "scored": false, "implausible_with": ["volume_cross_sections", "volume_disk_washer", "area_between_curves", "squeeze_theorem", "product_rule", "quotient_rule", "chain_rule", "riemann_sums", "u_substitution"] },
-  { "id": "particle_motion", "cluster": 5, "cb_unit": 4, "label": "Particle Motion", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "squeeze_theorem", "u_substitution", "separation_of_variables"] },
-
-  { "id": "limit_evaluation", "cluster": 6, "cb_unit": 1, "label": "Limit Evaluation Techniques", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "separation_of_variables", "u_substitution", "product_rule", "quotient_rule"] },
-  { "id": "continuity_types", "cluster": 6, "cb_unit": 1, "label": "Continuity Types and IVT", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "separation_of_variables", "u_substitution", "product_rule", "quotient_rule", "chain_rule"] },
-  { "id": "squeeze_theorem", "cluster": 6, "cb_unit": 1, "label": "Squeeze Theorem", "scored": true, "implausible_with": ["eulers_method", "volume_cross_sections", "volume_disk_washer", "area_between_curves", "slope_fields", "separation_of_variables", "u_substitution", "product_rule", "quotient_rule", "chain_rule", "implicit_differentiation", "related_rates", "optimization"] }
+  {
+    "id": "derivative_as_rate",
+    "cluster": 1,
+    "cb_unit": 2,
+    "label": "Derivatives as Rates of Change",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.derivative_as_rate"
+  },
+  {
+    "id": "integral_as_accumulation",
+    "cluster": 1,
+    "cb_unit": 6,
+    "label": "Integrals as Accumulated Change",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "implicit_differentiation",
+      "squeeze_theorem"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.integral_as_accumulation"
+  },
+  {
+    "id": "ftc_part1",
+    "cluster": 1,
+    "cb_unit": 6,
+    "label": "FTC Part 1",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "slope_fields",
+      "squeeze_theorem"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.ftc_part1"
+  },
+  {
+    "id": "ftc_part2",
+    "cluster": 1,
+    "cb_unit": 6,
+    "label": "FTC Part 2",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "slope_fields",
+      "squeeze_theorem",
+      "implicit_differentiation"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.ftc_part2"
+  },
+  {
+    "id": "riemann_sums",
+    "cluster": 1,
+    "cb_unit": 6,
+    "label": "Riemann Sums",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "implicit_differentiation",
+      "squeeze_theorem",
+      "slope_fields"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.riemann_sums"
+  },
+  {
+    "id": "f_fprime_fdoubleprime",
+    "cluster": 2,
+    "cb_unit": 5,
+    "label": "f, f', f'' Relationships",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "u_substitution",
+      "separation_of_variables",
+      "slope_fields"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.f_fprime_fdoubleprime"
+  },
+  {
+    "id": "increasing_decreasing",
+    "cluster": 2,
+    "cb_unit": 5,
+    "label": "Increasing/Decreasing",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "u_substitution",
+      "separation_of_variables",
+      "slope_fields",
+      "squeeze_theorem"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.increasing_decreasing"
+  },
+  {
+    "id": "concavity",
+    "cluster": 2,
+    "cb_unit": 5,
+    "label": "Concavity",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "u_substitution",
+      "separation_of_variables",
+      "slope_fields",
+      "squeeze_theorem"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.concavity"
+  },
+  {
+    "id": "relative_extrema",
+    "cluster": 2,
+    "cb_unit": 5,
+    "label": "Relative Extrema",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "u_substitution",
+      "separation_of_variables",
+      "slope_fields",
+      "squeeze_theorem"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.relative_extrema"
+  },
+  {
+    "id": "absolute_extrema",
+    "cluster": 2,
+    "cb_unit": 5,
+    "label": "Absolute Extrema (Candidates Test)",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "u_substitution",
+      "separation_of_variables",
+      "slope_fields",
+      "squeeze_theorem"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.absolute_extrema"
+  },
+  {
+    "id": "inflection_points",
+    "cluster": 2,
+    "cb_unit": 5,
+    "label": "Inflection Points",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "u_substitution",
+      "separation_of_variables",
+      "slope_fields",
+      "squeeze_theorem"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.inflection_points"
+  },
+  {
+    "id": "evt",
+    "cluster": 2,
+    "cb_unit": 5,
+    "label": "Extreme Value Theorem",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "u_substitution",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "slope_fields",
+      "squeeze_theorem"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.evt"
+  },
+  {
+    "id": "mvt",
+    "cluster": 2,
+    "cb_unit": 4,
+    "label": "Mean Value Theorem",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "u_substitution",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "slope_fields",
+      "squeeze_theorem"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.mvt"
+  },
+  {
+    "id": "optimization",
+    "cluster": 2,
+    "cb_unit": 5,
+    "label": "Optimization",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "slope_fields",
+      "squeeze_theorem",
+      "separation_of_variables"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.optimization"
+  },
+  {
+    "id": "product_rule",
+    "cluster": 3,
+    "cb_unit": 2,
+    "label": "Product Rule",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "squeeze_theorem",
+      "separation_of_variables",
+      "riemann_sums"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.product_rule"
+  },
+  {
+    "id": "quotient_rule",
+    "cluster": 3,
+    "cb_unit": 2,
+    "label": "Quotient Rule",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "squeeze_theorem",
+      "separation_of_variables",
+      "riemann_sums"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.quotient_rule"
+  },
+  {
+    "id": "chain_rule",
+    "cluster": 3,
+    "cb_unit": 3,
+    "label": "Chain Rule",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "squeeze_theorem",
+      "separation_of_variables",
+      "riemann_sums"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.chain_rule"
+  },
+  {
+    "id": "implicit_differentiation",
+    "cluster": 3,
+    "cb_unit": 3,
+    "label": "Implicit Differentiation",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "squeeze_theorem",
+      "riemann_sums"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.implicit_differentiation"
+  },
+  {
+    "id": "inverse_function_derivatives",
+    "cluster": 3,
+    "cb_unit": 3,
+    "label": "Inverse Function Derivatives",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "squeeze_theorem",
+      "riemann_sums",
+      "separation_of_variables"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.inverse_function_derivatives"
+  },
+  {
+    "id": "related_rates",
+    "cluster": 3,
+    "cb_unit": 4,
+    "label": "Related Rates",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "squeeze_theorem",
+      "riemann_sums",
+      "u_substitution"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.related_rates"
+  },
+  {
+    "id": "linear_approximation",
+    "cluster": 3,
+    "cb_unit": 4,
+    "label": "Linear Approximation / Differentials",
+    "scored": true,
+    "implausible_with": [
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "squeeze_theorem",
+      "riemann_sums",
+      "u_substitution",
+      "separation_of_variables"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.linear_approximation"
+  },
+  {
+    "id": "lhopitals_rule",
+    "cluster": 3,
+    "cb_unit": 4,
+    "label": "L'Hopital's Rule",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "separation_of_variables",
+      "riemann_sums",
+      "u_substitution",
+      "product_rule",
+      "quotient_rule"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.lhopitals_rule"
+  },
+  {
+    "id": "u_substitution",
+    "cluster": 4,
+    "cb_unit": 6,
+    "label": "u-Substitution",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "slope_fields",
+      "squeeze_theorem",
+      "product_rule",
+      "quotient_rule",
+      "implicit_differentiation",
+      "related_rates",
+      "lhopitals_rule"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.u_substitution"
+  },
+  {
+    "id": "area_between_curves",
+    "cluster": 4,
+    "cb_unit": 8,
+    "label": "Area Between Curves",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "slope_fields",
+      "squeeze_theorem",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "implicit_differentiation",
+      "related_rates",
+      "lhopitals_rule"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.area_between_curves"
+  },
+  {
+    "id": "volume_cross_sections",
+    "cluster": 4,
+    "cb_unit": 8,
+    "label": "Volume by Cross-Sections",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "slope_fields",
+      "squeeze_theorem",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "implicit_differentiation",
+      "related_rates",
+      "lhopitals_rule",
+      "limit_evaluation",
+      "continuity_types"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.volume_cross_sections"
+  },
+  {
+    "id": "volume_disk_washer",
+    "cluster": 4,
+    "cb_unit": 8,
+    "label": "Volume by Disk/Washer",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "slope_fields",
+      "squeeze_theorem",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "implicit_differentiation",
+      "related_rates",
+      "lhopitals_rule",
+      "limit_evaluation",
+      "continuity_types"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.volume_disk_washer"
+  },
+  {
+    "id": "average_value",
+    "cluster": 4,
+    "cb_unit": 8,
+    "label": "Average Value of a Function",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "slope_fields",
+      "squeeze_theorem",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "implicit_differentiation",
+      "related_rates",
+      "volume_cross_sections",
+      "volume_disk_washer"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.average_value"
+  },
+  {
+    "id": "separation_of_variables",
+    "cluster": 5,
+    "cb_unit": 7,
+    "label": "Separation of Variables",
+    "scored": true,
+    "implausible_with": [
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "squeeze_theorem",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "riemann_sums",
+      "lhopitals_rule"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.separation_of_variables"
+  },
+  {
+    "id": "slope_fields",
+    "cluster": 5,
+    "cb_unit": 7,
+    "label": "Slope Fields",
+    "scored": true,
+    "implausible_with": [
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "squeeze_theorem",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "riemann_sums",
+      "lhopitals_rule",
+      "u_substitution"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.slope_fields"
+  },
+  {
+    "id": "eulers_method",
+    "cluster": 5,
+    "cb_unit": 7,
+    "label": "Euler's Method (BC Enrichment)",
+    "scored": false,
+    "implausible_with": [
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "squeeze_theorem",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "riemann_sums",
+      "u_substitution"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.eulers_method"
+  },
+  {
+    "id": "particle_motion",
+    "cluster": 5,
+    "cb_unit": 4,
+    "label": "Particle Motion",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "squeeze_theorem",
+      "u_substitution",
+      "separation_of_variables"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.particle_motion"
+  },
+  {
+    "id": "limit_evaluation",
+    "cluster": 6,
+    "cb_unit": 1,
+    "label": "Limit Evaluation Techniques",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "separation_of_variables",
+      "u_substitution",
+      "product_rule",
+      "quotient_rule"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.limit_evaluation"
+  },
+  {
+    "id": "continuity_types",
+    "cluster": 6,
+    "cb_unit": 1,
+    "label": "Continuity Types and IVT",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "separation_of_variables",
+      "u_substitution",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.continuity_types"
+  },
+  {
+    "id": "squeeze_theorem",
+    "cluster": 6,
+    "cb_unit": 1,
+    "label": "Squeeze Theorem",
+    "scored": true,
+    "implausible_with": [
+      "eulers_method",
+      "volume_cross_sections",
+      "volume_disk_washer",
+      "area_between_curves",
+      "slope_fields",
+      "separation_of_variables",
+      "u_substitution",
+      "product_rule",
+      "quotient_rule",
+      "chain_rule",
+      "implicit_differentiation",
+      "related_rates",
+      "optimization"
+    ],
+    "subject": "ap",
+    "exam": "calc_ab",
+    "uid": "ap.calc_ab.squeeze_theorem"
+  }
 ]
