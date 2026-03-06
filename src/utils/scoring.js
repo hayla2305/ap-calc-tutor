@@ -6,15 +6,18 @@ import { getProgress, getAttempts } from '../hooks/useStorage';
  */
 export function getMasteryPercent(concept) {
   const progress = getProgress(concept);
-  const rec = progress.recognition;
-  if (rec.attempts === 0) return null;
+  const rec = progress?.recognition;
+  if (!rec || !rec.attempts) return null;
 
   // Use first-try data across all levels
   let totalCorrect = 0;
   let totalAttempts = 0;
-  for (const level of Object.values(rec.firstTriesByLevel)) {
-    totalCorrect += level.correct;
-    totalAttempts += level.total;
+  const levels = rec.firstTriesByLevel;
+  if (levels && typeof levels === 'object') {
+    for (const level of Object.values(levels)) {
+      totalCorrect += level?.correct || 0;
+      totalAttempts += level?.total || 0;
+    }
   }
   if (totalAttempts === 0) return null;
   return Math.round((totalCorrect / totalAttempts) * 100);
@@ -79,6 +82,6 @@ export function getRecentFirstTryAccuracy(concept, lastN = 10) {
  */
 export function getAttemptsAtLevel(concept, level) {
   const progress = getProgress(concept);
-  const levelData = progress.recognition.firstTriesByLevel[level];
+  const levelData = progress?.recognition?.firstTriesByLevel?.[level];
   return levelData ? levelData.total : 0;
 }

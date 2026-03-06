@@ -105,6 +105,52 @@ const DEFAULT_SOLVE = {
   lastSeen: null,
 };
 
+/**
+ * Normalize a progress object to ensure it has recognition/solve structure.
+ * Handles legacy flat format {correct, attempts, streak, ...} that lacks the wrapper.
+ */
+function normalizeProgress(data) {
+  if (!data || typeof data !== 'object') {
+    return {
+      recognition: { ...DEFAULT_RECOGNITION },
+      solve: { ...DEFAULT_SOLVE },
+    };
+  }
+  // Already has recognition wrapper — patch any missing fields
+  if (data.recognition && typeof data.recognition === 'object') {
+    data.recognition = { ...DEFAULT_RECOGNITION, ...data.recognition };
+    if (!data.recognition.firstTriesByLevel || typeof data.recognition.firstTriesByLevel !== 'object') {
+      data.recognition.firstTriesByLevel = {};
+    }
+    data.solve = data.solve && typeof data.solve === 'object'
+      ? { ...DEFAULT_SOLVE, ...data.solve }
+      : { ...DEFAULT_SOLVE };
+    return data;
+  }
+  // Legacy flat format: {correct, total/attempts, streak, ...} → wrap into recognition
+  const correct = data.correct || 0;
+  const attempts = data.attempts || data.total || 0;
+  const streak = data.streak || 0;
+  const lastSeen = data.lastSeen || null;
+  const currentLevel = data.currentLevel || 1;
+  const firstTriesByLevel = data.firstTriesByLevel && typeof data.firstTriesByLevel === 'object'
+    ? data.firstTriesByLevel
+    : (attempts > 0 ? { '1': { correct, total: attempts } } : {});
+  return {
+    recognition: {
+      correct,
+      attempts,
+      streak,
+      currentLevel,
+      firstTriesByLevel,
+      lastSeen,
+    },
+    solve: data.solve && typeof data.solve === 'object'
+      ? { ...DEFAULT_SOLVE, ...data.solve }
+      : { ...DEFAULT_SOLVE },
+  };
+}
+
 export function getProgress(concept) {
   const uid = resolveUid(concept);
   const defaultProgress = {
@@ -112,11 +158,11 @@ export function getProgress(concept) {
     solve: { ...DEFAULT_SOLVE },
   };
   const data = safeGet(`progress:${uid}`, null);
-  if (data !== null) return data;
+  if (data !== null) return normalizeProgress(data);
   // Fallback: try legacy key if UID key has no data (pre-migration)
   if (uid !== concept && _idToUid) {
     const legacy = safeGet(`progress:${concept}`, null);
-    if (legacy !== null) return legacy;
+    if (legacy !== null) return normalizeProgress(legacy);
   }
   return defaultProgress;
 }
