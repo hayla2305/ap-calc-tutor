@@ -319,111 +319,126 @@ function estimateStorageUsage() {
 }
 
 export function runStorageMigrationV2(concepts) {
-  const currentVersion = safeGet('storageSchemaVersion', 1);
-  if (currentVersion >= CURRENT_SCHEMA_VERSION) return;
-
-  // Build id → uid map
-  const idToUid = {};
-  for (const c of concepts) {
-    if (c.id && c.uid) idToUid[c.id] = c.uid;
-  }
-  const legacyIds = Object.keys(idToUid);
-  if (legacyIds.length === 0) return;
-
-  // ── Best-effort backup ──
-  const { used, quota } = estimateStorageUsage();
-  const projectedAfterBackup = used * 2; // backup roughly doubles usage
-  if (projectedAfterBackup < quota * 0.8) {
-    // Full backup: store all v1 keys
-    const backup = {};
-    for (const id of legacyIds) {
-      const progressRaw = storage.getItem(`progress:${id}`);
-      if (progressRaw !== null) backup[`progress:${id}`] = progressRaw;
-      for (const id2 of legacyIds) {
-        if (id === id2) continue;
-        const confRaw = storage.getItem(`confusions:${id}:${id2}`);
-        if (confRaw !== null) backup[`confusions:${id}:${id2}`] = confRaw;
-      }
+  console.log('[migration] runStorageMigrationV2 start');
+  try {
+    const currentVersion = safeGet('storageSchemaVersion', 1);
+    console.log('[migration] currentVersion:', currentVersion, 'target:', CURRENT_SCHEMA_VERSION);
+    if (currentVersion >= CURRENT_SCHEMA_VERSION) {
+      console.log('[migration] already at target version, skipping');
+      return;
     }
-    const attemptsRaw = storage.getItem('attempts');
-    if (attemptsRaw !== null) backup['attempts'] = attemptsRaw;
-    safeSet('__v1_backup__', backup);
-  } else {
-    // Manifest-only backup: store key map only
-    safeSet('__v1_backup_manifest__', {
-      idToUid,
-      migratedAt: Date.now(),
-      note: 'Full backup skipped — storage quota > 80%',
-    });
-  }
 
-  // ── Migrate progress keys ──
-  for (const id of legacyIds) {
-    const uid = idToUid[id];
-    const v1Raw = storage.getItem(`progress:${id}`);
-    if (v1Raw === null) continue;
-    // Only write v2 key if it doesn't already exist (idempotent)
-    const v2Raw = storage.getItem(`progress:${uid}`);
-    if (v2Raw === null) {
-      const ok = safeSet(`progress:${uid}`, JSON.parse(v1Raw));
-      // Only delete v1 after confirming v2 write
-      if (ok && storage.getItem(`progress:${uid}`) !== null) {
-        storage.removeItem(`progress:${id}`);
+    // Build id → uid map
+    const idToUid = {};
+    for (const c of concepts) {
+      if (c.id && c.uid) idToUid[c.id] = c.uid;
+    }
+    const legacyIds = Object.keys(idToUid);
+    console.log('[migration] legacyIds count:', legacyIds.length);
+    if (legacyIds.length === 0) return;
+
+    // ── Best-effort backup ──
+    const { used, quota } = estimateStorageUsage();
+    const projectedAfterBackup = used * 2; // backup roughly doubles usage
+    if (projectedAfterBackup < quota * 0.8) {
+      // Full backup: store all v1 keys
+      const backup = {};
+      for (const id of legacyIds) {
+        const progressRaw = storage.getItem(`progress:${id}`);
+        if (progressRaw !== null) backup[`progress:${id}`] = progressRaw;
+        for (const id2 of legacyIds) {
+          if (id === id2) continue;
+          const confRaw = storage.getItem(`confusions:${id}:${id2}`);
+          if (confRaw !== null) backup[`confusions:${id}:${id2}`] = confRaw;
+        }
       }
+      const attemptsRaw = storage.getItem('attempts');
+      if (attemptsRaw !== null) backup['attempts'] = attemptsRaw;
+      safeSet('__v1_backup__', backup);
     } else {
-      // v2 key already exists — just clean up v1
-      storage.removeItem(`progress:${id}`);
+      // Manifest-only backup: store key map only
+      safeSet('__v1_backup_manifest__', {
+        idToUid,
+        migratedAt: Date.now(),
+        note: 'Full backup skipped — storage quota > 80%',
+      });
     }
-  }
 
-  // ── Migrate confusion keys ──
-  for (const id1 of legacyIds) {
-    const uid1 = idToUid[id1];
-    for (const id2 of legacyIds) {
-      if (id1 === id2) continue;
-      const uid2 = idToUid[id2];
-      const v1Key = `confusions:${id1}:${id2}`;
-      const v2Key = `confusions:${uid1}:${uid2}`;
-      const v1Raw = storage.getItem(v1Key);
+    // ── Migrate progress keys ──
+    let progressMigrated = 0;
+    for (const id of legacyIds) {
+      const uid = idToUid[id];
+      const v1Raw = storage.getItem(`progress:${id}`);
       if (v1Raw === null) continue;
-      const v2Raw = storage.getItem(v2Key);
+      // Only write v2 key if it doesn't already exist (idempotent)
+      const v2Raw = storage.getItem(`progress:${uid}`);
       if (v2Raw === null) {
-        const ok = safeSet(v2Key, JSON.parse(v1Raw));
-        if (ok && storage.getItem(v2Key) !== null) {
-          storage.removeItem(v1Key);
+        const ok = safeSet(`progress:${uid}`, JSON.parse(v1Raw));
+        // Only delete v1 after confirming v2 write
+        if (ok && storage.getItem(`progress:${uid}`) !== null) {
+          storage.removeItem(`progress:${id}`);
+          progressMigrated++;
         }
       } else {
-        storage.removeItem(v1Key);
+        // v2 key already exists — just clean up v1
+        storage.removeItem(`progress:${id}`);
       }
     }
-  }
 
-  // ── Migrate attempts log (trueConcept / chosenConcept fields) ──
-  const attempts = safeGet('attempts', []);
-  let attemptsChanged = false;
-  for (const a of attempts) {
-    if (a.trueConcept && idToUid[a.trueConcept]) {
-      a.trueConceptUid = idToUid[a.trueConcept];
-      attemptsChanged = true;
-    } else if (a.trueConceptUid) {
-      // Already migrated
-    } else if (a.trueConcept) {
-      // Unknown concept — keep as-is, add uid field matching
-      a.trueConceptUid = a.trueConcept;
+    // ── Migrate confusion keys ──
+    let confusionMigrated = 0;
+    for (const id1 of legacyIds) {
+      const uid1 = idToUid[id1];
+      for (const id2 of legacyIds) {
+        if (id1 === id2) continue;
+        const uid2 = idToUid[id2];
+        const v1Key = `confusions:${id1}:${id2}`;
+        const v2Key = `confusions:${uid1}:${uid2}`;
+        const v1Raw = storage.getItem(v1Key);
+        if (v1Raw === null) continue;
+        const v2Raw = storage.getItem(v2Key);
+        if (v2Raw === null) {
+          const ok = safeSet(v2Key, JSON.parse(v1Raw));
+          if (ok && storage.getItem(v2Key) !== null) {
+            storage.removeItem(v1Key);
+            confusionMigrated++;
+          }
+        } else {
+          storage.removeItem(v1Key);
+        }
+      }
     }
-    if (a.chosenConcept && idToUid[a.chosenConcept]) {
-      a.chosenConceptUid = idToUid[a.chosenConcept];
-      attemptsChanged = true;
-    } else if (a.chosenConceptUid) {
-      // Already migrated
-    } else if (a.chosenConcept) {
-      a.chosenConceptUid = a.chosenConcept;
-    }
-  }
-  if (attemptsChanged) {
-    safeSet('attempts', attempts);
-  }
 
-  // ── Mark migration complete ──
-  safeSet('storageSchemaVersion', CURRENT_SCHEMA_VERSION);
+    // ── Migrate attempts log (trueConcept / chosenConcept fields) ──
+    const attempts = safeGet('attempts', []);
+    let attemptsChanged = false;
+    for (const a of attempts) {
+      if (a.trueConcept && idToUid[a.trueConcept]) {
+        a.trueConceptUid = idToUid[a.trueConcept];
+        attemptsChanged = true;
+      } else if (a.trueConceptUid) {
+        // Already migrated
+      } else if (a.trueConcept) {
+        // Unknown concept — keep as-is, add uid field matching
+        a.trueConceptUid = a.trueConcept;
+      }
+      if (a.chosenConcept && idToUid[a.chosenConcept]) {
+        a.chosenConceptUid = idToUid[a.chosenConcept];
+        attemptsChanged = true;
+      } else if (a.chosenConceptUid) {
+        // Already migrated
+      } else if (a.chosenConcept) {
+        a.chosenConceptUid = a.chosenConcept;
+      }
+    }
+    if (attemptsChanged) {
+      safeSet('attempts', attempts);
+    }
+
+    // ── Mark migration complete ──
+    safeSet('storageSchemaVersion', CURRENT_SCHEMA_VERSION);
+    console.log('[migration] complete — progress:', progressMigrated, 'confusions:', confusionMigrated, 'attempts updated:', attemptsChanged);
+  } catch (err) {
+    console.error('[migration] runStorageMigrationV2 failed:', err);
+  }
 }
