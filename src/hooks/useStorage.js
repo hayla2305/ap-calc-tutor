@@ -107,10 +107,18 @@ const DEFAULT_SOLVE = {
 
 export function getProgress(concept) {
   const uid = resolveUid(concept);
-  return safeGet(`progress:${uid}`, {
+  const defaultProgress = {
     recognition: { ...DEFAULT_RECOGNITION },
     solve: { ...DEFAULT_SOLVE },
-  });
+  };
+  const data = safeGet(`progress:${uid}`, null);
+  if (data !== null) return data;
+  // Fallback: try legacy key if UID key has no data (pre-migration)
+  if (uid !== concept && _idToUid) {
+    const legacy = safeGet(`progress:${concept}`, null);
+    if (legacy !== null) return legacy;
+  }
+  return defaultProgress;
 }
 
 export function setProgress(concept, data) {
@@ -135,12 +143,20 @@ export function updateSolve(concept, updater) {
 export function getConfusion(trueConcept, chosenConcept) {
   const trueUid = resolveUid(trueConcept);
   const chosenUid = resolveUid(chosenConcept);
-  return safeGet(`confusions:${trueUid}:${chosenUid}`, {
+  const defaultConfusion = {
     count: 0,
     lastSeen: null,
     coaching_baseline_count: null,
     coaching_shown_ts: null,
-  });
+  };
+  const data = safeGet(`confusions:${trueUid}:${chosenUid}`, null);
+  if (data !== null) return data;
+  // Fallback: try legacy key if UID key has no data (pre-migration)
+  if ((trueUid !== trueConcept || chosenUid !== chosenConcept) && _idToUid) {
+    const legacy = safeGet(`confusions:${trueConcept}:${chosenConcept}`, null);
+    if (legacy !== null) return legacy;
+  }
+  return defaultConfusion;
 }
 
 export function markCoachingBaseline(trueConcept, chosenConcept) {
@@ -171,7 +187,11 @@ export function getTopConfusions(trueConcept, limit = 2) {
   for (const chosenId of ids) {
     const chosenUid = resolveUid(chosenId);
     if (chosenUid === trueUid) continue;
-    const data = safeGet(`confusions:${trueUid}:${chosenUid}`, null);
+    // Try UID key first, fall back to legacy key (pre-migration)
+    let data = safeGet(`confusions:${trueUid}:${chosenUid}`, null);
+    if (data === null && _idToUid) {
+      data = safeGet(`confusions:${trueConcept}:${chosenId}`, null);
+    }
     if (data && data.count > 0) {
       confusions.push({ chosen: chosenId, ...data });
     }
