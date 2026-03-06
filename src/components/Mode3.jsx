@@ -1,6 +1,7 @@
-import { useMemo, useCallback } from 'react';
+import { useMemo, useCallback, useEffect } from 'react';
 import { getMasteryPercent } from '../utils/scoring';
 import { getGlobalTopConfusions } from '../utils/confusion';
+import { getProgress } from '../hooks/useStorage';
 
 const CLUSTER_NAMES = {
   1: 'Limits & Continuity',
@@ -28,6 +29,27 @@ export default function Mode3({ concepts, onDrillConcept }) {
   }, [concepts]);
 
   const topConfusions = useMemo(() => getGlobalTopConfusions(5), []);
+
+  // Temporary diagnostic: dump mastery state on mount
+  useEffect(() => {
+    const summary = concepts
+      .filter((c) => c.scored)
+      .map((c) => {
+        const mastery = getMasteryPercent(c.id);
+        const progress = getProgress(c.id);
+        const rec = progress.recognition;
+        return {
+          id: c.id,
+          mastery,
+          attempts: rec.attempts,
+          firstTries: rec.firstTriesByLevel,
+        };
+      })
+      .filter((c) => c.attempts > 0);
+    console.log('[Mode3 diagnostic] Concepts with attempts:', summary);
+    console.log('[Mode3 diagnostic] Total scored concepts:', concepts.filter((c) => c.scored).length);
+    console.log('[Mode3 diagnostic] Concepts with progress:', summary.length);
+  }, [concepts]);
 
   const getConceptLabel = useCallback((conceptId) => {
     const c = concepts.find((x) => x.id === conceptId);
@@ -87,13 +109,9 @@ export default function Mode3({ concepts, onDrillConcept }) {
 
 function ConceptTile({ concept, onDrill }) {
   const mastery = concept.scored ? getMasteryPercent(concept.id) : null;
-  const hasAttempts = mastery !== null && mastery > 0;
 
   let colorVar;
-  if (!concept.scored) {
-    colorVar = 'var(--color-text-dim)';
-  } else if (!hasAttempts && mastery === 0) {
-    // Check if there are attempts - mastery 0 could mean 0% or no attempts
+  if (!concept.scored || mastery === null) {
     colorVar = 'var(--color-text-dim)';
   } else if (mastery >= 80) {
     colorVar = 'var(--color-correct)';
@@ -115,7 +133,7 @@ function ConceptTile({ concept, onDrill }) {
             <div
               className="h-full rounded-full transition-all"
               style={{
-                width: `${mastery}%`,
+                width: `${mastery ?? 0}%`,
                 backgroundColor: colorVar,
               }}
             />
@@ -124,7 +142,7 @@ function ConceptTile({ concept, onDrill }) {
             className="text-xs font-mono"
             style={{ color: colorVar }}
           >
-            {mastery}%
+            {mastery ?? 0}%
           </span>
         </div>
       ) : (

@@ -7,7 +7,7 @@ import { getProgress, getAttempts } from '../hooks/useStorage';
 export function getMasteryPercent(concept) {
   const progress = getProgress(concept);
   const rec = progress.recognition;
-  if (rec.attempts === 0) return 0;
+  if (rec.attempts === 0) return null;
 
   // Use first-try data across all levels
   let totalCorrect = 0;
@@ -16,7 +16,7 @@ export function getMasteryPercent(concept) {
     totalCorrect += level.correct;
     totalAttempts += level.total;
   }
-  if (totalAttempts === 0) return 0;
+  if (totalAttempts === 0) return null;
   return Math.round((totalCorrect / totalAttempts) * 100);
 }
 
