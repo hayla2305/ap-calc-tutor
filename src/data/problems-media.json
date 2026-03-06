@@ -1,0 +1,15 @@
+{
+  "_comment": "Media arrays keyed by problem ID. Populated in Phase 3 (graphical problem audit). Lazy-loaded via mediaLoader.js — NOT bundled in the initial JS chunk.",
+  "_schema": {
+    "type": "CartesianPlot",
+    "props": {
+      "xDomain": "[-2, 6]",
+      "yDomain": "[-4, 4]",
+      "xLabel": "string",
+      "yLabel": "string"
+    },
+    "layers": [
+      { "type": "CurveLayer | PointLayer | AsymptoteLayer | DiscontinuityLayer | RegionLayer | RiemannLayer | AnnotationLayer | VectorFieldLayer" }
+    ]
+  }
+}
