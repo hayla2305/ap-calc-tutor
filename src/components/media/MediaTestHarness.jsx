@@ -1,4 +1,5 @@
 import MediaRenderer from './MediaRenderer';
+import pilotDraft from '../../../migration/graphical_draft.json';
 
 /**
  * MediaTestHarness — visual smoke test for all layer types.
@@ -7,6 +8,26 @@ import MediaRenderer from './MediaRenderer';
  * Renders a single CartesianPlot with one instance of every layer type
  * using hardcoded test data that matches the media schema.
  */
+
+// Phase 3 preview — all 16 drafted media entries
+const PILOT_PROBLEMS = [
+  { id: 'fff_003', label: 'fff_003 — f\'\'/f\' multi-curve' },
+  { id: 'sf_001', label: 'sf_001 — Slope Field dy/dx = x-y' },
+  { id: 'abc_003', label: 'abc_003 — Area Between Curves' },
+  { id: 'ct_003', label: 'ct_003 — Jump Discontinuity' },
+  { id: 'id_003', label: 'id_003 — Piecewise f\'(x)' },
+  { id: 'con_003', label: 'con_003 — Decreasing f\' → concavity' },
+  { id: 're_003', label: 're_003 — f\' sign changes → extrema' },
+  { id: 'ip_003', label: 'ip_003 — f\' local max → inflection' },
+  { id: 'la_003', label: 'la_003 — Tangent line approximation' },
+  { id: 'sv_003', label: 'sv_003 — Slope field dy/dx = x/y' },
+  { id: 'sf_002', label: 'sf_002 — 4 direction fields (match)' },
+  { id: 'pm_003', label: 'pm_003 — Piecewise velocity graph' },
+  { id: 'sq_003', label: 'sq_003 — Squeeze theorem oscillation' },
+  { id: 'fff_005', label: 'fff_005 — Linear f\' through (0,3),(6,-3)' },
+  { id: 'fff_007', label: 'fff_007 — Constant f\'\'(x) = 2' },
+  { id: 'sf_009', label: 'sf_009 — Harvesting model equilibria' },
+];
 
 const TEST_MEDIA = [
   {
@@ -204,6 +225,28 @@ export default function MediaTestHarness() {
           <MediaRenderer media={[{ id: 'f3', kind: 'diagram', version: '1.0', alt: 'Test diagram' }]} />
           <MediaRenderer media={[{ id: 'f4', kind: 'unknown', version: '1.0', alt: 'Unknown type' }]} />
           <MediaRenderer media={[{ id: 'f5', kind: 'graph', version: '99.0', alt: 'Future version', graph: {} }]} />
+        </div>
+      </section>
+
+      {/* Phase 3 Pilot Preview */}
+      <section>
+        <h3 className="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider mb-3">
+          Phase 3 — All 16 Draft Media Entries (19 graphs)
+        </h3>
+        <p className="text-xs text-[var(--color-text-dim)] mb-4">
+          Rendering from migration/graphical_draft.json. Review each graph for correctness before approving.
+        </p>
+        <div className="space-y-6">
+          {PILOT_PROBLEMS.map(({ id, label }) => {
+            const media = pilotDraft[id];
+            if (!media) return <p key={id} className="text-sm text-red-400">Missing: {id}</p>;
+            return (
+              <div key={id} className="space-y-2">
+                <h4 className="text-sm font-medium text-[var(--color-text)]">{label}</h4>
+                <MediaRenderer media={media} />
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>

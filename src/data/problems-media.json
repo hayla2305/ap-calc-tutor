@@ -9,7 +9,4876 @@
       "yLabel": "string"
     },
     "layers": [
-      { "type": "CurveLayer | PointLayer | AsymptoteLayer | DiscontinuityLayer | RegionLayer | RiemannLayer | AnnotationLayer | VectorFieldLayer" }
+      {
+        "type": "CurveLayer | PointLayer | AsymptoteLayer | DiscontinuityLayer | RegionLayer | RiemannLayer | AnnotationLayer | VectorFieldLayer"
+      }
     ]
-  }
+  },
+  "fff_003": [
+    {
+      "id": "m_fff_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of f''(x): parabola crossing x-axis at x=2 (pos to neg) and x=6 (neg to pos). Graph of f'(x): curve with root at x=4.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -1,
+          "xMax": 8,
+          "yMin": -6,
+          "yMax": 6,
+          "aspect": 1.6
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "y": [
+              -6,
+              -4,
+              -2,
+              0,
+              2,
+              4,
+              6
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "fprimeprime",
+            "label": "f''(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -1,
+                  5
+                ],
+                [
+                  0,
+                  3.5
+                ],
+                [
+                  1,
+                  1.5
+                ],
+                [
+                  2,
+                  0
+                ],
+                [
+                  3,
+                  -2
+                ],
+                [
+                  4,
+                  -3
+                ],
+                [
+                  5,
+                  -2
+                ],
+                [
+                  6,
+                  0
+                ],
+                [
+                  7,
+                  3
+                ],
+                [
+                  8,
+                  5
+                ]
+              ]
+            }
+          },
+          {
+            "type": "curve",
+            "id": "fprime",
+            "label": "f'(x)",
+            "color": "#f472b6",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -1,
+                  4
+                ],
+                [
+                  0,
+                  3.5
+                ],
+                [
+                  1,
+                  2.5
+                ],
+                [
+                  2,
+                  1.5
+                ],
+                [
+                  3,
+                  0.5
+                ],
+                [
+                  4,
+                  0
+                ],
+                [
+                  5,
+                  -0.5
+                ],
+                [
+                  6,
+                  -0.5
+                ],
+                [
+                  7,
+                  0.5
+                ],
+                [
+                  8,
+                  2
+                ]
+              ]
+            }
+          },
+          {
+            "type": "point",
+            "at": [
+              2,
+              0
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              6,
+              0
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              4,
+              0
+            ],
+            "marker": "closed",
+            "color": "#f472b6"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              1,
+              -4.5
+            ],
+            "text": "f''(x) — blue"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              6.5,
+              -4.5
+            ],
+            "text": "f'(x) — pink"
+          }
+        ]
+      }
+    }
+  ],
+  "sf_001": [
+    {
+      "id": "m_sf_001",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Slope field for dy/dx = x - y on [-3, 3] x [-3, 3] with initial point at (0, 1)",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "slope_field",
+        "viewport": {
+          "xMin": -3,
+          "xMax": 3,
+          "yMin": -3,
+          "yMax": 3,
+          "aspect": 1
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "y": [
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "vector_field",
+            "density": 12,
+            "samples": [
+              {
+                "at": [
+                  -3,
+                  -3
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -3,
+                  -2
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -3,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -3,
+                  0
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -3,
+                  1
+                ],
+                "slope": -4
+              },
+              {
+                "at": [
+                  -3,
+                  2
+                ],
+                "slope": -5
+              },
+              {
+                "at": [
+                  -3,
+                  3
+                ],
+                "slope": -6
+              },
+              {
+                "at": [
+                  -2,
+                  -3
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  -2,
+                  -2
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -2,
+                  -1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -2,
+                  0
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -2,
+                  1
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -2,
+                  2
+                ],
+                "slope": -4
+              },
+              {
+                "at": [
+                  -2,
+                  3
+                ],
+                "slope": -5
+              },
+              {
+                "at": [
+                  -1,
+                  -3
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  -1,
+                  -2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  -1,
+                  -1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -1,
+                  0
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -1,
+                  1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -1,
+                  2
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -1,
+                  3
+                ],
+                "slope": -4
+              },
+              {
+                "at": [
+                  0,
+                  -3
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  0,
+                  -2
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  0,
+                  -1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  0,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  0,
+                  2
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  0,
+                  3
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  1,
+                  -3
+                ],
+                "slope": 4
+              },
+              {
+                "at": [
+                  1,
+                  -2
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  1,
+                  -1
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  1,
+                  0
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  1,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  2
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  1,
+                  3
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  2,
+                  -3
+                ],
+                "slope": 5
+              },
+              {
+                "at": [
+                  2,
+                  -2
+                ],
+                "slope": 4
+              },
+              {
+                "at": [
+                  2,
+                  -1
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  2,
+                  0
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  2,
+                  1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  2,
+                  2
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  2,
+                  3
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  3,
+                  -3
+                ],
+                "slope": 6
+              },
+              {
+                "at": [
+                  3,
+                  -2
+                ],
+                "slope": 5
+              },
+              {
+                "at": [
+                  3,
+                  -1
+                ],
+                "slope": 4
+              },
+              {
+                "at": [
+                  3,
+                  0
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  3,
+                  1
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  3,
+                  2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  3,
+                  3
+                ],
+                "slope": 0
+              }
+            ]
+          },
+          {
+            "type": "point",
+            "at": [
+              0,
+              1
+            ],
+            "marker": "closed",
+            "color": "#fbbf24"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              0.8,
+              1.5
+            ],
+            "text": "(0, 1)"
+          }
+        ]
+      }
+    }
+  ],
+  "abc_003": [
+    {
+      "id": "m_abc_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of f(x) = downward parabola through (0,4), vertex (2,6), (4,4), and g(x) = 2 constant line. Shaded region between f and g on [0, 4].",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -1,
+          "xMax": 5,
+          "yMin": -1,
+          "yMax": 8,
+          "aspect": 1.4
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "y": [
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "f",
+            "label": "f(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -0.5,
+                  2.875
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  0.5,
+                  4.875
+                ],
+                [
+                  1,
+                  5.5
+                ],
+                [
+                  1.5,
+                  5.875
+                ],
+                [
+                  2,
+                  6
+                ],
+                [
+                  2.5,
+                  5.875
+                ],
+                [
+                  3,
+                  5.5
+                ],
+                [
+                  3.5,
+                  4.875
+                ],
+                [
+                  4,
+                  4
+                ],
+                [
+                  4.5,
+                  2.875
+                ]
+              ]
+            }
+          },
+          {
+            "type": "curve",
+            "id": "g",
+            "label": "g(x) = 2",
+            "color": "#f472b6",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -0.5,
+                  2
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  0.5,
+                  2
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1.5,
+                  2
+                ],
+                [
+                  2,
+                  2
+                ],
+                [
+                  2.5,
+                  2
+                ],
+                [
+                  3,
+                  2
+                ],
+                [
+                  3.5,
+                  2
+                ],
+                [
+                  4,
+                  2
+                ],
+                [
+                  4.5,
+                  2
+                ]
+              ]
+            }
+          },
+          {
+            "type": "region",
+            "mode": "between_curves",
+            "upper": "f",
+            "lower": "g",
+            "xMin": 0,
+            "xMax": 4,
+            "fill": "#a78bfa",
+            "opacity": 0.25
+          },
+          {
+            "type": "point",
+            "at": [
+              0,
+              4
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              2,
+              6
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              4,
+              4
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              2,
+              3.5
+            ],
+            "text": "Shaded area"
+          }
+        ]
+      }
+    }
+  ],
+  "ct_003": [
+    {
+      "id": "m_ct_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of p(x) near x=1: approaches 3 from left, 5 from right. p(1)=3 (closed dot). Open circle at (1,5). Jump discontinuity.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -2,
+          "xMax": 4,
+          "yMin": 0,
+          "yMax": 7,
+          "aspect": 1.4
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "y": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "p_left",
+            "label": "p(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -2,
+                  1
+                ],
+                [
+                  -1.5,
+                  1.3
+                ],
+                [
+                  -1,
+                  1.8
+                ],
+                [
+                  -0.5,
+                  2.2
+                ],
+                [
+                  0,
+                  2.5
+                ],
+                [
+                  0.3,
+                  2.7
+                ],
+                [
+                  0.5,
+                  2.8
+                ],
+                [
+                  0.7,
+                  2.9
+                ],
+                [
+                  0.9,
+                  2.97
+                ],
+                [
+                  1,
+                  3
+                ]
+              ]
+            }
+          },
+          {
+            "type": "curve",
+            "id": "p_right",
+            "label": "p(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  1,
+                  5
+                ],
+                [
+                  1.1,
+                  5.03
+                ],
+                [
+                  1.3,
+                  5.1
+                ],
+                [
+                  1.5,
+                  5.2
+                ],
+                [
+                  2,
+                  5.5
+                ],
+                [
+                  2.5,
+                  5.7
+                ],
+                [
+                  3,
+                  5.8
+                ],
+                [
+                  3.5,
+                  5.9
+                ],
+                [
+                  4,
+                  6
+                ]
+              ]
+            }
+          },
+          {
+            "type": "point",
+            "at": [
+              1,
+              3
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              1,
+              5
+            ],
+            "marker": "open",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "discontinuity_marker",
+            "at": [
+              1,
+              4
+            ],
+            "kind": "jump"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              2.5,
+              2
+            ],
+            "text": "Jump at x = 1"
+          }
+        ]
+      }
+    }
+  ],
+  "id_003": [
+    {
+      "id": "m_id_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of f'(x): piecewise horizontal lines. y=-2 for x<1, y=3 for 1<x<4, y=-1 for x>4. Jump discontinuities at x=1 and x=4.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -2,
+          "xMax": 7,
+          "yMin": -4,
+          "yMax": 5,
+          "aspect": 1.6
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "y": [
+              -4,
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "fprime_seg1",
+            "label": "f'(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -2,
+                  -2
+                ],
+                [
+                  -1,
+                  -2
+                ],
+                [
+                  0,
+                  -2
+                ],
+                [
+                  1,
+                  -2
+                ]
+              ]
+            }
+          },
+          {
+            "type": "curve",
+            "id": "fprime_seg2",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  1,
+                  3
+                ],
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  3
+                ],
+                [
+                  4,
+                  3
+                ]
+              ]
+            }
+          },
+          {
+            "type": "curve",
+            "id": "fprime_seg3",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  4,
+                  -1
+                ],
+                [
+                  5,
+                  -1
+                ],
+                [
+                  6,
+                  -1
+                ],
+                [
+                  7,
+                  -1
+                ]
+              ]
+            }
+          },
+          {
+            "type": "point",
+            "at": [
+              1,
+              -2
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              1,
+              3
+            ],
+            "marker": "open",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              4,
+              3
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              4,
+              -1
+            ],
+            "marker": "open",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              2.5,
+              4.5
+            ],
+            "text": "f'(x)"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              2.5,
+              -3
+            ],
+            "text": "f increasing where f' > 0"
+          }
+        ]
+      }
+    }
+  ],
+  "con_003": [
+    {
+      "id": "m_con_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of f'(x) as a decreasing line from (0, 3) to (6, -3), crossing x-axis at x=3",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -1,
+          "xMax": 7,
+          "yMin": -4,
+          "yMax": 4,
+          "aspect": 1.6
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "y": [
+              -4,
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "fprime",
+            "label": "f'(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -1,
+                  4
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  -1
+                ],
+                [
+                  5,
+                  -2
+                ],
+                [
+                  6,
+                  -3
+                ],
+                [
+                  7,
+                  -4
+                ]
+              ]
+            }
+          },
+          {
+            "type": "point",
+            "at": [
+              3,
+              0
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              3.5,
+              3
+            ],
+            "text": "f'(x) — always decreasing"
+          }
+        ]
+      }
+    }
+  ],
+  "re_003": [
+    {
+      "id": "m_re_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of f'(x) crossing x-axis at x=-1 (positive to negative) and x=3 (negative to positive)",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -3,
+          "xMax": 5,
+          "yMin": -4,
+          "yMax": 4,
+          "aspect": 1.6
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "y": [
+              -4,
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "fprime",
+            "label": "f'(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -3,
+                  3
+                ],
+                [
+                  -2,
+                  2
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  -1.5
+                ],
+                [
+                  1,
+                  -2.5
+                ],
+                [
+                  2,
+                  -2
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  2.5
+                ],
+                [
+                  5,
+                  3.5
+                ]
+              ]
+            }
+          },
+          {
+            "type": "point",
+            "at": [
+              -1,
+              0
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              3,
+              0
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              -1,
+              3
+            ],
+            "text": "f' + to - : rel max of f"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              3,
+              -3
+            ],
+            "text": "f' - to + : rel min of f"
+          }
+        ]
+      }
+    }
+  ],
+  "ip_003": [
+    {
+      "id": "m_ip_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of f'(x) with a local maximum at x=3. f' increases then decreases, peaking at x=3.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -1,
+          "xMax": 7,
+          "yMin": -2,
+          "yMax": 5,
+          "aspect": 1.6
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "y": [
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "fprime",
+            "label": "f'(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -1,
+                  -1
+                ],
+                [
+                  0,
+                  0.5
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  3.2
+                ],
+                [
+                  3,
+                  3.5
+                ],
+                [
+                  4,
+                  3
+                ],
+                [
+                  5,
+                  2
+                ],
+                [
+                  6,
+                  0.5
+                ],
+                [
+                  7,
+                  -0.5
+                ]
+              ]
+            }
+          },
+          {
+            "type": "point",
+            "at": [
+              3,
+              3.5
+            ],
+            "marker": "closed",
+            "color": "#fbbf24"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              3,
+              -1
+            ],
+            "text": "f' has local max at x=3"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              3,
+              4.5
+            ],
+            "text": "f has inflection point here"
+          }
+        ]
+      }
+    }
+  ],
+  "la_003": [
+    {
+      "id": "m_la_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of f(x) passing through (2,5) with tangent line of slope -3 at x=2. Tangent line shown as dashed.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": 0,
+          "xMax": 4,
+          "yMin": 0,
+          "yMax": 8,
+          "aspect": 1.4
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "y": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "f",
+            "label": "f(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  0,
+                  7.5
+                ],
+                [
+                  0.5,
+                  7.2
+                ],
+                [
+                  1,
+                  6.5
+                ],
+                [
+                  1.5,
+                  5.7
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2.5,
+                  4.5
+                ],
+                [
+                  3,
+                  4.2
+                ],
+                [
+                  3.5,
+                  4.1
+                ],
+                [
+                  4,
+                  4.2
+                ]
+              ]
+            }
+          },
+          {
+            "type": "curve",
+            "id": "tangent",
+            "label": "tangent line",
+            "color": "#f472b6",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  0.5,
+                  9.5
+                ],
+                [
+                  1,
+                  8
+                ],
+                [
+                  1.5,
+                  6.5
+                ],
+                [
+                  2,
+                  5
+                ],
+                [
+                  2.5,
+                  3.5
+                ],
+                [
+                  3,
+                  2
+                ],
+                [
+                  3.5,
+                  0.5
+                ]
+              ]
+            }
+          },
+          {
+            "type": "point",
+            "at": [
+              2,
+              5
+            ],
+            "marker": "closed",
+            "color": "#fbbf24"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              2.8,
+              6
+            ],
+            "text": "(2, 5)"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              1,
+              3
+            ],
+            "text": "slope = -3"
+          }
+        ]
+      }
+    }
+  ],
+  "sv_003": [
+    {
+      "id": "m_sv_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Slope field for dy/dx = x/y on [-3,3]x[-3,3] with initial point at (0,2)",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "slope_field",
+        "viewport": {
+          "xMin": -3,
+          "xMax": 3,
+          "yMin": -3,
+          "yMax": 3,
+          "aspect": 1
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "y": [
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "vector_field",
+            "density": 12,
+            "samples": [
+              {
+                "at": [
+                  -3,
+                  -3
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  -3,
+                  -2
+                ],
+                "slope": 1.5
+              },
+              {
+                "at": [
+                  -3,
+                  -1
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  -3,
+                  1
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -3,
+                  2
+                ],
+                "slope": -1.5
+              },
+              {
+                "at": [
+                  -3,
+                  3
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -2,
+                  -3
+                ],
+                "slope": 0.667
+              },
+              {
+                "at": [
+                  -2,
+                  -2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  -2,
+                  -1
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  -2,
+                  1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -2,
+                  2
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -2,
+                  3
+                ],
+                "slope": -0.667
+              },
+              {
+                "at": [
+                  -1,
+                  -3
+                ],
+                "slope": 0.333
+              },
+              {
+                "at": [
+                  -1,
+                  -2
+                ],
+                "slope": 0.5
+              },
+              {
+                "at": [
+                  -1,
+                  -1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  -1,
+                  1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -1,
+                  2
+                ],
+                "slope": -0.5
+              },
+              {
+                "at": [
+                  -1,
+                  3
+                ],
+                "slope": -0.333
+              },
+              {
+                "at": [
+                  0,
+                  -3
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  -2
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  -1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  2
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  3
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  -3
+                ],
+                "slope": -0.333
+              },
+              {
+                "at": [
+                  1,
+                  -2
+                ],
+                "slope": -0.5
+              },
+              {
+                "at": [
+                  1,
+                  -1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  1,
+                  1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  1,
+                  2
+                ],
+                "slope": 0.5
+              },
+              {
+                "at": [
+                  1,
+                  3
+                ],
+                "slope": 0.333
+              },
+              {
+                "at": [
+                  2,
+                  -3
+                ],
+                "slope": -0.667
+              },
+              {
+                "at": [
+                  2,
+                  -2
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  2,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  2,
+                  1
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  2,
+                  2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  2,
+                  3
+                ],
+                "slope": 0.667
+              },
+              {
+                "at": [
+                  3,
+                  -3
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  3,
+                  -2
+                ],
+                "slope": -1.5
+              },
+              {
+                "at": [
+                  3,
+                  -1
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  3,
+                  1
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  3,
+                  2
+                ],
+                "slope": 1.5
+              },
+              {
+                "at": [
+                  3,
+                  3
+                ],
+                "slope": 1
+              }
+            ]
+          },
+          {
+            "type": "point",
+            "at": [
+              0,
+              2
+            ],
+            "marker": "closed",
+            "color": "#fbbf24"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              0.8,
+              2.5
+            ],
+            "text": "(0, 2)"
+          }
+        ]
+      }
+    }
+  ],
+  "sf_002": [
+    {
+      "id": "m_sf_002_I",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Direction field I: slopes zero along y=0 and y=1, positive between, negative outside. Matches dy/dx = y(1-y).",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "slope_field",
+        "viewport": {
+          "xMin": -3,
+          "xMax": 3,
+          "yMin": -1,
+          "yMax": 2,
+          "aspect": 2
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "y": [
+              -1,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "vector_field",
+            "density": 10,
+            "samples": [
+              {
+                "at": [
+                  -3,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -2,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -1,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  0,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  1,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  2,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  3,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -3,
+                  -0.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  -2,
+                  -0.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  -1,
+                  -0.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  0,
+                  -0.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  1,
+                  -0.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  2,
+                  -0.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  3,
+                  -0.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  -3,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -2,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -1,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  2,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  3,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -3,
+                  0.25
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  -2,
+                  0.25
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  -1,
+                  0.25
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  0,
+                  0.25
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  1,
+                  0.25
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  2,
+                  0.25
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  3,
+                  0.25
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  -3,
+                  0.5
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  -2,
+                  0.5
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  -1,
+                  0.5
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  0,
+                  0.5
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  1,
+                  0.5
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  2,
+                  0.5
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  3,
+                  0.5
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  -3,
+                  0.75
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  -2,
+                  0.75
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  -1,
+                  0.75
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  0,
+                  0.75
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  1,
+                  0.75
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  2,
+                  0.75
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  3,
+                  0.75
+                ],
+                "slope": 0.1875
+              },
+              {
+                "at": [
+                  -3,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -2,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -1,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  2,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  3,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -3,
+                  1.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  -2,
+                  1.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  -1,
+                  1.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  0,
+                  1.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  1,
+                  1.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  2,
+                  1.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  3,
+                  1.5
+                ],
+                "slope": -0.75
+              },
+              {
+                "at": [
+                  -3,
+                  2
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -2,
+                  2
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -1,
+                  2
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  0,
+                  2
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  1,
+                  2
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  2,
+                  2
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  3,
+                  2
+                ],
+                "slope": -2
+              }
+            ]
+          },
+          {
+            "type": "annotation",
+            "at": [
+              0,
+              -0.6
+            ],
+            "text": "Field I"
+          }
+        ]
+      }
+    },
+    {
+      "id": "m_sf_002_II",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Direction field II: slopes zero only along y=0, positive above, negative below. dy/dx = y.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "slope_field",
+        "viewport": {
+          "xMin": -3,
+          "xMax": 3,
+          "yMin": -1,
+          "yMax": 2,
+          "aspect": 2
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "y": [
+              -1,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "vector_field",
+            "density": 10,
+            "samples": [
+              {
+                "at": [
+                  -3,
+                  -1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -2,
+                  -1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -1,
+                  -1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  0,
+                  -1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  1,
+                  -1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  2,
+                  -1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  3,
+                  -1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -3,
+                  -0.5
+                ],
+                "slope": -0.5
+              },
+              {
+                "at": [
+                  -2,
+                  -0.5
+                ],
+                "slope": -0.5
+              },
+              {
+                "at": [
+                  -1,
+                  -0.5
+                ],
+                "slope": -0.5
+              },
+              {
+                "at": [
+                  0,
+                  -0.5
+                ],
+                "slope": -0.5
+              },
+              {
+                "at": [
+                  1,
+                  -0.5
+                ],
+                "slope": -0.5
+              },
+              {
+                "at": [
+                  2,
+                  -0.5
+                ],
+                "slope": -0.5
+              },
+              {
+                "at": [
+                  3,
+                  -0.5
+                ],
+                "slope": -0.5
+              },
+              {
+                "at": [
+                  -3,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -2,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -1,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  2,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  3,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  -3,
+                  0.5
+                ],
+                "slope": 0.5
+              },
+              {
+                "at": [
+                  -2,
+                  0.5
+                ],
+                "slope": 0.5
+              },
+              {
+                "at": [
+                  -1,
+                  0.5
+                ],
+                "slope": 0.5
+              },
+              {
+                "at": [
+                  0,
+                  0.5
+                ],
+                "slope": 0.5
+              },
+              {
+                "at": [
+                  1,
+                  0.5
+                ],
+                "slope": 0.5
+              },
+              {
+                "at": [
+                  2,
+                  0.5
+                ],
+                "slope": 0.5
+              },
+              {
+                "at": [
+                  3,
+                  0.5
+                ],
+                "slope": 0.5
+              },
+              {
+                "at": [
+                  -3,
+                  1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  -2,
+                  1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  -1,
+                  1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  0,
+                  1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  1,
+                  1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  2,
+                  1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  3,
+                  1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  -3,
+                  1.5
+                ],
+                "slope": 1.5
+              },
+              {
+                "at": [
+                  -2,
+                  1.5
+                ],
+                "slope": 1.5
+              },
+              {
+                "at": [
+                  -1,
+                  1.5
+                ],
+                "slope": 1.5
+              },
+              {
+                "at": [
+                  0,
+                  1.5
+                ],
+                "slope": 1.5
+              },
+              {
+                "at": [
+                  1,
+                  1.5
+                ],
+                "slope": 1.5
+              },
+              {
+                "at": [
+                  2,
+                  1.5
+                ],
+                "slope": 1.5
+              },
+              {
+                "at": [
+                  3,
+                  1.5
+                ],
+                "slope": 1.5
+              },
+              {
+                "at": [
+                  -3,
+                  2
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  -2,
+                  2
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  -1,
+                  2
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  0,
+                  2
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  1,
+                  2
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  2,
+                  2
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  3,
+                  2
+                ],
+                "slope": 2
+              }
+            ]
+          },
+          {
+            "type": "annotation",
+            "at": [
+              0,
+              -0.6
+            ],
+            "text": "Field II"
+          }
+        ]
+      }
+    },
+    {
+      "id": "m_sf_002_III",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Direction field III: slopes depend only on x. dy/dx = x. Vertical columns have same slope.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "slope_field",
+        "viewport": {
+          "xMin": -3,
+          "xMax": 3,
+          "yMin": -1,
+          "yMax": 2,
+          "aspect": 2
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "y": [
+              -1,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "vector_field",
+            "density": 10,
+            "samples": [
+              {
+                "at": [
+                  -3,
+                  -1
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -3,
+                  -0.5
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -3,
+                  0
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -3,
+                  0.5
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -3,
+                  1
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -3,
+                  1.5
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -3,
+                  2
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  -2,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -2,
+                  -0.5
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -2,
+                  0
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -2,
+                  0.5
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -2,
+                  1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -2,
+                  1.5
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -2,
+                  2
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -1,
+                  -1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -1,
+                  -0.5
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -1,
+                  0
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -1,
+                  0.5
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -1,
+                  1
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -1,
+                  1.5
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  -1,
+                  2
+                ],
+                "slope": -1
+              },
+              {
+                "at": [
+                  0,
+                  -1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  -0.5
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  0.5
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  1.5
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  2
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  -1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  1,
+                  -0.5
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  1,
+                  0
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  1,
+                  0.5
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  1,
+                  1
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  1,
+                  1.5
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  1,
+                  2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  2,
+                  -1
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  2,
+                  -0.5
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  2,
+                  0
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  2,
+                  0.5
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  2,
+                  1
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  2,
+                  1.5
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  2,
+                  2
+                ],
+                "slope": 2
+              },
+              {
+                "at": [
+                  3,
+                  -1
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  3,
+                  -0.5
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  3,
+                  0
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  3,
+                  0.5
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  3,
+                  1
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  3,
+                  1.5
+                ],
+                "slope": 3
+              },
+              {
+                "at": [
+                  3,
+                  2
+                ],
+                "slope": 3
+              }
+            ]
+          },
+          {
+            "type": "annotation",
+            "at": [
+              0,
+              -0.6
+            ],
+            "text": "Field III"
+          }
+        ]
+      }
+    },
+    {
+      "id": "m_sf_002_IV",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Direction field IV: slopes zero along x=0 and x=1. dy/dx = x(1-x). Slopes depend only on x.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "slope_field",
+        "viewport": {
+          "xMin": -3,
+          "xMax": 3,
+          "yMin": -1,
+          "yMax": 2,
+          "aspect": 2
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3
+            ],
+            "y": [
+              -1,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "vector_field",
+            "density": 10,
+            "samples": [
+              {
+                "at": [
+                  -3,
+                  -1
+                ],
+                "slope": -12
+              },
+              {
+                "at": [
+                  -3,
+                  0
+                ],
+                "slope": -12
+              },
+              {
+                "at": [
+                  -3,
+                  0.5
+                ],
+                "slope": -12
+              },
+              {
+                "at": [
+                  -3,
+                  1
+                ],
+                "slope": -12
+              },
+              {
+                "at": [
+                  -3,
+                  2
+                ],
+                "slope": -12
+              },
+              {
+                "at": [
+                  -2,
+                  -1
+                ],
+                "slope": -6
+              },
+              {
+                "at": [
+                  -2,
+                  0
+                ],
+                "slope": -6
+              },
+              {
+                "at": [
+                  -2,
+                  0.5
+                ],
+                "slope": -6
+              },
+              {
+                "at": [
+                  -2,
+                  1
+                ],
+                "slope": -6
+              },
+              {
+                "at": [
+                  -2,
+                  2
+                ],
+                "slope": -6
+              },
+              {
+                "at": [
+                  -1,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -1,
+                  0
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -1,
+                  0.5
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -1,
+                  1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  -1,
+                  2
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  0,
+                  -1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  0.5
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  2
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0.5,
+                  -1
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  0.5,
+                  0
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  0.5,
+                  0.5
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  0.5,
+                  1
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  0.5,
+                  2
+                ],
+                "slope": 0.25
+              },
+              {
+                "at": [
+                  1,
+                  -1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  0
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  0.5
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  2
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  2,
+                  -1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  2,
+                  0
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  2,
+                  0.5
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  2,
+                  1
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  2,
+                  2
+                ],
+                "slope": -2
+              },
+              {
+                "at": [
+                  3,
+                  -1
+                ],
+                "slope": -6
+              },
+              {
+                "at": [
+                  3,
+                  0
+                ],
+                "slope": -6
+              },
+              {
+                "at": [
+                  3,
+                  0.5
+                ],
+                "slope": -6
+              },
+              {
+                "at": [
+                  3,
+                  1
+                ],
+                "slope": -6
+              },
+              {
+                "at": [
+                  3,
+                  2
+                ],
+                "slope": -6
+              }
+            ]
+          },
+          {
+            "type": "annotation",
+            "at": [
+              0.5,
+              -0.6
+            ],
+            "text": "Field IV"
+          }
+        ]
+      }
+    }
+  ],
+  "pm_003": [
+    {
+      "id": "m_pm_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of v(t): piecewise linear velocity from (0,4) to (2,-2) to (4,2) to (6,-1). Crosses zero at t=4/3, t=3, t=16/3.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -0.5,
+          "xMax": 7,
+          "yMin": -3,
+          "yMax": 5,
+          "aspect": 1.6
+        },
+        "axes": {
+          "xLabel": "t",
+          "yLabel": "v(t)",
+          "ticks": {
+            "x": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "y": [
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "v",
+            "label": "v(t)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  0,
+                  4
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1.333,
+                  0
+                ],
+                [
+                  2,
+                  -2
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  2
+                ],
+                [
+                  5.333,
+                  0
+                ],
+                [
+                  6,
+                  -1
+                ]
+              ]
+            }
+          },
+          {
+            "type": "point",
+            "at": [
+              0,
+              4
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              6,
+              -1
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              1.333,
+              0
+            ],
+            "marker": "dot",
+            "color": "#fbbf24"
+          },
+          {
+            "type": "point",
+            "at": [
+              3,
+              0
+            ],
+            "marker": "dot",
+            "color": "#fbbf24"
+          },
+          {
+            "type": "point",
+            "at": [
+              5.333,
+              0
+            ],
+            "marker": "dot",
+            "color": "#fbbf24"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              3,
+              4
+            ],
+            "text": "v(t)"
+          }
+        ]
+      }
+    }
+  ],
+  "sq_003": [
+    {
+      "id": "m_sq_003",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Three functions near x=0: y=-|x| (lower bound), y=f(x) oscillating, y=|x| (upper bound). All pass through origin.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -2,
+          "xMax": 2,
+          "yMin": -2,
+          "yMax": 2,
+          "aspect": 1
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ],
+            "y": [
+              -2,
+              -1,
+              0,
+              1,
+              2
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "upper",
+            "label": "y = |x|",
+            "color": "#f472b6",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -2,
+                  2
+                ],
+                [
+                  -1.5,
+                  1.5
+                ],
+                [
+                  -1,
+                  1
+                ],
+                [
+                  -0.5,
+                  0.5
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.5,
+                  0.5
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1.5,
+                  1.5
+                ],
+                [
+                  2,
+                  2
+                ]
+              ]
+            }
+          },
+          {
+            "type": "curve",
+            "id": "lower",
+            "label": "y = -|x|",
+            "color": "#f472b6",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -2,
+                  -2
+                ],
+                [
+                  -1.5,
+                  -1.5
+                ],
+                [
+                  -1,
+                  -1
+                ],
+                [
+                  -0.5,
+                  -0.5
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.5,
+                  -0.5
+                ],
+                [
+                  1,
+                  -1
+                ],
+                [
+                  1.5,
+                  -1.5
+                ],
+                [
+                  2,
+                  -2
+                ]
+              ]
+            }
+          },
+          {
+            "type": "curve",
+            "id": "f_osc",
+            "label": "f(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -2,
+                  1.6
+                ],
+                [
+                  -1.8,
+                  -1.4
+                ],
+                [
+                  -1.6,
+                  1.3
+                ],
+                [
+                  -1.4,
+                  -1.1
+                ],
+                [
+                  -1.2,
+                  0.9
+                ],
+                [
+                  -1,
+                  -0.8
+                ],
+                [
+                  -0.8,
+                  0.6
+                ],
+                [
+                  -0.6,
+                  -0.4
+                ],
+                [
+                  -0.4,
+                  0.3
+                ],
+                [
+                  -0.2,
+                  -0.15
+                ],
+                [
+                  -0.1,
+                  0.08
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.1,
+                  -0.07
+                ],
+                [
+                  0.2,
+                  0.14
+                ],
+                [
+                  0.4,
+                  -0.28
+                ],
+                [
+                  0.6,
+                  0.42
+                ],
+                [
+                  0.8,
+                  -0.6
+                ],
+                [
+                  1,
+                  0.8
+                ],
+                [
+                  1.2,
+                  -0.95
+                ],
+                [
+                  1.4,
+                  1.1
+                ],
+                [
+                  1.6,
+                  -1.3
+                ],
+                [
+                  1.8,
+                  1.5
+                ],
+                [
+                  2,
+                  -1.7
+                ]
+              ]
+            }
+          },
+          {
+            "type": "point",
+            "at": [
+              0,
+              0
+            ],
+            "marker": "closed",
+            "color": "#fbbf24"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              1.2,
+              1.7
+            ],
+            "text": "y = |x|"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              1.2,
+              -1.7
+            ],
+            "text": "y = -|x|"
+          }
+        ]
+      }
+    }
+  ],
+  "fff_005": [
+    {
+      "id": "m_fff_005",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of f'(x): straight line through (0,3) and (6,-3), crossing x-axis at x=3.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -1,
+          "xMax": 7,
+          "yMin": -4,
+          "yMax": 4,
+          "aspect": 1.6
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "y": [
+              -4,
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "fprime",
+            "label": "f'(x)",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -1,
+                  4
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  4,
+                  -1
+                ],
+                [
+                  5,
+                  -2
+                ],
+                [
+                  6,
+                  -3
+                ],
+                [
+                  7,
+                  -4
+                ]
+              ]
+            }
+          },
+          {
+            "type": "point",
+            "at": [
+              0,
+              3
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              6,
+              -3
+            ],
+            "marker": "closed",
+            "color": "#60a5fa"
+          },
+          {
+            "type": "point",
+            "at": [
+              3,
+              0
+            ],
+            "marker": "closed",
+            "color": "#fbbf24"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              3.5,
+              3
+            ],
+            "text": "f'(x)"
+          }
+        ]
+      }
+    }
+  ],
+  "fff_007": [
+    {
+      "id": "m_fff_007",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Graph of f''(x) = 2: horizontal line at y=2 for all x.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "cartesian_function",
+        "viewport": {
+          "xMin": -2,
+          "xMax": 4,
+          "yMin": -1,
+          "yMax": 4,
+          "aspect": 1.6
+        },
+        "axes": {
+          "xLabel": "x",
+          "yLabel": "y",
+          "ticks": {
+            "x": [
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "y": [
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "curve",
+            "id": "fdoubleprime",
+            "label": "f''(x) = 2",
+            "color": "#60a5fa",
+            "source": {
+              "kind": "points",
+              "points": [
+                [
+                  -2,
+                  2
+                ],
+                [
+                  -1,
+                  2
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  2,
+                  2
+                ],
+                [
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  2
+                ]
+              ]
+            }
+          },
+          {
+            "type": "annotation",
+            "at": [
+              1,
+              3
+            ],
+            "text": "f''(x) = 2"
+          }
+        ]
+      }
+    }
+  ],
+  "sf_009": [
+    {
+      "id": "m_sf_009",
+      "kind": "graph",
+      "version": "1.0",
+      "alt": "Slope field for dP/dt = P(4-P)-3 showing equilibria at P=1 (unstable) and P=3 (stable). t on x-axis, P on y-axis.",
+      "graph": {
+        "coordinateSystem": "cartesian",
+        "plotType": "slope_field",
+        "viewport": {
+          "xMin": 0,
+          "xMax": 6,
+          "yMin": -0.5,
+          "yMax": 5,
+          "aspect": 1.4
+        },
+        "axes": {
+          "xLabel": "t",
+          "yLabel": "P",
+          "ticks": {
+            "x": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "y": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        "layers": [
+          {
+            "type": "vector_field",
+            "density": 12,
+            "samples": [
+              {
+                "at": [
+                  0,
+                  0
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  1,
+                  0
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  2,
+                  0
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  3,
+                  0
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  4,
+                  0
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  5,
+                  0
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  6,
+                  0
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  0,
+                  0.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  1,
+                  0.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  2,
+                  0.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  3,
+                  0.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  4,
+                  0.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  5,
+                  0.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  6,
+                  0.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  0,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  2,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  3,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  4,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  5,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  6,
+                  1
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  1.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  1,
+                  1.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  2,
+                  1.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  3,
+                  1.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  4,
+                  1.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  5,
+                  1.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  6,
+                  1.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  0,
+                  2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  1,
+                  2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  2,
+                  2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  3,
+                  2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  4,
+                  2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  5,
+                  2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  6,
+                  2
+                ],
+                "slope": 1
+              },
+              {
+                "at": [
+                  0,
+                  2.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  1,
+                  2.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  2,
+                  2.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  3,
+                  2.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  4,
+                  2.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  5,
+                  2.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  6,
+                  2.5
+                ],
+                "slope": 0.75
+              },
+              {
+                "at": [
+                  0,
+                  3
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  1,
+                  3
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  2,
+                  3
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  3,
+                  3
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  4,
+                  3
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  5,
+                  3
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  6,
+                  3
+                ],
+                "slope": 0
+              },
+              {
+                "at": [
+                  0,
+                  3.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  1,
+                  3.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  2,
+                  3.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  3,
+                  3.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  4,
+                  3.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  5,
+                  3.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  6,
+                  3.5
+                ],
+                "slope": -1.25
+              },
+              {
+                "at": [
+                  0,
+                  4
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  1,
+                  4
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  2,
+                  4
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  3,
+                  4
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  4,
+                  4
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  5,
+                  4
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  6,
+                  4
+                ],
+                "slope": -3
+              },
+              {
+                "at": [
+                  0,
+                  4.5
+                ],
+                "slope": -5.25
+              },
+              {
+                "at": [
+                  1,
+                  4.5
+                ],
+                "slope": -5.25
+              },
+              {
+                "at": [
+                  2,
+                  4.5
+                ],
+                "slope": -5.25
+              },
+              {
+                "at": [
+                  3,
+                  4.5
+                ],
+                "slope": -5.25
+              },
+              {
+                "at": [
+                  4,
+                  4.5
+                ],
+                "slope": -5.25
+              },
+              {
+                "at": [
+                  5,
+                  4.5
+                ],
+                "slope": -5.25
+              },
+              {
+                "at": [
+                  6,
+                  4.5
+                ],
+                "slope": -5.25
+              }
+            ]
+          },
+          {
+            "type": "asymptote",
+            "orientation": "horizontal",
+            "y": 1
+          },
+          {
+            "type": "asymptote",
+            "orientation": "horizontal",
+            "y": 3
+          },
+          {
+            "type": "annotation",
+            "at": [
+              5,
+              1.4
+            ],
+            "text": "P=1 (unstable)"
+          },
+          {
+            "type": "annotation",
+            "at": [
+              5,
+              3.4
+            ],
+            "text": "P=3 (stable)"
+          }
+        ]
+      }
+    }
+  ]
 }
