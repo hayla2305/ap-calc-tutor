@@ -36,7 +36,7 @@ export default function VectorFieldLayer({ layer, xScale, yScale }) {
             y1={cy - dy}
             x2={cx + dx}
             y2={cy + dy}
-            stroke="var(--color-text-dim, #888)"
+            style={{ stroke: 'var(--color-text-dim, #888)' }}
             strokeWidth={1}
             strokeLinecap="round"
           />

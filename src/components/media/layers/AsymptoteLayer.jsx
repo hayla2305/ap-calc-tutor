@@ -13,7 +13,7 @@ export default function AsymptoteLayer({ layer, xScale, yScale }) {
         y1={yTop}
         x2={px}
         y2={yBottom}
-        stroke="var(--color-text-dim, #888)"
+        style={{ stroke: 'var(--color-text-dim, #888)' }}
         strokeWidth={1.5}
         strokeDasharray="6 4"
       />
@@ -29,7 +29,7 @@ export default function AsymptoteLayer({ layer, xScale, yScale }) {
         y1={py}
         x2={xRight}
         y2={py}
-        stroke="var(--color-text-dim, #888)"
+        style={{ stroke: 'var(--color-text-dim, #888)' }}
         strokeWidth={1.5}
         strokeDasharray="6 4"
       />

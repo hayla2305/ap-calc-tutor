@@ -18,7 +18,7 @@ export default function PointLayer({ layer, xScale, yScale }) {
         cx={cx}
         cy={cy}
         r={radius || 5}
-        fill="var(--color-bg, #1a1a2e)"
+        style={{ fill: 'var(--color-bg, #1a1a2e)' }}
         stroke={strokeColor}
         strokeWidth={2}
       />

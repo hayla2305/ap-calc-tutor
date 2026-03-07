@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useId } from 'react';
 import { scaleLinear } from 'd3-scale';
 import CurveLayer from '../layers/CurveLayer';
 import PointLayer from '../layers/PointLayer';
@@ -15,9 +15,12 @@ const PADDING = { top: 20, right: 20, bottom: 40, left: 45 };
 /**
  * CartesianPlot — coordinate system + layer pipeline.
  * Pure SVG with d3-scale for coordinate→pixel mapping.
+ *
+ * All colors use inline `style` (not SVG attributes) so CSS custom
+ * properties resolve correctly across browsers.
  */
 export default function CartesianPlot({ graph, alt }) {
-  const containerRef = useRef(null);
+  const clipId = useId();
   const { viewport, axes, layers } = graph;
   const { xMin, xMax, yMin, yMax, aspect = 1.6 } = viewport;
 
@@ -58,7 +61,6 @@ export default function CartesianPlot({ graph, alt }) {
 
   return (
     <svg
-      ref={containerRef}
       viewBox={`0 0 ${width} ${height}`}
       className="w-full min-h-[220px]"
       style={{ aspectRatio: aspect }}
@@ -67,35 +69,32 @@ export default function CartesianPlot({ graph, alt }) {
     >
       <title>{alt}</title>
 
-      {/* Background */}
-      <rect x={0} y={0} width={width} height={height} fill="none" />
-
       {/* Grid lines */}
-      <g className="grid-lines" opacity={0.15}>
+      <g opacity={0.15}>
         {xTicks.map((v) => (
-          <line key={`gx-${v}`} x1={xScale(v)} y1={PADDING.top} x2={xScale(v)} y2={PADDING.top + plotH} stroke="var(--color-text, #e0e0e0)" strokeWidth={0.5} />
+          <line key={`gx-${v}`} x1={xScale(v)} y1={PADDING.top} x2={xScale(v)} y2={PADDING.top + plotH} style={{ stroke: 'var(--color-text, #e0e0e0)' }} strokeWidth={0.5} />
         ))}
         {yTicks.map((v) => (
-          <line key={`gy-${v}`} x1={PADDING.left} y1={yScale(v)} x2={PADDING.left + plotW} y2={yScale(v)} stroke="var(--color-text, #e0e0e0)" strokeWidth={0.5} />
+          <line key={`gy-${v}`} x1={PADDING.left} y1={yScale(v)} x2={PADDING.left + plotW} y2={yScale(v)} style={{ stroke: 'var(--color-text, #e0e0e0)' }} strokeWidth={0.5} />
         ))}
       </g>
 
       {/* Axes */}
-      <g className="axes">
+      <g>
         {/* X axis */}
         {yMin <= 0 && yMax >= 0 && (
-          <line x1={PADDING.left} y1={yScale(0)} x2={PADDING.left + plotW} y2={yScale(0)} stroke="var(--color-text, #e0e0e0)" strokeWidth={1} />
+          <line x1={PADDING.left} y1={yScale(0)} x2={PADDING.left + plotW} y2={yScale(0)} style={{ stroke: 'var(--color-text, #e0e0e0)' }} strokeWidth={1} />
         )}
         {/* Y axis */}
         {xMin <= 0 && xMax >= 0 && (
-          <line x1={xScale(0)} y1={PADDING.top} x2={xScale(0)} y2={PADDING.top + plotH} stroke="var(--color-text, #e0e0e0)" strokeWidth={1} />
+          <line x1={xScale(0)} y1={PADDING.top} x2={xScale(0)} y2={PADDING.top + plotH} style={{ stroke: 'var(--color-text, #e0e0e0)' }} strokeWidth={1} />
         )}
 
         {/* X ticks + labels */}
         {xTicks.map((v) => (
           <g key={`xt-${v}`}>
-            <line x1={xScale(v)} y1={PADDING.top + plotH} x2={xScale(v)} y2={PADDING.top + plotH + 5} stroke="var(--color-text-dim, #888)" strokeWidth={1} />
-            <text x={xScale(v)} y={PADDING.top + plotH + 18} textAnchor="middle" fill="var(--color-text-dim, #888)" fontSize={11} fontFamily="system-ui, sans-serif">
+            <line x1={xScale(v)} y1={PADDING.top + plotH} x2={xScale(v)} y2={PADDING.top + plotH + 5} style={{ stroke: 'var(--color-text-dim, #888)' }} strokeWidth={1} />
+            <text x={xScale(v)} y={PADDING.top + plotH + 18} textAnchor="middle" style={{ fill: 'var(--color-text-dim, #888)' }} fontSize={11} fontFamily="system-ui, sans-serif">
               {v}
             </text>
           </g>
@@ -104,8 +103,8 @@ export default function CartesianPlot({ graph, alt }) {
         {/* Y ticks + labels */}
         {yTicks.map((v) => (
           <g key={`yt-${v}`}>
-            <line x1={PADDING.left - 5} y1={yScale(v)} x2={PADDING.left} y2={yScale(v)} stroke="var(--color-text-dim, #888)" strokeWidth={1} />
-            <text x={PADDING.left - 10} y={yScale(v) + 4} textAnchor="end" fill="var(--color-text-dim, #888)" fontSize={11} fontFamily="system-ui, sans-serif">
+            <line x1={PADDING.left - 5} y1={yScale(v)} x2={PADDING.left} y2={yScale(v)} style={{ stroke: 'var(--color-text-dim, #888)' }} strokeWidth={1} />
+            <text x={PADDING.left - 10} y={yScale(v) + 4} textAnchor="end" style={{ fill: 'var(--color-text-dim, #888)' }} fontSize={11} fontFamily="system-ui, sans-serif">
               {v}
             </text>
           </g>
@@ -113,26 +112,26 @@ export default function CartesianPlot({ graph, alt }) {
 
         {/* Axis labels */}
         {axes?.xLabel && (
-          <text x={PADDING.left + plotW / 2} y={height - 4} textAnchor="middle" fill="var(--color-text, #e0e0e0)" fontSize={13} fontFamily="system-ui, sans-serif">
+          <text x={PADDING.left + plotW / 2} y={height - 4} textAnchor="middle" style={{ fill: 'var(--color-text, #e0e0e0)' }} fontSize={13} fontFamily="system-ui, sans-serif">
             {axes.xLabel}
           </text>
         )}
         {axes?.yLabel && (
-          <text x={14} y={PADDING.top + plotH / 2} textAnchor="middle" fill="var(--color-text, #e0e0e0)" fontSize={13} fontFamily="system-ui, sans-serif" transform={`rotate(-90, 14, ${PADDING.top + plotH / 2})`}>
+          <text x={14} y={PADDING.top + plotH / 2} textAnchor="middle" style={{ fill: 'var(--color-text, #e0e0e0)' }} fontSize={13} fontFamily="system-ui, sans-serif" transform={`rotate(-90, 14, ${PADDING.top + plotH / 2})`}>
             {axes.yLabel}
           </text>
         )}
       </g>
 
-      {/* Plot area clip */}
+      {/* Plot area clip — unique ID per instance */}
       <defs>
-        <clipPath id="plot-area">
+        <clipPath id={clipId}>
           <rect x={PADDING.left} y={PADDING.top} width={plotW} height={plotH} />
         </clipPath>
       </defs>
 
       {/* Layer pipeline */}
-      <g clipPath="url(#plot-area)">
+      <g clipPath={`url(#${clipId})`}>
         {cappedLayers.map((layer, i) => renderLayer(layer, i, xScale, yScale, curveData, alt))}
       </g>
     </svg>
