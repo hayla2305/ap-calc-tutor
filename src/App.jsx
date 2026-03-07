@@ -5,6 +5,7 @@ import conceptsData from './data/concepts.json';
 import Mode1 from './components/Mode1';
 import Mode2 from './components/Mode2';
 import Mode3 from './components/Mode3';
+import MediaTestHarness from './components/media/MediaTestHarness';
 
 const scoredConcepts = conceptsData.filter((c) => c.scored);
 const conceptIds = conceptsData.map((c) => c.id);
@@ -20,7 +21,22 @@ runStorageMigrationV2(conceptsData);
 setConceptIds(conceptIds);
 setConceptUids(conceptUids);
 
+// Dev-only: #media-test hash shows the media test harness
+const IS_MEDIA_TEST = typeof window !== 'undefined' && window.location.hash === '#media-test';
+
 export default function App() {
+  if (IS_MEDIA_TEST) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <MediaTestHarness />
+      </div>
+    );
+  }
+
+  return <AppMain />;
+}
+
+function AppMain() {
   const [mode, setMode] = useState('recognition');
   const [settings, setSettingsState] = useState(() => getSettings());
   const [storageWarning, setStorageWarning] = useState(() => !isStoragePersistent());
