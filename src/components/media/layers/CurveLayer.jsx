@@ -1,7 +1,7 @@
 import { line, curveCatmullRom } from 'd3-shape';
+import { resolveColor } from './colorTokens';
 
 const MAX_POINTS = 2000;
-const COLOR_RE = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/;
 
 /**
  * CurveLayer — renders a smooth curve from sampled points.
@@ -12,7 +12,7 @@ export default function CurveLayer({ layer, xScale, yScale }) {
   if (!source?.points?.length) return null;
 
   const points = source.points.slice(0, MAX_POINTS);
-  const strokeColor = COLOR_RE.test(color) ? color : '#60a5fa';
+  const strokeColor = resolveColor(color);
 
   const pathGen = line()
     .x((d) => xScale(d[0]))
@@ -26,7 +26,7 @@ export default function CurveLayer({ layer, xScale, yScale }) {
     <path
       d={d}
       fill="none"
-      stroke={strokeColor}
+      style={{ stroke: strokeColor }}
       strokeWidth={2}
       data-layer-id={id}
       aria-label={label || id}

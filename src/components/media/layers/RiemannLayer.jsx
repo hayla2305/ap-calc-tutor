@@ -1,10 +1,11 @@
-const COLOR_RE = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/;
+import { resolveColor } from './colorTokens';
 
 /**
  * RiemannLayer — renders Riemann sum rectangles under a curve.
  *
  * method: "left" | "right" | "midpoint" | "trapezoidal"
  * Requires curveData map from CartesianPlot to resolve curve id → points.
+ * All colors use inline `style` so CSS custom properties resolve correctly.
  */
 export default function RiemannLayer({ layer, xScale, yScale, curveData }) {
   const { curve: curveId, xMin, xMax, n, method = 'left', fill } = layer;
@@ -13,7 +14,7 @@ export default function RiemannLayer({ layer, xScale, yScale, curveData }) {
   const points = curveData?.get(curveId);
   if (!points?.length) return null;
 
-  const fillColor = COLOR_RE.test(fill) ? fill : '#60a5fa';
+  const fillColor = resolveColor(fill);
   const dx = (xMax - xMin) / n;
   const rects = [];
 
@@ -41,9 +42,8 @@ export default function RiemannLayer({ layer, xScale, yScale, curveData }) {
         <polygon
           key={i}
           points={`${pxLeft},${py0} ${pxLeft},${pyL} ${pxRight},${pyR} ${pxRight},${py0}`}
-          fill={fillColor}
+          style={{ fill: fillColor, stroke: fillColor }}
           opacity={0.3}
-          stroke={fillColor}
           strokeWidth={1}
         />
       );
@@ -68,9 +68,8 @@ export default function RiemannLayer({ layer, xScale, yScale, curveData }) {
         y={rectY}
         width={pxW}
         height={rectH}
-        fill={fillColor}
+        style={{ fill: fillColor, stroke: fillColor }}
         opacity={0.3}
-        stroke={fillColor}
         strokeWidth={1}
       />
     );

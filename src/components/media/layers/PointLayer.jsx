@@ -1,8 +1,10 @@
-const COLOR_RE = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/;
+import { resolveColor } from './colorTokens';
 
 /**
  * PointLayer — renders a single point marker on the graph.
  * marker: "open" (unfilled circle), "closed" (filled), "dot" (small filled)
+ *
+ * All colors use inline `style` so CSS custom properties resolve correctly.
  */
 export default function PointLayer({ layer, xScale, yScale }) {
   const { at, marker = 'closed', color, radius } = layer;
@@ -10,7 +12,7 @@ export default function PointLayer({ layer, xScale, yScale }) {
 
   const cx = xScale(at[0]);
   const cy = yScale(at[1]);
-  const strokeColor = COLOR_RE.test(color) ? color : '#60a5fa';
+  const resolvedColor = resolveColor(color);
 
   if (marker === 'open') {
     return (
@@ -18,8 +20,7 @@ export default function PointLayer({ layer, xScale, yScale }) {
         cx={cx}
         cy={cy}
         r={radius || 5}
-        style={{ fill: 'var(--color-bg, #1a1a2e)' }}
-        stroke={strokeColor}
+        style={{ fill: 'var(--color-bg, #1a1a2e)', stroke: resolvedColor }}
         strokeWidth={2}
       />
     );
@@ -31,7 +32,7 @@ export default function PointLayer({ layer, xScale, yScale }) {
         cx={cx}
         cy={cy}
         r={radius || 3}
-        fill={strokeColor}
+        style={{ fill: resolvedColor }}
       />
     );
   }
@@ -42,7 +43,7 @@ export default function PointLayer({ layer, xScale, yScale }) {
       cx={cx}
       cy={cy}
       r={radius || 5}
-      fill={strokeColor}
+      style={{ fill: resolvedColor }}
     />
   );
 }

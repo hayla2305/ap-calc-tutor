@@ -1,14 +1,25 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 /**
  * MediaExpand — tap-to-expand full-screen modal wrapper for graphs.
  * On mobile: opens h-[100dvh] modal. On desktop: larger preview.
+ * Escape key closes the expanded view.
  */
 export default function MediaExpand({ children }) {
   const [expanded, setExpanded] = useState(false);
 
   const open = useCallback(() => setExpanded(true), []);
   const close = useCallback(() => setExpanded(false), []);
+
+  // Close on Escape key
+  useEffect(() => {
+    if (!expanded) return;
+    const handleKey = (e) => {
+      if (e.key === 'Escape') close();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [expanded, close]);
 
   return (
     <>
@@ -26,7 +37,13 @@ export default function MediaExpand({ children }) {
       {expanded && (
         <div
           className="fixed inset-0 z-50 bg-[var(--color-bg)] flex flex-col"
-          style={{ height: '100dvh', paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
+          style={{
+            height: '100dvh',
+            paddingTop: 'env(safe-area-inset-top)',
+            paddingBottom: 'env(safe-area-inset-bottom)',
+            paddingLeft: 'env(safe-area-inset-left)',
+            paddingRight: 'env(safe-area-inset-right)',
+          }}
         >
           <div className="flex justify-end p-3">
             <button

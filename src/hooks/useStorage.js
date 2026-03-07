@@ -48,7 +48,7 @@ export function setIdToUidMap(concepts) {
 
 // Resolve a concept identifier to its UID.
 // Accepts either legacy id or uid — always returns uid.
-function resolveUid(identifier) {
+export function resolveUid(identifier) {
   if (!identifier) return identifier;
   // Already a uid
   if (_uidSet && _uidSet.has(identifier)) return identifier;

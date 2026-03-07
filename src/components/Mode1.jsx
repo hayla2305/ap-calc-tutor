@@ -7,6 +7,7 @@ import {
   addAttempt,
   incrementConfusion,
   recordActivity,
+  resolveUid,
 } from '../hooks/useStorage';
 import { validateCues, extractCueChips } from '../utils/cueValidation';
 import { buildTechniqueOptions, getDistractorExplanation } from '../utils/confusion';
@@ -207,7 +208,9 @@ export default function Mode1({ concepts, scoredConcepts, onEndSession, pushOver
       mode: 'recognition',
       problemId: currentProblem.id,
       trueConcept: currentProblem.concept,
+      trueConceptUid: resolveUid(currentProblem.concept),
       chosenConcept: technique,
+      chosenConceptUid: resolveUid(technique),
       disguiseLevel: currentProblem.disguise_level,
       firstTry: isFirstTry,
       correct,

@@ -1,6 +1,5 @@
 import { area } from 'd3-shape';
-
-const COLOR_RE = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/;
+import { resolveColor } from './colorTokens';
 
 /**
  * RegionLayer — renders shaded area between curves or curve-to-axis.
@@ -9,10 +8,11 @@ const COLOR_RE = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/;
  * mode: "curve_to_axis" — shades between a curve and the x or y axis
  *
  * Requires curveData map from CartesianPlot to resolve curve id → points.
+ * All colors use inline `style` so CSS custom properties resolve correctly.
  */
 export default function RegionLayer({ layer, xScale, yScale, curveData }) {
   const { mode, fill, opacity = 0.2 } = layer;
-  const fillColor = COLOR_RE.test(fill) ? fill : '#60a5fa';
+  const fillColor = resolveColor(fill);
 
   if (mode === 'curve_to_axis') {
     return renderCurveToAxis(layer, xScale, yScale, curveData, fillColor, opacity);
@@ -38,7 +38,7 @@ function renderCurveToAxis(layer, xScale, yScale, curveData, fillColor, opacity)
 
     const d = areaGen(points);
     if (!d) return null;
-    return <path d={d} fill={fillColor} opacity={opacity} />;
+    return <path d={d} style={{ fill: fillColor }} opacity={opacity} />;
   }
 
   // axis === 'y': fill to y-axis (x=0)
@@ -49,7 +49,7 @@ function renderCurveToAxis(layer, xScale, yScale, curveData, fillColor, opacity)
 
   const d = areaGen(points);
   if (!d) return null;
-  return <path d={d} fill={fillColor} opacity={opacity} />;
+  return <path d={d} style={{ fill: fillColor }} opacity={opacity} />;
 }
 
 function renderBetweenCurves(layer, xScale, yScale, curveData, fillColor, opacity) {
@@ -71,7 +71,7 @@ function renderBetweenCurves(layer, xScale, yScale, curveData, fillColor, opacit
 
   const d = areaGen(upperPts);
   if (!d) return null;
-  return <path d={d} fill={fillColor} opacity={opacity} />;
+  return <path d={d} style={{ fill: fillColor }} opacity={opacity} />;
 }
 
 /**

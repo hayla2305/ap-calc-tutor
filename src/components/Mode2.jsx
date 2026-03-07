@@ -7,6 +7,7 @@ import {
   addAttempt,
   recordActivity,
   getAttempts,
+  resolveUid,
 } from '../hooks/useStorage';
 import problemsRaw from '../data/problems.json';
 
@@ -101,6 +102,7 @@ export default function Mode2({ concepts, scoredConcepts, onNavigate }) {
       mode: 'solve',
       problemId: currentProblem.id,
       trueConcept: currentProblem.concept,
+      trueConceptUid: resolveUid(currentProblem.concept),
       totalSteps,
       stepsRevealed,
       stepsAttempted,

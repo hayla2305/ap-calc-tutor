@@ -1,4 +1,4 @@
-import { useMemo, useId } from 'react';
+import { useMemo, useId, useState, useRef, useEffect } from 'react';
 import { scaleLinear } from 'd3-scale';
 import CurveLayer from '../layers/CurveLayer';
 import PointLayer from '../layers/PointLayer';
@@ -21,8 +21,23 @@ const PADDING = { top: 20, right: 20, bottom: 40, left: 45 };
  */
 export default function CartesianPlot({ graph, alt }) {
   const clipId = useId();
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(500);
   const { viewport, axes, layers } = graph;
   const { xMin, xMax, yMin, yMax, aspect = 1.6 } = viewport;
+
+  // Track actual rendered width for tick thinning on mobile
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setContainerWidth(entry.contentRect.width);
+      }
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   // SVG dimensions — responsive via viewBox
   const width = 500;
@@ -55,12 +70,15 @@ export default function CartesianPlot({ graph, alt }) {
   // Cap layers
   const cappedLayers = layers?.slice(0, MAX_LAYERS) || [];
 
-  // Tick values
-  const xTicks = axes?.ticks?.x || generateTicks(xMin, xMax);
-  const yTicks = axes?.ticks?.y || generateTicks(yMin, yMax);
+  // Tick values — thin on narrow viewports (<360px)
+  const rawXTicks = axes?.ticks?.x || generateTicks(xMin, xMax);
+  const rawYTicks = axes?.ticks?.y || generateTicks(yMin, yMax);
+  const xTicks = containerWidth < 360 ? thinTicks(rawXTicks) : rawXTicks;
+  const yTicks = containerWidth < 360 ? thinTicks(rawYTicks) : rawYTicks;
 
   return (
     <svg
+      ref={containerRef}
       viewBox={`0 0 ${width} ${height}`}
       className="w-full min-h-[220px]"
       style={{ aspectRatio: aspect }}
@@ -157,10 +175,22 @@ function renderLayer(layer, i, xScale, yScale, curveData, alt) {
     case 'vector_field':
       return <VectorFieldLayer key={i} layer={layer} xScale={xScale} yScale={yScale} />;
     default:
-      if (process.env.NODE_ENV !== 'production') {
+      if (import.meta.env.DEV) {
         console.warn(`CartesianPlot: unknown layer type "${layer.type}"`);
       }
-      return null;
+      // Render visible fallback instead of silently swallowing
+      return (
+        <text
+          key={i}
+          x={xScale((xScale.domain()[0] + xScale.domain()[1]) / 2)}
+          y={yScale((yScale.domain()[0] + yScale.domain()[1]) / 2)}
+          textAnchor="middle"
+          style={{ fill: 'var(--color-text-dim, #888)' }}
+          fontSize={11}
+        >
+          [unsupported layer: {layer.type}]
+        </text>
+      );
   }
 }
 
@@ -174,4 +204,12 @@ function generateTicks(min, max, count = 6) {
     ticks.push(Math.round(v * 100) / 100);
   }
   return ticks;
+}
+
+/**
+ * Thin ticks for narrow viewports — show every other tick to prevent overlap.
+ */
+function thinTicks(ticks) {
+  if (ticks.length <= 4) return ticks;
+  return ticks.filter((_, i) => i % 2 === 0);
 }
