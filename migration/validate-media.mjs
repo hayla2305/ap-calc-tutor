@@ -63,6 +63,9 @@ const ALLOWED_GRAPH_KEYS = new Set(['coordinateSystem', 'plotType', 'viewport', 
 const VALID_PLOT_COMBOS = new Set([
   'cartesian:cartesian_function',
   'cartesian:slope_field',
+  'cartesian:region',
+  'cartesian:parametric',
+  'polar:polar',
 ]);
 
 // ── Alt text answer-reveal patterns ──
@@ -312,6 +315,19 @@ for (const problemId of problemKeys) {
               err(problemId, idx, `Layer[${li}] region: curve ref "${layer.curve}" not found`);
             }
           }
+          // xMin < xMax enforcement
+          if (typeof layer.xMin === 'number' && typeof layer.xMax === 'number') {
+            if (layer.xMin >= layer.xMax) {
+              err(problemId, idx, `Layer[${li}] region: xMin (${layer.xMin}) >= xMax (${layer.xMax})`);
+            }
+            // Viewport containment
+            if (layer.xMin < vp.xMin) {
+              err(problemId, idx, `Layer[${li}] region: xMin (${layer.xMin}) < viewport.xMin (${vp.xMin})`);
+            }
+            if (layer.xMax > vp.xMax) {
+              err(problemId, idx, `Layer[${li}] region: xMax (${layer.xMax}) > viewport.xMax (${vp.xMax})`);
+            }
+          }
           break;
         }
         case 'riemann_rectangles': {
@@ -323,6 +339,19 @@ for (const problemId of problemKeys) {
           if (typeof layer.xMin !== 'number') err(problemId, idx, `Layer[${li}] riemann: missing numeric "xMin"`);
           if (typeof layer.xMax !== 'number') err(problemId, idx, `Layer[${li}] riemann: missing numeric "xMax"`);
           if (typeof layer.n !== 'number' || layer.n <= 0) err(problemId, idx, `Layer[${li}] riemann: missing or invalid "n"`);
+          // xMin < xMax enforcement
+          if (typeof layer.xMin === 'number' && typeof layer.xMax === 'number') {
+            if (layer.xMin >= layer.xMax) {
+              err(problemId, idx, `Layer[${li}] riemann: xMin (${layer.xMin}) >= xMax (${layer.xMax})`);
+            }
+            // Viewport containment
+            if (layer.xMin < vp.xMin) {
+              err(problemId, idx, `Layer[${li}] riemann: xMin (${layer.xMin}) < viewport.xMin (${vp.xMin})`);
+            }
+            if (layer.xMax > vp.xMax) {
+              err(problemId, idx, `Layer[${li}] riemann: xMax (${layer.xMax}) > viewport.xMax (${vp.xMax})`);
+            }
+          }
           break;
         }
         case 'vector_field': {
