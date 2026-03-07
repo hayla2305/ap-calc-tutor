@@ -1,0 +1,57 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`key → ID mapping snapshot > matches the expected mapping 1`] = `
+{
+  "abc_003": [
+    "m_abc_003",
+  ],
+  "con_003": [
+    "m_con_003",
+  ],
+  "ct_003": [
+    "m_ct_003",
+  ],
+  "fff_003": [
+    "m_fff_003",
+  ],
+  "fff_005": [
+    "m_fff_005",
+  ],
+  "fff_007": [
+    "m_fff_007",
+  ],
+  "id_003": [
+    "m_id_003",
+  ],
+  "ip_003": [
+    "m_ip_003",
+  ],
+  "la_003": [
+    "m_la_003",
+  ],
+  "pm_003": [
+    "m_pm_003",
+  ],
+  "re_003": [
+    "m_re_003",
+  ],
+  "sf_001": [
+    "m_sf_001",
+  ],
+  "sf_002": [
+    "m_sf_002_I",
+    "m_sf_002_II",
+    "m_sf_002_III",
+    "m_sf_002_IV",
+  ],
+  "sf_009": [
+    "m_sf_009",
+  ],
+  "sq_003": [
+    "m_sq_003",
+  ],
+  "sv_003": [
+    "m_sv_003",
+  ],
+}
+`;

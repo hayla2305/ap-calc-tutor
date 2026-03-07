@@ -4,6 +4,10 @@ import tailwindcss from '@tailwindcss/vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 
 export default defineConfig({
+  test: {
+    globals: true,
+    environment: 'node',
+  },
   plugins: [
     react(),
     tailwindcss(),
