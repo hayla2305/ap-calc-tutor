@@ -41,6 +41,15 @@ const VALID_ORIENTATIONS = new Set(['vertical', 'horizontal']);
 const VALID_DISCONTINUITY_KINDS = new Set(['jump', 'removable', 'infinite']);
 const VALID_REGION_MODES = new Set(['between_curves', 'curve_to_axis']);
 
+// ── Color validation — mirrors colorTokens.js runtime acceptance ──
+const HEX_COLOR_RE = /^#([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/;
+const VALID_NAMED_COLORS = new Set(['blue', 'red', 'green', 'orange', 'purple', 'gray']);
+
+function isValidColor(value) {
+  if (!value || typeof value !== 'string') return true; // absent is ok (runtime uses default)
+  return HEX_COLOR_RE.test(value) || VALID_NAMED_COLORS.has(value.toLowerCase());
+}
+
 // ── Per-layer-type key allowlists (additionalProperties: false) ──
 const ALLOWED_KEYS = {
   curve:                new Set(['type', 'id', 'label', 'color', 'source']),
@@ -52,6 +61,13 @@ const ALLOWED_KEYS = {
   riemann_rectangles:   new Set(['type', 'curve', 'xMin', 'xMax', 'n', 'method', 'fill']),
   vector_field:         new Set(['type', 'samples', 'density', 'color']),
 };
+
+// ── Nested object key allowlists ──
+const ALLOWED_SOURCE_KEYS = new Set(['kind', 'points']);
+const ALLOWED_SAMPLE_KEYS = new Set(['at', 'slope']);
+const ALLOWED_VIEWPORT_KEYS = new Set(['xMin', 'xMax', 'yMin', 'yMax', 'aspect']);
+const ALLOWED_AXES_KEYS = new Set(['xLabel', 'yLabel', 'ticks']);
+const ALLOWED_TICKS_KEYS = new Set(['x', 'y']);
 
 // ── Top-level media item allowed keys ──
 const ALLOWED_ITEM_KEYS = new Set(['id', 'kind', 'version', 'alt', 'graph']);
@@ -186,6 +202,7 @@ for (const problemId of problemKeys) {
       err(problemId, idx, 'Missing "graph.viewport"');
       return;
     }
+    checkUnknownKeys(vp, ALLOWED_VIEWPORT_KEYS, problemId, idx, 'viewport');
     for (const field of ['xMin', 'xMax', 'yMin', 'yMax']) {
       if (typeof vp[field] !== 'number') {
         err(problemId, idx, `viewport.${field} is not a number`);
@@ -193,6 +210,14 @@ for (const problemId of problemKeys) {
     }
     if (vp.xMin >= vp.xMax) err(problemId, idx, 'viewport.xMin >= xMax');
     if (vp.yMin >= vp.yMax) err(problemId, idx, 'viewport.yMin >= yMax');
+
+    // ── Axes (optional) ──
+    if (graph.axes) {
+      checkUnknownKeys(graph.axes, ALLOWED_AXES_KEYS, problemId, idx, 'axes');
+      if (graph.axes.ticks) {
+        checkUnknownKeys(graph.axes.ticks, ALLOWED_TICKS_KEYS, problemId, idx, 'axes.ticks');
+      }
+    }
 
     // ── Layers ──
     const layers = graph.layers;
@@ -233,6 +258,7 @@ for (const problemId of problemKeys) {
             err(problemId, idx, `Layer[${li}] curve: missing source.points array`);
             break;
           }
+          checkUnknownKeys(layer.source, ALLOWED_SOURCE_KEYS, problemId, idx, `Layer[${li}] curve source`);
           if (layer.source.points.length > MAX_POINTS) {
             err(problemId, idx, `Layer[${li}] curve: ${layer.source.points.length} points exceeds ${MAX_POINTS}`);
           }
@@ -241,6 +267,9 @@ for (const problemId of problemKeys) {
               err(problemId, idx, `Layer[${li}] curve: invalid point ${JSON.stringify(pt)}`);
               break;
             }
+          }
+          if (layer.color && !isValidColor(layer.color)) {
+            err(problemId, idx, `Layer[${li}] curve: invalid color "${layer.color}"`);
           }
           break;
         }
@@ -251,6 +280,9 @@ for (const problemId of problemKeys) {
           }
           if (layer.marker && !VALID_MARKERS.has(layer.marker)) {
             err(problemId, idx, `Layer[${li}] point: invalid marker "${layer.marker}"`);
+          }
+          if (layer.color && !isValidColor(layer.color)) {
+            err(problemId, idx, `Layer[${li}] point: invalid color "${layer.color}"`);
           }
           // Bounds check
           if (!inBounds(layer.at[0], vp.xMin, vp.xMax)) {
@@ -271,6 +303,9 @@ for (const problemId of problemKeys) {
           if (layer.text && layer.text.length > 80) {
             err(problemId, idx, `Layer[${li}] annotation: text "${layer.text.substring(0, 40)}..." exceeds 80 chars`);
           }
+          if (layer.color && !isValidColor(layer.color)) {
+            err(problemId, idx, `Layer[${li}] annotation: invalid color "${layer.color}"`);
+          }
           break;
         }
         case 'asymptote': {
@@ -283,6 +318,9 @@ for (const problemId of problemKeys) {
           if (layer.orientation === 'horizontal' && typeof layer.y !== 'number') {
             err(problemId, idx, `Layer[${li}] asymptote: horizontal asymptote missing numeric "y"`);
           }
+          if (layer.color && !isValidColor(layer.color)) {
+            err(problemId, idx, `Layer[${li}] asymptote: invalid color "${layer.color}"`);
+          }
           break;
         }
         case 'discontinuity_marker': {
@@ -291,6 +329,9 @@ for (const problemId of problemKeys) {
           }
           if (!Array.isArray(layer.at) || layer.at.length < 2) {
             err(problemId, idx, `Layer[${li}] discontinuity: missing or invalid "at"`);
+          }
+          if (layer.color && !isValidColor(layer.color)) {
+            err(problemId, idx, `Layer[${li}] discontinuity: invalid color "${layer.color}"`);
           }
           break;
         }
@@ -314,6 +355,9 @@ for (const problemId of problemKeys) {
             } else if (!curveIds.has(layer.curve)) {
               err(problemId, idx, `Layer[${li}] region: curve ref "${layer.curve}" not found`);
             }
+          }
+          if (layer.fill && !isValidColor(layer.fill)) {
+            err(problemId, idx, `Layer[${li}] region: invalid fill color "${layer.fill}"`);
           }
           // xMin < xMax enforcement
           if (typeof layer.xMin === 'number' && typeof layer.xMax === 'number') {
@@ -339,6 +383,9 @@ for (const problemId of problemKeys) {
           if (typeof layer.xMin !== 'number') err(problemId, idx, `Layer[${li}] riemann: missing numeric "xMin"`);
           if (typeof layer.xMax !== 'number') err(problemId, idx, `Layer[${li}] riemann: missing numeric "xMax"`);
           if (typeof layer.n !== 'number' || layer.n <= 0) err(problemId, idx, `Layer[${li}] riemann: missing or invalid "n"`);
+          if (layer.fill && !isValidColor(layer.fill)) {
+            err(problemId, idx, `Layer[${li}] riemann: invalid fill color "${layer.fill}"`);
+          }
           // xMin < xMax enforcement
           if (typeof layer.xMin === 'number' && typeof layer.xMax === 'number') {
             if (layer.xMin >= layer.xMax) {
@@ -364,6 +411,7 @@ for (const problemId of problemKeys) {
           }
           for (let si = 0; si < layer.samples.length; si++) {
             const s = layer.samples[si];
+            checkUnknownKeys(s, ALLOWED_SAMPLE_KEYS, problemId, idx, `Layer[${li}] vector_field sample[${si}]`);
             if (!Array.isArray(s.at) || s.at.length < 2) {
               err(problemId, idx, `Layer[${li}] vector_field sample[${si}]: invalid "at"`);
               break;
@@ -372,6 +420,9 @@ for (const problemId of problemKeys) {
               err(problemId, idx, `Layer[${li}] vector_field sample[${si}]: invalid slope`);
               break;
             }
+          }
+          if (layer.color && !isValidColor(layer.color)) {
+            err(problemId, idx, `Layer[${li}] vector_field: invalid color "${layer.color}"`);
           }
           break;
         }

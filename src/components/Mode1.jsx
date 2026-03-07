@@ -311,6 +311,8 @@ export default function Mode1({ concepts, scoredConcepts, onEndSession, pushOver
       mode: 'recognition',
       problemId: currentProblem?.id,
       trueConcept: currentProblem?.concept,
+      trueConceptUid: resolveUid(currentProblem?.concept),
+      chosenConceptUid: resolveUid(result?.chosenConcept),
       isExitTicket: true,
       ...result,
     });
