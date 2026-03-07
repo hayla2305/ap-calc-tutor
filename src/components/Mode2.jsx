@@ -1,6 +1,7 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, lazy, Suspense } from 'react';
 import { v4 as uuid } from 'uuid';
 import MathDisplay, { MathBlock } from './MathDisplay';
+import useMedia from '../hooks/useMedia';
 import {
   updateSolve,
   addAttempt,
@@ -8,6 +9,8 @@ import {
   getAttempts,
 } from '../hooks/useStorage';
 import problemsRaw from '../data/problems.json';
+
+const MediaRenderer = lazy(() => import('./media/MediaRenderer'));
 
 /**
  * Mode 2 — "Solve It"
@@ -57,6 +60,9 @@ export default function Mode2({ concepts, scoredConcepts, onNavigate }) {
   const [studentAnswers, setStudentAnswers] = useState({});
   const [completed, setCompleted] = useState(false);
   const startTimeRef = useRef(null);
+
+  // Async media loading for graph-representation problems
+  const { media } = useMedia(currentProblem);
 
   const totalSteps = currentProblem?.solution_steps?.length || 0;
 
@@ -180,6 +186,15 @@ export default function Mode2({ concepts, scoredConcepts, onNavigate }) {
           <MathDisplay text={currentProblem.stem} />
         </div>
       </div>
+
+      {/* Problem media (graphs, etc.) */}
+      {media && (
+        <Suspense fallback={<div className="card p-4 mb-6 text-center text-sm text-[var(--color-text-dim)]">Loading graph...</div>}>
+          <div className="mb-6">
+            <MediaRenderer media={media} />
+          </div>
+        </Suspense>
+      )}
 
       {/* Steps */}
       <div className="space-y-4 mb-6">

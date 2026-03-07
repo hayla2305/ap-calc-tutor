@@ -1,6 +1,7 @@
-import { useState, useCallback, useMemo, useRef, useEffect } from 'react';
+import { useState, useCallback, useMemo, useRef, useEffect, lazy, Suspense } from 'react';
 import { v4 as uuid } from 'uuid';
 import MathDisplay, { MathBlock } from './MathDisplay';
+import useMedia from '../hooks/useMedia';
 import {
   updateRecognition,
   addAttempt,
@@ -13,6 +14,8 @@ import { selectProblem, applyAdaptive, shouldInterleave, getMasteredConceptForRe
 import TutorChat from './TutorChat';
 import CoachingCard from './CoachingCard';
 import { getConfusionPairs } from '../utils/confusion';
+
+const MediaRenderer = lazy(() => import('./media/MediaRenderer'));
 
 // Dynamically import all problem files and merge
 import problemsRaw from '../data/problems.json';
@@ -56,6 +59,9 @@ export default function Mode1({ concepts, scoredConcepts, onEndSession, pushOver
   const tutorUsedThisProblemRef = useRef(false);
   const drillQueueRef = useRef([]);
   const startTimeRef = useRef(null);
+
+  // Async media loading for graph-representation problems
+  const { media } = useMedia(currentProblem);
 
   // Listen for close-overlays event from browser back
   useEffect(() => {
@@ -362,6 +368,15 @@ export default function Mode1({ concepts, scoredConcepts, onEndSession, pushOver
           <MathDisplay text={currentProblem.stem} />
         </div>
       </div>
+
+      {/* Problem media (graphs, etc.) */}
+      {media && (
+        <Suspense fallback={<div className="card p-4 mb-6 text-center text-sm text-[var(--color-text-dim)]">Loading graph...</div>}>
+          <div className="mb-6">
+            <MediaRenderer media={media} />
+          </div>
+        </Suspense>
+      )}
 
       {/* Phase: Cue Selection */}
       {phase === PHASES.CUE_SELECT && (
