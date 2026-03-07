@@ -79,24 +79,10 @@ const TEST_MEDIA = [
           fill: '#34d399',
         },
 
-        // 5. Points — open and closed markers
-        { type: 'point', at: [2, 0], marker: 'closed', color: '#60a5fa' },
-        { type: 'point', at: [0, 0], marker: 'open', color: '#f472b6' },
-        { type: 'point', at: [5, 4], marker: 'dot', color: '#fbbf24' },
-
-        // 6. Asymptotes — one vertical, one horizontal
-        { type: 'asymptote', orientation: 'vertical', x: -1 },
-        { type: 'asymptote', orientation: 'horizontal', y: 5 },
-
-        // 7. Discontinuity markers — all three kinds
-        { type: 'discontinuity_marker', at: [3, 2], kind: 'removable' },
-        { type: 'discontinuity_marker', at: [7, 2], kind: 'jump' },
-        { type: 'discontinuity_marker', at: [9, 2], kind: 'infinite' },
-
-        // 8. Annotation
+        // 5. Annotation (render early so it's not clipped by MAX_LAYERS=12)
         { type: 'annotation', at: [5, -3], text: 'Region between f and g' },
 
-        // 9. Vector field — small slope field in bottom-left area
+        // 6. Vector field — small slope field in bottom-left area
         {
           type: 'vector_field',
           density: 12,
@@ -113,6 +99,17 @@ const TEST_MEDIA = [
             { at: [0.5, -3], slope: -0.5 },
           ],
         },
+
+        // 7. Points — open and closed markers
+        { type: 'point', at: [2, 0], marker: 'closed', color: '#60a5fa' },
+        { type: 'point', at: [0, 0], marker: 'open', color: '#f472b6' },
+        { type: 'point', at: [5, 4], marker: 'dot', color: '#fbbf24' },
+
+        // 8. Asymptote — vertical dashed line
+        { type: 'asymptote', orientation: 'vertical', x: -1 },
+
+        // 9. Discontinuity — removable (open circle)
+        { type: 'discontinuity_marker', at: [3, 2], kind: 'removable' },
       ],
     },
   },
@@ -177,10 +174,10 @@ export default function MediaTestHarness() {
         <div className="text-xs text-[var(--color-text-dim)] mb-2 space-y-1">
           <p>Blue curve (f) + pink curve (g) + purple shaded region between them [2,6]</p>
           <p>Green Riemann rectangles (left sum) under f on [6,10]</p>
+          <p>Annotation text at (5, -3) + vector field segments in bottom-left</p>
           <p>Points: closed (blue, x=2), open (pink, x=0), dot (yellow, x=5)</p>
-          <p>Asymptotes: vertical at x=-1, horizontal at y=5</p>
-          <p>Discontinuity markers: removable (x=3), jump (x=7), infinite (x=9)</p>
-          <p>Annotation text at bottom + vector field segments in bottom-left</p>
+          <p>Vertical asymptote at x=-1 + removable discontinuity at (3, 2)</p>
+          <p>11 layers total (MAX_LAYERS=12)</p>
         </div>
         <MediaRenderer media={TEST_MEDIA} />
       </section>
