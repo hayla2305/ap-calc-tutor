@@ -1,15 +1,10 @@
-import { useState, useEffect, useCallback, useRef, lazy, Suspense } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { setConceptIds, setConceptUids, setIdToUidMap, runStorageMigrationV2, getSettings, setSettings, isStoragePersistent, recordActivity } from './hooks/useStorage';
 import useSession from './hooks/useSession';
 import conceptsData from './data/concepts.json';
 import Mode1 from './components/Mode1';
 import Mode2 from './components/Mode2';
 import Mode3 from './components/Mode3';
-
-// Dev-only: lazy-load MediaTestHarness — tree-shaken in production builds
-const MediaTestHarness = import.meta.env.DEV
-  ? lazy(() => import('./components/media/MediaTestHarness'))
-  : null;
 
 const scoredConcepts = conceptsData.filter((c) => c.scored);
 const conceptIds = conceptsData.map((c) => c.id);
@@ -25,20 +20,7 @@ runStorageMigrationV2(conceptsData);
 setConceptIds(conceptIds);
 setConceptUids(conceptUids);
 
-// Dev-only: #media-test hash shows the media test harness
-const IS_MEDIA_TEST = typeof window !== 'undefined' && window.location.hash === '#media-test';
-
 export default function App() {
-  if (IS_MEDIA_TEST && MediaTestHarness) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Suspense fallback={<div className="p-8 text-center text-sm text-[var(--color-text-dim)]">Loading test harness…</div>}>
-          <MediaTestHarness />
-        </Suspense>
-      </div>
-    );
-  }
-
   return <AppMain />;
 }
 

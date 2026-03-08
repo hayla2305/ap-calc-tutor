@@ -385,14 +385,9 @@ function estimateStorageUsage() {
 }
 
 export function runStorageMigrationV2(concepts) {
-  console.log('[migration] runStorageMigrationV2 start');
   try {
     const currentVersion = safeGet('storageSchemaVersion', 1);
-    console.log('[migration] currentVersion:', currentVersion, 'target:', CURRENT_SCHEMA_VERSION);
-    if (currentVersion >= CURRENT_SCHEMA_VERSION) {
-      console.log('[migration] already at target version, skipping');
-      return;
-    }
+    if (currentVersion >= CURRENT_SCHEMA_VERSION) return;
 
     // Build id → uid map
     const idToUid = {};
@@ -400,7 +395,6 @@ export function runStorageMigrationV2(concepts) {
       if (c.id && c.uid) idToUid[c.id] = c.uid;
     }
     const legacyIds = Object.keys(idToUid);
-    console.log('[migration] legacyIds count:', legacyIds.length);
     if (legacyIds.length === 0) return;
 
     // ── Best-effort backup ──
@@ -503,7 +497,6 @@ export function runStorageMigrationV2(concepts) {
 
     // ── Mark migration complete ──
     safeSet('storageSchemaVersion', CURRENT_SCHEMA_VERSION);
-    console.log('[migration] complete — progress:', progressMigrated, 'confusions:', confusionMigrated, 'attempts updated:', attemptsChanged);
   } catch (err) {
     console.error('[migration] runStorageMigrationV2 failed:', err);
   }
